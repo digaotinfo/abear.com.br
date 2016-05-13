@@ -8,6 +8,7 @@ CREATE TABLE `tb_clipping` (
   `texto_eng` TEXT NULL,
   `texto_esp` TEXT NULL,
   `ativo` TINYINT(1) NULL DEFAULT 1,
+  `delete` TINYINT(1) NULL DEFAULT 0,
   `url_amigavel__ptbr` VARCHAR(300) NULL,
   `url_amigavel_eng` VARCHAR(300) NULL,
   `url_amigavel_esp` VARCHAR(300) NULL,
@@ -15,3 +16,18 @@ CREATE TABLE `tb_clipping` (
   `modified` DATETIME NULL,
   PRIMARY KEY (`id`))
 ENGINE = MyISAM;
+
+
+
+
+CREATE TABLE `abear_2014`.`tb_clipping_historico` (
+  `id` INT NOT NULL AUTO_INCREMENT,
+  `clipping_id` INT NULL,
+  `username` VARCHAR(100) NULL,
+  `acao` VARCHAR(45) NULL,
+  `edicao` LONGTEXT NULL,
+  `created` DATETIME NULL,
+  `modified` DATETIME NULL,
+  PRIMARY KEY (`id`))
+ENGINE = MyISAM;
+

@@ -1,6 +1,6 @@
 CREATE TABLE `tb_clipping` (
   `id` INT NOT NULL AUTO_INCREMENT,
-  `data` DATETIME NULL,
+  `data` DATE NULL,
   `titulo_ptbr` VARCHAR(200) NULL,
   `titulo_eng` VARCHAR(200) NULL,
   `titulo_esp` VARCHAR(200) NULL,
