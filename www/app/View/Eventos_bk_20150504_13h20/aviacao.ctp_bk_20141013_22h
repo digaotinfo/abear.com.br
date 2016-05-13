@@ -1,0 +1,133 @@
+<?php 
+	//print_r($txt);
+	//print_r($videos);
+	//print_r($videoDestaques);
+	//die();
+	
+?>
+<div class='row progEvento'>
+	<div class='titulo_grande img'>
+		<div class='title'>
+		<?=$this->Html->image('/'.$txt[$model]['logo_' .$lang. '_file'])?>
+		</div> 
+		<div class='quad'></div>
+	</div>
+
+	<?=$this->element('intros')?>
+	
+	<?php if(!empty($txt)){ ?>
+	<div class='text bBot'>
+		<p><?=$txt[$model]['texto_'.$lang]?></p>
+	</div>
+	<?php } ?>
+	<div class='video_big'>
+	<?php
+		if(!empty($videosDestaqueAviacao) ){
+			foreach($videosDestaqueAviacao as $destaques){  
+	?>
+		<div class='video_'>
+			<?=$destaques['Video']['video_'.$lang]?>
+			
+			<div class='video_info'>
+				<div class='title'><p><?php 
+											echo $this->Text->truncate(
+														$destaques['Video']['titulo_'.$lang],
+														45,
+														array(
+															'ellipsis' => '...',
+															'exact' => false,
+															'html' => false,
+														)
+													);
+										 ?></p></div>
+				<div class='info'><p> <?=$destaques['Video']['chamada_'.$lang]?></p></div>
+			</div>
+			
+		</div>
+	<?php	
+			}
+		}	
+		else{
+			echo '_';
+			}  
+
+	?>
+	</div>
+	
+	<div class='video_small' style='display: none'>
+	
+	<?php 
+		if(!empty($videos)){
+			foreach($videosPaginate as $video){  
+				if($video['Video']['destaque_aviacao'] == 0): 
+	?>
+		<div class='video_'>
+			<?php
+
+			$frame = split( "/", $video['Video']['video_'.$lang] );
+			$img_yt = split('"', $frame[4]);
+			?>
+			
+			<a href="<?=$this->Html->url(array('controller' => 'videos', 'action' => 'index', $video['Video']['url_amigavel_'.$lang]))?>" id="<?=$video['Video']['id']?>"><?=$this->Html->image('http://img.youtube.com/vi/' .$img_yt[0]. '/0.jpg')?></a>
+
+			<div class='video_info'>
+				<p><?php
+					echo $this->Text->truncate(
+												$video['Video']['titulo_'.$lang],
+												30,
+												array(
+													'ellipsis' => '...',
+													'exact' => false,
+													'html' => false,
+												)
+													);
+				?></p>
+			</div>
+		</div>
+	<?php  
+				endif;
+			}  
+	?>	
+			
+	</div>
+	<div class='pagina_eventos' style='display: none'>
+        <div class='hold'>
+			<div>
+			<?php
+			if(!empty($this->params->paging['Video']['prevPage'])){ 
+            	echo $this->Paginator->prev(
+                                        'Anteriores',
+                                        array('class' => 'arrowL')
+                                        );
+            }else{
+                echo $this->Paginator->prev(
+                                        'Anteriores',
+                                        array('class' => 'arrowL desactive')
+                                        );
+            }
+
+            echo "<div><p> | </p></div>";
+
+
+            if(!empty($this->params->paging['Video']['nextPage'])){
+               echo $this->Paginator->next(
+                                        'Próximos',
+                                         array('class' => 'arrowR')
+                                        );
+            }else{
+                echo $this->Paginator->next(
+                                        'Próximos',
+                                        array('class' => 'arrowR desactive')
+                                        );
+            }
+             ?>
+         	</div>
+    	</div>
+     	<?php
+		}else{
+			echo '_';	
+		} 
+	?>
+	</div>
+	
+</div>

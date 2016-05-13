@@ -1,0 +1,219 @@
+<?php
+// print_r($type['NewslettersEditableType']['html']);
+// print_r($configuracao['Configuracao']['facebook']);
+?>
+<html>
+    <head>
+        <?php
+            echo $this->Html->css('newsletter.css');
+            // >>> atualizar data
+            $data = date('D');
+            $mes = date('M');
+            $dia = date('d');
+            $ano = date('Y');
+
+            $semana = array(
+                        'Sun'=>'DOMINGO',
+                        'Mon'=>'SEGUNDA-FEIRA',
+                        'Tue'=>'TERÇA-FEIRA',
+                        'Wed'=>'QUARTA-FEIRA',
+                        'Thu'=>'QUINTA-FEIRA',
+                        'Fri'=>'SEXTA-FEIRA',
+                        'Sat'=>'SÁBADO'
+                        );
+
+            $mes_extenso = array(
+                                'Jan'=>'JANEIRO',
+                                'Feb'=>'FEVEREIRO',
+                                'Mar'=>'MARÇO',
+                                'Apr'=>'ABRIL',
+                                'May'=>'MAIO',
+                                'Jun'=>'JUNHO',
+                                'Jul'=>'JUSLHO',
+                                'Aug'=>'AGOSTO',
+                                'Nov'=>'NOVEMBRO',
+                                'Sep'=>'SETEMBRO',
+                                'Oct'=>'OUTUBRO',
+                                'Dec'=>'DEZEMBRO'
+                            );
+            $find = array("{DATA}", "[FACEBOOK]", "[TWITTER]", "[YOUTUBE]", "http://server.local/abear.com.br/www/");
+            $subDate =  array($semana["$data"].", <b>{$dia} de ".$mes_extenso["$mes"]." de {$ano}</b>", $configuracao['Configuracao']['facebook'], $configuracao['Configuracao']['twitter'], $configuracao['Configuracao']['youtube'], Router::url('/', true));
+            $html = str_replace($find, $subDate, $type['NewslettersEditableType']['html']);
+            // <<< atualizar data
+            ?>
+
+        <!-- >>> IMPORTANT -->
+
+        <?=$this->Html->script('jquery_min.js');?>
+        <?=$this->Html->script('jquery-ui_min.js');?>
+        <?=$this->Html->script('jquery.browser.js');?>
+
+        <!-- >>> elfinder -->
+        <?php
+            echo $this->Html->css('../elfinder/css/elfinder.min.css');
+            echo $this->Html->script('../elfinder/js/elfinder.min.js');
+            ?>
+        <!-- <<< elfinder -->
+
+        <!-- >>> tinymce -->
+        <?=$this->Html->script('tinymce_editable/tinymce.min.js');?>
+        <script type="text/javascript">
+
+            tinymce.init({
+                selector: ".editable",
+                inline: true,
+                fixed_toolbar_container: "#barra",
+                file_browser_callback: elFinderBrowser,
+
+
+                plugins: [
+                    "textcolor advlist autolink lists link image charmap print preview anchor",
+                    "searchreplace visualblocks code fullscreen",
+                    "insertdatetime media table contextmenu paste"
+                ],
+                toolbar: "forecolor backcolor | insertfile undo redo | styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image",
+                 
+                style_formats: [
+                                    {title: 'Titulo Verde',
+                                        selector: 'a',
+                                            styles: {
+                                                'text-decoration': 'none',
+                                                'color': '#0d7f40',
+                                                'font-family': 'Calibri',
+                                                'font-weight': 'bold',
+                                                'font-size': '16px'
+                                                
+                                            }
+                                    },
+                                    {title: 'Título cinza',
+                                        selector: 'a',
+                                            styles: {
+                                                'text-decoration': 'none',
+                                                'color': '#797979',
+                                                'font-family': 'Calibri',
+                                                'font-weight': 'bold',
+                                                'font-size': '16px'
+                                                
+                                            }
+                                    },
+                                    
+                                    {title: 'Texto Corrido',
+                                        selector: 'a', 
+                                            styles: {
+                                                    'text-decoration': 'none',
+                                                    'color': '#797979',
+                                                    'font-family': 'Calibri',
+                                                    'font-size': '16px'
+                                            }
+                                     },
+                                    {title: 'Padronizar Imagem para texto corrido',
+                                        selector: 'img',
+                                            styles: {
+                                                "max-width": "100%",
+                                                "width": "auto",
+                                                "height": "auto",
+                                                'padding': '10px',
+                                            }
+                                    },
+                                    {title: 'Largura automática da imagem para Tabela',
+                                        selector: 'img',
+                                            styles: {
+                                                "width": "100%",
+                                                "height": "auto",
+                                            }
+                                    },
+                                    {title: 'Imagem alinhada à esquerda',
+                                        selector: 'img',
+                                            styles: {
+                                                'float': 'left',
+                                            }
+                                    },
+                                    {title: 'Imagem alinhada à direita',
+                                        selector: 'img',
+                                            styles: {
+                                                'float': 'right',
+                                            }
+                                    }
+                                ]
+                               
+
+
+            });
+            
+            //elfinder
+            function elFinderBrowser(field_name, url, type, win) {
+                tinymce.activeEditor.windowManager.open({
+                    file: '<?= $this->webroot; ?>elfinder/elfinder.html', // use an absolute path!
+                    title: 'Upload de Imagem para NewsLetter Abear',
+                    width: 900,
+                    height: 450,
+                    resizable: 'yes'
+                }, {
+                    setUrl: function(url) {
+                        win.document.getElementById(field_name).value = url;
+                    }
+                });
+                return false;
+                
+            }
+        </script>
+    	<!-- >>> IMPORTANT -->
+
+        <meta charset="UTF-8">
+    </head>
+
+    <body style="margin-left: 0px;" class="newsletter">
+
+        <?php echo $this->Form->create($model); ?>
+
+        <div style="background-color: #9ACB22; color: #fff; z-index: 9999; position: fixed; top: 0; width:100%; ">
+            <div style="/*background-color: #FFD700;*/ font-family: verdana; font-size: 14px; color: #949494;padding: 10px 8px;" align="right">
+                <?=$this->Html->link('[voltar]', array('action' => 'admin_types'), array('class' => 'voltar'))?>
+            </div>
+            <div style="padding: 5px; font-family: verdana; font-size: 12px;padding-left: 50%;" id="menu_ferramenta">
+                <div id="barra" style="margin-left: -321px;"></div>
+            </div>
+        </div>
+        
+        <table width="100%" border="0" cellspacing="0" cellpadding="0" style=" text-align: center;margin-top: 100px;">
+            <tbody>
+                <tr>
+                    <td>
+                        <table width="600" align='center' style="font-size: 14px;font-family: Calibri, Regular;margin-top: 50px;" class="editable">
+                            
+                            <?=$html;?>
+                        </table>
+                       
+                    </td>
+                </tr>
+            </tbody>
+        </table> <!-- <<< editable -->
+
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <div style="background-color: #9ACB22; color: #fff; z-index: 9999; position: fixed; bottom: 0px;  width:100%; ">
+            <div style="font-family: verdana; font-size: 12px;padding-left: 50%;" id="menu_ferramenta">
+                <div id="barra" style="margin-left: -321px;"></div>
+            </div>
+
+
+            <div align='center' style="padding: 10px; /*background-color: #FFD700;*/ font-family: verdana; font-size: 14px; color: #949494;">
+                <?=$this->Form->input('titulo', array(
+                                                    'label' => false,
+                                                    'placeholder' => 'Escolha o Titulo',
+                                                    'div' => true,
+                                                    ));
+                        ?>
+                <?=$this->Form->end('Salvar', array('div' => '',));?>
+            </div>
+
+
+        </div>
+
+    
+    </body>
+
+</html>

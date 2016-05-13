@@ -1,0 +1,826 @@
+$( document ).ready(function() {
+
+	/*Video Click change iframe*/
+	$('.galeria_ .videos_hold a[video-click]').click(function(e){
+		e.preventDefault();
+		var obj 	= $(this).find('img');
+		var titulo 	= obj.attr('tit');
+		var descri 	= obj.attr('desc');
+		var endere 	= obj.attr('end');
+
+		var temp 	= $('.galeria_ .videos_hold .single');
+		var tempEnd = temp.find('.video').find('iframe').attr('src');
+		var tempIframe = temp.find('.video').html();
+		var tempTit = temp.find('.info').find('.title').find('p').text();
+		var tempDes = temp.find('.info').find('.text').find('p').text();
+
+		//console.log(tempDes);
+		//console.log(tempEnd);
+		temp.find('.video').html(endere);
+		temp.find('.info').find('.title').find('p').text(titulo);
+		temp.find('.info').find('.text').find('p').text(descri);
+
+		// console.log(tempEnd.split('/')[4].split('"')[0].split('?')[0]);
+
+		obj.attr('src', 'http://img.youtube.com/vi/'+tempEnd.split('/')[4].split('"')[0].split('?')[0]+'/0.jpg');
+		obj.attr('tit', tempTit);
+		obj.attr('desc', tempDes);
+		obj.attr('end', tempIframe);
+	});
+
+	/**/
+	$('.news .video_small').each(function(index, value){
+		var height = 240;
+		$(value).find('.video_').each(function(ind, val){
+			if($(val).height() > height) height = $(val).height();
+		});
+		setTimeout(function() {$(value).css('min-height', height);}, 300);
+	});
+
+	// setTimeout(function(){
+	// 	$('.evento_amarelo .right_').each(function(index, value){
+
+	// 		var h = 0;
+	// 		for (var i = 0; i < $(value).find('.event').length; i++) {
+	// 			//console.log($(value).find('.event').eq(i).height());
+	// 			if($(value).find('.event').eq(i).height() > h){
+	// 				h = $(value).find('.event').eq(i).height();
+	// 			}
+	// 			// console.log(h);
+	// 		};
+	// 		$(value).parent().css('height', (h+20));
+	// 	});
+	// }, 200);
+
+	// >>> videos mobile
+	// if($('.xp_hold .right_').find('iframe')){
+	// 	if($(window).width() < '700'){
+	// 		var w = $('iframe').attr('width')/2;
+	// 		var h = $('iframe').attr('height')/2;
+
+	// 		$('iframe').css("width", w);
+	// 		$('iframe').css("height", h);
+	// 	}
+	// }
+	// <<< videos mobile
+
+	/* SEARCH */
+    $("#buscar").submit(function(e)
+    {
+        e.preventDefault();
+        //alert('asd');
+        if($("#search").val() != '')
+        {
+            window.location = webroot+'busca/' + $("#search").val();
+        }
+    });
+
+
+
+
+
+    /* DROPDOWN MENU */
+		// $('[dropdown-pj]').each(function(index, value){
+		// 	var obj = $(value);
+		// 	var attr = $(value).attr('dropdown-pj');
+		// 	var toOpen = $('.dropdown_pj#'+attr);
+
+		// 	obj.parent().parent().bind('mouseenter', function(e){
+		// 		e.preventDefault();
+		//     	$('.dropdown_pj').hide(0);
+		// 		toOpen.show(100).css('left','0 !important');
+		// 	}).bind('mouseleave', function(e){
+		// 		e.preventDefault();
+		// 		toOpen.hide(0).css('left','-9999px !important');
+		// 	});
+		// });
+    /* END DROPDOWN MENU */
+
+
+
+    /* GALERIA IMG - DIV FLUTUANTE */
+    	/* TESTE 1 - DIV INSIDE */          //Falure due to overflow hidden on the slick
+
+    	// $('.fotos_orbit .elementToOrbit .img').bind('mouseenter', function(){
+    	// 	$(this).parent().find('.pop').show(100);
+    	// }).bind('mouseleave', function(){
+    	// 	$(this).parent().find('.pop').hide(10);
+    	// });
+
+		/* TESTE 2 - DIV ON THE MOUSE */
+
+		$(document).on('mousemove', function(e){
+		    // $('#img_info_div').css({
+		    //    left:  e.pageX,
+		    //    top:   e.pageY
+		    // });
+			$('#img_info_div').offset({left: (e.pageX+10), top: (e.pageY - $('#img_info_div').height() -40)});
+		});
+
+		$('[diflu-titulo]').each(function(index, value){
+			var obj = $(value);
+			var titulo = $(value).attr('diflu-titulo');
+			var descricao = $(value).attr('diflu-desc');
+
+			obj.bind('mouseenter', function(e){
+				e.preventDefault();
+				$('#img_info_div .title p').html(titulo);
+				$('#img_info_div .text p').html(descricao);
+				$('#img_info_div').slideDown(0);
+			}).bind('mouseleave', function(e){
+				e.preventDefault();
+				$('#img_info_div').slideUp(0);
+			});
+		});
+
+    /* END GALERIA IMG - DIV FLUTUANTE */
+
+
+
+	/* Banner Orbit Index */
+    setTimeout(function(){
+	    // console.log('asdasdasd');
+	    // console.log($('.index_bannerOrbit'));
+	    // console.log($('.index_bannerOrbit .slick-dots'));
+	    // console.log($('.index_bannerOrbit .slick-dots li'));
+		for (var i = 0; i < $('.index_bannerOrbit .slick-dots li').length; i++) {
+			//console.log(i);
+			$('.index_bannerOrbit .slick-dots li').eq(i).css('width', (100/$('.index_bannerOrbit .slick-dots li').length)+'%');
+		};
+	}, 500);
+	/* //END// Banner Orbit Index */
+
+
+
+	/*HOME Agenda Orbit Index*/
+	$('.agenda .orbit-prev, .agenda .orbit-next, .index_bannerOrbit .orbit-next, .index_bannerOrbit .orbit-prev').find('span').remove();
+
+
+
+	/*Estrutura logos*/
+
+	$('.estrutura .loggo').css('height', $('.estrutura .loggo .eRight').height());
+
+	$('.estrutura .loggo .logos > div').each(function(index, value){
+		var obj = $(value);
+		var img = $(value).find('img');
+
+		// img.ready(function(){
+		// 	img.css('margin-top', (obj.height() - img.height())/2);
+		// });
+		// $(window).resize(function(){
+		// 	img.css('margin-top', (obj.height() - img.height())/2);
+		// });
+
+		obj.bind('click', function(){
+			if(!$(this).hasClass('active')){
+				var id = $(this).attr('id');
+				$('.estrutura .loggo .logos > div').removeClass('active');
+				$('.estrutura .loggo .info.conselheiro').slideUp(60);
+
+				$(this).addClass('active');
+				setTimeout(function(){$('.estrutura .info.conselheiro#'+id).slideDown(200);}, 200);
+				//console.log($('.estrutura .loggo .line').width);
+				//$('.estrutura .loggo .line').attr('style', 'background-position-x: '+((index-1) * $('.estrutura .loggo .line').width + $('.estrutura .loggo .line').width/2) );
+				//$('.estrutura .loggo .line').css('background-position-x', ((index-1) * $('.estrutura .loggo .line').width + $('.estrutura .loggo .line').width/2));
+				$('.estrutura .loggo .line').attr('id', 'bp'+index);
+			}
+		});
+
+	});
+
+
+
+	/*Estrutura Diretores*/
+/*
+	for (var i = 0; i < $('.diret .pessoa_hold .pessoas .pessoa img').length; i++) {
+		$('.diret .pessoa_hold .pessoas .pessoa img').eq(i).attr('number', i).bind('click', function(p){
+			p.preventDefault();
+			var id = $(this).attr('rel');
+			var n = parseInt($(this).attr('number')) + 1;
+			if(!$(this).parent().hasClass('active')){
+				$('.diret .pessoa_hold .pessoas .pessoa').removeClass('active');
+				$(this).parent().addClass('active');
+				$('.info_pessoas').hide(100);
+				$('.pessoa_hold .line').removeClass('active')
+				$(this).parent().parent().parent().find('.line').attr('class', 'line active pessoa'+n);
+				$.post( (webroot) + "conheca/estrutura/diretoria/"+ (id), function(data){
+					// if(data){
+						var obj = $('.diret .pessoa_hold .pessoas .pessoa img[rel="'+id+'"]').parent().parent().parent().find('.info_pessoas');
+						obj.html(data);
+						setTimeout(function(){$('.diret .pessoa_hold .pessoas .pessoa img[rel="'+id+'"]').parent().parent().parent().find('.info_pessoas').show(300);}, 100);
+					// }else{
+					// 	alert('Sem acesso. Tente novamente mais tarde!');
+					// }
+				});
+			}else{
+				$('.diret .pessoa_hold .pessoas .pessoa').removeClass('active');
+				$('.info_pessoas').hide(100);
+			}
+		});
+	};
+*/
+
+
+	/* Minha Estrutura Diretores*/
+	for (var i = 0; i < $('.diret .pessoa_hold .pessoas .pessoa').length; i++) {
+		$('.diret .pessoa_hold .pessoas .pessoa').eq(i).attr('number', i).bind('click', function(p){
+			p.preventDefault();
+			var id = $(this).attr('rel');
+			var n = parseInt($(this).attr('number')) + 1;
+
+			if(n <= 3){
+				if(!$(this).parent().hasClass('active')){
+					$('.diret .pessoa_hold .pessoas .pessoa').removeClass('active_');
+					$(this).addClass('active_');
+					console.log(this);
+					$('.info_pessoas').hide(100);
+					$('.pessoa_hold .pessoas .pessoa .line').removeClass('active')
+					$('.pessoa_hold').find('.line').attr('class', 'line active pessoa'+n);
+					$('.pessoa_hold').find('.line_inf').attr('class', 'line_inf');
+
+
+					$.post( (webroot) + "conheca/estrutura/diretoria/"+ (id), function(data){
+							var obj = $('.diret .pessoa_hold .pessoas .pessoa[rel="'+id+'"]').parent().parent().find('.info_pessoas');
+							obj.html(data);
+							setTimeout(function(){$('.diret .pessoa_hold .pessoas .pessoa[rel="'+id+'"]').parent().parent().find('.info_pessoas').show(300);}, 100);
+					});
+				}
+			}
+
+			if(n > 3){
+				if(!$(this).parent().hasClass('active')){
+
+					$('.diret .pessoa_hold .pessoas .pessoa').removeClass('active_');
+					$(this).addClass('active_');
+					$('.info_pessoas').hide(100);
+					$('.pessoa_hold .pessoas .line_inf').removeClass('active')
+					$('.pessoa_hold').find('.line_inf').attr('class', 'line_inf active pessoa'+n);
+					$('.pessoa_hold').find('.line').attr('class', 'line');
+
+					$.post( (webroot) + "conheca/estrutura/diretoria/"+ (id), function(data){
+							var obj = $('.diret .pessoa_hold .pessoas .pessoa[rel="'+id+'"]').parent().parent().find('.info_pessoas');
+							obj.html(data);
+							setTimeout(function(){$('.diret .pessoa_hold .pessoas .pessoa[rel="'+id+'"]').parent().parent().find('.info_pessoas').show(300);}, 100);
+					});
+				}
+			}
+
+
+
+
+
+			else{
+				$('.diret .pessoa_hold .pessoas .pessoa').removeClass('active');
+				$('.info_pessoas').hide(100);
+			}
+
+		});
+
+	};
+
+
+
+
+
+	/*VOAR EXPERIENCIA - GUIA DE PASSAGEIROS*/
+	for (var i = 0; i < $('.passageiros .icone').length; i++) {
+		$('.passageiros .icone').eq(i).attr('number', i).bind('click', function(p){
+			p.preventDefault();
+			var id = $(this).find('img').attr('rel');
+			var n = parseInt($(this).attr('number')) + 1;
+			var element = $(this).parent().parent().parent().parent();
+			var nomeDaSessao = $(this).find('div.ball p').html();
+
+			if(!$(this).hasClass('active')){
+				$('.passageiros .icone').removeClass('active');
+				$(this).addClass('active');
+				$('.content').hide(100);
+
+				contabilizarEvento('Experiência de Voar', 'Guia do Passageiro', nomeDaSessao);
+
+				// $.post( (webroot) + "experiencia-de-voar/guia-de-passageiros/icones/"+ (id), function(data){
+				$.post( (webroot) + "experiencia-de-voar/guia-de-passageiros/icones/"+ (id), function(data){
+					// console.log(element);
+					element.find('.content .conteudo .aqui_').html(data);
+					setTimeout(function(){element.find('.content').show(300);},100);
+				});
+
+			}else{
+				$(this).removeClass('active');
+			}
+		});
+	};
+
+
+
+	//////////// AJAX - Contato
+	//////////////////////////////////////////////////////////////////
+	$('#form_contato button').click(function(e){
+		e.preventDefault();
+		var isValid = true;
+		var form = $(this).parent();
+		var loader = $(this).parent().parent().find('.loader');
+
+		$('.modal_mail .error').remove();
+
+		form.find('input').each(function(index, value){
+			if( $(value).attr('type') == 'email' ){
+				if( !isEmail($(value).val())){
+					isValid = false;
+					$(value).parent().append('<div class="error" style="margin-bottom: 5px; display:none; width:100%; background: #fed712; padding: 3px; color: #515151; font-size: 10px; border: 1px solid #ccc;">Preencha este campo corretamente com o '+$(value).attr('placeholder')+'!</div>');
+				}
+			}else{
+				if($(value).val() == ''){
+					isValid = false;
+					$(value).parent().append('<div class="error" style="margin-bottom: 5px; display:none; width:100%; background: #fed712; padding: 3px; color: #515151; font-size: 10px; border: 1px solid #ccc;">Preencha este campo corretamente com o '+$(value).attr('placeholder')+'!</div>');
+				}
+			}
+		});
+
+		if(isValid){
+			form.hide(0);
+			loader.show(10);
+
+			$.post( (webroot) + "contato/enviar/", $( "#form_contato" ).serialize(), function(data){
+				console.log(data);
+				if (data == 'true') {
+					$('#form_contato').find('input, textarea').val('');
+				    $('#form_contato').find('input[type="radio"], input[type="checkbox"]').prop('checked', false);
+				    alert('Formulario enviado!');
+				} else {
+					alert('Seu e-mail não pode ser enviado. Tente novamente mais tarde');
+				}
+				form.show(10);
+				loader.hide(0);
+			});
+		}else{
+			alert('Preencha todos os campos corretamente antes de enviar!');
+		}
+		$('#form_contato .error').show(10);
+	});
+	//////////////////////////////////////////////////////////////////
+	//////////////////////////////////////////////////////////////////
+
+
+	/*Ajusta tamanho do foto-modal*/
+	// $('[data-reveal-id]').bind('click', function(){
+	// 	$('#fotos_modal .foto').css('min-height', (getHeight() - 250)+'px');
+	// });
+
+
+
+	/*SETA AMARELA (NAS AERONAVES e TRANSPORTE DE ORGAOS)*/
+	// $('.seta_').bind('click', function(){
+	// 	//console.log('oiM');
+	// 	var img = $(this).parent().find('img').attr('src');
+	// 	//console.log(img);
+	// 	$('#fotos_modal .foto').css('background', 'url('+img+')').css('background-repeat', 'no-repeat').css('background-position', 'center center');
+	// });
+
+
+
+	// /*IMGS COM LIGHTBOX (COMO VOAR)*/
+	// $('[como-voar-img]').bind('click', function(){
+	// 	var id = $(this).attr('rel');
+	// 	//var model = $(this).attr('model');
+	// 	//var atributos = id + '/' + model;
+	// 	//console.log(atributos);
+	// 	//$('#fotos_modal .foto').css('background', 'url('+img+')').css('background-repeat', 'no-repeat').css('background-position', 'center center');
+	// 	postToModal(id, "modal");
+	// });
+
+
+	/// PAGINATOR ///
+		/* POG PAGINATOR LINHA */
+			/* Type 1 -> Linha em cima 100% */
+			// for (var i = 0; i < $('.arrowL').length; i++) {
+			// 	var obj = $('.arrowL').eq(i);
+			// 	if(obj.find('div').length <= 0){
+			// 		obj.prepend('<div></div>');
+			// 	}
+			// 	if(obj.find('a').length <= 0){
+			// 		obj.addClass('deactive');
+			// 	}
+			// };
+			// for (var i = 0; i < $('.arrowR').length; i++) {
+			// 	var obj = $('.arrowR').eq(i);
+			// 	if(obj.find('div').length <= 0){
+			// 		obj.append('<div></div>');
+			// 	}
+			// 	if(obj.find('a').length <= 0){
+			// 		obj.addClass('deactive');
+			// 	}
+			// };
+			// /* Type 2 -> Linha em cima dividida */
+			// for (var i = 0; i < $('.prev_, .next_').length; i++) {
+			// 	var obj = $('.prev_, .next_').eq(i);
+			// 	if(obj.find('a').length <= 0){
+			// 		var text = obj.text();
+			// 		//console.log('text> '+text);
+			// 		obj.html('<a href="#" class="deactive"><div></div><p>'+text+'</p></a>');
+			// 	}else{
+			// 		var text = obj.find('a').text();
+			// 		obj.find('a').html('<div></div><p>'+text+'</p>');
+			// 	}
+			// };
+		$('.arrowL.desactive, .arrowR.desactive').click(function(e){
+			e.preventDefault();
+		})
+		$('.pagina_eventos .hold .arrowL, .pagina_eventos .hold .arrowR, .pagina_agenda .hold .arrowL, .pagina_agenda .hold .arrowR').each(function(index, value){
+			var obj = $(value);
+			if(obj.is('span')){
+				if(obj.find('a').length > 0) obj.find('a').append('<div></div>');
+				else{obj.append('<div></div>')}
+			}
+		});
+		/* PAGINATOR SETAS*/
+		for (var i = 0; i < $('.paginator .hold .prev, .paginator .hold .next').length; i++) {
+			var obj = $('.paginator .hold .prev, .paginator .hold .next').eq(i);
+			if(obj.is('span')){
+				if(obj.is('.next')){
+					if(obj.find('a').length > 0) obj.find('a').append('<div></div>');
+					else{obj.append('<div></div>')}
+					obj.parent().append('<div class="next pp">'+obj.html()+'</div>');
+				}else if(obj.is('.prev')){
+					if(obj.find('a').length > 0) obj.find('a').append('<div></div>');
+					else{obj.append('<div></div>')}
+					obj.parent().prepend('<div class="prev pp">'+obj.html()+'</div>');
+				}
+				obj.remove();
+			}else if(!obj.is('.pp')){
+				obj.append('<div></div>');
+			}
+		};
+		/* PAGINATOR CENTRALIZAR */
+		centerPaginator();
+		$(window).resize(centerPaginator);
+		function centerPaginator(){
+			var n = 0;
+			for (var i = 0; i < $('.paginator .hold > div').length; i++) {
+				n += $('.paginator .hold > div').eq(i).width();
+				n += 12;
+			};
+
+			var total = $('.paginator').width();
+			var marginLeft = (total - n)/2;
+			$('.paginator .hold').css('margin-left', marginLeft+'px');
+		}
+	/// END PAGINATOR ///
+
+
+	//SHARE SCRIPTS - PJquery
+	////////
+	////////	Algumas redes sociais possuem atributos para determinar certas descrições, titulos, imagems, entre outros.
+	////////
+	///////
+	//////
+	/////
+	////  Facebook
+	////
+	////  Twitter
+	////
+	////  Google Plus
+	////
+	////  Pinterest
+	////  	__ Adicionar atributo 'share-pj-pinimg = {LINK DA IMAGEM}'
+	////  	__ Adicionar atributo 'share-pj-pindesc = {DESCRIÇÃO}'
+	////
+	////  Linkedin
+	////  	__ Adicionar atributo 'share-pj-lkdtitle = {TITULO}'
+	////  	__ Adicionar atributo 'share-pj-lkdsummary = {SUMARIO}'
+	////  	__ Adicionar atributo 'share-pj-lkdsource = {FONTE}'
+	////
+	////  Buffer
+	////  	__ Adicionar atributo 'share-pj-buffertitle = {TITULO}'
+	////
+	////  DIGG
+	////  	__ Adicionar atributo 'share-pj-diggtitle = {TITULO}'
+	////
+	////  TUMBLR
+	////  	__ Adicionar atributo 'share-pj-tumbtitle = {TITULO}'
+	////  	__ Adicionar atributo 'share-pj-tumbdesc = {DESCRIÇÃO}'
+	////
+	////  Reddit
+	////  	__ Adicionar atributo 'share-pj-reddittitle = {TITULO}'
+	////
+	////  StumbleUpon
+	////  	__ Adicionar atributo 'share-pj-stumbtitle = {TITULO}'
+	////
+	////  Delicious
+	////  	__ Adicionar atributo 'share-pj-delictitle = {TITULO}'
+	////  	__ Adicionar atributo 'share-pj-delicprovider = {PROVIDER}'
+	////
+	///////////////////////////////////////////////
+	$('[share-pj]').each(function(index, value){
+		var obj = $(value);
+		var redeSocial = $(value).attr('share-pj');
+		var url = '';
+		var windowWidth = 500;
+		var windowHeight = 420;
+
+		switch(redeSocial){
+			case 'facebook':
+				url = 'https://www.facebook.com/sharer/sharer.php?u='+obj.attr('href');
+			break;
+
+
+			case 'twitter':
+				// url = 'https://twitter.com/home'+obj.attr('href');
+				url = 'https://twitter.com/home?status='+obj.attr('href');
+			break;
+
+
+			case 'g-plus':
+				url = 'https://plus.google.com/share?url='+obj.attr('href');
+			break;
+
+
+			case 'pinterest':
+				var img = $(value).attr('share-pj-pinimg');
+				var description = $(value).attr('share-pj-pindesc');
+				var complemento = '';
+
+				if(img != '' && img != null) complemento = complemento + '&media=' + img;
+				if(description != '' && description != null) complemento = complemento + '&description=' + description;
+
+				url = 'https://pinterest.com/pin/create/button/?url=' + obj.attr('href') + complemento;
+			break;
+
+
+			case 'linkedin':
+				var title = $(value).attr('share-pj-lkdtitle');
+				var summary = $(value).attr('share-pj-lkdsummary');
+				var source = $(value).attr('share-pj-lkdsource');
+				var complemento = '';
+				windowWidth = 615;
+				windowHeight = 300;
+
+				if(title != '' && title != null) complemento = complemento + '&title=' + title;
+				if(summary != '' && summary != null) complemento = complemento + '&summary=' + summary;
+				if(source != '' && source != null) complemento = complemento + '&source=' + source;
+
+				url = 'https://www.linkedin.com/shareArticle?mini=true&url=' + obj.attr('href') + complemento;
+			break;
+
+
+			case 'buffer':
+				var title = $(value).attr('share-pj-buffertitle');
+
+				url = 'http://bufferapp.com/add?text=' + title + '&url=' + obj.attr('href');
+			break;
+
+
+			case 'digg':
+				var title = $(value).attr('share-pj-diggtitle');
+				var complemento = '';
+
+				if(title != '' && title != null) complemento = complemento + '&title=' + title;
+
+				url = 'http://digg.com/submit?url=' + obj.attr('href') + complemento;
+			break;
+
+
+			case 'tumblr':
+				var title = $(value).attr('share-pj-tumbtitle');
+				var description = $(value).attr('share-pj-tumbdesc');
+				var complemento = '';
+
+				if(title != '' && title != null) complemento = complemento + '&name=' + title;
+				if(description != '' && description != null) complemento = complemento + '&description=' + description;
+
+				url = 'http://www.tumblr.com/share/link?url=' + obj.attr('href') + complemento;
+			break;
+
+
+			case 'reddit':
+				var title = $(value).attr('share-pj-reddittitle');
+				var complemento = '';
+
+				if(title != '' && title != null) complemento = complemento + '&title=' + title;
+
+				url = 'http://reddit.com/submit?url=' + obj.attr('href') + complemento;
+			break;
+
+
+			case 'stumbleUpon':
+				var title = $(value).attr('share-pj-stumbtitle');
+				var complemento = '';
+
+				if(title != '' && title != null) complemento = complemento + '&title=' + title;
+
+				url = 'http://www.stumbleupon.com/submit?url=' + obj.attr('href') + complemento;
+			break;
+
+
+			case 'delicious':
+				var title = $(value).attr('share-pj-delictitle');
+				var provider = $(value).attr('share-pj-delicprovider');
+				var complemento = '';
+
+				if(title != '' && title != null) complemento = complemento + '&title=' + title;
+
+				url = 'https://delicious.com/save?v=5&provider=' + provider + '&noui&jump=close&url=' + obj.attr('href') + complemento;
+			break;
+
+
+			case 'mail':
+				// $('#form_contato').on('valid', function () {
+
+				// 	$('.contato #form_holder').css('height', $('.contato #form_holder').height());
+				// 	$('.contato #form_holder form').css('display','none');
+				// 	$('.contato #form_holder .loader').css('display','inline');
+
+				// 	$.post( (webroot) + "emailenvios/enviarcontato", $( "#form_contato" ).serialize(), function(data){
+				// 		console.log(data);
+				// 		/* console.log((webroot) + "emailenvios/enviarcontato"); */
+				// 		if (data == 'true') {
+				// 			$('#form_contato').find('input, textarea').val('');
+				// 		    $('#form_contato').find('input[type="radio"], input[type="checkbox"]').prop('checked', false);
+
+				// 		    alert('Formulario enviado!');
+				// 		} else {
+				// 			alert('Seu e-mail não pode ser enviado. Tente novamente mais tarde');
+				// 		}
+				// 		$('.contato #form_holder').css('height', 'auto');
+				// 		$('.contato #form_holder form').css('display', 'block');
+				// 		$('.contato #form_holder .loader').css('display', 'none');
+
+				// 	});
+				// });
+				// obj.click(function(e){
+				// 	e.preventDefault();
+				// });
+				return;
+			break;
+		}
+		obj.click(function(e){
+			e.preventDefault();
+			window.open(url,'targetWindow','toolbar=no,location=no,status=no,menubar=no,scrollbars=yes,resizable=yes,width='+windowWidth+',height='+windowHeight);
+		});
+	});
+
+
+	//MODAL - PJquery
+	/////////
+	////////		Shows the modal on click. The modal class or id can be passed throug the attribute modal-pj.
+	///////			__You can select your own background layer to use behind the modal with the attribute modalbg-pj
+	//////			 	 or use 'no' to use no background layer. By default, one white background layer will be created if the
+	/////				 atribute is left blank.
+	////			__Use the class modal-pj-close to set any click on the element with the classto close the modal. This class should be set in a element inside the modal.
+	///				__Use the class hold-pj='X' to hold the function for X ms.
+	//////////////////////////////////////////////////////////////////
+	var quant = 0;
+	$('[modal-pj]').each(function(index, value){
+		var obj = $(value);
+		var modalSelector = $(value).attr('modal-pj');
+		var bgSelector = $(value).attr('modalbg-pj');
+		var hold = $(value).attr('hold-pj');
+		var showing = false;
+		var bg = null;
+		var time = 0;
+
+		if(hold) time = parseInt(hold);
+		setTimeout(function(){
+			$(modalSelector).bind('closeModal', function(){
+				$(modalSelector).hide(0);
+				bg.hide(0);
+			});
+
+			if($(modalSelector).length >=0){
+				if(bgSelector){
+					if(bgSelector != 'no'){
+						bg = $(''+bgSelector);
+					}
+				}else{
+					$('body').append('<div class="bg_modal-pj'+quant+'" style="background: rgba(0,0,0,.5); width:100%; height:100%; position: fixed; top: 0; left: 0; display: none; z-index:'+(10+(quant*2))+';"></div>');
+					bg = $('.bg_modal-pj'+quant);
+					bg.click(function(){
+						$(modalSelector).hide(0);
+						bg.hide(0);
+					});
+				}
+				$(modalSelector).css('z-index', 11 + (quant*2));
+				$(modalSelector).find('.modal-pj-close').click(function(){
+					$(modalSelector).hide(0);
+					bg.hide(0);
+				});
+
+				obj.click(function(e){
+					e.preventDefault();
+					if (!showing) {
+						$(modalSelector).show(0);
+						bg.show(0);
+					}
+				});
+
+				quant++;
+			}
+		}, time);
+	});
+});
+
+function getHeight() {
+  	var xHeight = null;
+  	//if(window.screen != null) xHeight = window.screen.availHeight;
+	if(window.innerHeight != null) xHeight = window.innerHeight;
+	//if(document.body != null) xHeight = document.body.clientHeight;
+	return xHeight;
+}
+
+function postToModal(id, adress){
+	$.post( (webroot) + adress + '/' + (id), function(data){
+		$('.foto_modal').html(data);
+	});
+}
+
+function isEmail(obj) {
+    if(isString(obj)){
+        return obj.match(/\b[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}\b/ig);
+    }else{
+        return false;
+    }
+};
+
+function isString(obj) {
+    return typeof (obj) == 'string';
+};
+
+//GALERIA DE EVENTOS
+$(window).load(function() {
+  // The slider being synced must be initialized first
+  $('#carous').flexslider({
+    animation: "slide",
+    controlNav: false,
+    animationLoop: false,
+    slideshow: false,
+    itemWidth: 100,
+    itemMargin: 5,
+    asNavFor: '#slid'
+
+  });
+
+
+  $('#slid').flexslider({
+    animation: "slide",
+    controlNav: false,
+    animationLoop: false,
+    slideshow: false,
+    sync: "#carous"
+  });
+
+});
+
+//GALERIA DE EVENTOS teste
+$(window).load(function() {
+  // The slider being synced must be initialized first
+  $('#super-carousel').flexslider({
+    animation: "slides",
+    controlNav: false,
+    animationLoop: false,
+    slideshow: false,
+    itemWidth: 200,
+    // itemWidth: 295,
+    itemMargin: 5,
+    // asNavFor: '#slid'
+
+  });
+
+
+  // $('#super-slider').flexslider({
+  //   animation: "slide",
+  //   controlNav: false,
+  //   animationLoop: false,
+  //   slideshow: false,
+  //   caption: true,
+  //   sync: "#super-carousel"
+  // });
+
+});
+
+
+
+
+// TESTE
+ $(window).load(function() {
+  // The slider being synced must be initialized first
+  $('#carousel').flexslider({
+    animation: "slide",
+    controlNav: false,
+    animationLoop: false,
+    slideshow: false,
+    itemWidth: 100,
+    itemMargin: 5,
+    asNavFor: '#slider'
+  });
+
+
+  $('#slider').flexslider({
+    animation: "slide",
+    controlNav: false,
+    animationLoop: false,
+    slideshow: false,
+    sync: "#carousel"
+  });
+
+});

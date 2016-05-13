@@ -1,0 +1,152 @@
+$zConfig = array(
+	'GaleriaImagenCapa' => array(
+		'img_file' => array( 'dir' => 'uploads/img/galeria_capa/', 'width' => 300, 'height' => 300, 'types' => array('jpg','jpeg','gif','png'), 'forceresize' => false, 'forceupload' => array(false,false), 'filename' => '', 'createfolder' => true, 'thumb' => array('width' => 100, 'height' => 100) )
+	),
+	'GaleriaImagen' => array(
+		'img_file' => array( 'dir' => 'uploads/img/galeria_imagen/', 'width' => 860, 'height' => 400, 'types' => array('jpg','jpeg','gif','png'), 'forceresize' => false, 'forceupload' => array(false,false), 'filename' => '', 'createfolder' => true, 'thumb' => array('width' => 70, 'height' => 70) )
+	),					
+	'Video' => array(
+		'capa_file' => array( 'dir' => 'uploads/img/capa_videos/', 'width' => 300, 'height' => 300, 'types' => array('jpg','jpeg','gif','png'), 'forceresize' => false, 'forceupload' => array(false,false), 'filename' => '', 'createfolder' => true, 'thumb' => array('width' => 100, 'height' => 100) )
+	),
+	'Banner' => array(
+		'banner_file' => array( 'dir' => 'uploads/img/banners/', 'width' => 940, 'height' => 273, 'types' => array('jpg','jpeg','gif','png'), 'forceresize' => false, 'forceupload' => array(false,false), 'filename' => '', 'createfolder' => true, 'thumb' => array('width' => 100, 'height' => 100) ),
+	),
+	'DescricaoHome' => array(
+		'logos_file' => array( 'dir' => 'uploads/img/logos_home/', 'width' => 410, 'height' => 31, 'types' => array('jpg','jpeg','gif','png'), 'forceresize' => false, 'forceupload' => array(false,false), 'filename' => '', 'createfolder' => true, 'thumb' => array('width' => 50, 'height' => 50) )
+	),
+	'Abear' => array(
+		'imagem_ptbr_file' => array( 'dir' => 'uploads/img/a_abear_ptbr/', 'width' => 558, 'height' => 328, 'types' => array('jpg','jpeg','gif','png'), 'forceresize' => false, 'forceupload' => array(false,false), 'filename' => '', 'createfolder' => true, 'thumb' => array('width' => 50, 'height' => 50) ),
+		'imagem_eng_file' => array( 'dir' => 'uploads/img/a_abear_eng/', 'width' => 558, 'height' => 328, 'types' => array('jpg','jpeg','gif','png'), 'forceresize' => false, 'forceupload' => array(false,false), 'filename' => '', 'createfolder' => true, 'thumb' => array('width' => 50, 'height' => 50) ),
+		'imagem_esp_file' => array( 'dir' => 'uploads/img/a_abear_esp/', 'width' => 558, 'height' => 328, 'types' => array('jpg','jpeg','gif','png'), 'forceresize' => false, 'forceupload' => array(false,false), 'filename' => '', 'createfolder' => true, 'thumb' => array('width' => 50, 'height' => 50) ),	
+	),
+	'Logo' => array(
+		'logo_file' => array( 'dir' => 'uploads/img/logo_a_abear/', 'width' => 558, 'height' => 328, 'types' => array('jpg','jpeg','gif','png'), 'forceresize' => false, 'forceupload' => array(false,false), 'filename' => '', 'createfolder' => true, 'thumb' => array('width' => 50, 'height' => 50) )
+	),
+	'Estrutura' => array(
+		'foto_file' => array( 'dir' => 'uploads/img/estrutura_da_entidade/', 'width' => 200, 'height' => 123, 'types' => array('jpg','jpeg','gif','png'), 'forceresize' => false, 'forceupload' => array(false,false), 'filename' => '', 'createfolder' => true, 'thumb' => array('width' => 100, 'height' => 30) )
+	),
+	'Diretor' => array(
+		'foto_file' => array( 'dir' => 'uploads/img/diretores/', 'width' => 328, 'height' => 328, 'types' => array('jpg','jpeg','gif','png'), 'forceresize' => false, 'forceupload' => array(false,false), 'filename' => '', 'createfolder' => true, 'thumb' => array('width' => 190, 'height' => 190) )
+	),
+	'Estatuto' => array(
+		'arquivo_file_ptbr' => array( 'dir' => 'uploads/arquivos/estatuto_ptbr/', 'width' => 0, 'height' => 0, 'types' => array('pdf'), 'forceresize' => false, 'forceupload' => array(false,false), 'filename' => '', 'createfolder' => true, 'thumb' => array('width' => 0, 'height' => 0) ),
+		'arquivo_file_eng' => array( 'dir' => 'uploads/arquivos/estatuto_eng/', 'width' => 0, 'height' => 0, 'types' => array('pdf'), 'forceresize' => false, 'forceupload' => array(false,false), 'filename' => '', 'createfolder' => true, 'thumb' => array('width' => 0, 'height' => 0) ),
+		'arquivo_file_esp' => array( 'dir' => 'uploads/arquivos/estatuto_esp/', 'width' => 0, 'height' => 0, 'types' => array('pdf'), 'forceresize' => false, 'forceupload' => array(false,false), 'filename' => '', 'createfolder' => true, 'thumb' => array('width' => 0, 'height' => 0) ),
+
+	),
+	'Fundador' => array(
+		'logo_file' => array( 'dir' => 'uploads/img/fundadores/', 'width' => 558, 'height' => 328, 'types' => array('jpg','jpeg','gif','png'), 'forceresize' => false, 'forceupload' => array(false,false), 'filename' => '', 'createfolder' => true, 'thumb' => array('width' => 50, 'height' => 50) )
+	),
+	'Etica' => array(
+		'imagem_file' => array( 'dir' => 'uploads/img/etica/', 'width' => 558, 'height' => 328, 'types' => array('jpg','jpeg','gif','png'), 'forceresize' => false, 'forceupload' => array(false,false), 'filename' => '', 'createfolder' => true, 'thumb' => array('width' => 50, 'height' => 50) )
+	),
+	'Setoraereo' => array(
+		'imagem_file' => array( 'dir' => 'uploads/img/setor_aereo/', 'width' => 200, 'height' => 200, 'types' => array('jpg','jpeg','gif','png'), 'forceresize' => false, 'forceupload' => array(false,false), 'filename' => '', 'createfolder' => true, 'thumb' => array('width' => 50, 'height' => 50) )
+	),	
+	'Aviacao' => array(
+		'logo_ptbr_file' => array( 'dir' => 'uploads/img/logo_dentro_da_aviacao_ptbr/', 'width' => 257, 'height' => 106, 'types' => array('jpg','jpeg','gif','png'), 'forceresize' => false, 'forceupload' => array(false,false), 'filename' => '', 'createfolder' => true, 'thumb' => array('width' => 50, 'height' => 50) ),
+		'logo_eng_file' => array( 'dir' => 'uploads/img/logo_dentro_da_aviacao_eng/', 'width' => 257, 'height' => 106, 'types' => array('jpg','jpeg','gif','png'), 'forceresize' => false, 'forceupload' => array(false,false), 'filename' => '', 'createfolder' => true, 'thumb' => array('width' => 50, 'height' => 50) ),
+		'logo_esp_file' => array( 'dir' => 'uploads/img/logo_dentro_da_aviacao_esp/', 'width' => 257, 'height' => 106, 'types' => array('jpg','jpeg','gif','png'), 'forceresize' => false, 'forceupload' => array(false,false), 'filename' => '', 'createfolder' => true, 'thumb' => array('width' => 50, 'height' => 50) ),
+	),
+	'Voar' => array(
+		'logo_ptbr_file' => array( 'dir' => 'uploads/img/logo_como_voar_ptbr/', 'width' => 261, 'height' => 122, 'types' => array('jpg','jpeg','gif','png'), 'forceresize' => false, 'forceupload' => array(false,false), 'filename' => '', 'createfolder' => true, 'thumb' => array('width' => 50, 'height' => 50) ),
+		'logo_eng_file' => array( 'dir' => 'uploads/img/logo_como_voar_eng/', 'width' => 261, 'height' => 122, 'types' => array('jpg','jpeg','gif','png'), 'forceresize' => false, 'forceupload' => array(false,false), 'filename' => '', 'createfolder' => true, 'thumb' => array('width' => 50, 'height' => 50) ),
+		'logo_esp_file' => array( 'dir' => 'uploads/img/logo_como_voar_esp/', 'width' => 261, 'height' => 122, 'types' => array('jpg','jpeg','gif','png'), 'forceresize' => false, 'forceupload' => array(false,false), 'filename' => '', 'createfolder' => true, 'thumb' => array('width' => 50, 'height' => 50) ),
+	),
+	'Noticia' => array(
+		'imagem_ptbr_file' => array( 'dir' => 'uploads/img/imagem_noticias_ptbr/', 'width' => 900, 'height' => 400, 'types' => array('jpg','jpeg','gif','png'), 'forceresize' => false, 'forceupload' => array(false,false), 'filename' => '', 'createfolder' => true, 'thumb' => array('width' => 100, 'height' => 100) ),
+		'imagem_eng_file' => array( 'dir' => 'uploads/img/imagem_noticias_eng/', 'width' => 900, 'height' => 400, 'types' => array('jpg','jpeg','gif','png'), 'forceresize' => false, 'forceupload' => array(false,false), 'filename' => '', 'createfolder' => true, 'thumb' => array('width' => 100, 'height' => 100) ),
+		'imagem_esp_file' => array( 'dir' => 'uploads/img/imagem_noticias_esp/', 'width' => 900, 'height' => 400, 'types' => array('jpg','jpeg','gif','png'), 'forceresize' => false, 'forceupload' => array(false,false), 'filename' => '', 'createfolder' => true, 'thumb' => array('width' => 100, 'height' => 100) ),
+		'imagem_capa_file' => array( 'dir' => 'uploads/img/imagem_noticias_capa/', 'width' => 900, 'height' => 400, 'types' => array('jpg','jpeg','gif','png'), 'forceresize' => false, 'forceupload' => array(false,false), 'filename' => '', 'createfolder' => true, 'thumb' => array('width' => 100, 'height' => 100) ),
+	),
+	'GuiaPassageiro' => array(
+		'img_ptbr_file' => array( 'dir' => 'uploads/img/guia_de_passageiros_ptbr/', 'width' => 220, 'height' => 220, 'types' => array('jpg','jpeg','gif','png'), 'forceresize' => false, 'forceupload' => array(false,false), 'filename' => '', 'createfolder' => true, 'thumb' => array('width' => 100, 'height' => 100) ),
+		'img_eng_file'  => array( 'dir' => 'uploads/img/guia_de_passageiros_eng/', 'width' => 220, 'height' => 220, 'types' => array('jpg','jpeg','gif','png'), 'forceresize' => false, 'forceupload' => array(false,false), 'filename' => '', 'createfolder' => true, 'thumb' => array('width' => 100, 'height' => 100) ),
+		'img_esp_file' 	=> array( 'dir' => 'uploads/img/guia_de_passageirosesp/', 'width' => 220, 'height' => 220, 'types' => array('jpg','jpeg','gif','png'), 'forceresize' => false, 'forceupload' => array(false,false), 'filename' => '', 'createfolder' => true, 'thumb' => array('width' => 100, 'height' => 100) ),
+	),
+	'VoarMaisBrasil' => array(
+		'logo_ptbr_file' => array( 'dir' => 'uploads/img/voar_por_mais_brasil_ptbr/', 'width' => 376, 'height' => 517, 'types' => array('jpg','jpeg','gif','png'), 'forceresize' => false, 'forceupload' => array(false,false), 'filename' => '', 'createfolder' => true, 'thumb' => array('width' => 50, 'height' => 50) ),
+		'logo_eng_file' => array( 'dir' => 'uploads/img/voar_por_mais_brasil_eng/', 'width' => 376, 'height' => 517, 'types' => array('jpg','jpeg','gif','png'), 'forceresize' => false, 'forceupload' => array(false,false), 'filename' => '', 'createfolder' => true, 'thumb' => array('width' => 50, 'height' => 50) ),
+		'logo_esp_file' => array( 'dir' => 'uploads/img/voar_por_mais_brasil_esp/', 'width' => 376, 'height' => 517, 'types' => array('jpg','jpeg','gif','png'), 'forceresize' => false, 'forceupload' => array(false,false), 'filename' => '', 'createfolder' => true, 'thumb' => array('width' => 50, 'height' => 50) ),
+	),	
+	'VoarExperiencia' => array(
+		'img_ptbr_file' => array( 'dir' => 'uploads/img/aeronaves_ptbr/', 'width' => 376, 'height' => 467, 'types' => array('jpg','jpeg','gif','png'), 'forceresize' => false, 'forceupload' => array(false,false), 'filename' => '', 'createfolder' => true, 'thumb' => array('width' => 50, 'height' => 50) ),
+		'img_eng_file' => array( 'dir' => 'uploads/img/aeronaves_eng/', 'width' => 376, 'height' => 467, 'types' => array('jpg','jpeg','gif','png'), 'forceresize' => false, 'forceupload' => array(false,false), 'filename' => '', 'createfolder' => true, 'thumb' => array('width' => 50, 'height' => 50) ),
+		'img_esp_file' => array( 'dir' => 'uploads/img/aeronaves_esp/', 'width' => 376, 'height' => 467, 'types' => array('jpg','jpeg','gif','png'), 'forceresize' => false, 'forceupload' => array(false,false), 'filename' => '', 'createfolder' => true, 'thumb' => array('width' => 50, 'height' => 50) ),
+		
+	),	
+
+	'NasAeronave' => array(
+		'img_ptbr_file' => array( 'dir' => 'uploads/img/aeronaves_ptbr/', 'width' => 376, 'height' => 467, 'types' => array('jpg','jpeg','gif','png'), 'forceresize' => false, 'forceupload' => array(false,false), 'filename' => '', 'createfolder' => true, 'thumb' => array('width' => 50, 'height' => 50) ),
+		'img_eng_file' => array( 'dir' => 'uploads/img/aeronaves_eng/', 'width' => 376, 'height' => 467, 'types' => array('jpg','jpeg','gif','png'), 'forceresize' => false, 'forceupload' => array(false,false), 'filename' => '', 'createfolder' => true, 'thumb' => array('width' => 50, 'height' => 50) ),
+		'img_esp_file' => array( 'dir' => 'uploads/img/aeronaves_esp/', 'width' => 376, 'height' => 467, 'types' => array('jpg','jpeg','gif','png'), 'forceresize' => false, 'forceupload' => array(false,false), 'filename' => '', 'createfolder' => true, 'thumb' => array('width' => 50, 'height' => 50) ),
+		
+	),
+	'Dadosefato' => array(
+		'imagem_lateral_esquerda_ptbr_file' => array( 'dir' => 'uploads/img/dados_e_fatos_img_lateral_esquerda_ptbr/', 'width' => 900, 'height' => 400, 'types' => array('jpg','jpeg','gif','png'), 'forceresize' => false, 'forceupload' => array(false,false), 'filename' => '', 'createfolder' => true, 'thumb' => array('width' => 100, 'height' => 100) ),	
+		'imagem_lateral_esquerda_eng_file' => array( 'dir' => 'uploads/img/dados_e_fatos_img_lateral_esquerda_eng/', 'width' => 900, 'height' => 400, 'types' => array('jpg','jpeg','gif','png'), 'forceresize' => false, 'forceupload' => array(false,false), 'filename' => '', 'createfolder' => true, 'thumb' => array('width' => 100, 'height' => 100) ),	
+		'imagem_lateral_esquerda_esp_file' => array( 'dir' => 'uploads/img/dados_e_fatos_img_lateral_esquerda_esp/', 'width' => 900, 'height' => 400, 'types' => array('jpg','jpeg','gif','png'), 'forceresize' => false, 'forceupload' => array(false,false), 'filename' => '', 'createfolder' => true, 'thumb' => array('width' => 100, 'height' => 100) ),	
+
+		'imagem_1_ptbr_file' => array( 'dir' => 'uploads/img/dados_e_fatos_imgs_1_ptbr/', 'width' => 900, 'height' => 400, 'types' => array('jpg','jpeg','gif','png'), 'forceresize' => false, 'forceupload' => array(false,false), 'filename' => '', 'createfolder' => true, 'thumb' => array('width' => 100, 'height' => 100) ),		
+		'imagem_2_ptbr_file' => array( 'dir' => 'uploads/img/dados_e_fatos_imgs_2_ptbr/', 'width' => 900, 'height' => 400, 'types' => array('jpg','jpeg','gif','png'), 'forceresize' => false, 'forceupload' => array(false,false), 'filename' => '', 'createfolder' => true, 'thumb' => array('width' => 100, 'height' => 100) ),
+		'imagem_3_ptbr_file' => array( 'dir' => 'uploads/img/dados_e_fatos_imgs_3_ptbr/', 'width' => 900, 'height' => 400, 'types' => array('jpg','jpeg','gif','png'), 'forceresize' => false, 'forceupload' => array(false,false), 'filename' => '', 'createfolder' => true, 'thumb' => array('width' => 100, 'height' => 100) ),
+		'imagem_1_eng_file' => array( 'dir' => 'uploads/img/dados_e_fatos_imgs_1_eng/', 'width' => 900, 'height' => 400, 'types' => array('jpg','jpeg','gif','png'), 'forceresize' => false, 'forceupload' => array(false,false), 'filename' => '', 'createfolder' => true, 'thumb' => array('width' => 100, 'height' => 100) ),
+		'imagem_2_eng_file' => array( 'dir' => 'uploads/img/dados_e_fatos_imgs_2_eng/', 'width' => 900, 'height' => 400, 'types' => array('jpg','jpeg','gif','png'), 'forceresize' => false, 'forceupload' => array(false,false), 'filename' => '', 'createfolder' => true, 'thumb' => array('width' => 100, 'height' => 100) ),
+		'imagem_3_eng_file' => array( 'dir' => 'uploads/img/dados_e_fatos_imgs_3_eng/', 'width' => 900, 'height' => 400, 'types' => array('jpg','jpeg','gif','png'), 'forceresize' => false, 'forceupload' => array(false,false), 'filename' => '', 'createfolder' => true, 'thumb' => array('width' => 100, 'height' => 100) ),
+		'imagem_1_esp_file' => array( 'dir' => 'uploads/img/dados_e_fatos_imgs_1_esp/', 'width' => 900, 'height' => 400, 'types' => array('jpg','jpeg','gif','png'), 'forceresize' => false, 'forceupload' => array(false,false), 'filename' => '', 'createfolder' => true, 'thumb' => array('width' => 100, 'height' => 100) ),		
+		'imagem_2_esp_file' => array( 'dir' => 'uploads/img/dados_e_fatos_imgs_2_esp/', 'width' => 900, 'height' => 400, 'types' => array('jpg','jpeg','gif','png'), 'forceresize' => false, 'forceupload' => array(false,false), 'filename' => '', 'createfolder' => true, 'thumb' => array('width' => 100, 'height' => 100) ),		
+		'imagem_3_esp_file' => array( 'dir' => 'uploads/img/dados_e_fatos_imgs_3_esp/', 'width' => 900, 'height' => 400, 'types' => array('jpg','jpeg','gif','png'), 'forceresize' => false, 'forceupload' => array(false,false), 'filename' => '', 'createfolder' => true, 'thumb' => array('width' => 100, 'height' => 100) ),		
+		'pdf_ptbr_file' => array( 'dir' => 'uploads/pdf/PDF_dados_e_fatos_ptbr/', 'width' => 0, 'height' => 0, 'types' => array('pdf'), 'forceresize' => false, 'forceupload' => array(false,false), 'filename' => '', 'createfolder' => true, 'thumb' => array('width' => 0, 'height' => 0) ),
+		'pdf_eng_file' => array( 'dir' => 'uploads/pdf/PDF_dados_e_fatos_eng/', 'width' => 0, 'height' => 0, 'types' => array('pdf'), 'forceresize' => false, 'forceupload' => array(false,false), 'filename' => '', 'createfolder' => true, 'thumb' => array('width' => 0, 'height' => 0) ),
+		'pdf_esp_file' => array( 'dir' => 'uploads/pdf/PDF_dados_e_fatos_esp/', 'width' => 0, 'height' => 0, 'types' => array('pdf'), 'forceresize' => false, 'forceupload' => array(false,false), 'filename' => '', 'createfolder' => true, 'thumb' => array('width' => 0, 'height' => 0) ),
+	),
+    'Dadosefatoarquivo' => array(
+	     'arquivo_ptbr_file' => array( 'dir' => 'uploads/arquivos/dados_e_fatos_arquivos_ptbr/', 'width' => 0, 'height' => 0, 'types' => array('pdf','xls', 'xlsx', 'doc', 'docx'), 'forceresize' => false, 'forceupload' => array(false,false), 'filename' => '', 'createfolder' => true, 'thumb' => array('width' => 0, 'height' => 0) ),
+	     'arquivo_eng_file' => array( 'dir' => 'uploads/arquivos/dados_e_fatos_arquivos_eng/', 'width' => 0, 'height' => 0, 'types' => array('pdf','xls', 'xlsx', 'doc', 'docx'), 'forceresize' => false, 'forceupload' => array(false,false), 'filename' => '', 'createfolder' => true, 'thumb' => array('width' => 0, 'height' => 0) ),
+	     'arquivo_esp_file' => array( 'dir' => 'uploads/arquivos/dados_e_fatos_arquivos_esp/', 'width' => 0, 'height' => 0, 'types' => array('pdf','xls', 'xlsx', 'doc', 'docx'), 'forceresize' => false, 'forceupload' => array(false,false), 'filename' => '', 'createfolder' => true, 'thumb' => array('width' => 0, 'height' => 0) ),	
+	), 
+	'NewslettersEditableType' => array(
+		'img_file' => array( 'dir' => 'images/newsletter/', 'width' => 700, 'height' => 1228, 'types' => array('jpg','jpeg','gif','png'), 'forceresize' => false, 'forceupload' => array(false,false), 'filename' => '', 'createfolder' => true, 'thumb' => array('width' => 120, 'height' => 370) )
+	),
+	'Evento' => array(
+		'imagem_destacada_ptbr_file' => array( 'dir' => 'uploads/img/eventos_ptbr/', 'width' => 120, 'height' => 120, 'types' => array('jpg','jpeg','gif','png'), 'forceresize' => false, 'forceupload' => array(false,false), 'filename' => '', 'createfolder' => true, 'thumb' => array('width' => 100, 'height' => 100) ),
+		'imagem_destacada_eng_file' => array( 'dir' => 'uploads/img/eventos_eng/', 'width' => 120, 'height' => 120, 'types' => array('jpg','jpeg','gif','png'), 'forceresize' => false, 'forceupload' => array(false,false), 'filename' => '', 'createfolder' => true, 'thumb' => array('width' => 100, 'height' => 100) ),
+		'imagem_destacada_esp_file' => array( 'dir' => 'uploads/img/eventos_esp/', 'width' => 120, 'height' => 120, 'types' => array('jpg','jpeg','gif','png'), 'forceresize' => false, 'forceupload' => array(false,false), 'filename' => '', 'createfolder' => true, 'thumb' => array('width' => 100, 'height' => 100) ),
+	),
+	'Configuracao' => array(
+		'logo_file' => array( 'dir' => 'uploads/img/logo/', 'width' => 120, 'height' => 120, 'types' => array('jpg','jpeg','gif','png'), 'forceresize' => false, 'forceupload' => array(false,false), 'filename' => '', 'createfolder' => true, 'thumb' => array('width' => 100, 'height' => 100) )
+	),
+);
+
+
+$zInput = array(
+	/*
+	'Dadosefato' => array(
+		'titulo_ptbr' => array(
+			'type'		=>		'text',
+			'label'		=>		'Título pt-BR',
+			'gtitle'	=>		'Título',
+			'group'		=>		array(
+									'titulo_eng' => array('type' => 'text', 'label' => 'Título Eng', 'position' => '2'),
+									'titulo_esp' => array('type' => 'text', 'label' => 'Título Esp', 'position' => '3')
+								)
+		),
+		'titulo_eng' => array('group' => false),
+		'titulo_esp' => array('group' => false),
+		
+		'chamada_ptbr' => array(
+			'type'		=>		'textarea',
+			'label'		=>		'Chamada pt-BR',
+			'gtitle'	=>		'Chamada',
+			'group'		=>		array(
+									'chamada_eng' => array('type' => 'textarea', 'label' => 'Chamada Eng', 'position' => '2'),
+									'chamada_esp' => array('type' => 'textarea', 'label' => 'Chamada Esp', 'position' => '3')
+								)
+		),
+		'chamada_eng' => array('group' => false),
+		'chamada_esp' => array('group' => false),
+	),
+	*/
+);
+
+	

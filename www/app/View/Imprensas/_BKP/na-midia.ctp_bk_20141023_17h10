@@ -1,0 +1,155 @@
+<?php
+//print_r($registros);
+//print_r($radios);
+//print_r($videos);
+?>
+<div class='row news'>
+	<div class='titulo_grande'>
+		<div class='title'><p><?=__d('default', 'Na midia')?></p></div>
+		<div class='quad'></div>
+	</div>
+	<?=$this->element('intros')?>
+	<div class='naMidia_hold'>
+		<div class='left_'>
+		<?php if(!empty($radios[0]['Radio']['link_'.$lang])){ ?>
+			<div class='sounds'>
+				<div class='title'><p><?=__d('default', 'NO RADIO')?></p></div>
+				<?php foreach($radios as $radio): ?>
+					<div class='sound'>
+						<?=$radio['Radio']['link_'.$lang]?>
+						<div class='title'><p> <?=$radio['Radio']['titulo_'.$lang]?> </p></div>
+					</div>
+				<?php
+					endforeach; 
+					?>
+					<div class='todos'><a href="<?=$this->Html->url(array('controller' => 'imprensas', 'action' => 'all_sound'))?>"><p><?=__d('default', 'Ver todos')?></p><div></div></a></div>
+			</div>
+			<?php } ?>
+			
+			<?php if(!empty($videos[0]['Video']['video_'.$lang])){ ?>
+			<div class='videos'>
+				<div class='title'><p><?=__d('default', 'NA TV')?></p></div>
+				<div class='video_'>
+				<a href='<?=$this->Html->url(array('controller' => 'videos', 'action' => 'videos', $videos[0]['Video']['url_amigavel_'.$lang]))?>'>
+					<?php
+						$frame = split("/", $videos[0]['Video']['video_'.$lang]);
+						$img_yt = split('"', $frame[4]);
+						
+						echo $this->Html->image('http://img.youtube.com/vi/' .$img_yt[0]. '/0.jpg');
+					?>
+				</a>
+					<div class='todos'><a href="<?=$this->Html->url(array('controller'=> 'videos', 'action' => 'index', $videos[0]['Video']['url_amigavel_'.$lang]))?>"><p><?=__d('default', 'Ver todos')?></p><div></div></a></div>
+				</div>
+				<?php } ?>
+			</div>
+		</div>
+		<div class='right_'>
+			<div class='title'><p><?=__d('default', 'IMPRESSOS E SITES')?></p></div>
+			
+			<? 
+			foreach($registros as $midia): 
+				?>
+				<div class='artigo date'>
+					<div class='top'><p><?=$this->Time->format('d.m.Y', $midia[$model]['data']);?></p><div></div></div>
+					<div class='title'>
+						<a href='<?=$this->Html->url(
+													array(
+														'controller' => 'imprensas', 
+														'action' => 'mostrar_noticia',
+														'categoria' => $categoria,
+														'url_amigavel' => $midia[$model]['url_amigavel_'.$lang]))?>'>
+							<p><?=$midia[$model]['titulo_'.$lang]?></p>
+						</a>	
+					</div>
+					<div class="fonte">
+						<?php
+	                        if(!empty($midia[$model]['fonte_url'])){
+			                    $http = '';
+		                        $urlstr = $midia[$model]['fonte_url'];
+								$myhttp   = 'http://';
+								$url = strpos($urlstr, $myhttp);
+								
+								if($url === false ){
+									$http = 'http://';
+								}
+							
+	                    ?>
+
+						<a href='<?=$http.$midia[$model]['fonte_url']?>'>
+							<p><?=$midia[$model]['fonte']?></p>
+						</a>
+						<?php }else{ ?>
+							<p><?=$midia[$model]['fonte']?></p>
+						<?php } ?>
+					</div>
+					<div class='text'>
+						<a href='<?=$this->Html->url(
+													array(
+														'controller' => 'imprensas', 
+														'action' => 'mostrar_noticia',
+														'categoria' => $categoria,
+														'url_amigavel' => $midia[$model]['url_amigavel_'.$lang]))?>'>
+							<p>	
+								<?php
+								echo $this->Text->truncate(
+															$midia[$model]['chamada_'. $lang],
+															200,
+															array(
+																'ellipsis' => '...',
+																'exact' => false,
+																'html' => false,
+															)
+														);
+								?>
+							</p>
+						</a>
+					</div>
+					<!-- <a class='saiba_mais'><p>Continuar lendo</p><div></div></a> -->
+				</div>
+				<? 
+			endforeach; 
+			?>
+
+			<div class='paginator bTop pTop20'>
+				<div class='hold'>
+					<?php 
+					$this->Paginator->options(
+									array('url' => array(
+										'controller' => 'imprensas', 
+										'action' => 'listarTodas',
+										'categoria' => $categoria,
+									)));
+					if($this->params->paging[$model]['prevPage']){
+	                	echo $this->Paginator->prev(
+	                                            '',
+	                                            null,
+	                                            null,
+	                                            array('class' => 'prev')
+	                                            );
+                    }
+                 
+                	echo $this->Paginator->numbers(array(
+                    									'separator' => '',
+                                                        'currentTag' => 'a',
+                    									'tag' => 'div',
+                    									'class' => 'bt'
+                                                                                        
+                    									));
+                           
+                    if($this->params->paging[$model]['nextPage']){
+	                   echo $this->Paginator->next(
+	                                            '',
+	                                            null,
+	                                            null,
+	                                            array('class' => 'next')
+	                                            );
+	                }
+                 ?>
+					
+					
+				</div>
+			</div>
+		</div>
+
+	</div>
+</div>

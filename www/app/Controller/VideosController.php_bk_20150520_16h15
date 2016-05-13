@@ -1,0 +1,250 @@
+<?
+class VideosController extends AppController{
+	var $name 		= "Videos";
+    public $helpers = array('Html', 'Session', 'Form', 'Text');
+    //var $uses		= array('Video');
+    var $scaffold 	= 'admin';
+        var $paginate = array(
+                        'order'  => array(
+                                        'id' => 'DESC'
+                        ),
+                        'limit' => 30,
+                        ); 
+  	var $transformUrl = array(
+  								'url_amigavel_ptbr' => 'titulo_ptbr',
+  								'url_amigavel_eng' => 'titulo_eng',
+  								'url_amigavel_esp' => 'titulo_esp',
+
+  								);
+
+
+	function beforeFilter() {
+		parent::beforeFilter();
+
+		if (isset($this->params['prefix']) && $this->params['prefix'] == 'admin') {
+			$showThisFields	=	array(
+									'id'			=> 'ID',
+									'titulo_ptbr'	=> 'Titulo em Português',
+									'video_categoria_id' => 'Categoria do Video',
+									'ativo'			=> 'Ativo'
+								);
+			$showImage	=	array(
+								//'imagem_file'
+							);
+
+			$this->set('showFields', $showThisFields);
+			$this->set('fieldToImg', $showImage);
+
+
+			$this->set('schemaTable', $this->Video->schema());
+		}
+	}
+
+	public function index($url=null){
+		$model = 'Video';
+		$lang = $this->Cookie->read('lang');
+		
+		$conditions = '';
+		if(!empty($url)):
+			$video = $this->$model->find('first', array(
+														'fields' => array(
+																			'id',
+																			"url_amigavel_{$lang}",
+																			"titulo_{$lang}",
+																			"chamada_{$lang}",
+																			"video_{$lang}"
+																			),
+														'conditions' => array(	
+																			'Video.url_amigavel_'.$lang => $url
+																			)
+														));	
+			$this->paginate = array(
+									'conditions' => array('video_'.$lang. ' <>' => ''),
+									'order'		=> array('id' => 'DESC'),
+									'limit'		=> '8',
+								);
+	                   															
+			$videos = $this->paginate($model);
+			
+			$neighbors = $this->$model->find('neighbors', array(
+	            												'field' => 'id', "url_amigavel_{$lang}",
+	            												'value' => $video[$model]['id'],
+	                                                            'fields' => array(
+					                                                            'id',
+					                                                            "url_amigavel_{$lang}",
+																				),
+	                                                            'conditions' => array(
+	                                                            					'video_'.$lang. ' <>' => '',
+	                                                            					"Video.url_amigavel_{$lang} <>" => '',
+	                                                            					"Video.destaque" => 1
+	                                                            					),
+	                                                            'limit' => 1,
+	                                                            'order' => array(
+	                                                            					'id' => 'DESC'
+	                                                            					)
+																));
+		else:
+		
+			$video = $this->$model->find('first', array(
+														'fields' => array(
+																			'id',
+																			"url_amigavel_{$lang}",
+																			"titulo_{$lang}",
+																			"chamada_{$lang}",
+																			"video_{$lang}"
+																			),
+														'order' => array('id' => 'DESC')
+														));
+	
+			$this->paginate = array(
+									'conditions' => array('video_'.$lang. ' <>' => ''),
+									'order'		=> array('id' => 'DESC'),
+									'limit'		=> '8',
+								);
+	                   															
+			$videos = $this->paginate($model);
+			
+			$neighbors = $this->$model->find('neighbors', array(
+	            												'field' => 'id', "url_amigavel_{$lang}",
+	            												'value' => $video[$model]['id'],
+	                                                            'fields' => array(
+					                                                            'id',
+					                                                            "url_amigavel_{$lang}",
+																				),
+	                                                            'conditions' => array(
+	                                                            					'video_'.$lang. ' <>' => '',
+	                                                            					"Video.url_amigavel_{$lang} <>" => '',
+	                                                            					"Video.destaque" => 1
+	                                                            					),
+	                                                            'limit' => 1,
+	                                                            'order' => array(
+                                                            					'id' => 'DESC'
+                                                            					)
+																));
+		endif;
+
+		$this->set(array(
+						'model' => $model,
+						'lang' => $lang,
+						'video' => $video,
+       					'videos' => $videos,
+       					'neighbors' => $neighbors
+       						));
+       	
+	}
+	
+	public function videos($categoria = null, $url=null){
+		$this->set('categoria', $categoria);
+		$model = 'Video';
+		$lang = $this->Cookie->read('lang');
+		$categoriaVideo = array();
+		
+		
+		////////////////////////////////////////////////////////////////////////////////////
+		///////se tiver um video selecionado, traze-lo em destaque + outros da mesma sessão
+		////////////////////////////////////////////////////////////////////////////////////
+		if(!empty($url)):
+			$video = $this->$model->find('first', array(
+															'fields' => array(
+																				'id',
+																				"url_amigavel_{$lang}",
+																				'video_categoria_id',
+																				"titulo_{$lang}",
+																				"chamada_{$lang}",
+																				"video_{$lang}"
+																				),
+															'conditions' =>  array(
+																					'video_'.$lang. ' <>' => '',
+																					"Video.url_amigavel_{$lang}" => $url
+																					),
+															));
+			
+			$categoriaVideo = $this->VideoCategoria->find('first', array(
+																			'conditions' => array(
+																									'id' => $video[$model]['video_categoria_id']
+																									)
+																			));
+
+			$this->paginate['limit'] = 8;
+	        $this->paginate['conditions'] = array(
+	        										'video_'.$lang. ' <>' => '',
+	        										'Video.url_amigavel_' .$lang. ' <>' => $video[$model]['url_amigavel_'.$lang],
+	        										'video_categoria_id' => $categoriaVideo['VideoCategoria']['id']
+	        										);
+	        $this->paginate['order'] = array('id' => 'DESC');
+			$videos = $this->paginate($model);
+			
+			$neighbors = $this->$model->find('neighbors', array(
+	            												'field' => 'id', "url_amigavel_{$lang}",
+	            												'value' => $video[$model]['id'],
+	                                                            'fields' => array(
+					                                                            'id',
+					                                                            "url_amigavel_{$lang}",
+																				),
+	                                                            'conditions' => array(
+	                                                            					'Video.url_amigavel_' .$lang. ' <>' => '',
+	                                                            					'Video.url_amigavel_' .$lang. ' <>' => $url,
+	                                                            					'video_categoria_id' => $video[$model]['video_categoria_id'],
+	                                                            					'video_'.$lang. ' <>' => '',
+	                                                            					),
+	                                                            'limit' => 1,
+	                                                            'order' => array(
+	                                                            					'id' => 'DESC'
+	                                                            					)
+																));
+															
+		else:
+		////////////////////////////////////////////////////////////////////////////////////
+		///listar todos os videos, sem nenhuma categoria..
+		////////////////////////////////////////////////////////////////////////////////////
+			$video = $this->$model->find('first', array(
+															'fields' => array(
+																				'id',
+																				"url_amigavel_{$lang}",
+																				"titulo_{$lang}",
+																				"chamada_{$lang}",
+																				"video_{$lang}"
+																				),
+															'conditions' =>  array(
+																					'video_'.$lang. ' <>' => '',
+																					),
+															));
+			
+			$this->paginate['limit'] = 8;
+	                   															
+			$videos = $this->paginate($model);
+			 
+			$neighbors = $this->$model->find('neighbors', array(
+	            												'field' => 'id', "url_amigavel_{$lang}",
+	            												'value' => $video[$model]['id'],
+	                                                            'fields' => array(
+					                                                            'id',
+					                                                            "url_amigavel_{$lang}",
+																				),
+	                                                            'conditions' => array(
+	                                                            					"Video.url_amigavel_{$lang} <>" => '',
+	                                                            					"Video.url_amigavel_{$lang} <>" => $url,
+	                                                            					"Video.destaque" => 1,
+	                                                            					'video_'.$lang. ' <>' => '',
+	                                                            					),
+	                                                            'limit' => 1,
+	                                                            'order' => array(
+	                                                            					'id' => 'DESC'
+	                                                            					)
+																));
+		
+		
+		endif;															
+
+		$this->set(array(
+						'model' => $model,
+						'lang' => $lang,
+						'video' => $video,
+       					'videos' => $videos,
+       					'categoriaVideo' => $categoriaVideo,
+       					'neighbors' => $neighbors
+       						));			
+	
+	}
+	
+}

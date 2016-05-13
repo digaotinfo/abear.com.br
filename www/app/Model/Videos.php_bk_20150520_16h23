@@ -1,0 +1,4 @@
+<?php
+class Videos extends AppModel {
+    var $name = 'tb_video';
+}

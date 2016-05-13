@@ -1,0 +1,26 @@
+<?php
+class Dadosefato extends AppModel {
+   var $useTable = "tb_dados_e_fatos_new";
+   // var $useTable = "tb_dadosefatos";
+
+
+	public $displayField= 'titulo_ptbr';
+
+	var $order = 'DadoseFato.id DESC';
+
+	public $belongsTo = array(
+							'Dadosefatotipo' ,
+							// 'GaleriaImagenCapa',
+
+						);
+
+	public $hasMany = array(
+		'Dadosefatoarquivo' 	=> array(
+			'className' 	=> 'Dadosefatoarquivo',
+			'foreignKey' 	=> 'dadosefato_id',
+			'dependent' 	=> true,
+		),
+		//'GaleriaImagen',
+	);
+}
+?>

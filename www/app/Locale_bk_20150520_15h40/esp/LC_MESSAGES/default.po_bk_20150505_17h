@@ -1,0 +1,398 @@
+#### ESP
+
+msgid "Em breve mais informações." 
+msgstr "Pronto más información."
+
+msgid "Saiba como foi o evento" 
+msgstr "Conozca cómo fue el evento"
+
+msgid "Ãrea do Cliente"
+msgstr "Ãrea del Cliente"
+
+msgid "Intranet"
+msgstr "Intranet"
+
+msgid "Blog"
+msgstr "Blog"
+
+msgid "Busca"
+msgstr "Busca"
+
+msgid "Sobre"
+msgstr "Acerca"
+
+
+msgid "Grupo Máquina"
+msgstr "Groupo Máquina"
+
+msgid "Visão"
+msgstr "Visión"
+
+msgid "Missão"
+msgstr "Misión"
+
+msgid "Valor"
+msgstr "Valor"
+
+msgid "Grupo <span> Máquina </span>"
+msgstr "Grupo <span> Máquina </span>"
+
+msgid "Equipe"
+msgstr "Equipa"
+
+msgid "Escritórios<br /><span> e </span> Parceiros"
+msgstr "Oficinas<br /><span> y </span> Aliados"
+
+msgid "Prêmios"
+msgstr "Premios"
+
+msgid "Nossos <span> Talentos </span>"
+msgstr "Nuestros <span> Talentos </span>"
+
+msgid "Unidades e Serviços"
+msgstr "Unidades y Servicios"
+
+msgid "unidades e <span> serviços </span>"
+msgstr "unidades y <span> servicios </span>"
+
+msgid "Clientes"
+msgstr "Clientes"
+
+msgid "Cases"
+msgstr "Casos"
+
+msgid "Responsabilidade Corporativa"
+msgstr "Responsabilidad Corporativa"
+
+msgid "responsabilidade <br /> <span> corporativa </span>"
+msgstr "responsabilidad <br /> <span> corporativa </span>"
+
+msgid "Trabalhe Conosco"
+msgstr "Trabaja con Nosotros"
+
+msgid "trabalhe <br /> <span> conosco </span>"
+msgstr "trabaja con <br /> <span style='margin-left:300px;'> nosotros </span>"
+
+msgid "Contato"
+msgstr "Contacto"
+
+msgid "Veículo/Empresa"
+msgstr "Vehículo/Empresa"
+
+msgid "digite aqui sua pesquisa"
+msgstr "escriba su bÃºsqueda aquÃ­"
+
+msgid "Ãltimos"
+msgstr "Ãltimos"
+
+msgid "Entidades Apoiadas"
+msgstr "Entidades compatibles"
+
+msgid "Relatório <span> Social </span>"
+msgstr "Informe <span> Social </span>"
+
+msgid "Parceiros Internacionais"
+msgstr "Aliados Internacionales"
+
+msgid "Parceiros Nacionais"
+msgstr "Aliados Nacionales"
+
+msgid "Envie seu currículo"
+msgstr "Enviar currículum"
+
+msgid "Vagas disponíveis"
+msgstr "Empleos disponibles"
+
+msgid "Todas as Vagas"
+msgstr "Todos los empleos"
+
+msgid "Nome"
+msgstr "Nombre"
+
+msgid "Assunto"
+msgstr "Tema"
+
+msgid "Site / Portfolio"
+msgstr "Sitio / Cartera"
+
+msgid "Selecione uma Vaga"
+msgstr "Seleccionar um Empleo"
+
+msgid "Mensagem"
+msgstr "Mensaje"
+
+msgid "Todos os direitos reservados"
+msgstr "Reservados todos los derechos"
+
+msgid "Voltar"
+msgstr "Volver "
+
+msgid "Nome deve ser preenchido"
+msgstr "Nombre debe ser llenado"
+
+msgid "E-mail deve ser preenchido"
+msgstr "E-mail debe ser llenado"
+
+msgid "Assunto deve ser preenchido"
+msgstr "El sujeto debe ser completada"
+
+msgid "Mensagem deve ser preenchida"
+msgstr "Mensaje debe ser completada"
+
+msgid "Abrangência Global"
+msgstr "Alcance Global"
+
+msgid "News das associadas" 
+msgstr "Noticias del asociado"
+
+msgid "Na midia" 
+msgstr "En los medios de comunicación "
+
+msgid "NO RADIO" 
+msgstr "EN LA RADIO "
+
+msgid "NA TV" 
+msgstr "EN LA TV"
+
+msgid "no" 
+msgstr "el"
+
+msgid "PESQUISAR"
+msgstr "INVESTIGACIÓN"
+
+msgid "na" 
+msgstr "el"
+
+msgid "ENVIAR" 
+msgstr "ENVIAR"
+
+msgid "Nome do Remetente"
+msgstr "Nombre del Remitente"
+
+msgid "Email do Remetente"
+msgstr "Remitente Email "
+
+msgid "Nome do Destinatário"
+msgstr "Nombre del Destinatario
+
+msgid "Email do Destinatário"
+msgstr "Correo Electrónico del Destinatario"
+
+msgid "Publicações"
+msgstr "Publicaciones"
+
+msgid "Continuar lendo"
+msgstr "Seguir leyendo"
+
+msgid "Compartilhar por e-mail" 
+msgstr "Compartir por correo electrónico "
+
+msgid "EQUIPE" 
+msgstr "EQUIPO"
+
+msgid "galeria de fotos" 
+msgstr "galería de fotos "
+
+msgid "Organizar:" 
+msgstr "Organiza:"
+
+msgid "por evento" 
+msgstr "por el evento"
+
+msgid "mais recentes" 
+msgstr "más reciente"
+
+msgid "fechar" 
+msgstr "cerca"
+
+msgid "vídeos" 
+msgstr "vídeos"
+
+msgid "anterior" 
+msgstr "anterior"
+
+msgid "próximo" 
+msgstr "cerca"
+
+msgid "Associados" 
+msgstr "Asociados"
+
+msgid "visitar o site" 
+msgstr "visitar sitio"
+
+msgid "titulares" 
+msgstr "titulares"
+
+msgid "suplentes" 
+msgstr "suplentes"
+
+msgid "Comitês" 
+msgstr "COMITÉS"
+
+msgid "VER TODAS" 
+msgstr "VER TODAS"
+
+msgid "Ver todos" 
+msgstr "ver todo"
+
+msgid "Ver todas as imagens" 
+msgstr "Ver todas las imágenes"
+
+msgid  "VER TODOS" 
+msgstr "VER TODOS"
+
+msgid "VER AGENDA COMPLETA" 
+msgstr "VER CALENDARIO COMPLETO"
+
+msgid "eventos do setor" 
+msgstr "eventos do setor"
+
+msgid "Anteriores" 
+msgstr "Previous"
+
+msgid "Próximos" 
+msgstr "Next"
+
+msgid "MENU" 
+msgstr "MENÚ"
+
+msgid "CONHEÇA" 
+msgstr "SABER"
+
+msgid "A ABEAR" 
+msgstr "La ABEAR"
+
+msgid "Estrutura da Entidade" 
+msgstr "Estructura de la Entidad"
+
+msgid "Fundadores" 
+msgstr "Fundadores"
+
+msgid "Código de Ética" 
+msgstr "Código de Ética"
+
+msgid "Setor Aéreo" 
+msgstr "Sector Aire"
+
+msgid "setor aéreo" 
+msgstr "Sector Aire"
+
+msgid "Eventos" 
+msgstr "Eventos"
+
+msgid "Prêmio de Jornalismo ABEAR" 
+msgstr "Periodismo Premio ABEAR"
+
+msgid "Por Dentro da Aviação" 
+msgstr "Dentro de los Jets"
+
+msgid "Asas do Bem" 
+msgstr "Alas Well"
+
+msgid "Como Voa o Brasil" 
+msgstr "Como vuela Brasil"
+
+msgid "Aviação em Debate" 
+msgstr "Debate de Aviación"
+
+msgid "PROGRAMAS E EVENTOS" 
+msgstr "PROGRAMAS Y EVENTOS"
+
+msgid "NEWS"
+msgstr "NEWS"
+
+msgid "Notas e Releases"
+msgstr "Notas y Comunicados"
+
+msgid "IMPRENSA" 
+msgstr "PERIODISMO"
+
+msgid "Artigos" 
+msgstr "Artículos"
+
+msgid "Na Mídia" 
+msgstr "En los Medios"
+
+msgid "News das Associadas" 
+msgstr "News de la Associated"
+
+msgid "Agência ABEAR" 
+msgstr "Agencia ABEAR"
+
+msgid "DADOS E FATOS" 
+msgstr "DATOS Y HECHOS"
+
+msgid "EXPERIÊNCIA DE VOAR" 
+msgstr "LA EXPERIENCIA DE VOLAR"
+
+msgid "Guia do Passageiro" 
+msgstr "Guía del pasajero"
+
+msgid "Clube ABEAR" 
+msgstr "Club de ABEAR"
+
+msgid "Clube ABEAR: Amigos da Aviação" 
+msgstr "ABEAR Club: Amigos de la Aviación"
+
+msgid "CAMPANHAS" 
+msgstr "CAMPAÑAS"
+
+msgid "Voar Por Mais Brasil" 
+msgstr "Volar Por Más Brasil"
+
+msgid "Nas Aeronaves" 
+msgstr "En Aviones"
+
+msgid "Transporte de Órgãos" 
+msgstr "Órganos Transporte "
+
+msgid "Tudo Para Voar Melhor" 
+msgstr "Todo a volar mejor"
+
+msgid "CONTATO" 
+msgstr "CONTACTO"
+
+msgid "NOTÍCIAS" 
+msgstr "NOTÍCIAS"
+
+msgid "VÍDEOS" 
+msgstr "VÍDEOS"
+
+msgid "AGENDA" 
+msgstr "AGENDA"
+
+msgid "Parceiros" 
+msgstr "Partners"
+
+msgid "Vídeos" 
+msgstr "Vídeos"
+
+msgid "Galeria" 
+msgstr "Galería"
+
+msgid "Ver outras galerias" 
+msgstr "Ver otras galerías"
+
+msgid "Assessoria de imprensa da abear" 
+msgstr "Portavoz del Abear"
+
+msgid "Nome Completo" 
+msgstr "Nombre Completo "
+
+msgid "E-mail" 
+msgstr "Email"
+
+msgid "Veiculo/Empresa" 
+msgstr "Vehículo / Empresa"
+
+msgid "Telefone" 
+msgstr "Teléfono"
+
+msgid "Cidade" 
+msgstr "Ciudad"
+
+msgid "Mensagem" 
+msgstr "Mensaje"
+
+msgid "Desejo receber notícias da ABEAR." 
+msgstr "Deseo recibir noticias ABEAR."

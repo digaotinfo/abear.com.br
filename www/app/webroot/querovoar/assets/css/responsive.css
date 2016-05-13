@@ -1,0 +1,53 @@
+@media all and (max-width:1440px){header{height:80px;padding:10px 0;}
+header .logo{margin:0 40px 0 0;}
+header nav ul li{margin:30px 10px 0 10px;}
+section#hero{background:url('../images/hero-background.jpg') no-repeat center -20px;margin:30px 0 0 0;}
+section#hero .CTA{margin:300px auto 0;}
+section#video{margin:-480px 0 0 0;}
+section#video .social, section#video h4{padding:0 10px 0 0;}
+}
+@media all and (max-width:1024px){header .logo{margin:0 40px 0 0;}
+header nav ul li{margin:40px 10px 0 10px;}
+header nav ul li a{padding:5px;}
+section#fatos .grid4x3 .object{width:50%;}
+}
+@media all and (max-width:780px){header .logo{margin:0 20px 0 0;}
+header nav{width:100%;}
+header nav .menu{background:url('../images/icon-menu-list.png') center center no-repeat;background-size:80%;position:absolute;width:40px;height:40px;top:30px;right:30px;display:block;}
+header nav .menu.cmenu{background:url('../images/icon-menu-close.png') center center no-repeat;background-size:80%;}
+header nav ul{width:100%;float:right;margin:10px 0 0 0;display:none;}
+header nav ul li{width:100%;float:left;margin:0;}
+header nav ul li a{background:#fff;width:80%;float:left;text-align:center;margin:auto;padding:20px 10%;font-size:14px;border-top:1px solid;-webkit-transition:.12s ease;-o-transition:.12s ease;transition:.12s ease;}
+header nav ul li a:hover{background-color:#ffc501;color:#000;-webkit-transition:.12s ease;-o-transition:.12s ease;transition:.12s ease;}
+section .content.twoColumns .fColumn, section .content.twoColumns .sColumn{width:100% !important;}
+section#midia .content.twoColumns .fColumn{width:30% !important;}
+section#midia .content.twoColumns .fColumn img{width:100%;}
+section#midia .content.twoColumns .sColumn{width:70% !important;}
+section#apoie .content .fColumn.picApoio{background-size:100% auto;position:relative;min-height:300px;}
+section#apoie .content .fColumn .tile{background-color:rgba(255,197,1,.9);background-image:none;width:30%;top:0;right:0;bottom:0;text-align:left;}
+section .content .sColumn{background-image:none;}
+}
+@media screen and (orientation:landscape) and (max-width:640px){header nav ul{overflow:scroll;height:250px;}
+}
+@media all and (max-width:640px){header{height:40px !important;padding-top:10px !important;padding-bottom:10px !important;}
+header .logo{background-size:100%;width:40px;height:40px;margin:0 0 0 10px;}
+header nav .menu{top:10px;right:10px;}
+section h2{background-image:none;width:90%;font-size:28px;margin:0 5% 30px;border-bottom:none;display:inline-block;}
+section#hero{background-size:280%;background-position:35% top;margin:60px 0 0 0;}
+section#hero h1{font-size:48px;margin:-30px 0 0 0 !important;}
+section#hero .CTA{margin:230px auto 0;}
+section#video{background-position:center 200px;margin:-780px 0 0 0;}
+section#fatos .grid4x3 .object{width:100%;}
+section#apoie .content .fColumn.picApoio{min-height:230px;}
+section#apoie .content .fColumn .tile{background-color:rgba(255,197,1,.9);width:80%;height:170px;min-height:170px;padding:30px 10%;}
+section#midia .content.twoColumns .fColumn{width:100% !important;text-align:center;}
+section#midia .content.twoColumns .fColumn img{width:50%;margin:0 0 40px 0;}
+section#midia .content.twoColumns .sColumn{width:100% !important;}
+footer{overflow:hidden;}
+footer .footerLinks{display:none;}
+footer .footerAddress{width:100%;}
+footer .footerAddress ul{margin:0 10px;}
+}
+@media all and (max-width:320px){section#hero h1{font-size:42px;margin:-45px 0 0 0 !important;}
+section#hero .CTA{margin:180px auto 0;text-shadow:3px 3px 10px rgba(0,0,0,.7);}
+}

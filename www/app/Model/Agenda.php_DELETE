@@ -1,0 +1,6 @@
+<?php
+class Agenda extends AppModel {
+    var $name = 'tb_agendaevento';
+
+    var $order = array("Agenda.id" => "DESC");
+}

@@ -1,0 +1,174 @@
+<?php 
+	//print_r($fotos);
+	//print_r($videos[0]['Video']);
+	//print_r($titulo);
+?>
+<div class='row exp_de_voar'>
+	<div class='titulo_grande'>
+		<div class='title'><p><?=__d('default', 'Nas Aeronaves')?></p></div>
+		<div class='quad'></div>
+	</div>
+	<?=$this->element('intros')?>
+	<div class='orgaos'>
+		<?php 
+			if(!empty($fotos)):
+				?> 
+				<div class='first'>
+					<?php if(!empty($titulo['NasAeronavesTitulo']['titulo_sup_'.$lang])){?>
+						<div class='title_'><h2><?=$titulo['NasAeronavesTitulo']['titulo_sup_'.$lang]?></h2></div>
+					<?php } ?>
+					<?php if(!empty($fotos[0][$model]['img_'.$lang.'_file'])){ ?>
+						<div class='left_'>
+							<div class='seta_' id='right'>
+								<a href="#" data-reveal-id="fotos_modal">	
+									<div></div>
+								</a>
+							</div>
+							<?=$this->Html->image('/'.$fotos[0][$model]['img_'.$lang.'_file'])?>
+							<div class='seta_' id='left'><a href="#" data-reveal-id="fotos_modal"><div></div></a></div>
+						</div>
+					
+
+						<div class='right_'>
+							<div class='title'><p><?=$fotos[0][$model]['titulo_'.$lang]?></p></div>
+							<div class='text'><?=$fotos[0][$model]['texto_'.$lang]?></div>
+
+							<div class='orbit_aeronaves'>
+								<div class='elementsHere'>
+									<?php
+									$count = 0;
+									foreach($fotos as $foto):
+										?>
+										<div class='elementToSlide' align='center'><?=$this->Html->image('/'.$foto[$model]['img_'.$lang.'_file'], array(
+																					'rtitle' => $foto[$model]['titulo_'.$lang],
+																					'desc' => $foto[$model]['texto_'.$lang]
+
+																					) )?></div>
+										<?php
+										$count++;
+									endforeach; ?>
+								</div>
+							</div>
+						</div>
+					<?php } ?>
+					
+				</div>
+		<?php 
+			endif;
+			?>
+
+		<div class='inf'>
+			<?php if(!empty($titulo['NasAeronavesTitulo']['titulo_inf_'.$lang])){?>
+				<div class='title'><h2><?=$titulo['NasAeronavesTitulo']['titulo_inf_'.$lang]?></h2></div>
+			<?php } ?>
+		</div>
+		<?=$this->element('tipo-galeria')?>
+	</div>
+</div>
+		
+<script type="text/javascript">
+
+	$( document ).ready(function() {
+		var wid = $('.orbit_aeronaves').width()/3;
+		var hei = 150;
+		var pos = 0;
+		var nElements = $('.orbit_aeronaves .elementsHere > div').length;
+		var indexElements = 0;
+		var walk = 0;
+
+		$("<img/>").attr("src", $('.orgaos .first .left_ > img').attr("src")).load(function(){
+			$('.orgaos .first .left_').css('height', this.height);
+		});
+
+		$('.orbit_aeronaves').attr('style', 'overflow: hidden; height: '+hei+'px; width: 100%;').find('.elementsHere').attr('style', 'width: 999999px; position: relative; left: 0;');
+
+		$('.orbit_aeronaves .elementToSlide').each(function(index, value){
+			var slide = $(value);
+			slide.attr('slide', index);
+			slide.attr('style', 'width: '+Math.floor(.95*wid)+'px; margin-left: '+Math.floor(wid*.05)+'px; float: left;');
+			slide.find('img').css('cursor', 'pointer');
+
+			/* Centralizar verticalmente a imagem */
+			var pic_real_width, pic_real_height;
+			$("<img/>").attr("src", $(value).find('img').attr("src")).load(function(){
+			    pic_real_width = this.width;   // Note: $(this).width() will not
+			    pic_real_height = this.height; // work for in memory images.
+			    var newHeight = Math.floor((wid * pic_real_height)/pic_real_width);
+			    if(newHeight < 150) $(value).find('img').css('margin-top', (hei - newHeight)/2);
+			});
+
+			slide.click(function(e){
+				e.preventDefault();
+				var deslocamento = 0;
+				var clickedIndex = parseInt($(this).attr('slide'));
+
+				if(clickedIndex == indexElements){
+					return;
+				}else if(clickedIndex > indexElements){
+					if(clickedIndex >= nElements -3){
+						deslocamento = (nElements -3) * wid * (-1);
+					}else{
+						deslocamento = clickedIndex * wid * (-1);
+					}
+				}else{
+					if(clickedIndex >= nElements -3){
+						deslocamento = (nElements -3) * wid * (-1);
+					}else{
+						deslocamento = clickedIndex * wid * (-1);
+					}
+				}
+				
+				if(clickedIndex == nElements-2){
+					walk = 1;
+				}else if(clickedIndex == nElements-1){
+					walk = 2;
+				}else{walk = 0;}
+
+				TweenMax.fromTo($('.orbit_aeronaves .elementsHere'), .5, {css:{x: pos}}, {css:{x: deslocamento}, onComplete: function(){}});
+				pos = deslocamento;
+				indexElements = clickedIndex;
+				setInfo(indexElements);
+			});
+		});
+
+		$('.seta_#right').click(function(e){
+			e.preventDefault();
+			if(indexElements >= 0 && indexElements < nElements-1){
+				if(indexElements < nElements-3){
+					TweenMax.fromTo($('.orbit_aeronaves .elementsHere'), .5, {css:{x: pos}}, {css:{x: pos - wid}, onComplete: function(){}});
+					walk++;
+					pos -= wid;
+				}
+				indexElements++;
+				setInfo(indexElements);
+			}
+		});
+		$('.seta_#left').click(function(e){
+			e.preventDefault();
+			if(indexElements <= nElements - 1 && indexElements > 0){
+				if(walk <= 0){
+					TweenMax.fromTo($('.orbit_aeronaves .elementsHere'), .5, {css:{x: pos}}, {css:{x: pos + wid}, onComplete: function(){}});
+					pos += wid;
+				}
+				else walk--;
+				indexElements--;
+				setInfo(indexElements);
+			}
+		});
+	});
+
+	function setInfo(i){
+		var obj = $('.orbit_aeronaves .elementToSlide').eq(i).find('img');
+		$('.orgaos .first .left_ > img').attr('src', obj.attr('src'));
+		$('.orgaos .first .right_ .text').html('<p>'+ obj.attr('desc')+'</p>');
+		$('.orgaos .first .right_ .title').html('<p>'+  obj.attr('rtitle') +'</p>');
+		$('.orgaos .first .title').html('<p>'+  obj.attr('rtitle') +'</p>');
+
+		$("<img/>").attr("src", obj.attr("src")).load(function(){
+			// console.log(this.height);
+			// console.log($('.orgaos .first .left_').height());
+			$('.orgaos .first .left_ img').css('margin-top', ($('.orgaos .first .left_').height() - this.height)/2);
+		});
+	}
+
+</script>

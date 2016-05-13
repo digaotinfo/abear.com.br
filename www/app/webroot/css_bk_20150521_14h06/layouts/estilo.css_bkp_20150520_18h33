@@ -1,0 +1,1896 @@
+body{background: #f3f3f3; height: auto !important;}
+form, input, button{margin-bottom: 0 !important;}
+
+/*HEADER*/
+.aHeader{width: 100%; height: 140px;}
+.aHeader .row{height: 100%;}
+.aHeader .row > a img{float: left;margin-top: 11px;}
+.aHeader .head{height:63%; width:86.5%; margin: 11px 0 0 140px; border-radius: 4px;background: white;
+	z-index: 2;position: relative;}
+	/*TOP*/
+.aHeader .head .top{height: 60%;}
+.aHeader .head .top .top_hold{height: 100%; float: right; position: relative;}
+.aHeader .head .top .top_hold > div{display: inline-block; margin: 0 10px 0 10px;}
+		/*LINGUA*/
+.aHeader .head .top .top_hold .language{width: 100px;}
+.aHeader .head .top .top_hold .language > div{margin-top: -22px; position: absolute; margin-left: 10px;}
+.aHeader .head .top .top_hold .language > div a{display: inline-block; font-family: 'montserrat-regular';  font-size: 12px;}
+.aHeader .head .top .top_hold .language > div p{display: inline-block; margin: 0 10px 0 10px; color: #d0d0d0;
+	font-family: 'montserrat-regular'; font-size: 12px;}
+		/*SOCIAL*/
+.aHeader .head .top .top_hold .social{margin: 0;}
+.aHeader .head .top .top_hold .social a{width: 25px;height: 25px;display: inline-block; cursor: pointer; margin: 15px 5px 0 5px;}
+.aHeader .head .top .top_hold .social a:first-child{margin-left: 0;}
+.aHeader .head .top .top_hold .social a:last-child{margin-right: 0;}
+.aHeader .head .top .top_hold .social #fb{background: url(../../img/header/header_ico-facebook.png) no-repeat 0 -25px;}
+.aHeader .head .top .top_hold .social #fb:hover{background: url(../../img/header/header_ico-facebook.png) no-repeat 0 0;}
+.aHeader .head .top .top_hold .social #tw{background: url(../../img/header/header_ico-twitter.png) no-repeat 0 -25px;}
+.aHeader .head .top .top_hold .social #tw:hover{background: url(../../img/header/header_ico-twitter.png) no-repeat 0 0;}
+.aHeader .head .top .top_hold .social #yt{background: url(../../img/header/header_ico-youtube.png) no-repeat 0 -25px;}
+.aHeader .head .top .top_hold .social #yt:hover{background: url(../../img/header/header_ico-youtube.png) no-repeat 0 0;}
+		/*BUSCA*/
+.search{width: 210px;}
+.search > div{position: absolute; margin-top: -29px; border: 1px solid #d0d0d0; border-radius: 4px;}
+.search > div form > div{display: inline-block; margin-right: 10px;}
+.search .bt_ok{float: right; margin-top: 5px;}
+.search .bt_ok button{background: transparent; padding-top: 3px; padding-left: 10px; color: #d0d0d0;
+	border-left: 1px solid #d0d0d0; height: 20px; width: 36px;}
+.search .bt_ok button:hover{background: rgba(0,0,0,0); padding-top: 3px; color: #aaa;}
+.search > div form > div input{height: 30px; border: none; margin: 0; color: #d0d0d0; font-size: 12px;
+    border-radius:4px; -moz-border-radius:4px; -webkit-border-radius:4px; -webkit-box-shadow: inset 0 0 0 rgba(0, 0, 0, 0); }
+.search > div form > div input:focus{box-shadow: 0 0 0 rgba(0,0,0,0); outline: 0; background: rgba(0,0,0,0);
+	border: 0; -webkit-box-shadow: 0;}
+.search > div form > div input::-webkit-input-placeholder{color: #e0e0e0;}
+.search > div form > div input::-moz-placeholder{color: #e0e0e0;}
+.search > div form > div input:-ms-input-placeholder{color: #e0e0e0;}
+#buscar{width: 210px;}
+
+#resultado_de_busca .search{height: 30px; padding-top: 20px;}
+#resultado_de_busca .search > div{background: #f3f3f3;}
+#resultado_de_busca .search > div form > div input{background: none;}
+
+.aHeader .head .top .top_hold .divisoria{width: 1px; height: 25px; background: #f1f1f1;}
+.bg_branco_fullRight{height: 88px; width: 63.5%; right: 0; top: 11px; background: white; position: absolute;}
+	/* MENU*/
+.aHeader .head .menu{height: 40%;}
+.aHeader .head .menu .hold{list-style: none; float: right;}
+.aHeader .head .menu .hold > li{display: inline-block; padding: 5px 10px 0 10px; border-right: 1px solid #f1f1f1;position: relative;}
+.aHeader .head .menu .hold > li:last-child{border-right: 0}
+.aHeader .head .menu .hold p{font-family: 'montserrat-regular'; font-size: 12px;}
+.aHeader .head .menu .hold > li > div a:hover p{color: #0d7f40;}
+.aHeader .head .menu .hold > li > ul{background: #0d7f40; border-radius: 6px; border-top-left-radius: 0;}
+.aHeader .head .menu .hold #drop_progConheca{width: 190px;}
+.aHeader .head .menu .hold #drop_exp{width: 170px;}
+.aHeader .head .menu .hold #drop_progEventos{width: 210px;}
+.aHeader .head .menu .hold > li > ul > li{height: 22px; margin: 0 10px; min-width: 170px}
+.aHeader .head .menu .hold > li > ul > li:last-child{margin-bottom: 15px;}
+.aHeader .head .menu .hold > li > ul > li a{padding-top: 0; color: white; font-family: 'montserrat-regular'; padding-left: 0; font-size: 12px;}
+.aHeader .head .menu .hold > li > ul > li:hover a{color: white;}
+.aHeader .head .menu .hold > li > ul .submenu_tituloBranco{margin: 10px 0 0 0; cursor: default;}
+.aHeader .head .menu .hold > li > ul .submenu_tituloBranco p{color: white; font-family: 'montserrat-bold';}
+.aHeader .head .menu .hold > li > ul .submenu_tituloAmarelo{margin: 5px 0 0 0; cursor: default;}
+.aHeader .head .menu .hold > li > ul .submenu_tituloAmarelo p{color: #ffd503; font-family: 'montserrat-regular';}
+	/*MENU DROPDOWN*/
+.aHeader .head .menu .hold ul{max-width: 230px; border: 0;}
+.aHeader .head .menu .hold ul:before{content: ' ';border-color: transparent transparent #0d7f40 transparent; left: 10px;}
+.aHeader .head .menu .hold ul:after{ left: 9px;}
+/*.f-dropdown li:hover, .f-dropdown li:focus{background: none;}*/
+
+.dropdown_pj{position: absolute; margin-left: 0; display: none; z-index:100;}
+	/*TOP BAR(MENU RESERVA)*/
+.aHeader .top-bar{display: none;}
+.title_menu{color: #ddd; font-size: 10px; padding-left: 16px; height: 15px;}
+
+.top-bar{background: #0d7f40;}
+.top-bar-section ul{background: #0d7f40;}
+.top-bar-section ul li > a{ background: #0d7f40;}
+.top-bar-section ul li:hover > a{ background: #0d7f40; color: white;}
+.top-bar-section li:not(.has-form) a:not(.button){background-color: #0d7f40;}
+.top-bar-section li:not(.has-form) a:not(.button):hover{background-color: #0d7f40; color: black;}
+.top-bar-section .dropdown li{background-color: #0d7f40;}
+/*.top-bar-section .divider, .top-bar-section [role="separator"]{border-top: solid 1px white;}*/
+/*FOOTER*/
+.aFooter{width: 100%; background: #e4e4e4; padding-top: 20px;}
+.aFooter > div > div{border-top: 1px solid #adadad;float: left;}
+	/*ESQUERDA MENU FOOTER*/
+.aFooter .footerMenu{height: 100%; width: 63%; margin-right: 2%; position: relative; top: 0;}
+.aFooter .footerMenu > div > div{margin-bottom: 40px; padding-top: 10px;}
+/*.aFooter .footerMenu > div > div a{font-family: 'montserrat-regular'; font-size: 12px; display: block; margin-bottom: 6px; color: #7d7d7d;}*/
+/*.aFooter .footerMenu > div > div a:hover{color: #bbbbbb;}*/
+/*.aFooter .footerMenu > div > div a.title{font-family: 'montserrat-bold'; text-transform: uppercase; margin-bottom: 8px;}*/
+.aFooter .footerMenu > div > div a, .aFooter .footerMenu > div > div div.title{font-family: 'montserrat-regular'; font-size: 12px; display: block; margin-bottom: 6px; color: #7d7d7d;}
+.aFooter .footerMenu > div > div > div.title{font-family: 'montserrat-bold'; text-transform: uppercase; margin-bottom: 8px;font-size: 12px;}
+.aFooter .footerMenu > div > div a span{font-size: 8px; color: #ed145b;}
+.aFooter .footerMenu .columns{padding-left: 0;}
+	/*DIREITA INFO FOOTER*/
+.aFooter .footerInfo{height: 100%; width: 33%; position: relative; top: 0; padding-top: 10px;}
+.aFooter .footerInfo > div{margin-bottom: 20px;}
+.aFooter .footerInfo > div p{font-family: 'montserrat-regular'; font-size: 12px; color: #7d7d7d;}
+.aFooter .footerInfo > div p.title{font-family: 'montserrat-bold'; text-transform: uppercase; margin-bottom: 8px; font-size: 12px; color: #7d7d7d;}
+
+	/*config for most orbits (slicker)*/
+button.slick-next{background: url(../../img/index/home_seta-agenda-direita.png) no-repeat 0 -70px; height: 70px; width: 19px; margin-top: -35px; margin-right: 25px;}
+button.slick-next:hover{background-position: 0 0;}
+button.slick-prev{background: url(../../img/index/home_seta-agenda-esquerda.png) no-repeat 0 -70px; height: 70px; width: 19px; margin-top: -35px; margin-left: 25px;}
+button.slick-prev:hover{background-position: 0 0;}
+button.slick-next:before,
+button.slick-prev:before{content: '';}
+.slick-dots{margin-left: 0;}
+.slick-dots li button:before{content: '';}
+.dots_new .slick-dots li button{background: #a1a1a1; width: 10px; height: 10px; border-radius: 5px;}
+.dots_new .slick-dots li.slick-active button{background: #ffd503;}
+
+.index_videoOrbit{max-width: 450px; max-height: 300px;}
+.index_videoOrbit .slick-list{width: 100%; height: 300px;}
+.index_videoOrbit iframe{width: 100%; height: 300px;}
+.index_videoOrbit .slick-track{ height: 300px;}
+
+/*///INDEX///*/
+	/*BANNER
+.index_bannerOrbit .slick-list{height: 273px;}*/
+.index_bannerOrbit button.slick-next,
+.index_bannerOrbit button.slick-prev{visibility: hidden;}
+.index_bannerOrbit:hover button.slick-next,
+.index_bannerOrbit:hover button.slick-prev{visibility: visible;}
+.index_bannerOrbit .slick-dots{margin: -11px 0 0 0; bottom: auto;}
+.index_bannerOrbit .slick-dots li{height: 5px; margin: 0; background: #a1a1a1;}
+.index_bannerOrbit .slick-dots li.slick-active{background: #ffd503;}
+.index_bannerOrbit .slick-dots li button{width: 100%; height: 100%;}
+	/*COLUNAS*/
+.colunaIndex .titleTop{margin-bottom: 15px;}
+.colunaIndex .titleTop > div{display: inline-block;}
+.colunaIndex .titleTop .symbol{width: 40px; height: 40px;}
+.colunaIndex .titleTop .title{margin: 5px 0 0 8px; position: absolute;}
+.colunaIndex .titleTop .title p{font-family: 'montserrat-regular'; font-size: 22px; color: #0d7f40; text-transform: uppercase;}
+.colunaIndex .titleTop .verTodos{height: 15px; margin-top: 16px; float: right; border-bottom: 1px solid #cecece;}
+.colunaIndex .titleTop .verTodos a{font-family: 'montserrat-regular'; font-size: 10px; color: #a0a0a0; text-transform: uppercase; float: right;}
+.colunaIndex .titleTop .verTodos a:hover{color: #7d7d7d;}
+		/*ESQUERDA*/
+			/*NOTICIAS*/
+.colunaIndex .colLeft .news_hold{margin-bottom: 25px;}
+.colunaIndex .colLeft .news_hold .titleTop .symbol{background: url(../../img/index/home_ico-jornal.png) no-repeat center center;}
+.colunaIndex .colLeft .news_hold .titleTop .verTodos{width: 64%;}
+.colunaIndex .colLeft .news_hold .news .noticia .noti_hold{min-height: 100px; width: 97.5%; border-top: 1px solid #cecece;
+	padding-top: 10px; margin-left: 2.5%;}
+.colunaIndex .colLeft .news_hold .news .noticia .noti_hold .setaCinza{height: 11px; width: 13px; position: absolute; bottom: 15px;
+	cursor: pointer; /*background: url(../../img/index/eventos_seta-cinza-direita.png) no-repeat 0 -11px;*/}
+.colunaIndex .colLeft .news_hold .news .noticia .noti_hold .setaCinza:hover{background: url(../../img/index/eventos_seta-cinza-direita.png) no-repeat 0 0;}
+.colunaIndex .colLeft .news_hold .news .noticia .noti_hold a{font-family: 'opensans-regular'; font-size: 14px; color: #797979;}
+.colunaIndex .colLeft .news_hold .news .noticia .noti_hold a:hover{color: #bbbbbb;}
+			/*ABEAR*/
+.colunaIndex .colLeft .abear_hold{width: 100%; background: #fed712; border-radius: 8px; padding: 50px 20px; margin-bottom: 20px;}
+.colunaIndex .colLeft .abear_hold .text p{font-family: 'montserrat-regular'; font-size: 14px; color: #6e6e6e;}
+.colunaIndex .colLeft .abear_hold .logos{padding-top: 20px;}
+.colunaIndex .colLeft .abear_hold .logos img{display: inline-block; max-width: 98px; filter: url(filters.svg#grayscale); filter: gray; -webkit-filter: grayscale(1);}
+		/*DIREITA*/
+			/*VIDEOS*/
+.colunaIndex .colRight .video_hold{margin-bottom: 25px;}
+.colunaIndex .colRight .video_hold .titleTop .symbol{background: url(../../img/index/home_ico-videos.png) no-repeat center center;}
+.colunaIndex .colRight .video_hold .titleTop .verTodos{width: 69%;}
+/*.video_hold .orbit-bullets li{background: #a1a1a1;}
+.video_hold .orbit-bullets li.active{background: #ffd503;}*/
+			/*AGENDA*/
+.colunaIndex .colRight .agenda_hold{margin-bottom: 25px;}
+.colunaIndex .colRight .agenda_hold .titleTop .symbol{background: url(../../img/index/home_ico-agenda.png) no-repeat center center;}
+.colunaIndex .colRight .agenda_hold .titleTop .verTodos{width: 65%;}
+.colunaIndex .colRight .agenda_hold .index_agendaOrbit .agenda_elemento{width: 90%; margin-left: 7%;}
+.colunaIndex .colRight .agenda_hold .index_agendaOrbit .agenda_elemento > div{display: inline-block;}
+.colunaIndex .colRight .agenda_hold .index_agendaOrbit .agenda_elemento .data{width: 8%; margin-left: 1%; padding: 5px 0;}
+.colunaIndex .colRight .agenda_hold .index_agendaOrbit .agenda_elemento:first-child .data{border-bottom: 1px solid #cecece;}
+.colunaIndex .colRight .agenda_hold .index_agendaOrbit .agenda_elemento .data p{font-family: 'montserrat-bold'; font-size: 20px; color: #a0a0a0;
+	line-height: 20px; text-align: center;}
+.colunaIndex .colRight .agenda_hold .index_agendaOrbit .agenda_elemento .texto{width: 81%; margin-left: 12px; padding: 5px 0;}
+.colunaIndex .colRight .agenda_hold .index_agendaOrbit .agenda_elemento:first-child .texto{border-bottom: 1px solid #cecece;}
+.colunaIndex .colRight .agenda_hold .index_agendaOrbit .agenda_elemento .texto p{font-family: 'opensans-regular'; font-size: 14px; color: #797979;
+	line-height: 20px;}
+.colunaIndex .colRight .agenda_hold .index_agendaOrbit .agenda_elemento .texto a:hover p{color: #bbbbbb;}
+
+
+/*///CONHECA///*/
+.conheca{margin-bottom: 80px;}
+	/*ABEAR*/
+.titulo_grande{height: 70px; width: 100%; margin-bottom: 20px;}
+.titulo_grande > div{float: left;}
+.titulo_grande .title{height: 100%; width: 91.5%; background: #e5e5e5; margin-right: .5%; padding-left: 15px; border-radius: 2px;}
+.titulo_grande .title p{font-family: 'montserrat-bold'; font-size: 32px; text-transform: uppercase; color: #515151; margin-top: 20px;}
+.titulo_grande .quad{width: 8%; height: 70px; background: #e5e5e5; border-radius: 2px;}
+.conheca .paragrafo{margin-bottom: 48px; padding-right: 5px;}
+.conheca .paragrafo img.img_sobre{float: left; margin: 20px; margin-left: -170px;}
+.conheca .paragrafo.mL170{margin-left: 170px; padding-right: 10px;}
+.conheca .paragrafo p{ font-family: 'opensans-regular'; color: #797979; text-align: justify; font-size: 14px; line-height: 20px; margin-bottom: 10px;}
+.conheca .paragrafo p b{font-family: 'opensans-bold';}
+.conheca .imgs_bot > div{padding-top: 5px; border-top: 1px solid #d4d4d4;}
+.conheca .imgs_bot .left_{width: 68%; float: left; height: 100px; position: relative;}
+.conheca .imgs_bot .left_ p.title{font-family: 'montserrat-bold'; font-size: 16px; text-transform: uppercase; color: #797979;}
+.conheca .imgs_bot .left_ img{max-height: 100%; position: absolute; top: 5px; right: 0;}
+.conheca .imgs_bot .right_{width: 29%; margin-left: 2%; display: inline-block; height: 100px;}
+.conheca .imgs_bot .right_ img{float: right; max-height: 100%;}
+	/*FUNDADORES*/
+		/*EMPRESAS*/
+.conheca .fundadores .empresa{padding: 20px 0 10px 0; border-bottom: 1px solid #e5e5e5;}
+.conheca .fundadores .empresa > div{display: inline-block;}
+.conheca .fundadores .empresa .logo{width: 200px; border-right: 1px solid #e5e5e5; float: left;}
+.conheca .fundadores .empresa .info{width: 700px; margin-left: 10px; min-height: 120px;}
+.conheca .fundadores .empresa .info .text p{font-family: 'opensans-regular'; color: #797979; font-size: 14px; line-height: 20px;}
+.conheca .fundadores .empresa .info .text p:last-child{ margin-bottom: 10px;}
+.conheca .fundadores .empresa .info .links p{color: #a1a1a1; font-family: 'montserrat-regular';}
+.conheca .fundadores .empresa .info .links p a{color: #a1a1a1; font-family: 'montserrat-regular'; text-transform: uppercase; font-size: 12px;}
+.conheca .fundadores .empresa .info .links p a:hover{color: #bbbbbb;}
+.conheca .fundadores .empresa .logo.avianca{background: url(../../img/conheca/fundadores_logo-avianca.png) no-repeat center center;}
+.conheca .fundadores .empresa .logo.azul{background: url(../../img/conheca/fundadores_logo-azul.png) no-repeat center center;}
+.conheca .fundadores .empresa .logo.gol{background: url(../../img/conheca/fundadores_logo-gol.png) no-repeat center center;}
+.conheca .fundadores .empresa .logo.tam{background: url(../../img/conheca/fundadores_logo-tam.png) no-repeat center center;}
+.conheca .fundadores .empresa .logo.tamCargo{background: url(../../img/conheca/fundadores_logo-tam-cargo.png) no-repeat center center;}
+.conheca .fundadores .empresa .logo.tapPortugal{background: url(../../img/conheca/fundadores_logo-tap.png) no-repeat center center;}
+		/*SUB-TITLE*/
+.conheca .fundadores .sub-title{position: relative; margin: 50px 0 10px 0;}
+.conheca .fundadores .sub-title > div{position: absolute; width: 78%; height: 1px; background: #aeaeae; top: 21px; right: 0}
+.conheca .fundadores .sub-title p{font-family: 'montserrat-regular'; font-size: 28px; color: #aeaeae; text-transform: uppercase;}
+	/*ESTRUTURA*/
+.conheca .estrutura .element > div{float: left; border-top: 3px solid #ffd503; padding-bottom: 30px;}
+		/*LEFT*/
+.conheca .estrutura .element .eLeft{width: 30%; margin-right: 1%;}
+.conheca .estrutura .element .eLeft .title{padding-top: 5px;}
+.conheca .estrutura .element .eLeft .title p{font-family: 'montserrat-bold'; font-size: 18px; color: #515151; text-transform: uppercase;}
+.conheca .estrutura .element .eLeft .text{padding-left: 5px;}
+.conheca .estrutura .element .eLeft .text p{font-family: 'opensans-regular'; font-size: 14px; color: #797979; line-height: 20px;}
+		/*RIGHT*/
+.conheca .estrutura .element .eRight{width: 67%; margin-left: 1.5%;}
+			/*LOGOS*/
+.conheca .estrutura .element .eRight .logos{width: 100%;height: 160px;}
+.conheca .estrutura .element .eRight .logos > div{background-position: center center; background-repeat: no-repeat ;background-size: 100%; width: 140px;height: 140px; margin: 5px; display: inline-block; cursor: pointer; border-radius: 70px; filter: url(filters.svg#grayscale); filter: gray; -webkit-filter: grayscale(1);}
+.conheca .estrutura .element .eRight .logos > div:hover{background-color: white;}
+.conheca .estrutura .element .eRight .logos > div.active:hover{background-color: rgba(0,0,0,0);}
+.conheca .estrutura .element .eRight .logos > div.active{cursor: default;}
+.conheca .estrutura .element .eRight .logos > div.active{filter: none;  -webkit-filter: none;}
+/*.conheca .estrutura .element .eRight .logos .avianca.active,
+.conheca .estrutura .element .eRight .logos .avianca.active:hover{background: url(../../img/conheca/estrutura-entidade_logo-avianca.png) no-repeat 0 top;}
+.conheca .estrutura .element .eRight .logos .avianca:hover{background: url(../../img/conheca/estrutura-entidade_logo-avianca.png) no-repeat 0 center;}
+.conheca .estrutura .element .eRight .logos .avianca{background: url(../../img/conheca/estrutura-entidade_logo-avianca.png) no-repeat 0 bottom;}
+.conheca .estrutura .element .eRight .logos .azul.active,
+.conheca .estrutura .element .eRight .logos .azul.active:hover{background: url(../../img/conheca/estrutura-entidade_logo-azul.png) no-repeat 0 top;}
+.conheca .estrutura .element .eRight .logos .azul:hover{background: url(../../img/conheca/estrutura-entidade_logo-azul.png) no-repeat 0 center;}
+.conheca .estrutura .element .eRight .logos .azul{background: url(../../img/conheca/estrutura-entidade_logo-azul.png) no-repeat 0 bottom;}
+.conheca .estrutura .element .eRight .logos .gol.active,
+.conheca .estrutura .element .eRight .logos .gol.active:hover{background: url(../../img/conheca/estrutura-entidade_logo-gol.png) no-repeat 0 top;}
+.conheca .estrutura .element .eRight .logos .gol:hover{background: url(../../img/conheca/estrutura-entidade_logo-gol.png) no-repeat 1px center;}
+.conheca .estrutura .element .eRight .logos .gol{background: url(../../img/conheca/estrutura-entidade_logo-gol.png) no-repeat 1px bottom;}
+.conheca .estrutura .element .eRight .logos .tam.active,
+.conheca .estrutura .element .eRight .logos .tam.active:hover{background: url(../../img/conheca/estrutura-entidade_logo-tam.png) no-repeat 0 top;}
+.conheca .estrutura .element .eRight .logos .tam:hover{background: url(../../img/conheca/estrutura-entidade_logo-tam.png) no-repeat 0 center;}
+.conheca .estrutura .element .eRight .logos .tam{background: url(../../img/conheca/estrutura-entidade_logo-tam.png) no-repeat 0 bottom;}*/
+			/*LINE*/
+.conheca .estrutura .element .eRight .line{width: 100%; height: 10px; border-bottom:1px solid #d0d0d0;}
+.conheca .estrutura .element .eRight .line.active{background: url(../../img/conheca/estrutura-entidade_seletor.png) no-repeat 0 3px;}
+
+				/*PADRAO DE BG PRA LOGOS*/
+.conheca .estrutura .element .eRight .line.active#bp0{background-position: 10% 3px;}
+.conheca .estrutura .element .eRight .line.active#bp1{background-position: 34% 3px;}
+.conheca .estrutura .element .eRight .line.active#bp2{background-position: 61% 3px;}
+.conheca .estrutura .element .eRight .line.active#bp3{background-position: 86% 3px;}
+
+
+
+				/*PADRAO DE BG PRA PESSOAS*/
+.conheca .estrutura .element .eRight .line.active.pessoa1,
+.conheca .estrutura .element .eRight .line.active.pessoa4{background-position: 15% 3px;}
+.conheca .estrutura .element .eRight .line.active.pessoa2,
+.conheca .estrutura .element .eRight .line.active.pessoa5{background-position: 50% 3px;}
+.conheca .estrutura .element .eRight .line.active.pessoa3,
+.conheca .estrutura .element .eRight .line.active.pessoa6{background-position: 82% 3px;}
+
+/* meu */
+
+			/*LINE*/
+.conheca .estrutura .element .eRight .line_inf{width: 100%; height: 10px; border-bottom:1px solid #d0d0d0;}
+.conheca .estrutura .element .eRight .line_inf.active{background: url(../../img/conheca/estrutura-entidade_seletor.png) no-repeat 0 3px;}
+
+				/*PADRAO DE BG PRA LOGOS*/
+.conheca .estrutura .element .eRight .line_inf.active#bp0{background-position: 10% 3px;}
+.conheca .estrutura .element .eRight .line_inf.active#bp1{background-position: 34% 3px;}
+.conheca .estrutura .element .eRight .line_inf.active#bp2{background-position: 61% 3px;}
+.conheca .estrutura .element .eRight .line_inf.active#bp3{background-position: 86% 3px;}
+
+
+
+				/*PADRAO DE BG PRA PESSOAS*/
+.conheca .estrutura .element .eRight .line_inf.active.pessoa1,
+.conheca .estrutura .element .eRight .line_inf.active.pessoa4{background-position: 15% 3px;}
+.conheca .estrutura .element .eRight .line_inf.active.pessoa2,
+.conheca .estrutura .element .eRight .line_inf.active.pessoa5{background-position: 50% 3px;}
+.conheca .estrutura .element .eRight .line_inf.active.pessoa3,
+.conheca .estrutura .element .eRight .line_inf.active.pessoa6{background-position: 82% 3px;}
+
+/* end meu */
+
+
+			/*INFO*/
+.conheca .estrutura .element .eRight .info{padding: 10px 0 20px 0;}
+.conheca .estrutura .element .eRight .info.conselheiro{display: none;}
+.conheca .estrutura .element .eRight .info.conselheiro.active{display: block;}
+.conheca .estrutura .element .eRight .info > div{width: 49%;margin-right: .5%; float: left;}
+.conheca .estrutura .element .eRight .info p{font-size: 14px; color: #797979;}
+.conheca .estrutura .element .eRight .info .info_title{ margin-bottom: 20px;}
+.conheca .estrutura .element .eRight .info .info_title p{font-family: 'montserrat-bold'; text-transform: uppercase;}
+.conheca .estrutura .element .eRight .info .info_text p{font-family: 'opensans-regular'; line-height: 20px;}
+				/*INFO PESSOAS*/
+.conheca .estrutura .element .eRight .info_pessoas,
+.conheca .estrutura .element .eRight .info_pessoas2{padding-bottom: 20px; border-bottom: 3px solid #d0d0d0;}
+.conheca .estrutura .element .eRight .info_pessoas > div,
+.conheca .estrutura .element .eRight .info_pessoas2 > div{width: 100%; margin-right: 0; float: none;}
+.conheca .estrutura .element .eRight .info_pessoas p.infoP_title,
+.conheca .estrutura .element .eRight .info_pessoas2 p.infoP_title{font-size: 18px;font-family: 'montserrat-regular'; text-transform: uppercase; line-height: 20px;}
+.conheca .estrutura .element .eRight .info_pessoas p.infoP_cargo,
+.conheca .estrutura .element .eRight .info_pessoas2 p.infoP_cargo{font-family: 'montserrat-bold'; margin-bottom: 10px;}
+.conheca .estrutura .element .eRight .info_pessoas .infoP_text p,
+.conheca .estrutura .element .eRight .info_pessoas2 .infoP_text p{font-family: 'opensans-regular'; line-height: 20px; font-size: 14px; margin-bottom: 10px;}
+
+			/*PESSOAS*/
+.conheca .estrutura .element .eRight .pessoas{height: 220px;margin-left: 8px; padding: 10px 0;}
+.conheca .estrutura .element .eRight .pessoas > div{width: 200px; height: 200px; float: left; margin-right: 6px;}
+.conheca .estrutura .element .eRight .pessoas > div:last-child{margin-right: 0;}
+.conheca .estrutura .element .eRight .pessoas .pessoa{ float: left; -webkit-border-radius: 6px; -moz-border-radius: 6px; border-radius: 6px;	}
+.conheca .estrutura .element .eRight .pessoas .pessoa {cursor: pointer; width: 32%; filter: url(filters.svg#grayscale); /* Firefox 3.5+ */ filter: gray; /* IE6-9 */    -webkit-filter: grayscale(1); /* Google Chrome, Safari 6+ & Opera 15+ */}
+
+.conheca .estrutura .element .eRight .pessoas .pessoa :hover,
+.conheca .estrutura .element .eRight .pessoas .pessoa.active_{filter: none; -webkit-filter: grayscale(0);}
+	/*SETOR AEREO*/
+		/*EMPRESA*/
+.conheca .setor_aereo .empresa{padding: 20px 0 10px 0; border-bottom: 1px solid #e5e5e5; min-height: 210px;}
+.conheca .setor_aereo .empresa > div{display: inline-block;}
+.conheca .setor_aereo .empresa .logo{width: 200px; height: 200px; float: left;}
+.conheca .setor_aereo .empresa .logo img{max-width: 70%; margin-left: 15%;}
+.conheca .setor_aereo .empresa .info{width: 700px; margin-left: 10px;}
+.conheca .setor_aereo .empresa .info .title{margin-bottom: 10px;}
+.conheca .setor_aereo .empresa .info .title p{color: #797979; font-family: 'montserrat-regular'; text-transform: uppercase; font-size: 12px;}
+.conheca .setor_aereo .empresa .info > p{font-family: 'opensans-regular'; color: #797979; font-size: 14px; line-height: 20px; margin-bottom: 10px;}
+.conheca .setor_aereo .empresa .info .links p{color: #a1a1a1; font-family: 'montserrat-regular';}
+.conheca .setor_aereo .empresa .info .links p a{color: #a1a1a1; font-family: 'montserrat-regular'; text-transform: uppercase; font-size: 12px;}
+.conheca .setor_aereo .empresa .info .links p a:hover{color: #bbbbbb;}
+		/*SUB-TITLE*/
+.conheca .setor_aereo .sub-title{position: relative; margin: 10px 0;}
+.conheca .setor_aereo .sub-title > div{position: absolute; width: 78%; height: 1px; background: #aeaeae; top: 21px; right: 0}
+.conheca .setor_aereo .sub-title p{font-family: 'montserrat-regular'; font-size: 28px; color: #aeaeae; text-transform: uppercase;}
+
+
+/*///PROGRAMAS E EVENTOS///*/
+.progEvento .titulo_grande.img{height: 140px;}
+.progEvento .titulo_grande.img .title{padding-top: 10px;}
+.progEvento .text p{font-family: 'opensans-regular'; font-size: 14px; line-height: 20px;}
+.progEvento .text p:last-child{ padding-bottom: 20px;}
+	/*COMO VOA O BRASIL*/
+		/*ORBIT FOTOS*/
+.fotos_orbit{width: 100%; min-height: 300px; border-top: 3px solid #ffd503; padding-bottom: 20px;}
+.fotos_orbit > iframe{float: left; margin: 20px 0 0 10px; width: 38%; height: 250px;}
+.fotos_orbit .orbit_{width: 570px; float: left; margin: 32px 0 0 0; overflow: hidden;}
+.fotos_orbit .orbit_ .example-orbit{display: block !important;}
+.fotos_orbit .elementToOrbit{width: 100%; height: 100%;}
+.fotos_orbit .elementToOrbit .img{width: 100px; height: 225px; margin: 0; margin-right: 4.7%; float: left; position: relative;}
+.fotos_orbit .elementToOrbit .img:first-child{margin-left: 45px;}
+.fotos_orbit .elementToOrbit .img:last-child{margin-right: 0;}
+.fotos_orbit .elementToOrbit .img img{max-height: 50%; cursor: pointer;}
+.fotos_orbit .elementToOrbit .img img:last-child{ position: absolute; bottom: 0;}
+.fotos_orbit .orbit-bullets{top: 0;}
+.fotos_orbit .orbit-bullets li{background: #a1a1a1;}
+.fotos_orbit .orbit-bullets li.active{background: #ffd503;}
+.imagens .fotos_orbit{ border-top: 0;}
+
+/*.fotos_orbit .title{margin-left: 10px; text-align: left; font-family: 'montserrat-regular'; font-size: 16px; text-transform: uppercase; color: #797979;}*/
+	/*POR  DENTRO DA AVIACAO*/
+		/*VIDEOS GRANDES*/
+.progEvento .video_big{width: 100%; min-height: 430px;}
+.progEvento .video_ .video{float: left; margin-left: 1.3%; width: 48%; margin-bottom: 20px;}
+.progEvento .video_big .video_ iframe{width: 100%; padding: 10px 0 10px 0; border-bottom: 3px solid #ffd503;}
+.progEvento .video_big .video_ .video_info{width: 100%; padding: 5px 0 30px 0;}
+.progEvento .video_big .video_ .video_info p{color: #797979;}
+.progEvento .video_big .video_ .video_info .title{padding: 10px 0;}
+.progEvento .video_big .video_ .video_info .title p{font-size: 16px; text-transform: uppercase; font-family: 'montserrat-regular'; line-height: 22px;}
+.progEvento .video_big .video_ .video_info .info p{font-size: 14px; font-family: 'opensans-regular'; line-height: 20px;}
+.video_{margin-bottom: 30px;}
+.vertical-align {
+	display: table !important;
+}
+	.vertical-align .v-middle  {
+		display: table-cell !important;
+		vertical-align: middle !important;
+	}
+	.vertical-align .v-bottom  {
+		display: table-cell !important;
+		vertical-align: bottom !important;
+	}
+
+.content-video .traco{border-bottom: 3px solid #fed712;margin-bottom: 15px;}
+.content-video .video_info p.desc{margin-bottom: 35px;}
+		/*VIDEOS PEQUENOS*/
+.progEvento .video_small{padding: 10px 0; border-top: 3px solid #d7d7d7; min-height: 240px;}
+.progEvento .video_small .video_{float: left; margin-left: 10px; height: 240px; width: 227px;}
+.progEvento .video_small .video_ iframe{width: 227px; height: 160px;}
+.progEvento .video_small .video_:first-child{margin-left: 0;}
+.progEvento .video_small .video_ .video_info{padding-top: 5px; border-top: 1px solid #c8c8c8;}
+.progEvento .video_small .video_ .video_info p{color: #797979; font-size: 14px; font-family: 'montserrat-regular'; line-height: 20px;}
+.progEvento .video_ .video_info .title{font-size: 16px;/*text-transform: uppercase;*/font-family: 'montserrat-regular';line-height: 22px;margin-bottom: 10px;
+}
+.progEvento .video_ .video_info .text{font-size: 14px;text-transform: uppercase;font-family: 'montserrat-regular';line-height: 22px;margin-bottom: 10px;
+}
+.progEvento .video_ .video_info .desc{font-size: 14px;font-family: 'opensans-regular';line-height: 20px;margin-bottom: 30px;}
+		/*PAGINA*/
+.progEvento .pagina{width: 100%; min-height: 60px; margin-bottom: 30px;}
+.progEvento .pagina > div{float: left; border-top: 2px solid #d3d3d3; margin-bottom: 20px;}
+.progEvento .pagina > div a > p{color: #797979; font-size: 14px; font-family: 'montserrat-regular'; text-transform: uppercase;}
+.progEvento .pagina > div a > div{width: 12px;height: 10px; margin: 6px 3px;}
+.progEvento .pagina .nd{width: 66%;}
+.progEvento .pagina .next_{width: 15%; margin-left: 2%;}
+.progEvento .pagina .next_ a > p{float: right; text-align: right;}
+.progEvento .pagina .next_ a > div{float: right; background: url(../../img/prog_evento/eventos_seta-cinzaD.png) no-repeat 0 0;}
+.progEvento .pagina .next_:hover a > p{color: #bebebe;}
+.progEvento .pagina .next_:hover a > div{background-position: 0 -9px;}
+.progEvento .pagina .prev_{width: 15%; margin-left: 2%;}
+.progEvento .pagina .prev_ a > div{float: left; background: url(../../img/prog_evento/eventos_seta-cinzaE.png) no-repeat 0 0;}
+.progEvento .pagina .prev_:hover a > p{color: #bebebe;}
+.progEvento .pagina .prev_:hover a > div{background-position: 0 -9px;}
+.progEvento .pagina > div:hover a.deactive{cursor: default;}
+.progEvento .pagina > div a.deactive > p{color: #bebebe}
+.progEvento .pagina > div a.deactive > div{background-position: 0 -9px;}
+	/*EVENTOS*/
+.progEvento .sub-title{padding-top: 20px;}
+.progEvento .sub-title p{font-family: 'montserrat-regular'; text-transform: uppercase; font-size: 24px; color: #515151;}
+.progEvento .eventos{width: 99.5%; position: relative;}
+.progEvento .eventos .left_{width: 150px; margin-right: 2%; border-top: 3px solid #ffd503; position: absolute; top: 0;}
+.progEvento .eventos .left{max-width: 16%;}
+.progEvento .eventos .right_{border-top: 3px solid #ffd503; margin-left: 150px;}
+.progEvento .eventos .right_ .event{ float: left;}
+/*.progEvento .eventos .right_ .event:nth-child(2n){margin-left: 2%;}*/
+.progEvento .eventos .event .date{position: relative;}
+.progEvento .eventos .event .date p{font-size: 16px; font-family: 'montserrat-regular'; color: #797979;}
+.progEvento .eventos .right_ .event .date div{width: 72%;}
+.progEvento .eventos .event .date div{width: 88%; border-bottom: 1px solid #b7b7b7; height: 1px; position: absolute; top: 17px; right: 0}
+.progEvento .eventos .right_ .event .info p{font-size: 14px;}
+.progEvento .eventos .right_ .event .info .title{padding-top: 4px; margin-bottom: 10px;}
+.progEvento .eventos .right_ .event .info .title p{font-family: 'montserrat-bold'; text-transform: uppercase; line-height: 20px;}
+.progEvento .eventos .right_ .event .info .title a{font-family: 'montserrat-bold'; text-transform: uppercase; line-height: 20px; font-size: 14px; color: #797979;}
+.progEvento .eventos .right_ .event .info .text p{font-family: 'opensans-regular'; line-height: 20px;}
+.progEvento .eventos .right_ .event .saiba_mais{margin-top: 5px;}
+.progEvento .eventos .right_ .event .saiba_mais a > div{float: left;}
+.progEvento .eventos .right_ .event .saiba_mais a > div p{font-size: 11px; font-family: 'montserrat-regular'; text-transform: uppercase;}
+.progEvento .eventos .right_ .event .saiba_mais a .arrow{width: 12px; height: 10px; background: url(../../img/prog_evento/eventos_seta-verde.png) no-repeat 0 0; margin: 3px 0 0 3px;}
+.progEvento .eventos .right_ .event .saiba_mais a:hover .arrow{background-position: 0 -9px;}
+.progEvento .eventos .right_ .event .saiba_mais a:hover > div p{color: #bebebe;}
+
+
+/*>>> eventos img*/
+.progEvento .eventos .event.img .date{position: relative;}
+.progEvento .eventos .event.img .date p{font-size: 16px; font-family: 'montserrat-regular'; color: #797979;}
+.progEvento .eventos .right_ .event.img .date div{width: 89%;}
+.progEvento .eventos .event.img .date div{width: 88%; border-bottom: 1px solid #b7b7b7; height: 1px; position: absolute; top: 17px; right: 0}
+.progEvento .eventos .right_ .event.img{width: 100%;}
+.progEvento .eventos .right_ .event .info .area-imagem .imagem{width: 120px;height: 70px;float: left;margin-right: 15px;}
+.progEvento .eventos .right_ .event .info p{font-size: 14px;}
+.progEvento .eventos .right_ .event .info .title{padding-top: 4px; margin-bottom: 10px;}
+.progEvento .eventos .right_ .event .info .title p{font-family: 'montserrat-bold'; text-transform: uppercase; line-height: 20px;}
+.progEvento .eventos .right_ .event .info .title a{font-family: 'montserrat-bold'; text-transform: uppercase; line-height: 20px; font-size: 14px; color: #797979;}
+.progEvento .eventos .right_ .event .info .text p{font-family: 'opensans-regular'; line-height: 20px;}
+.progEvento .eventos .right_ .event .saiba_mais{margin-top: 5px;}
+.progEvento .eventos .right_ .event .saiba_mais a > div{float: left;}
+.progEvento .eventos .right_ .event .saiba_mais a > div p{font-size: 11px; font-family: 'montserrat-regular'; text-transform: uppercase;}
+.progEvento .eventos .right_ .event .saiba_mais a .arrow{width: 12px; height: 10px; background: url(../../img/prog_evento/eventos_seta-verde.png) no-repeat 0 0; margin: 3px 0 0 3px;}
+.progEvento .eventos .right_ .event .saiba_mais a:hover .arrow{background-position: 0 -9px;}
+.progEvento .eventos .right_ .event .saiba_mais a:hover > div p{color: #bebebe;}
+
+/* >>> arquivos*/
+.progEvento .eventos .right_ .arquivos{
+		background-color: #e5e5e5;
+		-webkit-border-radius: 5px;
+		-moz-border-radius: 5px;
+		border-radius: 5px;
+		padding: 20px 40px 6px;
+	}
+.progEvento .eventos .right_ .arquivos .titulo{padding: 0;}
+.progEvento .eventos .right_ .arquivos-videos{
+		background-color: #e5e5e5;
+		-webkit-border-radius: 5px;
+		-moz-border-radius: 5px;
+		border-radius: 5px;
+		padding: 20px 40px;
+		margin-bottom: 20px;
+	}
+.progEvento .eventos .right_ .arquivos-videos li .row{
+	padding-left: 30px;
+  	padding-right: 30px;
+}
+	.progEvento .eventos .right_ .arquivos-videos .orbit-container .orbit-next > span{
+		border-left-color: rgba(0, 0, 0, 0.3);
+	}
+	.progEvento .eventos .right_ .arquivos-videos .orbit-container .orbit-prev > span{
+		border-right-color: rgba(0, 0, 0, 0.3);
+	}
+		.progEvento .eventos .right_ .arquivos-videos .orbit-container .orbit-next:hover > span,
+		.progEvento .eventos .right_ .arquivos-videos .orbit-container .orbit-next > span:hover {
+			border-left-color: #fff;
+		}
+		.progEvento .eventos .right_ .arquivos-videos .orbit-container .orbit-prev:hover > span,
+		.progEvento .eventos .right_ .arquivos-videos .orbit-container .orbit-prev > span:hover {
+			border-right-color: #fff;
+		}
+
+/*.progEvento .eventos .right_ .arquivos-videos .content-video{margin-top: 29%;}*/
+
+.progEvento .eventos .right_ .arquivos p{
+		font-size: 13px;
+		font-family: 'montserrat-regular';
+		color: #797979;
+		position: absolute;
+		background-color: #e5e5e5;
+		width: 100%;
+		/*font-size: 13px;
+		font-family: 'montserrat-regular';
+		color: #797979;*/
+	}
+.progEvento .eventos .right_ .arquivos hr{
+		/*background-image: url('../../img/prog_evento/traco.png');
+		height: 1px;
+		width: 100%;
+		background-size: 100%;*/
+		border: 0;
+		height: 1px;
+		width: 94%;
+		background: #b7b7b7;
+		float: right;
+}
+/*.progEvento .eventos .right_ .arquivos .topo-arquivos{padding-top: 10px;}*/
+.progEvento .eventos .right_ .arquivos a.button{
+		background-color: transparent!important;
+		border: 1px solid #ACACAC;
+		padding: 4px 20px;
+		margin: 0;
+		line-height: 115%;
+		color: #b5b5b7;
+		text-transform: uppercase;
+}
+.progEvento .eventos .right_ .arquivos a.button:hover{color: #9b9b9e;}
+/* <<< arquivos*/
+/*<<< eventos img*/
+
+
+		/*EVENTOS (AMARELO)*/
+.progEvento .eventos .evento_amarelo{background: #ffd503; min-height: 130px; border-radius: 3px; padding-top: 10px;float: left;}
+.progEvento .eventos .event .imagem{height: 61px;background-position: center center;/*background-position-x: 0;background-position-y: 50%;*/background-repeat: no-repeat;background-size: contain;/*background-size: 100%;*/-webkit-border-radius: 5px;-moz-border-radius: 5px;border-radius: 5px;margin-top: 5px;}
+.progEvento .eventos .evento_amarelo .event{padding-bottom: 34px;/*padding-bottom: 22px;*/padding-right: 5px;}
+.progEvento .eventos .evento_amarelo .event .date p{color: #035025;}
+.progEvento .eventos .evento_amarelo .event .date div{border-color: #035025;}
+.progEvento .eventos .evento_amarelo .event .area-imagem{/*width: 130px;*/width: 91px;float: left;margin-right: 10px;}
+.progEvento .eventos .evento_amarelo .event .info p.title{color: #035025; font-family: 'montserrat-bold'; text-transform: uppercase; line-height: 20px;}
+.progEvento .eventos .evento_amarelo .event .info p.text{color: black; font-family: 'opensans-regular'; line-height: 20px;}
+.progEvento .eventos .evento_amarelo .event .saiba_mais a > div p{font-size: 11px;font-family: 'montserrat-regular';text-transform: uppercase;color: #054e2d;}
+.progEvento .eventos .evento_amarelo .event .saiba_mais a:hover > div p{color: #0a7d48;}
+		/*EVENTOS (MAIN)*/
+.progEvento .eventos .evento_main{position: relative;}
+.progEvento .eventos .evento_main.interna .area-imagem{max-width: 120px;max-height: 120px;/*max-width: 150px;max-height: 100px;*/margin-top: 10px;}
+.progEvento .eventos .evento_main.interna .area-imagem .imagem{background-position: center center;background-repeat: no-repeat;background-size: 100%;height: 120px;/*height: 75px;*/-webkit-border-radius: 5px;-moz-border-radius: 5px;border-radius: 5px;}
+.progEvento .eventos .evento_main .left_ .mes p{font-family: 'montserrat-bold'; text-transform: uppercase; padding-top: 4px; color: #515151; font-size: 18px;}
+.progEvento .eventos .evento_main .right_{padding-bottom: 20px; padding-top: 10px;}
+.progEvento .eventos .evento_main .right_ .event{padding-bottom: 30px;  padding-top: 8px;}
+
+.progEvento .eventos .evento_main.interna .right_{margin-left: 17%; padding-top: 0;}
+.progEvento .eventos .evento_main.interna .right_ .event{width: 100%; float: none;}
+.progEvento .eventos .evento_main.interna .right_ .event .date div{width: 88%;}
+.galeria_{background: #e5e5e5; border-radius: 5px; width: 100%; /*min-height: 400px;*/ padding: 20px 40px;}
+.galeria_ .evento_imageOrbit{width: 100%;}
+.galeria_ .evento_imageOrbit > div{width: 100%; float: left;}
+.galeria_ .evento_imageOrbit > div img{}
+.galeria_ .galeria_hold{width: 100%; min-height: 40px;}
+.galeria_ .info{border-top: 3px solid #ffd503; margin-top: -134px; margin-top: 0px;}
+.galeria_ .info .title, .first .right_ .title{margin-bottom: 10px;}
+.galeria_ .info .title p, .first .right_ .title p{font-size: 16px; font-family: 'montserrat-regular'; color: #797979;}
+.galeria_ .info .text p{font-size: 14px; font-family: 'opensans-regular'; line-height: 20px;}
+
+.galeria_{margin-bottom: 20px;}
+.galeria_ .videos_hold .single{}
+.video-responsive iframe{width: 100%;}
+/*.galeria_ .videos_hold .single > div{display: inline-block; width: 49%; margin-top: 0;}
+.galeria_ .videos_hold .single > div:last-child{margin-left: 1%; float: right; position: relative;}*/
+.galeria_ .videos_hold .single > div iframe{width: 100%;}
+.galeria_ .videos_hold .single > div .todos{margin-bottom: 20px;}
+.galeria_ .videos_hold .single > div .todos a p{font-size: 12px; color: #797979; float: left; text-transform: uppercase;}
+.galeria_ .videos_hold .single > div .todos a:hover p{color: #999999;}
+.galeria_ .videos_hold .single > div .todos a div{width: 12px; height: 10px; float: left; background: url(../../img/prog_evento/eventos_seta-cinzaD.png) no-repeat 0 0; margin: 4px 0 0 4px;}
+.galeria_ .videos_hold .single > div .todos a:hover div{background-position: 0 -9px;}
+.galeria_ .videos_hold .single .more{width: 100%; padding: 10px 0 0 0; position: absolute; bottom: 3px;}
+.galeria_ .videos_hold .single .more .vid{display: inline-block; width: 49%;}
+.galeria_ .videos_hold .single .info{position: relative;}
+.galeria_ .videos_hold .single .info .todos{position: absolute; bottom: 155px; right: 5px; }
+.sounds .todos{min-height: 1px;}
+.line_div{border-top: 3px solid #fed712; width: 100%; margin-top: 30px;}
+		/*PAGINAS*/
+.pagina_eventos .hold{width: 100%; min-height: 60px; padding-bottom: 40px; border-top: 1px solid #b7b7b7;}
+.pagina_eventos .hold > div{float: right; margin-top: 10px;}
+.pagina_eventos .hold > div > a,
+.pagina_eventos .hold > div > div{display: inline-block;}
+.pagina_eventos .hold > div > a p{font-family: 'opensans-regular'; font-size: 12px; color: #515151; text-transform: uppercase;}
+.pagina_eventos .hold > div > a > div{width: 12px; height: 10px; margin: 4px 4px 0 4px;}
+.pagina_eventos .hold > div > a.arrowL{margin-right: 4px;}
+.pagina_eventos .hold > div > a.arrowL > div{background: url(../../img/prog_evento/eventos_seta-cinzaE.png) no-repeat 0 0; float: left;}
+.pagina_eventos .hold > div > a.arrowR{margin-left: 10px;}
+.pagina_eventos .hold > div > a.arrowR > div{background: url(../../img/prog_evento/eventos_seta-cinzaD.png) no-repeat 0 0; float: right;}
+.pagina_eventos .hold > div > a:hover > div{background-position: 0 -9px;}
+.pagina_eventos .hold > div > a:hover p{color: #a1a1a1;}
+.pagina_eventos .hold > div > a p,
+.pagina_eventos .hold > div > a div{float: right;}
+.pagina_eventos .hold > div > div{position: relative;}
+.pagina_eventos .hold > div > div p{position: absolute; margin: 17px 2px 0 0;}
+
+.pagina_eventos .hold{width: 100%; min-height: 60px; padding-bottom: 40px; border-top: 1px solid #b7b7b7;}
+.pagina_eventos .hold > div{float: right; margin-top: 10px;}
+.pagina_eventos .hold > div > span,
+.pagina_eventos .hold > div > div{display: inline-block;}
+.pagina_eventos .hold > div > span,
+.pagina_eventos .hold > div > span a{font-family: 'opensans-regular'; font-size: 12px; color: #515151; text-transform: uppercase;}
+.pagina_eventos .hold > div > span > div{width: 12px; height: 10px; margin: 0px 4px 0 4px;}
+.pagina_eventos .hold > div > span.arrowL{margin-right: 4px;}
+.pagina_eventos .hold > div > span.arrowL > div{background: url(../../img/prog_evento/eventos_seta-cinzaE.png) no-repeat 0 0; float: left;}
+.pagina_eventos .hold > div > span.arrowR{margin-left: 7px;}
+.pagina_eventos .hold > div > span.arrowR > div{background: url(../../img/prog_evento/eventos_seta-cinzaD.png) no-repeat 0 0; float: right;}
+.pagina_eventos .hold > div > span:hover > div{background-position: 0 -9px;}
+.pagina_eventos .hold > div > span:hover a{color: #a1a1a1;}
+.pagina_eventos .hold > div > span p,
+.pagina_eventos .hold > div > span > div{float: right;}
+.pagina_eventos .hold > div > div{position: relative;}
+.pagina_eventos .hold > div > div{position: absolute; margin-top: -20px;}
+.pagina_eventos .hold > div > span.deactive{color: #a1a1a1;}
+.pagina_eventos .hold > div > span.deactive > div{background-position: 0 -9px;}
+
+.pagina_eventos .hold > div > a.desactive.arrowL > div,
+.pagina_eventos .hold > div > a.desactive.arrowR > div{background-position: 0 -9px; cursor: default;}
+.pagina_eventos .hold > div > a.desactive.arrowL p,
+.pagina_eventos .hold > div > a.desactive.arrowR p{color: #a1a1a1;}
+
+.pagina_eventos .hold > div > span.desactive.arrowL,
+.pagina_eventos .hold > div > span.desactive.arrowR{color: #a1a1a1;}
+.pagina_eventos .hold > div > span.desactive.arrowL > div,
+.pagina_eventos .hold > div > span.desactive.arrowR > div{background-position: 0 -9px;}
+.pagina_eventos .hold > div > span.arrowL > a div{width: 12px; height: 10px; margin: 0px 4px 0 4px; background: url(../../img/prog_evento/eventos_seta-cinzaE.png) no-repeat 0 0; float: left;}
+.pagina_eventos .hold > div > span.arrowR > a div{width: 12px; height: 10px; margin: 0px 4px 0 4px; background: url(../../img/prog_evento/eventos_seta-cinzaD.png) no-repeat 0 0; float: right;}
+.pagina_eventos .hold > div > span.arrowL:hover > a div{background-position: 0 -9px;}
+.pagina_eventos .hold > div > span.arrowR:hover > a div{background-position: 0 -9px;}
+
+.progEvento .pagina_eventos{margin-top: 20px;}
+/*///NEWS///*/
+.news{margin-bottom: 20px;}
+	/*GALERIA IMGS*/
+		/*Organizador*/
+.news .galeria_organizar{width: 100%; height: 27px; border-bottom: 3px solid #ffd503; position: relative; margin-bottom: 30px;}
+.news .galeria_organizar .organizar{float: right;}
+.news .galeria_organizar .organizar > div{display: inline-block;}
+.news .galeria_organizar .organizar > div p,
+.news .galeria_organizar .organizar > div a{color: #a2a2a2; font-family: 'montserrat-regular'; font-size: 12px; text-transform: uppercase; padding: 0 0 0 4px;}
+.news .galeria_organizar .organizar > div a.active{font-family: 'montserrat-bold'; color: #515151; cursor: default;}
+.news .galeria_organizar .organizar > div a:hover{font-family: 'montserrat-bold'; color: #515151;}
+.news .galeria_organizar .seta{width: 20px; height: 20px; background: url(../../img/news/galeria-fotos_seletor.png) no-repeat 0 0; position: absolute;}
+.news .galeria_organizar .seta.a1{bottom: -13px; right: 48px;}
+.news .galeria_organizar .seta.a2{bottom: -13px; right: 156px;}
+		/*GALERIA DE IMAGENS*/
+/*.news .galeria_news > div{padding-left: 1%;}*/
+/*.news .galeria_news > div > div{width: 23%; margin-right: 2%; display: inline-block; padding-bottom: 10px; border-bottom: 1px solid #c2c2c2; margin-bottom: 30px;}*/
+/*.news .galeria_news > div > div{width: 23%; margin-right: 15px; float: left; padding-bottom: 10px; border-bottom: 1px solid #c2c2c2; margin-bottom: 30px;}*/
+/*.news .galeria_news > div > div:last-child{margin-right: 0;}*/
+/*.news .galeria_news > div > div img{max-width: 100%;}*/
+/*.news .galeria_news > div > div .title{margin-top: 10px;}*/
+.news .galeria_news > div > div .title p{font-family: 'montserrat-bold'; color: #515151; font-size: 14px; text-transform: uppercase;}
+.news .galeria_news > div > div .info p{font-family: 'montserrat-regular'; color: #a1a1a1; font-size: 12px;}
+
+
+
+.galerias-capa-content {
+	/*padding-bottom: 10px;
+	border-bottom: 1px solid #c2c2c2;*/
+
+	/*margin-bottom: 1.525em;
+	margin-left: 0.625em;
+	margin-right: 0.625em;
+	padding-left: 0 !important;
+	padding-right: 0 !important;*/
+}
+
+.galerias-capa-content hr {
+	border-color: #c2c2c2;
+}
+
+.galeria-thumbs-capas {
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size:100%;
+	/*max-height: 150px;*/
+}
+
+.galeria-thumbs-fotos {
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size:100%;
+	/*max-height: 150px;*/
+}
+
+.galeria-thumbs-capas,
+.galeria-thumbs-fotos,
+.galeria-thumbs-capas img {
+	max-height: 150px;
+}
+
+.galeria-thumbs-fotos img {
+	max-height: 110px;
+}
+
+		/*PAGINATOR*/
+.paginator{height: 50px; width: 100%; margin-bottom: 40px;}
+.paginator .hold{position: relative;}
+.paginator .hold > div{display: table; width: 36px; height: 36px; border-radius: 18px; background: #e5e5e5; float: left; margin: 0 6px;}
+.paginator .hold .bt{ cursor: pointer;}
+.paginator .hold .bt.current,
+.paginator .hold .bt.active{cursor: default;}
+.paginator .hold > div:hover{background: #ffd503;}
+.paginator .hold > div.active,
+.paginator .hold > div.current{background: #ffd503; cursor: default;}
+.paginator .hold > div a{color: #999999;font-size: 18px; font-family: 'montserrat-regular'; text-align: center;display: table-cell; vertical-align: middle; margin-left: 10px;}
+.paginator .hold > div > div {width: 100%; margin-top: 6px;}
+.paginator .hold .prev{width: 36px; height: 36px;}
+.paginator .hold .prev div{margin: 12px 0 0 13px; height: 10px; width: 12px; background: url(../../img/prog_evento/eventos_seta-cinzaE.png) no-repeat 0 -9px;}
+.paginator .hold .prev a div{margin: 0 0 0 13px; height: 10px; width: 12px; background: url(../../img/prog_evento/eventos_seta-cinzaE.png) no-repeat 0 -9px;}
+.paginator .hold .next{width: 36px; height: 36px;}
+.paginator .hold .next div{margin: 12px 0 0 13px; height: 10px; width: 12px; background: url(../../img/prog_evento/eventos_seta-cinzaD.png) no-repeat 0 -9px;}
+.paginator .hold .next a div{margin: 0 0 0 13px; height: 10px; width: 12px; background: url(../../img/prog_evento/eventos_seta-cinzaD.png) no-repeat 0 -9px;}
+.paginator .hold > div:hover{color: #797979;}
+.paginator .hold > div.active{color: #797979; cursor: default;}
+.paginator .hold .prev:hover > div{background-position: 0 0;}
+.paginator .hold .next:hover > div{background-position: 0 0;}
+/*.paginator .hold .pp{cursor: default;}
+.paginator .hold .pp:hover{background: #e5e5e5;}
+.paginator .hold .pp:hover > div{background-position: 0 -9px;}*/
+		/*MODAL*/
+.foto_modal{min-height: 400px; position: fixed; background: #e5e5e5; z-index: 8000; display: none; left: 50%; margin-left: -470px; top: 5%; padding: 20px 45px; border-radius: 5px;}
+.foto_modal .top{width: 100%; height: 20px;}
+.foto_modal .top > div{border-top: 1px solid #797979; height: 100%; float: left;}
+.foto_modal .top .first{width: 84%;}
+.foto_modal .top .last{width: 14%; margin-left: 1.8%;}
+.foto_modal .top .last a{float: right; color: #797979; font-family: 'montserrat-regular'; font-size: 12px; text-transform: uppercase; margin-top: 5px;}
+.foto_modal .top .last a:hover{color: #a9a9a9;}
+.foto_modal .foto{width: 100%; min-height: 400px; margin: 10px 0 15px 0; background-position: center center; background-repeat: no-repeat;}
+.foto_modal .foto img{width: 0; height: 0;}
+.foto_modal .info{width: 100%; border-top: 3px solid #ffd503; padding-top: 10px;}
+.foto_modal .info .title p{font-family: 'montserrat-bold'; font-size: 16px; color: #797979; text-transform: uppercase;}
+.foto_modal .info .text{padding: 10px 0 10px 0;}
+.foto_modal .info .text p{ font-family: 'opensans-regular'; font-size: 14px; color: #797979; }
+.foto_modal .bot{width: 100%; height: 20px;}
+.foto_modal .bot > div{border-top: 1px solid #797979; height: 100%; float: left;}
+.foto_modal .bot .first{width: 68%;}
+.foto_modal .bot .next_,
+.foto_modal .bot .prev_{width: 14%; margin-left: 1.8%;}
+.foto_modal .bot .next_ a{float: right; color: #797979; font-family: 'montserrat-regular'; font-size: 12px; text-transform: uppercase; margin-top: 5px;}
+.foto_modal .bot .prev_ a{float: left; color: #797979; font-family: 'montserrat-regular'; font-size: 12px; text-transform: uppercase; margin-top: 5px;}
+.foto_modal .bot .prev_ a div{width: 12px; height: 10px; background: url(../../img/prog_evento/eventos_seta-cinzaE.png) no-repeat 0 0; margin: 0 4px 0 4px; float: left;}
+.foto_modal .bot .next_ a div{width: 12px; height: 10px; background: url(../../img/prog_evento/eventos_seta-cinzaD.png) no-repeat 0 0; margin: 0 4px 0 4px; float: right;}
+.foto_modal .bot .prev_ a:hover,
+.foto_modal .bot .next_ a:hover{color: #a9a9a9;}
+.foto_modal .bot .prev_.deactive a,
+.foto_modal .bot .next_.deactive a{color: #a9a9a9; cursor: default;}
+.foto_modal .bot .prev_ a:hover div,
+.foto_modal .bot .next_ a:hover div{background-position: 0 -9px;}
+.foto_modal .bot .prev_.deactive a div,
+.foto_modal .bot .next_.deactive a div{background-position: 0 -9px;}
+.reveal-modal-bg{background: rgba(255, 255, 255, 0.85);}
+	/*GALERIA VIDEOS*/
+		/*Main VIDEO INFO*/
+.news .video_visualizar iframe{width: 600px; height: 435px; display: inline-block;}
+.news .video_visualizar .info{width: 300px; display: inline-block; border-top: 3px solid #ffd503; padding: 10px 0 20px 0; margin-left: 20px;}
+.news .video_visualizar .info .title { padding-top: 10px;}
+.news .video_visualizar .info .title p{font-family: 'montserrat-bold'; font-size: 16px; text-transform: uppercase; color: #797979;}
+.news .video_visualizar .info .text{ padding-top: 10px;}
+.news .video_visualizar .info .text p{font-family: 'opensans-regular'; font-size: 14px; color: #797979; line-height: 20px;}
+.news .video_visualizar .info .prev_next{width: 100%; padding-top: 20px;}
+.news .video_visualizar .info .prev_next > div{display: inline-block;}
+.news .video_visualizar .info .prev_next .next_{width: 44%; border-top: 1px solid #c2c2c2; padding-top: 5px;}
+.news .video_visualizar .info .prev_next .prev_{width: 44%; border-top: 1px solid #c2c2c2; padding-top: 5px; margin: 0 5% 0 2%;}
+.news .video_visualizar .info .prev_next .next_ a{float: right; color: #797979; font-family: 'montserrat-regular'; font-size: 12px; text-transform: uppercase; margin-top: 5px;}
+.news .video_visualizar .info .prev_next .prev_ a{float: left; color: #797979; font-family: 'montserrat-regular'; font-size: 12px; text-transform: uppercase; margin-top: 5px;}
+.news .video_visualizar .info .prev_next .prev_ a div{width: 12px; height: 10px; background: url(../../img/prog_evento/eventos_seta-cinzaE.png) no-repeat 0 0; margin: 1px 4px 0 4px; float: left;}
+.news .video_visualizar .info .prev_next .next_ a div{width: 12px; height: 10px; background: url(../../img/prog_evento/eventos_seta-cinzaD.png) no-repeat 0 0; margin: 1px 4px 0 4px; float: right;}
+.news .video_visualizar .info .prev_next .prev_ a:hover,
+.news .video_visualizar .info .prev_next .next_ a:hover{color: #a9a9a9;}
+.news .video_visualizar .info .prev_next .prev_ a:hover div,
+.news .video_visualizar .info .prev_next .next_ a:hover div{background-position: 0 -9px;}
+
+.news .video_visualizar .info .prev_next .prev_ a p{float: right;}
+.news .video_visualizar .info .prev_next .next_ a p{float: left;}
+		/*OTHER VIDEOS*/
+.news .video_small{padding: 10px 0 0 0; min-height: 200px; margin-bottom: 20px; float: left;}
+.news .video_small .video_{float: left; margin-left: 10px; min-height: 150px; width: 227px;}
+.news .video_small .video_:first-child{margin-left: 0;}
+.news .video_small .video_ iframe{width: 227px; height: 140px;}
+.news .video_small .video_ .video_info{padding-top: 5px; border-top: 1px solid #c8c8c8;}
+.news .video_small .video_ .video_info p{color: #797979; font-size: 14px; font-family: 'montserrat-regular';}
+	/*ARTIGOS E PUBLICAÇÕES*/
+		/*Artigos*/
+.news .artigos{ border-top: 3px solid #ffd503; padding-top: 10px;}
+.news .artigos .left_{width: 23%; margin-right: 2%; float: left;}
+.news .artigos .left_ p{font-family: 'opensans-regular'; font-size: 14px; line-height: 20px; color: #797979; }
+.news .artigos .right_{width: 74%; display: inline-block;}
+			/*Artigo*/
+.news .artigo{/*min-height: 140px;*/ margin-bottom: 10px;}
+.news .artigo.date .top{padding-top: 10px; margin-bottom: 10px;}
+.news .artigo .top {float: left; width: 100%;}
+.news .artigo .top > div{width: 100%; border-bottom: 1px solid #d1d1d1; height: 1px;}
+.news .artigo.date .top > div{width: 88%; float: right; margin-top: -7px;}
+.news .artigo.date .top p{font-family: 'montserrat-regular'; font-size: 14px; color: #b0b0b0; line-height: 20px;}
+.news .artigo > p{color: #797979;}
+.news .artigo .title{margin-top: 20px;}
+.news .artigo .title p{font-family: 'montserrat-bold'; font-size: 16px; text-transform: uppercase; line-height: 22px;}
+.news .artigo .title a{font-family: 'montserrat-bold'; font-size: 16px; text-transform: uppercase; line-height: 22px;}
+.news .artigo.date .title{margin-top: 15px;}
+.news .artigo .text{ margin-top: 10px; margin-bottom: 40px;}
+.news .artigo .text p{font-family: 'opensans-regular'; font-size: 14px; color: #797979; line-height: 20px;}
+.news .artigo .saiba_mais p{font-family: 'montserrat-regular'; font-size: 12px; margin-top: 10px; display: inline-block; text-transform: uppercase; line-height: 18px;}
+.news .artigo .voltar_landingpage p{font-family: 'montserrat-regular'; font-size: 12px; margin-top: 10px; display: inline-block; text-transform: uppercase; line-height: 18px;}
+.news .artigo .saiba_mais:hover p,
+.news .artigo .voltar_landingpage:hover p {color: #797979;}
+.news .artigo .saiba_mais > div{width: 12px; height: 10px; margin-left: 4px;display: inline-block; background: url(../../img/prog_evento/eventos_seta-cinzaD.png) no-repeat 0 -9px;}
+.news .artigo .voltar_landingpage > div{width: 12px; height: 10px; margin-left: 4px;display: inline-block; background: url(../../img/prog_evento/eventos_seta-cinzaE.png) no-repeat 0 -9px;}
+.news .artigo .saiba_mais:hover > div,
+.news .artigo .voltar_landingpage:hover > div{background-position: 0 0;}
+		/*Publicações*/
+.news .publi{width: 100%; border-top: 3px solid #ffd503; padding-top: 10px; border-bottom: 1px solid #d1d1d1; margin-bottom: 20px;}
+.news .publi p.title{font-family: 'montserrat-regular'; font-size: 16px; color: #797979; text-transform: uppercase; float: left; line-height: 22px;}
+.news .publi .hold{display: inline-block; margin-left: 20px; width: 85%; margin-bottom: 10px;}
+.news .publi .hold .publi_element .elem_{width: 140px; border-radius: 4px; background: #dadada; float: left; margin-left: 2%;}
+.news .publi .hold .publi_element .elem_ img{width: 100%;}
+	/*NEWS ASSOCIADOS*/
+		/*ESQUERDA*/
+.news .associados_hold .left_{width: 67%;display: inline-block; margin-right: 2%;}
+.news .associados_hold .left_ .title{margin-bottom: 10px;}
+.news .associados_hold .left_ .title p{font-family: 'montserrat-regular'; font-size: 16px; color: #797979; text-transform: uppercase; line-height: 22px;}
+.news .associados_hold .left_ .text p{font-family: 'opensans-regular'; font-size: 14px; color: #797979; line-height: 20px;}
+.news .associados_hold .left_ .social_share{margin: 10px 0 10px 0; height: 20px;}
+		/*DIREITA*/
+.news .associados_hold .right_{width: 29%; background: #e5e5e5; float: right; margin-right: .5%; border-radius: 4px; padding: 20px 0 40px 0;}
+.news .associados_hold .right_ > div{margin-bottom: 10px; width: 94%; margin-left: 3%;}
+.news .associados_hold .right_ > div .title{ padding-bottom: 5px; border-bottom: 3px solid #afafaf; margin-bottom: 5px;}
+.news .associados_hold .right_ > div .title p{font-family: 'montserrat-regular'; font-size: 16px; color: #797979; text-transform: uppercase; line-height: 22px;}
+.news .associados_hold .right_ #bt_tw iframe{height: 250px !important;}
+			/*MAIS LIDAS*/
+#mais_lidas .noticia_{ margin-bottom: 10px;}
+#mais_lidas .noticia_ a > div{display: inline-block;}
+#mais_lidas .noticia_ a .seta{width: 12px; height: 10px; display: inline-block; background: url(../../img/prog_evento/eventos_seta-cinzaD.png) no-repeat 0 0;position: relative; top: -44px;}
+#mais_lidas .noticia_:hover a .seta{background-position: 0 -9px;}
+#mais_lidas .noticia_ a .conteudo{width: 91%; margin-left: 2%;}
+#mais_lidas .noticia_ a .conteudo p{font-family: 'opensans-regular'; font-size: 14px; color: #797979; padding-bottom: 10px; border-bottom: 2px solid #d8d8d8; text-align: left;}
+#mais_lidas .noticia_:hover a .conteudo p{color: #999999;}
+.seta.mais-lidas {float: left !important; top: 6px !important;}
+			/*VIDEOS*/
+.news .associados_hold .right_ #videos_ { border-bottom: 1px solid #afafaf; margin-top: 20px;}
+.news .associados_hold .right_ #videos_ .todos{margin-bottom: 20px;}
+.news .associados_hold .right_ #videos_ .todos a p{font-size: 12px; color: #797979; float: left; text-transform: uppercase;}
+.news .associados_hold .right_ #videos_ .todos a:hover p{color: #999999;}
+.news .associados_hold .right_ #videos_ .todos a div{width: 12px; height: 10px; float: left; background: url(../../img/prog_evento/eventos_seta-cinzaD.png) no-repeat 0 0; margin: 4px 0 0 4px;}
+.news .associados_hold .right_ #videos_ .todos a:hover div{background-position: 0 -9px;}
+			/*NEWS COM IMG*/
+.news .artigo.img .imagem{/*max-width: 33%;*/ float: left; /*margin-right: 10px;*/}
+.news .artigo.img .imagem img{max-width: 100%; /*margin-left: 5%;*/max-height: 200px;}
+.news .artigo.img .content{width: 65%; margin-left: 1.8%; display: inline-block;}
+	/*NEWS NA MIDIA*/
+.news .naMidia_hold{border-top: 3px solid #ffd503; padding-bottom: 5px;}
+.news .naMidia_hold .left_{width: 28%; float: left;}
+.news .naMidia_hold .left_ .sounds{margin: 5px 0 30px 0;}
+.news .naMidia_hold .left_ .sounds > .title p{font-family: 'montserrat-regular'; font-size: 16px; text-transform: uppercase; color: #797979; padding-bottom: 5px; margin-bottom: 15px;}
+.news .naMidia_hold .left_ .sounds .sound{border-bottom: 1px solid #cecece; margin: 5px 0 35px 0;}
+.news .naMidia_hold .left_ .sounds .sound .title{ margin: 5px 0 5px 0;}
+.news .naMidia_hold .left_ .sounds .sound .title p{color: #a1a1a1; font-family: 'montserrat-regular'; font-size: 16px; text-transform: uppercase; line-height: 22px;}
+.news .naMidia_hold .left_ .videos{padding: 10px 0 5px 0; border-top: 3px solid #ffd503; border-bottom: 3px solid #cecece;}
+.news .naMidia_hold .left_ .videos .title p{font-family: 'montserrat-regular'; font-size: 16px; text-transform: uppercase; color: #797979; margin-bottom: 10px;}
+.news .naMidia_hold .left_ .videos .video_ .video_info p{color: #797979; font-size: 14px; font-family: 'montserrat-regular';}
+.news .naMidia_hold .left_ .todos{margin-bottom: 20px;}
+.news .naMidia_hold .left_ .todos a p{font-size: 12px; color: #797979; float: left; text-transform: uppercase;}
+.news .naMidia_hold .left_ .todos a:hover p{color: #999999;}
+.news .naMidia_hold .left_ .todos a div{width: 12px; height: 10px; float: left; background: url(../../img/prog_evento/eventos_seta-cinzaD.png) no-repeat 0 0; margin: 4px 0 0 4px;}
+.news .naMidia_hold .left_ .todos a:hover div{background-position: 0 -9px;}
+.news .naMidia_hold .right_{width: 68%; margin-left: 3%; display: inline-block;}
+.news .naMidia_hold .right_ > .title{margin-top: 5px;}
+.news .naMidia_hold .right_ > .title p{font-family: 'montserrat-regular'; font-size: 16px; text-transform: uppercase; color: #797979; padding-bottom: 5px;}
+
+	/*NEWS IMPRENSA*/
+.news .imprensa_hold{border-top: 3px solid #ffd503; padding-bottom: 5px;}
+.news .imprensa_hold .left_{width: 28%; float: left;}
+.news .imprensa_hold .left_ p, .news .imprensa_hold .left_ p a{color: #797979;}
+.news .imprensa_hold .left_ > .title{margin-top: 10px;}
+.news .imprensa_hold .left_ > .title p{font-family: 'montserrat-bold'; font-size: 22px; text-transform: uppercase; color: #515151; line-height: 30px;}
+.news .imprensa_hold .left_ > .cargo{margin: 7px 0 10px 0;}
+.news .imprensa_hold .left_ > .cargo p{font-family: 'montserrat-regular'; font-size: 12px; text-transform: uppercase; line-height: 18px;}
+.news .imprensa_hold .left_ .contato .name p{font-family: 'montserrat-bold'; font-size: 14px; line-height: 20px;}
+.news .imprensa_hold .left_ .contato .info p{font-family: 'opensans-regular'; font-size: 14px; line-height: 20px;}
+.news .imprensa_hold .left_ .separator{margin: 15px 0 5px 0; background: #797979; height: 1px; width: 40px;}
+.news .imprensa_hold .right_{width: 68%; margin-left: 3%; display: inline-block;}
+		/*GALERIAS VIDEO E IMAGENS*/
+.gal_vid .videos{width: 39%; float: left; border-top: 3px solid #ffd503; padding: 5px 0 5px 0; border-bottom: 3px solid #cecece;}
+.gal_vid .videos iframe{width: 100%; height: 254px;}
+.gal_vid .videos .top > p.title{font-family: 'montserrat-regular'; font-size: 16px; text-transform: uppercase; color: #797979;}
+.gal_vid .videos .top .todos{float: right; margin-top: -22px;}
+.gal_vid .videos .top .todos a p{font-size: 12px; color: #797979; float: left; text-transform: uppercase; font-family: 'montserrat-regular';}
+.gal_vid .videos .top .todos a:hover p{color: #999999;}
+.gal_vid .videos .top .todos a div{width: 12px; height: 10px; float: left; background: url(../../img/prog_evento/eventos_seta-cinzaD.png) no-repeat 0 0; margin: 4px 0 0 4px;}
+.gal_vid .videos .top .todos a:hover div{background-position: 0 -9px;}
+.gal_vid .videos .video_info{padding: 10px 0;}
+.gal_vid .videos .video_info p{font-family: 'opensans-regular'; font-size: 14px; color: #797979;}
+.gal_vid .imagens{width: 58%; margin-left: 2%; display: inline-block; border-top: 3px solid #ffd503;
+	padding: 5px 0 1px 0; border-bottom: 3px solid #cecece;}
+.gal_vid .imagens > p.title{font-family: 'montserrat-regular'; font-size: 16px; text-transform: uppercase; color: #797979;}
+.gal_vid .imagens .galeria img{margin-right: 1.34128%}
+.gal_vid .imagens .galeria img:last-child{margin-right: 0;}
+.gal_vid .imagens .paginator{margin-bottom: 0; padding-top: 8px;}
+
+
+/*///DADOS E FATOS///*/
+.news .dados_fatos{border-top: 3px solid #ffd503; padding-bottom: 5px; margin-left: -0.025em !important;margin-right: -0.025em !important;}
+.imagem-dado{height: 192px;width: 193px;background-position: center center;background-repeat: no-repeat;background-size: 100%;}
+	/*LEFT*/
+
+.news .dados_fatos .left_{width: 25%; float: left;}
+		/*MENU*/
+.news .dados_fatos .left_ .menu{padding-bottom: 30px;}
+.news .dados_fatos .left_ .menu a{display: block; padding: 7px 0 5px 0; border-bottom: 1px solid #e5e5e5; font-family: 'montserrat-regular';
+	font-size: 12px; text-transform: uppercase; color: #797979; line-height: 18px;}
+.news .dados_fatos .left_ .menu a:hover,
+.news .dados_fatos .left_ .menu a.active{font-family: 'montserrat-bold'; color: #414141;}
+		/*VIDEOS*/
+.news .dados_fatos .left_ .videos_ p.title{font-family: 'montserrat-regular'; font-size: 16px; text-transform: uppercase; color: #797979;
+	padding-bottom: 5px; border-bottom: 3px solid #b6b6b6; margin-bottom: 15px;}
+.news .dados_fatos .left_ .videos_ iframe{width: 100%; height: 200px;}
+
+.news .dados_fatos .left_ .todos{margin-bottom: 20px; border-bottom: 1px solid #b6b6b6; height: 20px;}
+.news .dados_fatos .left_ .todos a p{font-size: 12px; color: #797979; float: left; text-transform: uppercase;}
+.news .dados_fatos .left_ .todos a:hover p{color: #999999;}
+.news .dados_fatos .left_ .todos a div{width: 12px; height: 10px; float: left;
+	background: url(../../img/prog_evento/eventos_seta-cinzaD.png) no-repeat 0 0; margin: 4px 0 0 4px;}
+.news .dados_fatos .left_ .todos a:hover div{background-position: 0 -9px;}
+		/*IMAGENS*/
+.news .dados_fatos .left_ .imagens_ p.title{font-family: 'montserrat-regular'; font-size: 16px; text-transform: uppercase; color: #797979;
+	padding-bottom: 5px; border-bottom: 3px solid #b6b6b6; margin-bottom: 15px;}
+.news .dados_fatos .left_ .imagens_ .galeria .orbit-container{height: 180px;}
+.news .dados_fatos .left_ .imagens_ .galeria > div{width: 235px; height: 150px}
+.news .dados_fatos .left_ .imagens_ .galeria > div > div{width: 235px;height: 150px;}
+.news .dados_fatos .left_ .imagens_ .galeria .elementToOrbit{width: 235px; height: 150px;}
+.news .dados_fatos .left_ .imagens_ .galeria .elementToOrbit .img{}
+.news .dados_fatos .left_ .imagens_ .galeria .elementToOrbit .img img{display: inline-block; vertical-align: middle; width: 70px; margin-right: 1%;}
+.news .dados_fatos .left_ .imagens_ .galeria .orbit-bullets{top: 0;}
+.news .dados_fatos .left_ .imagens_ .galeria .orbit-bullets li{background: #a1a1a1;}
+.news .dados_fatos .left_ .imagens_ .galeria .orbit-bullets li.active{background: #ffd503;}
+	/*RIGHT*/
+.news .dados_fatos .right_{/*width: 61%;*/width: 70%; margin-left: 3%; display: inline-block;}
+		/*AGENDA*/
+.news .dados_fatos .right_ .agenda{border-bottom: 1px solid #b6b6b6; margin-bottom: 10px; padding-top: 20px;}
+.news .dados_fatos .right_ .agenda .title{margin-bottom: 15px;}
+.news .dados_fatos .right_ .agenda .title p,
+.news .dados_fatos .right_ .agenda .title a{font-family: 'montserrat-bold'; font-size: 16px; text-transform: uppercase; color: #797979; }
+.news .dados_fatos .right_ .agenda .title a:hover{ color: #b1b1b1;}
+.news .dados_fatos .right_ .agenda .text{margin-bottom: 10px;}
+.news .dados_fatos .right_ .agenda .text p{font-family: 'opensans-regular'; font-size: 14px; color: #797979;line-height: 20px;}
+.news .dados_fatos .right_ .agenda .imgs_{width: 100%; margin-top: 10px;}
+.news .dados_fatos .right_ .agenda .imgs_ .element{ margin-bottom: 10px;}
+.news .dados_fatos .right_ .agenda .imgs_ .element:last-child{margin-right: 0;}
+.news .dados_fatos .right_ .agenda .imgs_ .element img{max-width: 100%; margin-bottom: 5px;}
+.news .dados_fatos .right_ .agenda .imgs_ .element .info{ padding-top: 10px; border-top: 1px solid #e5e5e5;margin: 5px 0 10px 0;}
+.news .dados_fatos .right_ .agenda .imgs_ .element .info p{font-family: 'opensans-regular'; font-size: 14px; color: #797979;}
+.agenda .titulo_grande{margin-bottom: 0;}
+.agenda .titulo_grande .title p{width: 100%;}
+.pagina_agenda{margin-bottom: 35px;}
+.pagina_agenda .hold > div{float: right; margin-top: 10px;}
+.pagina_agenda .hold > div > a,
+.pagina_agenda .hold > div > div{display: inline-block;}
+.pagina_agenda .hold > div > a p{font-family: 'opensans-regular'; font-size: 12px; color: #515151; text-transform: uppercase;}
+.pagina_agenda .hold > div > a > div{width: 12px; height: 10px; margin: 4px 4px 0 4px;}
+.pagina_agenda .hold > div > a.arrowL{margin-right: 4px;}
+.pagina_agenda .hold > div > a.arrowL > div{background: url(../../img/prog_evento/eventos_seta-cinzaE.png) no-repeat 0 0; float: left;}
+.pagina_agenda .hold > div > a.arrowR{margin-left: 10px;}
+.pagina_agenda .hold > div > a.arrowR > div{background: url(../../img/prog_evento/eventos_seta-cinzaD.png) no-repeat 0 0; float: right;}
+.pagina_agenda .hold > div > a:hover > div{background-position: 0 -9px;}
+.pagina_agenda .hold > div > a:hover p{color: #a1a1a1;}
+.pagina_agenda .hold > div > a p,
+.pagina_agenda .hold > div > a div{float: right;}
+.pagina_agenda .hold > div > div{position: relative;}
+.pagina_agenda .hold > div > div p{position: absolute; margin: 17px 2px 0 0;}
+
+.pagina_agenda .hold > div{float: right; margin-top: 10px;}
+.pagina_agenda .hold > div > span,
+.pagina_agenda .hold > div > div{display: inline-block;}
+.pagina_agenda .hold > div > span,
+.pagina_agenda .hold > div > span a{font-family: 'opensans-regular'; font-size: 12px; color: #515151; text-transform: uppercase;}
+.pagina_agenda .hold > div > span > div{width: 12px; height: 10px; margin: 0px 4px 0 4px;}
+.pagina_agenda .hold > div > span.arrowL{margin-right: 4px;}
+.pagina_agenda .hold > div > span.arrowL > div{background: url(../../img/prog_evento/eventos_seta-cinzaE.png) no-repeat 0 0; float: left;}
+.pagina_agenda .hold > div > span.arrowR{margin-left: 7px;}
+.pagina_agenda .hold > div > span.arrowR > div{background: url(../../img/prog_evento/eventos_seta-cinzaD.png) no-repeat 0 0; float: right;}
+.pagina_agenda .hold > div > span:hover > div{background-position: 0 -9px;}
+.pagina_agenda .hold > div > span:hover a{color: #a1a1a1;}
+.pagina_agenda .hold > div > span p,
+.pagina_agenda .hold > div > span > div{float: right;}
+.pagina_agenda .hold > div > div{position: relative;}
+.pagina_agenda .hold > div > div{position: absolute; margin-top: -20px;}
+.pagina_agenda .hold > div > span.deactive{color: #a1a1a1;}
+.pagina_agenda .hold > div > span.deactive > div{background-position: 0 -9px;}
+
+.pagina_agenda .hold > div > a.desactive.arrowL > div,
+.pagina_agenda .hold > div > a.desactive.arrowR > div{background-position: 0 -9px; cursor: default;}
+.pagina_agenda .hold > div > a.desactive.arrowL p,
+.pagina_agenda .hold > div > a.desactive.arrowR p{color: #a1a1a1;}
+
+.pagina_agenda .hold > div > span.desactive.arrowL,
+.pagina_agenda .hold > div > span.desactive.arrowR{color: #a1a1a1;}
+.pagina_agenda .hold > div > span.desactive.arrowL > div,
+.pagina_agenda .hold > div > span.desactive.arrowR > div{background-position: 0 -9px;}
+.pagina_agenda .hold > div > span.arrowL > a div{width: 12px; height: 10px; margin: 0px 4px 0 4px; background: url(../../img/prog_evento/eventos_seta-cinzaE.png) no-repeat 0 0; float: left;}
+.pagina_agenda .hold > div > span.arrowR > a div{width: 12px; height: 10px; margin: 0px 4px 0 4px; background: url(../../img/prog_evento/eventos_seta-cinzaD.png) no-repeat 0 0; float: right;}
+.pagina_agenda .hold > div > span.arrowL:hover > a div{background-position: 0 -9px;}
+.pagina_agenda .hold > div > span.arrowR:hover > a div{background-position: 0 -9px;}
+.agenda .info .traco-registro{border-top: 3px solid;margin-top: -20px;padding-top: 15px;}
+
+.progEvento .pagina_eventos{margin-top: 20px;}
+
+/* <<< page agenda*/
+.progEvento .eventos .right_ .agenda{ float: left;margin-top: 10px;}
+.progEvento .eventos .event-agenda .date{position: relative;}
+.progEvento .eventos .event-agenda .date div {width: 88%;border-bottom: 1px solid #b7b7b7;height: 1px;position: absolute;top: 17px;right: 0;width: 74%;}
+.progEvento .eventos .event-agenda .date p{font-size: 16px;font-family: 'montserrat-regular';color: #797979;}
+.progEvento .eventos .event .date div {width: 77%;/*width: 88%;*/border-bottom: 1px solid #b7b7b7;height: 1px;position: absolute;top: 17px;right: 0;}
+.progEvento .eventos .event .date div.dupla-data {width: 50%;}
+.progEvento .eventos .right_ .agenda .info{min-height: 115px;}
+.progEvento .eventos .right_ .traco-registro-agenda{border-bottom: 1px solid;}
+.v-bottom hr{}
+/*.progEvento .eventos .right_ .agenda .info .hora-agenda{font-size: 0.7rem;padding: 0 0 10px 0;}*/
+.info .hora-agenda{
+    /*font-size: 0.7rem !important;*/
+    padding: 0 0 10px 0 !important;
+}
+.progEvento .eventos .right_ .agenda .info .title {padding-top: 4px;/*margin-bottom: 10px;*/}
+.progEvento .eventos .right_ .agenda .info .title p {font-family: 'montserrat-bold';text-transform: uppercase;line-height: 20px;}
+.progEvento .eventos .right_ .agenda .info .text p {font-family: 'opensans-regular';line-height: 20px;}
+/* <<< page agenda*/
+
+		/*ARTIGOS*/
+.news .dados_fatos .right_ .artigos_ .artigo.img .title p{margin-top: 8px; color: #797979;}
+.news .dados_fatos .right_ .artigos_ .artigo .download{padding: 20px 0;}
+.news .dados_fatos .right_ .artigos_ .artigo .download a{border: 1px solid #ACACAC;padding: 3px 20px;margin: 14px 5px;line-height: 200%;}
+.news .dados_fatos .right_ .artigos_ .artigo .download ul.dados-e-fatos{margin-top: 0;}
+.news .dados_fatos .right_ .artigos_ .artigo .download ul.dados-e-fatos[class*="block-grid-"] > li{padding: 0 0.625rem 1.05rem!important;}
+.news .dados_fatos .right_ .artigos_ .artigo .download .dados-e-fatos a.button.expand{background-color: transparent!important;border: 1px solid #ACACAC;padding: 0 20px;margin: 0;line-height: 200%;color: #b5b5b7;}
+.news .dados_fatos .right_ .artigos_ .artigo .download .dados-e-fatos a.button.expand:hover{background-color: transparent;color: #9b9b9e;}
+.news .dados_fatos .right_ .artigos_ .artigo .links p{margin: 0 10px;}
+.news .dados_fatos .right_ .artigos_ .artigo .links a,
+.news .dados_fatos .right_ .artigos_ .artigo .links p{float: left; color: #797979; font-family: 'montserrat-regular';
+	font-size: 12px; text-transform: uppercase; line-height: 18px;}
+.news .dados_fatos .right_ .artigos_ .artigo .links a,
+.links a{
+	border: 1px solid #ACACAC;
+	padding: 5px 15px;
+	margin: 5px;
+}
+.news .dados_fatos .right_ .artigos_ .artigo .links a:hover,
+.links a:hover{color: #b1b1b1;}
+.news .dados_fatos .right_ .artigos_ .artigo.img .saiba_mais p{color: #797979;}
+.news .dados_fatos .right_ .artigos_ .artigo.img .saiba_mais:hover p{color: #b1b1b1;}
+.news .dados_fatos .right_ .artigos_ .artigo.img .saiba_mais > div{background-position: 0 0;}
+.news .dados_fatos .right_ .artigos_ .artigo.img .saiba_mais:hover > div{ background-position: 0 -9px;}
+
+.news .galeria_evento .left_{width: 25%; float: left; margin-right: 1%;}
+.news .galeria_evento .left_ .title p{font-family: 'montserrat-bold'; color: #515151; font-size: 16px; text-transform: uppercase;}
+.news .galeria_evento .left_ .date{margin-bottom: 10px;}
+.news .galeria_evento .left_ .date p{font-family: 'montserrat-regular'; color: #a1a1a1; font-size: 14px;}
+.news .galeria_evento .left_ .text p{font-family: 'montserrat-regular'; color: #898989; font-size: 12px;}
+.news .galeria_evento .right_{width: 74%; display: inline-block;}
+
+/*DIGÃO*/
+.news .dados_fatos .right_ .artigos_ .dado .title p{margin-top: 8px; color: #797979;}
+
+/*///EXPERIENCIA DE VOAR///*/
+	/*VOAR + BRASIL*/
+.exp_de_voar .xp_hold{width: 100%;}
+.exp_de_voar .xp_hold .left_{width: 30%; float: left;}
+.exp_de_voar .xp_hold .left_ > img{max-width: 100%; margin: 20px 0 0 0; padding-bottom: 20px; border-bottom: 1px solid #d1d1d1;}
+.exp_de_voar .xp_hold .left_ .title p{font-family: 'montserrat-regular'; font-size: 16px; text-transform: uppercase; color: #797979; text-align: left; padding-bottom: 5px; border-bottom: 3px solid #b6b6b6; margin-bottom: 15px;}
+.exp_de_voar .xp_hold .left_ .text{margin-top: 15px; text-align: left;}
+.exp_de_voar .xp_hold .left_ .text p{font-family: 'opensans-regular'; font-size: 14px; color: #797979; line-height: 20px;}
+.exp_de_voar .xp_hold .right_{width: 67%; margin-left: 2.2%;display: inline-block;}
+/*.exp_de_voar .xp_hold .right_ .sound_{margin-top: 10px;}*/
+.exp_de_voar .xp_hold .right_ .sound_:not(:first-child){margin-top: 30px;}
+.exp_de_voar .xp_hold .right_ .sound_ .data{margin-bottom: 10px;}
+.exp_de_voar .xp_hold .right_ .sound_ .data p{font-family: 'montserrat-regular'; font-size: 14px; color: #b0b0b0;}
+.exp_de_voar .xp_hold .right_ .sound_ .data > div{width: 87%; height: 1px; background: #d6d6d6;float: right; margin-top: -5px;}
+/*.exp_de_voar .xp_hold .right_ .sound_ .title{margin: 5px 0 10px 0;}*/
+.exp_de_voar .xp_hold .right_ .sound_ .title{margin: 5px 0 0 0;}
+.exp_de_voar .xp_hold .right_ .sound_ .title p{font-family: 'montserrat-bold'; font-size: 16px; text-transform: uppercase; color: #797979;}
+.exp_de_voar .xp_hold .right_ .sound_ .info{ margin-bottom: 10px;}
+.exp_de_voar .xp_hold .right_ .sound_ .info p{font-family: 'opensans-regular'; font-size: 14px; color: #797979; line-height: 20px;}
+	/*TRANSPORTE DE ORGAOS*/
+		/*FIRST (IMGS)*/
+.exp_de_voar .orgaos .first{position: relative; margin-bottom: 60px;}
+.exp_de_voar .orgaos .first .title_ h2{font-size: 20px; font-family: 'montserrat-regular'; color: #797979;}
+.exp_de_voar .orgaos .first .title_{margin-bottom: 22px}
+
+.exp_de_voar .orgaos .inf{position: relative; margin-bottom: 20px;}
+.exp_de_voar .orgaos .inf .title h2{font-size: 20px; font-family: 'montserrat-regular'; color: #797979;}
+.exp_de_voar .orgaos .inf .title{margin-bottom: 26px}
+
+.exp_de_voar .orgaos .first .left_{display: inline-block; width: 40%; position: relative; min-height: 467px;}
+/*.exp_de_voar .orgaos .first .left_{display: inline-block; width: 40%; position: relative; min-height: 300px;}*/
+.exp_de_voar .orgaos .first .left_ img{max-width: 100%;margin: 0 auto;
+display: block;max-height: 467px;}
+
+.exp_de_voar .orgaos .first .left_ .seta_{position: absolute; top: 46%; width: 52px; height: 50px;}
+
+.exp_de_voar .orgaos .first .left_ .seta_#left{left: 10px;}
+.exp_de_voar .orgaos .first .left_ .seta_#left a > div{width: 100%; height: 100%; background: url(../../img/exp/nas-aeronaves_seta_L.png) no-repeat 0 -1px;}
+.exp_de_voar .orgaos .first .left_ .seta_#right{right: 10px;}
+.exp_de_voar .orgaos .first .left_ .seta_#right a > div{width: 100%; height: 100%; background: url(../../img/exp/nas-aeronaves_seta.png) no-repeat 0 -1px;}
+.exp_de_voar .orgaos .first .left_ .seta_#left:hover a > div,
+.exp_de_voar .orgaos .first .left_ .seta_#right:hover a > div{background-position: 0 -52px;}
+
+.exp_de_voar .orgaos .first .right_{position: absolute; width: 57%; margin-left: 2%; bottom: 0; right: 0; border-bottom: 5px solid #fed712;}
+.exp_de_voar .orgaos .first .right_ .text p{font-family: 'opensans-regular'; font-size: 14px; color: #797979; line-height: 20px;}
+.exp_de_voar .orgaos .todos{margin: 20px 0 5px 0; height: 20px;}
+.exp_de_voar .orgaos .todos a p{font-size: 12px; color: #797979; float: left; text-transform: uppercase;}
+.exp_de_voar .orgaos .todos a:hover p{color: #999999;}
+.exp_de_voar .orgaos .todos a div{width: 12px; height: 10px; float: left;
+	background: url(../../img/prog_evento/eventos_seta-cinzaD.png) no-repeat 0 0; margin: 4px 0 0 4px;}
+.exp_de_voar .orgaos .todos a:hover div{background-position: 0 -9px;}
+		/*SECOND (VIDEOS)*/
+.exp_de_voar .orgaos .second{background: #ebebeb; padding: 20px 0 20px 0; margin-bottom: 40px;}
+.exp_de_voar .orgaos .second .left_{border-top: 5px solid #fed712; height: 348px; margin-left: 1%; width: 30%; position: relative;}
+.exp_de_voar .orgaos .second .left_ > div{ position: absolute; bottom: 0}
+.exp_de_voar .orgaos .second .left_ .text p{font-family: 'opensans-regular'; font-size: 14px; color: #797979; line-height: 20px;}
+.exp_de_voar .orgaos .second .left_ .todos{ padding-top: 5px; border-top: 1px solid #d1d1d1;}
+.exp_de_voar .orgaos .second .right_{width: 69%;}
+	/*GUIA DO PASSAGEIRO*/
+		/*ICONES*/
+.exp_de_voar .passageiros{width: 99.4%;}
+.exp_de_voar .passageiros .element{border-bottom: 1px solid #ccc; margin-bottom: 20px; padding-bottom: 10px;}
+.exp_de_voar .passageiros .element:last-child{border-bottom: 0;}
+.exp_de_voar .passageiros .element > div{margin-left: 0; margin-right: 0;}
+.exp_de_voar .passageiros .icone{width: 100%; height: 100%; position: relative;}
+.exp_de_voar .passageiros .icone img{max-width: 100%; max-height: 100%;}
+.exp_de_voar .passageiros .icone .ball{position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+	background: url(../../img/exp/guia-do-passageiro_-hover-icone.png) no-repeat center center; visibility: hidden; display: table;
+	height: 214px;}
+.exp_de_voar .passageiros .icone:hover .ball{visibility: visible;}
+.exp_de_voar .passageiros .icone .ball p{width: 100%; font-family: 'montserrat-bold'; font-size: 16px; color: #4f4f4f; text-transform: uppercase;display: table-cell;
+   text-align: center;
+   vertical-align: middle;}
+.exp_de_voar .passageiros .icone.active .triangle{position: absolute; bottom: -1px; left: 0; width: 100%; height: 20px;
+	background:  url(../../img/exp/guia-do-passageiro_seleto-ativo.png) no-repeat center 0;}
+		/*CONTEUDO*/
+.exp_de_voar .passageiros .conteudo{border-top: 3px solid #fed712; margin-bottom: 30px;}
+.exp_de_voar .passageiros .conteudo .title{ margin-top: 10px;}
+.exp_de_voar .passageiros .conteudo .title p{font-family: 'montserrat-regular'; font-size: 16px; color: #797979; text-transform: uppercase;}
+.exp_de_voar .passageiros .conteudo .text{ margin: 10px 0 10px 0; }
+.exp_de_voar .passageiros .conteudo .text p{font-family: 'opensans-regular'; font-size: 14px; color: #797979; line-height: 20px;}
+.exp_de_voar .passageiros .conteudo .social{margin-top: 20px;}
+.exp_de_voar .passageiros .conteudo .social > div{float: left;}
+.exp_de_voar .passageiros .conteudo .social #bt_fb{margin-right: 35px;}
+.exp_de_voar .passageiros .content ul{list-style: disc; margin-left: 20px;}
+.exp_de_voar .passageiros .content ul li{font-family: 'opensans-regular'; font-size: 14px; color: #797979; line-height: 20px;}
+/*///CLUBE ABEAR   =  NEWS_VIDEOS///*/
+.exp_de_voar .clube .text{ margin: 10px 0 10px 0;}
+.exp_de_voar .clube .text p{font-family: 'opensans-regular'; font-size: 14px; color: #797979; line-height: 20px;}
+.exp_de_voar .clube{padding-bottom: 10px; margin-bottom: 15px; border-bottom: 1px solid #aeaeae;}
+
+/*///CONTATO///*/
+.contato .left_{border-top: 3px solid #fed712; padding: 0 10px 30px 0; margin-left: 10px; width: 210px;}
+.contato .left_ p.title{font-family: 'montserrat-bold'; font-size: 18px; color: #797979; text-transform: uppercase; margin-top: 10px;}
+.contato .left_ p.sub-title{font-family: 'montserrat-regular'; font-size: 14px; color: #797979; line-height: 20px; margin-top: 20px;}
+.contato .left_ p.content{font-family: 'opensans-regular'; font-size: 14px; color: #797979;}
+.contato .right_{border-top: 3px solid #fed712; padding: 20px 0; margin-left: 2%; width: 64.4%;}
+.contato .right_ input{height: 30px; background: #ebebeb; border: none; border-radius: 5px; margin: 10px 0 0 0 !important;
+	color: #797979; font-size: 12px; font-family:'montserrat-regular';  box-shadow: none; -moz-box-shadow: none; -webkit-box-shadow: none;}
+.contato .right_ textarea{min-height: 100px; max-height: 100px; min-width: 618px; max-width: 618px; background: #ebebeb;
+	border: none; color: #797979; font-family:'montserrat-regular'; border-radius: 5px;  box-shadow: none; -moz-box-shadow: none; -webkit-box-shadow: none;}
+.contato button{float: right; width: 120px; border-radius: 5px; height: 25px; padding-top: 4px; background: #ebebeb; font-family: 'montserrat-regular';}
+.contato button:hover{-webkit-transition: none; -moz-transition: none; transition: none; background: #c1c1c1;}
+.contato .input.checkbox{margin-bottom: 10px; padding-left: 5px; position: relative;}
+.contato .input.checkbox input{position: absolute; margin: -6px 0 0 0 !important; cursor: pointer;}
+.contato .input.checkbox label{position: relative; margin-left: 20px; color: #898989; cursor: default;}
+
+/*TEXTO DE INTRODUCÃO*/
+.text_intro{padding-bottom: 20px; border-bottom: 3px solid #fed712; margin-bottom: 10px; width: 99.4%;}
+.text_intro p{font-family: 'opensans-regular'; font-size: 14px; color: #797979;}
+.no-bb .text_intro{border-bottom: 0;}
+
+#mais_lidas .todos{margin-bottom: 20px;}
+#mais_lidas .todos a p{font-size: 12px; color: #797979; float: left; text-transform: uppercase;}
+#mais_lidas .todos a:hover p{color: #999999;}
+#mais_lidas .todos a div{width: 12px; height: 10px; float: left; background: url(../../img/prog_evento/eventos_seta-cinzaD.png) no-repeat 0 0; margin: 4px 0 0 4px;}
+#mais_lidas .todos a:hover div{background-position: 0 -9px;}
+
+#img_info_div{position: absolute; background: #fed712; width: 220px; border-radius: 20px 20px 20px 0; padding: 20px; display: none;
+-webkit-box-shadow: 0px 7px 11px 0px rgba(50, 50, 50, 0.6);
+-moz-box-shadow:    0px 7px 11px 0px rgba(50, 50, 50, 0.6);
+box-shadow:         0px 7px 11px 0px rgba(50, 50, 50, 0.6);
+z-index: 20;}
+
+/*#img_info_div{position: absolute; background: #f3f3f3; width: 220px; height: 150px;padding: 20px; display: none;
+-webkit-box-shadow: 0px 7px 11px 0px rgba(50, 50, 50, 0.6);
+-moz-box-shadow:    0px 7px 11px 0px rgba(50, 50, 50, 0.6);
+box-shadow:         0px 7px 11px 0px rgba(50, 50, 50, 0.6); border-top: 3px solid #fed712; border-bottom: 3px solid #ccc;}*/
+
+#img_info_div .title{margin-bottom: 15px;}
+#img_info_div .title p{font-size: 18px; color: #6e6e6e; line-height: 24px; font-family: 'montserrat-regular';}
+#img_info_div .text p{font-size: 12px; color: #6e6e6e; line-height: 20px; font-family: 'montserrat-regular';}
+
+.artigo .social_share{height: 20px; margin-top: 10px;}
+
+a[share-pj="facebook"],
+a[share-pj="twitter"],
+a[share-pj="g-plus"],
+a[share-pj="pinterest"],
+a[modal-pj='.modal_mail']{float: left;}
+
+a[share-pj="facebook"] > div{width: 18px; height: 18px; background: url(../../img/index/face.png) no-repeat center center; margin: 0 5px;}
+a[share-pj="twitter"] > div{width: 18px; height: 18px; background: url(../../img/index/twi.png) no-repeat center center; margin: 0 5px;}
+a[share-pj="g-plus"] > div{width: 18px; height: 18px; background: url(../../img/index/plus.png) no-repeat center center; margin: 0 5px;}
+a[share-pj="pinterest"] > div{width: 18px; height: 18px; background: url(../../img/index/pin.png) no-repeat center center; margin: 0 5px;}
+a[modal-pj='.modal_mail'] > div{width: 18px; height: 18px; background: url(../../img/index/mail.png) no-repeat center center; margin: 0 5px;}
+
+.modal_mail{min-height: 480px;position: fixed; background: #e5e5e5; display: none; left: 50%; margin: -240px 0 0 -300px; top: 50%; padding: 20px 45px; border-radius: 5px; width: 600px;}
+.modal_mail #share_mail_form > div{margin-bottom: 20px;}
+.modal_mail #share_mail_form textarea{width: 100%; max-width: 100%; min-height: 150px; padding-top: 6px;}
+.modal_mail .title{margin-bottom: 20px;}
+.modal_mail .title p{font-size: 18px; color: #6e6e6e; line-height: 24px; font-family: 'montserrat-regular';}
+.modal_mail .loader{margin-top: 25%; display: none;}
+.modal_mail .close_{width: 30px; height: 30px; position: absolute; right: 20px; top: 20px; border-radius: 15px; background: none; cursor: pointer;}
+.modal_mail .close_:hover{ background: #909093; }
+.modal_mail .close_ p{font-size: 22px; font-family: 'montserrat-regular'; position: absolute; margin-left: 8px; margin-top: -1px; color: #909093;}
+.modal_mail .close_:hover p{color: white; }
+
+.orbit_aeronaves img{max-height: 150px;}
+
+.contato .loader{ display: none;}
+
+.artigo.result{margin-bottom: 20px;}
+.artigo.result .title{margin: 15px 0 10px 0;}
+.artigo.result .title p{font-family: 'montserrat-bold'; text-transform: uppercase; line-height: 20px; font-size: 14px; color: #797979;}
+/*.artigo .title p{font-family: 'montserrat-bold'; text-transform: uppercase; line-height: 20px; font-size: 14px;}*/
+
+/*CLASSES DE AJUDA*/
+.mL5{margin-left: 15px !important;}
+.mTop10{margin-top: 10px;}
+.mBot10{margin-bottom: 10px !important;}
+.mBot30{margin-bottom: 30px;}
+.mBT10{margin: 10px 0 10px 0;}
+.mBot0{margin-bottom: 0;}
+
+/* padding 20 */
+.padding-capa-galeria{padding-right: 20px;}
+/* padding 20 */
+
+.noBorderBot{border-bottom: 0 !important;}
+/*.bBot{border-bottom: 1px solid #aeaeae;}*/
+.bTop{border-top: 1px solid #d1d1d1;}
+
+.pTop20{padding-top: 20px;}
+.pTop5{padding-top: 5px;}
+.pTop10{padding-top: 10px;}
+.pBot10{padding-bottom: 10px;}
+.pBot20{padding-bottom: 20px;}
+.w100{width: 100%;}
+
+.spacer{width: 100%; height: 30px;}
+
+.bgWhite{background: white;}
+
+/*DIGÃO*/
+.news .artigo.img .dados-e-fatos{background-color: #dedede;min-height: 200px;-webkit-border-radius: 5px;-moz-border-radius: 5px;border-radius: 5px;width: 100%;padding: 2px 15px;}
+/*.news .artigo.img .dados-e-fatos-txt{background-color: #dedede;min-height: 200px;-webkit-border-radius: 5px;-moz-border-radius: 5px;border-radius: 5px;width: 100%;padding: 2px 15px;}*/
+.news .dados_fatos .right_ .artigos_ .dado_{margin-bottom: 20px;}
+.news .dados_fatos .right_ .artigos_ .arquivos .dados-e-fatos{background-color: #dedede;-webkit-border-radius: 5px;-moz-border-radius: 5px;border-radius: 5px;min-height: 60px;margin-top: -20px;margin-bottom: 20px;}
+.news .dados_fatos .right_ .artigos_ .arquivos .dados-e-fatos .links .download p{padding: 5px 15px;margin: 5px;}
+.dados-e-fatos.margin-left-9{margin-left: -9px;width: 103% !important;}
+.news .right_ .artigo .dado_ .imagem{width: 300px;max-width: 33%;}
+.news .dados_fatos .right_ .artigos_ .artigo .download{padding: 12px 0}
+.news .dados_fatos .right_ .artigos_ .artigo .download p{padding-top: 5px;}
+
+/*DIGAO*/
+	.pad{ padding-left: 53px; padding-top: 16px; }
+
+	.img_evento{
+		width: 240px;
+		float: left;
+	}
+	.img_evento .width-eventos{
+		width: 100% !important;
+	}
+	.img-destaque-evento{
+		height: 400px;
+		background-size: 100%;
+		background-position: top center;
+	}
+	.tam{
+		background-size: 100%;
+		background-position: center center;
+		background-repeat: no-repeat;
+		height: 145px;
+		-webkit-border-radius: 5px;
+		-moz-border-radius: 5px;
+		border-radius: 5px;
+	}
+	.flex-prev.flex-disabled{pointer-events: none;}
+	.flex-next.flex-disabled{pointer-events: none;}
+
+	.news .video_visualizar .info .prev_next .next_.deactive{visibility: hidden;}
+	.news .video_visualizar .info .prev_next .prev_.deactive{visibility: hidden;}
+	.row.conheca, .row.progEvento, .row.news, .row.dados_fatos, .row.exp_de_voar, .row.contato{min-height: 520px;}
+	.news .artigo.img .imagem{width: 224px;height: 200px;background-repeat: no-repeat;background-position: center center;background-size: 100%;float: left;margin-bottom: 10px;border: 4px solid #dedede;-webkit-border-radius: 2px;-moz-border-radius: 2px;border-radius: 2px;}
+	.news .artigo.img .imagem img{width: 191px;height: 196px;max-width: 191px;}
+	.margin-top40{margin-top: 40px;}
+	.margin-bootom20{margin-bottom: 20px;}
+	.social_share{padding: 10px 0;}
+/*DIGAO*/
+
+
+
+
+
+/* PIPO */
+#carous.flexslider {
+	background-color: #CCC;
+	padding: 0 10px;
+}
+.flex-direction-nav .flex-next {
+	right: -25px !important;
+}
+.flex-direction-nav .flex-prev {
+	left: -25px !important;
+}
+
+
+div.agenda[data-equalizer-watch] hr {
+	bottom: 0;
+	float: left;
+	position: absolute;
+	width: 93%;
+	text-align: center;
+	margin: 0 auto;
+}
+/* PIPO */
+
+
+
+
+
+
+/* RESPONSIVILIDADE */
+
+@media only screen and (max-width : 1024px){
+
+	body > div{padding: 0 20px;}
+	.aHeader .head .menu .hold p{font-size: 11px;}
+	.index_bannerOrbit .slick-dots{width: 95.7%;}
+	.conheca .estrutura .element .eRight .logos > div{background-size: 100% !important; width: 120px; height: 120px;}
+	.titulo_grande .title{width: 90%;}
+	.news .publi .hold{width: 100%;}
+	.news .publi .hold > div{width: 130px; height: 130px;}
+	.conheca .estrutura .element .eRight .pessoas > div{width: 180px; height: 180px;}
+	.conheca .fundadores .empresa .info,
+	.conheca .setor_aereo .empresa .info{width: 630px;}
+	.progEvento .video_big .video_ .vd{width: 410px;}
+	.progEvento .video_small .video_ iframe{width: 200px;}
+	.progEvento .fotos_orbit iframe{width: 340px;}
+	.progEvento .fotos_orbit .orbit_{width: 470px; margin-top: 45px; left: 50%; margin-left: -235px; margin-bottom: 20px;}
+	.progEvento .fotos_orbit .elementToOrbit .img{width: 80px; height: 180px;}
+	/*.paginator .hold{margin-left: 175px;}*/
+	.exp_de_voar .orgaos .second .right_ iframe{width: 575px;}
+	/*.foto_modal{width: 90%; margin-left: -400px;}*/
+	.news .imprensa_hold .gal_vid .videos iframe{width: 320px;}
+	/*.news .imprensa_hold .gal_vid .imagens .paginator .hold{margin-left: 140px;}*/
+	/*.news .imprensa_hold .right_ .paginator .hold{margin-left: 190px;}*/
+	.news .naMidia_hold .left_ .videos iframe{width: 235px;}
+	.news .associados_hold .right_ #videos_ iframe{width: 230px;}
+	.news .video_visualizar iframe{width: 560px;}
+	.news .video_visualizar .info{width: 240px;}
+	.news .video_small .video_{width: 200px;}
+	.news .video_small iframe{width: 200px;}
+	/*.news .paginator .hold{margin-left: 290px;}*/
+	.contato .right_ textarea{min-width: initial; max-width: none;}
+	/*.news .artigos .right_ .paginator .hold,
+	.news .naMidia_hold .right_ .paginator .hold{margin-left: 200px;}*/
+	.progEvento .fotos_orbit > iframe{float: left; margin: 20px 0 0 12%; width: 75%; height: 315px;}
+	.pad{ padding-left: 33px; padding-top: 16px; }
+	.progEvento .eventos .evento_main.interna .right_{margin-left: 18%;}
+	.tam{height: 127px !important;}
+	/*.content-video .video_info{margin-top: 60%;}*/
+
+}
+
+@media only screen and (max-width : 900px){
+
+	body > div{padding: 0 20px;}
+	/*.foto_modal .foto{background-size: 100% !important;}*/
+	.bg_branco_fullRight{height: 98px;}
+	.aHeader .head{width: auto; height: 70%}
+	.aHeader .head .top{height: 49%;}
+	.aHeader .head .menu .hold p{font-size: 10px;}
+	.aHeader .head .menu .hold > li{padding: 5px 5px 0 5px;}
+/*	.aHeader .head .menu .hold > li > ul{margin-top: 15px;}*/
+	.index_bannerOrbit .slick-dots{/*width: 93.8%;*/}
+	.conheca .estrutura .element .eRight .logos > div{background-size: 100% !important; width: 22%;
+height: 90%;}
+	.conheca .estrutura .element .eRight .logos{height: 120px;}
+	.conheca .estrutura .element .eLeft .text p,
+	.conheca .estrutura .element .eRight .info_pessoas .infoP_text p, .conheca .estrutura .element .eRight .info_pessoas2 .infoP_text p{font-size: 12px; line-height: 18px;}
+	.titulo_grande .title{width: 88%;}
+	.titulo_grande .quad{width: 11%}
+	.titulo_grande .title p{font-size: 26px;}
+	.conheca .paragrafo.mL170{margin-left: 130px;}
+	.conheca .paragrafo img.img_sobre{margin-left: -130px;}
+	.conheca .estrutura .element .eRight{min-height: 310px;}
+	.conheca .estrutura .element .eRight .pessoas{height: 150px;}
+	.conheca .estrutura .element .eRight .pessoas > div{width: 135px; height: 135px;}
+	.conheca .fundadores .empresa .info,
+	.conheca .setor_aereo .empresa .info{width: 420px;}
+	.conheca .fundadores .sub-title > div{width: 69%;}
+	.progEvento .video_big .video_ .vd{width: 310px; height: 230px;}
+	.progEvento .video_small .video_{margin-left: 52px;}
+	.progEvento .video_small .video_:first-child{margin-left: 52px;}
+	.progEvento .video_small .video_ iframe{width: 230px;}
+	/*.progEvento .fotos_orbit iframe{width: 400px; height: 250px; float: none;}*/
+	.progEvento .fotos_orbit .orbit_{margin-bottom: 50px;}
+	.progEvento .fotos_orbit .elementToOrbit .img{width: 81px; height: 180px; margin-right: 4%;}
+	/*.progEvento .eventos .right_ .event .date div{width: 65%;}*/
+	/*.paginator .hold{margin-left: 90px;}*/
+	.exp_de_voar .orgaos .second .right_ iframe{width: 438px; height: 280px;}
+	.exp_de_voar .orgaos .second .left_{height: 270px;}
+	.exp_de_voar .clube .text p{font-size: 13px; line-height: 14px;}
+	/*.foto_modal{width: 90%; margin-left: -300px;}*/
+	.news .publi .hold{width: 100%;}
+	.news .publi .hold > div{width: 110px; height: 110px;}
+	.news .imprensa_hold .left_ .contato .info p{font-size: 12px;}
+	.news .imprensa_hold .gal_vid .videos iframe{width: 250px;height: 180px;}
+	/*.news .imprensa_hold .gal_vid .imagens .paginator .hold{margin-left: 65px;}*/
+	/*.news .imprensa_hold .right_ .paginator .hold{margin-left: 110px;}*/
+	.news .naMidia_hold .left_ .videos iframe{width: 180px; height: 140px;}
+	.news .associados_hold .right_ #videos_ iframe{width: 175px; height: 130px;}
+	.news .associados_hold .right_ #mais_lidas .noticia_ a .seta{float: left; margin-top: 6px; display: block; top: 0;}
+	.news .associados_hold .right_ #mais_lidas .noticia_ a .conteudo{width: 84%;}
+	.news .associados_hold .right_ #bt_fb{min-height: 350px;}
+	.news .associados_hold .right_ #bt_fb iframe{width: 180px; height: 290px;}
+	.news .video_visualizar iframe{width: 380px; height: 230px;}
+	.news .video_visualizar .info{width: 240px;}
+	.news .video_small .video_, .news .video_small .video_:first-child{width:300px; min-height: 250px; margin-left: 20px;}
+	.news .video_small iframe{width: 300px; height: 210px;}
+	/*.news .video_small .video_{width: 240px; min-height: 215px; margin-left: 45px; display: inline-block; float: none;}
+	.news .video_small iframe{width: 240px; height: 170px;}*/
+	/*.news .paginator .hold{margin-left: 200px;}*/
+	.news .artigo.date .top > div{width: 83%;}
+	.contato .right_ textarea{min-width: initial; max-width: none;}
+	.colunaIndex .colRight .agenda_hold .index_agendaOrbit .agenda_elemento{margin-left: 13%;}
+	.colunaIndex .colRight .agenda_hold .index_agendaOrbit .agenda_elemento .texto{width: 70%;margin-left: 30px;}
+	/*.colunaIndex .colRight .video_hold iframe{width: 300px;height: 230px;}*/
+	/*.news .artigos .right_ .paginator .hold{margin-left: 135px;}*/
+	/*.news .naMidia_hold .right_ .paginator .hold{margin-left: 100px;}*/
+	.foto_modal{width: 80%; margin-left: 10%; left: 0;}
+	.foto_modal .bot .next_, .foto_modal .bot .prev_{width: 25%;}
+	.foto_modal .bot .first{width: 46%;}
+	.fb-like-box{width: 100%; overflow: hidden;}
+	.exp_de_voar .orgaos .first .right_{width: 100%;margin-top: 10px; position: static;}
+	.exp_de_voar .orgaos .first .left_{ width: 100%;}
+	.exp_de_voar .orgaos .first .left_ img{margin: 0 auto; display: block; max-width: 100%;}
+	.aHeader .head .top .top_hold .search{display: none;}
+	.exp_de_voar .passageiros .icone .ball{
+		height: 155px;
+		background-size: 100%;
+	}
+	.pad{ padding-left: 10px; padding-top: 16px; }
+	.galeria_ .info{border-top: 3px solid #ffd503; margin-top: 30px;}
+	.index_bannerOrbit .slick-dots{width: 94.7%;}
+	.progEvento .eventos .evento_amarelo{min-height: 170px;}
+	.news .artigo.img .dados-e-fatos{width: 64%;}
+	/*.progEvento .eventos .event .date div{width: 86%;}*/
+	.progEvento .eventos .event .date div{width: 70%;}
+        .progEvento .eventos .event .date div.dupla-data {width: 53%;}
+	.progEvento .eventos .right_ .event.img .date div{width: 87%;}
+	.progEvento .eventos .evento_main.interna .right_{margin-left: 21%;}
+	.news .dados_fatos .right_ .artigos_ .artigo .download a{padding: 3px 15px}
+
+}
+@media only screen and (max-width : 900px){
+	.imprensa_hold.mBot30 .left_{width: 100%;}
+	.news .imprensa_hold .left_.divisor-amarelo{border-top: 3px solid #ffd503; width: 100%; /*margin: 10px 0 0 0;*/}
+	.news .imprensa_hold .right_#divisor-NR-index{border-top: 3px solid #ffd503; width: 100%; margin: 10px 0 0 0;}
+	/*.news .imprensa_hold .right_{border-top: 3px solid #ffd503; width: 100%; margin: 10px 0 0 0;}*/
+	.news .artigo.img .dados-e-fatos{width: 100%;}
+	.progEvento .eventos .right_ .event.img .date div{width: 87%;}
+}
+@media only screen and (max-width : 800px){
+	/*.progEvento .eventos .event .date div{width: 85%;}*/
+	.progEvento .eventos .event .date div{width: 67%;}
+        .progEvento .eventos .event .date div.dupla-data {width: 47%;}
+	.progEvento .eventos .right_ .event.img .date div{width: 85%;}
+	.progEvento .eventos .evento_main.interna .right_{margin-left: 24%;}
+	.progEvento .eventos .right_ .event .date div{width: 65%;}
+	.tam{height: 105px !important;}
+	.news .dados_fatos .right_ .artigos_ .artigo .download a{padding: 3px 5px;}
+
+
+	.progEvento .eventos .right_ .arquivos a.button{font-size: 12px;margin-top: 19px;}
+	.progEvento .eventos .right_ .arquivos p{font-size: 11px}
+}
+@media only screen and (max-width : 700px){
+	.bg_branco_fullRight{height: 88px;}
+	/*.foto_modal{margin-left: -260px;}
+	.foto_modal .bot .first{width: 53%;}
+	.foto_modal .bot .next_, .foto_modal .bot .prev_{width: 21%;}
+	.foto_modal .info p.text{font-size: 12px; line-height: 15px;}*/
+	.aHeader{margin-bottom: 30px; height: 160px;}
+	.aHeader .head{height: 55%;}
+	.aHeader .head .top .top_hold > div{margin: 0 5px 0 5px;}
+	.aHeader .head .top .top_hold .language{width: 60px;}
+	.aHeader .head .top .top_hold .language > div p{margin: 0 5px 0 5px;}
+	.aHeader .head .top .top_hold .language > div a{font-size: 10px;}
+	.aHeader .head .top .top_hold .search > div form > div{margin-right: 5px;}
+	.aHeader .head .top .top_hold .search > div form > div input{width: 80px;}
+	.aHeader .head .top .top_hold .social a{margin: 15px -2px 0 0px;}
+	.aHeader .head .menu .hold{display: none;}
+	.aHeader .top-bar{display: block; margin-top: -22px; z-index: 8;}
+	.titulo_grande .title{width: 85%;}
+	.contato .left_ p.content{font-size: 12px;}
+	.conheca .paragrafo.mL170{margin-left: 100px;}
+	.conheca .paragrafo img.img_sobre{max-width: 80%; margin-left: -100px;}
+	.conheca .estrutura .element.loggo{min-height: 400px;}
+	.conheca .estrutura .element .eRight .logos{height: 80px;}
+	.conheca .estrutura .element .eRight .logos > div{width: 75px; height: 75px;}
+	.conheca .estrutura .element .eRight .pessoas{height: 125px;}
+	.conheca .estrutura .element .eRight .pessoas > div{width: 110px; height: 110px;}
+	.conheca .estrutura .element .eLeft .text p{font-size: 12px;}
+	.conheca .estrutura .element .eRight .info p{font-size: 12px;}
+	.conheca .estrutura .element .eRight .info_pessoas p.infoP_title{font-size: 16px;}
+	.conheca .fundadores .empresa .logo{width: 150px;}
+	.conheca .fundadores .empresa .info,
+	.conheca .setor_aereo .empresa .info{width: 370px;}
+	.conheca .fundadores .sub-title > div{width: 62%;}
+	.conheca .setor_aereo .empresa .logo{width: 150px; }
+	.progEvento .video_big .video_ .vd{width: 530px; height: 340px;}
+	/*.progEvento .video_big{min-height: 900px;}*/
+	.progEvento .video_small .video_,
+	.progEvento .video_small .video_:first-child{margin-left: 25px;}
+	.progEvento .eventos .right_ .event .info p{font-size: 12px;}
+	/*.progEvento .eventos .right_ .event .date div{width: 58%;}*/
+	.progEvento .eventos .evento_main .left_ .mes p{font-size: 18px;}
+	.exp_de_voar .xp_hold .left_ .text p{font-size: 12px; line-height: 15px;}
+	.exp_de_voar .orgaos .second .left_ .text p,
+	.exp_de_voar .orgaos .first .right_ .text p{font-size: 12px; line-height: 14px;}
+	.exp_de_voar .orgaos .second .right_ iframe{width: 370px; height: 240px;}
+	.exp_de_voar .orgaos .second .left_{height: 235px;}
+	.exp_de_voar .orgaos .first .right_{width: 100%;margin-top: 40px;}
+	.exp_de_voar .orgaos .first .left_{width: 100%;}
+	/*.news .paginator .hold{margin-left: 150px;}*/
+	.news .imprensa_hold .left_ > .cargo p{font-size: 10px;}
+	.news .imprensa_hold .left_ .contato .info p{font-size: 10px;}
+	.news .imprensa_hold .gal_vid .videos{width: 100%; border-bottom: 0;}
+	.news .imprensa_hold .gal_vid .videos iframe{width: 440px; height: 300px; margin-left: 60px;}
+	.news .imprensa_hold .gal_vid .videos .video_info{margin-top: 10px;}
+	.news .imprensa_hold .gal_vid .imagens{width: 100%; margin: 10px 0 0 0;}
+	/*.news .imprensa_hold .gal_vid .imagens .paginator .hold{margin-left: 140px;}*/
+	.news .imprensa_hold .left_{width: 100%;}
+	/*.news .imprensa_hold .right_{border-top: 3px solid #ffd503; width: 100%; margin: 10px 0 0 0;}*/
+	.news .imprensa_hold .gal_vid .videos .top{margin-bottom: 10px;}
+	.news .artigos .left_{width: 100%;}
+	.news .artigos .right_{width: 100%; border-top: 3px solid #ffd503;}
+	.news .publi .hold > div{width: 95px; height: 95px;}
+	.news .naMidia_hold .left_{width: 100%;}
+	.news .naMidia_hold .left_ .videos{border-bottom: 0;}
+	.news .naMidia_hold .left_ .videos iframe{width: 400px; height: 270px; margin-left: 75px;}
+	.news .naMidia_hold .right_{width: 100%; margin-left: 0; border-top: 3px solid #ffd503; margin-top: 20px;}
+	.news .associados_hold .left_{width: 100%;}
+	.news .associados_hold .right_{width: 100%; float: none; margin-right: 0; background: none;}
+	.news .associados_hold .right_ > div{width: 49%; float: left; margin: 0; min-height: 350px;}
+	.news .associados_hold .right_ > div:nth-child(2n){margin-left: 1%;}
+	.news .associados_hold .right_ #videos_{margin-top: 0; border-bottom: 0;}
+	.news .associados_hold .right_ #videos_ iframe{width: 268px; height: 200px;}
+	.titulo_grande .title p{font-size: 20px; margin-top: 30px;}
+	.news .video_visualizar iframe{width: 545px; height: 325px;}
+	.news .video_visualizar .info{width: 100%; margin-left: 0; padding: 0; margin-top: 20px; border-top: 0;}
+	.news .video_small iframe{width: 240px; height: 175px;}
+	.news .video_small .video_,
+	.news .video_small .video_:first-child{width: 240px; margin-left: 16px;}
+	.news .video_small:first-child{border-top: 3px solid #ffd503;}
+	.colunaIndex .colLeft .news_hold .news .noticia .noti_hold{min-height: 90px;}
+	.colunaIndex > div{width: 100%;}
+	/*.colunaIndex .colRight .video_hold iframe{width: 450px; height: 280px; margin-left: 40px;}*/
+	.index_videoOrbit{margin-left: auto; margin-right: auto;}
+	/*.news .naMidia_hold .right_ .paginator .hold{margin-left: 150px;}*/
+	/*.galeria_ .videos_hold .single > div{display: block; width: 100%; margin-top: 15px;}
+	.galeria_ .videos_hold .single > div:last-child{float: none;}*/
+	.galeria_ .videos_hold .single .info .todos{bottom: 170px;}
+	.news .dados_fatos .left_{width: 100%; float: none;}
+	.news .dados_fatos .right_{width: 100%; margin-left: 0; display: block;}
+	.foto_modal{min-height: 350px;}
+	.foto_modal .bot .next_, .foto_modal .bot .prev_{width: 48%;}
+	.foto_modal .bot .first{width: 0;}
+	.foto_modal .foto{background-size: 100%; min-height: 350px;}
+	.news .galeria_news > div > div{/*margin-right: 5px;*/}
+	.associa_Rbar{display: none;}
+	.news .galeria_evento .left_{width: 100%; float: none; margin-right: 0; padding-bottom: 10px; border-bottom: 3px solid #fed712; margin-bottom: 10px;}
+	.news .galeria_evento .right_{width: 100%; display: block;}
+	.news .galeria_evento .left_ img{max-width: 200px;}
+	.exp_de_voar .orgaos .first .left_ img{
+		max-height: 660px;
+	}
+	.index_bannerOrbit .slick-dots{width: 93.5%;}
+	.progEvento .eventos .evento_amarelo{min-height: 180px;}
+	.contato .left_{width: 100%;}
+	.contato .right_{width: 100%;}
+	/*.progEvento .eventos .event .date div{width: 83%;}*/
+	.progEvento .eventos .event .date div{width: 62%;}
+        .progEvento .eventos .event .date div.dupla-data {width: 40%;}
+	.progEvento .eventos .right_ .event.img .date div{width: 82%;}
+	.progEvento .eventos .evento_main.interna .right_{margin-left: 26%;}
+	.progEvento .eventos .right_ .event .date div{width: 59%;}
+	.tam{height: 83px !important;}
+	/* >>> page agenda*/
+	.progEvento .eventos .event-agenda .date div{width: 71%;}
+	/* <<< page agenda*/
+	.news .dados_fatos .right_ .artigos_ .artigo .download a{padding: 2px 20px;}
+}
+
+@media only screen and (max-width : 640px){
+	/*.news .artigo.img .imagem{margin: 0 35%;}*/
+	.news .right_ .artigo .dado_ .imagem{max-width: 100%;margin: 0 28%;margin-bottom: 10px;height: 327px;}
+	.progEvento .eventos .right_ .event.img .date div{width: 81%;}
+	.progEvento .eventos .evento_main.interna .right_{margin-left: 28%;}
+	.progEvento .eventos .right_ .event .date div{width: 57%;}
+	.tam{height: 123px !important;margin-bottom: 20px;width: 70%;}
+	.content-video .video_info{height: 0;}
+	.content-video .video_info p.desc{margin-bottom: 10px;}
+	.content-video .video_info{height: 100% !important;margin-top: 0;}
+	.content-video .traco.no-border{border: 0px;}
+	/* >>> page agenda*/
+	.progEvento .eventos .event-agenda .date div{width: 68%;}
+	/* <<< page agenda*/
+}
+
+
+@media only screen  and (max-width : 600px){
+	.aHeader .head .top .top_hold .search{margin-top: 40px; margin-left: 25px;}
+	.titulo_grande .title{width: 83%;}
+	.progEvento .video_big .video_ .vd{width: 425px; height: 300px;}
+	.progEvento .video_small .video_, .progEvento .video_small .video_:first-child{margin-left: 8px;}
+	.progEvento .video_small .video_ iframe{width: 210px;}
+	.progEvento .fotos_orbit iframe{width: 94%; margin-left: 3%;}
+	.progEvento .fotos_orbit .orbit_{width: 440px; margin-left: -220px;}
+	.progEvento .fotos_orbit .elementToOrbit .img{width: 75px; height: 165px;}
+	.exp_de_voar .xp_hold .left_{width: 100%; float: none;}
+	.exp_de_voar .xp_hold .left_ .text{width: 100%;}
+	.exp_de_voar .xp_hold .left_ .text p{text-align: left;}
+	.exp_de_voar .xp_hold .right_{border-top: 3px solid #ffd503; width: 100%; margin-top: 20px; margin-left: 0;}
+	.exp_de_voar .orgaos .first .left_{width: 100%; display: block;}
+	.exp_de_voar .orgaos .first .right_{position: relative; width: 100%; margin: 60px 0 0 0;}
+	.exp_de_voar .orgaos .first .left_ img{max-height: 660px;}
+	.exp_de_voar .orgaos .second .left_{float: none; width: 100%; margin-left: 0; border-top: 0; margin-bottom: 20px; height: auto;}
+	.exp_de_voar .orgaos .second .left_ > div{position: relative;}
+	.exp_de_voar .orgaos .second .right_{width: 100%; float: none;}
+	.exp_de_voar .orgaos .second .right_ iframe{width: 438px; height: 280px;}
+	.news .imprensa_hold .gal_vid .videos iframe{margin-left: 0;}
+	.news .publi .hold > div{width: 75px; height: 75px;}
+	.news .naMidia_hold .left_ .videos iframe{margin-left: 25px;}
+	.news .associados_hold .right_ #videos_ iframe{width: 220px; height: 160px;}
+	.exp_de_voar .passageiros .icone .ball p{top:20%; font-size: 12px;}
+	.titulo_grande .title p{font-size: 16px; margin-top: 42px;}
+	.news .video_visualizar .info .title p{font-size: 14px;}
+	.news .video_small iframe{width: 350px; height: 245px;}
+	.news .video_small .video_, .news .video_small .video_:first-child{width: 350px;margin-left: 45px; height: 300px;}
+	.news .video_visualizar iframe{width: 446px; height: 286px;}
+	.news .video_small:first-child{padding-top: 25px;}
+	/*.colunaIndex .colRight .video_hold iframe{width: 360px;}*/
+	.conheca .estrutura .element .eRight .logos > div{width: 60px; height: 60px;}
+	.conheca .estrutura .element .eRight .pessoas > div{width: 90px; height: 90px;}
+	.conheca .estrutura .element .eRight .pessoas{height: 110px;}
+	.conheca .fundadores .empresa .logo{width: 125px;}
+	.conheca .fundadores .empresa .info, .conheca .setor_aereo .empresa .info{width: 300px;}
+	.conheca .fundadores .empresa .info .text p{font-size: 12px; line-height: 16px;}
+	.conheca .fundadores .sub-title > div{width: 25%;}
+	.progEvento .eventos .evento_amarelo{min-height: 260px;}
+	/*.progEvento .eventos .right_ .event .date div{width: 47%;}*/
+	.progEvento .sub-title p{font-size: 20px;}
+	.progEvento .eventos .evento_main .left_ .mes p{font-size: 20px;}
+	/*.news .naMidia_hold .right_ .paginator .hold{margin-left: 100px;}*/
+	/*.galeria_ .videos_hold .single .info .todos{bottom: 150px;}*/
+	.progEvento .eventos .left_{position: relative; width: 100%;}
+	.progEvento .eventos .evento_main.interna .right_{margin-left: 0; border-top: 0;}
+	.progEvento .eventos .evento_main.interna .right_ .event .date div{width: 80%;}
+	.exp_de_voar .passageiros .icone .ball {
+		height: 7em;
+		background-size: 100%;
+	}
+	.galeria_ .evento_imageOrbit{
+		/*margin-bottom: -40px;*/
+	}
+	.index_bannerOrbit .slick-dots{width: 92.1%;}
+	.news .artigo.img .imagem{margin: 0 35%;}
+	/*.progEvento .eventos .event .date div{width: 83%;}*/
+	.progEvento .eventos .event .date div{width: 80%;}
+        .progEvento .eventos .event .date div.dupla-data {width: 66%;}
+	.progEvento .eventos .right_ .event.img .date div{width: 75%;}
+	.progEvento .eventos .right_{border-top: 0px;}
+	.progEvento .eventos .right_ .event .date div{width: 44%;}
+	.tam{height: 109px !important;}
+	/* >>> page agenda*/
+	.progEvento .eventos .event-agenda .date div{width: 58%;}
+	/* <<< page agenda*/
+	.news .dados_fatos .right_ .artigos_ .artigo .download a{padding: 2px 18px;}
+
+}
+
+
+@media only screen and (max-width : 500px){
+	/*.colunaIndex .colRight .video_hold iframe{width: 280px; height: 195px; margin-left: 20px;}*/
+	.colunaIndex .colRight .agenda_hold .titleTop .verTodos,
+	.colunaIndex .colRight .video_hold .titleTop .verTodos,
+	.colunaIndex .colLeft .news_hold .titleTop .verTodos{width: 30%;}
+	.colunaIndex .colLeft .news_hold .news .noticia .noti_hold{min-height: 110px;}
+	.colunaIndex .colLeft .news_hold .news .noticia .noti_hold a{font-size: 12px;}
+	.colunaIndex .colLeft .news_hold .news .noticia .noti_hold .setaCinza{
+		position: static;
+		margin: 5px 0;
+	}
+	.colunaIndex .colLeft .abear_hold .text p{font-size: 14px;}
+	.aFooter .footerMenu > div > div a,
+	.aFooter .footerInfo > div p,
+	.aFooter .footerInfo > div p.title,
+	.aHeader .head .top .top_hold .search > div form > div input,
+	.aHeader .head .top .top_hold .search .bt_ok button{font-size: 10px;}
+	.aHeader .head .top .top_hold{float:left;}
+	.aHeader .head{margin-left: 130px;}
+	.aHeader .head .top .top_hold .search{ display: none;}
+	.aHeader .head .top .top_hold .divisoria{display: none;}
+	.aHeader .head .top .top_hold .language, .aHeader .head .top .top_hold .social{width: 100%; text-align: center; }
+	.aHeader .head .top .top_hold .language div{margin-top: 15px; position: static; display: inline-block; margin-left:-5px;}
+	.bg_branco_fullRight{display: none;}
+	.titulo_grande .title{width: 78%; margin-right: 1.5%;}
+	.conheca .paragrafo.mL170{margin-left: 0;}
+	.conheca .paragrafo img.img_sobre{max-width: 100%; margin-left: 0;}
+	.conheca .imgs_bot .left_ img{top: 30px; width: 60%;}
+	.conheca .imgs_bot .right_ img{margin-top: 30px;}
+	.conheca .estrutura .element .eLeft{width: 100%; margin-right: 0; float: none;}
+	.conheca .estrutura .element .eRight{width: 100%; margin-left: 0; float: none; border-top: 0; min-height: 180px;}
+	.conheca .estrutura .element .eRight .pessoas > div{
+		width: 31%;
+		height: 93%;
+	}
+	.conheca .estrutura .element .eLeft .title p{font-size: 14px;}
+	.conheca .estrutura .element .logos div{ max-width: 20%; max-height: 65px;}
+	.conheca .fundadores .empresa .logo{width: 70%; margin: 0 0 25px 15%; border-right: 0;}
+	.conheca .setor_aereo .empresa .logo img{max-width: 70%; margin-left: 0;}
+	.conheca .setor_aereo .empresa .logo{width: 100%; min-height: 200px;}
+	.conheca .fundadores .empresa .info, .conheca .setor_aereo .empresa .info{width: 95%;}
+	.conheca .setor_aereo .empresa .info > p{font-size: 12px;line-height: 15px;}
+	.progEvento .eventos .right_ .event{width: 100%; float: none;}
+	.progEvento .eventos .right_ .event,.progEvento .eventos .right_ .event:nth-child(2n){width: 100%; float: none; margin-left: 0;}
+	.progEvento .eventos .right_{margin-left: 10px; padding-right: 10px;}
+	.progEvento .eventos .right_ .event .date div{width: 48%;}
+	.progEvento .eventos .left_{width: 100%; margin-right: 0; border-top: 0; position: relative;}
+	.progEvento .eventos .evento_main .right_{margin-left: 0;}
+	.progEvento .eventos .right_ > div{margin-left: 0;}
+	.progEvento .sub-title p{font-size: 20px;}
+	.progEvento .eventos .evento_main .left_ .mes p{font-size: 16px;}
+	.progEvento .video_big .video_{width: 100%; margin-left: 0;}
+	.progEvento .video_big .video_ .vd{width: 100%;}
+	.progEvento .video_small .video_, .progEvento .video_small .video_:first-child{width: 80%; margin-left: 10%; height: 240px;}
+	.progEvento .video_small .video_ iframe{width: 100%; height: 200px;}
+	.progEvento .fotos_orbit iframe{margin-left: 5% !important; width: 90%;}
+	.progEvento .fotos_orbit .orbit_{width: 100%; margin-left: -6px;}
+	.progEvento .fotos_orbit .elementToOrbit .img{width: 55px; height: 120px;}
+	/*.foto_modal{margin-left: -170px;}
+	.foto_modal .foto{min-height: 525px;}
+	.foto_modal .bot .first{width: 0;}
+	.foto_modal .bot .next_, .foto_modal .bot .prev_{width: 47%;}*/
+	.exp_de_voar .orgaos .second .right_ iframe{width: 100%; height: 250px;}
+	/*.news .imprensa_hold .gal_vid .imagens .paginator .hold,*/
+	/*.news .imprensa_hold .right_ .paginator .hold,*/
+	/*.news .paginator .hold{margin-left: 50px;}*/
+	.news .imprensa_hold .gal_vid .videos iframe{width: 100%; height: 240px;}
+	.news .publi .hold > div{width: 55px; height: 55px;}
+	.news .artigo.date .top > div{width: 70%;}
+	.news .naMidia_hold .left_ .videos iframe{width: 100%; height: 240px; margin-left: 0;}
+	.news .associados_hold .right_ > div{width: 100%;}
+	.news .associados_hold .right_ #bt_fb iframe{width: 100%; margin-left: 20%;}
+	.news .associados_hold .right_ #videos_ iframe,
+	.news .video_visualizar iframe{width: 100%; height: 240px;}
+	.news .video_small .video_, .news .video_small .video_:first-child{width: 100%; margin-left: 0;}
+	.news .video_small iframe{width: 90%; margin-left: 5%; height: 240px;}
+	.titulo_grande .title p{margin-top: 19px;}
+	.titulo_grande .quad{width: 20%;}
+	.contato > .row > div{width: 95%; padding-bottom: 20px;}
+	.conheca .estrutura .element .eRight .logos > div{width: 70px; height: 70px;}
+	/*.news .artigos .right_ .paginator .hold,*/
+	/*.news .naMidia_hold .right_ .paginator .hold{margin-left: 50px;}*/
+	.news .artigo.img .imagem{width: 100%; float: none;margin-bottom: 10px;margin: 0 30%;}
+	.evento_main{margin-top: 15px;}
+	.galeria_ .videos_hold .single .info .todos{bottom: 130px;}
+	.paginator .hold > div{
+		margin: 0 3px;
+	}
+	.paginator{
+		padding-left: 100%;
+	}
+	.paginator.new{
+		padding-left: 125%;
+
+	}
+	.paginator .hold .bt{
+		display: none;
+	}
+	.agenda_hold .titleTop .verTodos a{
+		font-size: 7px;
+	}
+	.colunaIndex .colRight .agenda_hold .index_agendaOrbit .agenda_elemento{
+		/*margin-left: 0;*/
+		margin-left: 10%;
+
+	}
+	.colunaIndex .colRight .agenda_hold .index_agendaOrbit .agenda_elemento .data{
+		width: 10%
+	}
+	.colunaIndex .colRight .agenda_hold .index_agendaOrbit .agenda_elemento .texto{
+		margin-left: 20px
+	}
+	.aFooter .footerMenu{
+		display: none;
+	}
+	.aFooter .footerInfo{
+		width: 100%;
+	}
+	.foto_modal .foto{
+		min-height: 270px;
+	}
+	.foto_modal .bot .next_ a, .foto_modal .bot .prev_ a{
+		font-size: 10px;
+	}
+	.foto_modal .info .title p{
+		font-size: 12px;
+	}
+	.foto_modal .info .text p{
+		font-size: 11px;
+	}
+	.element.diret{
+		margin-top: 20px;
+	}
+	.exp_de_voar .passageiros .icone .ball p{
+		top:0;
+		font-size: 9px;
+	}
+	.exp_de_voar .passageiros .icone .ball{
+		height: 44px;
+		background-size: 100%;
+	}
+	.galeria_ .evento_imageOrbit{
+		margin-bottom: -100px;
+	}
+	.galeria_ .info{border-top: 3px solid #ffd503; margin-top: -34px;}
+
+	.pad20{margin-bottom: 20px; }
+
+	.pad0-10 .tam{ background-size: 100%; background-position: center center; height: 115px; }
+
+	/*.slides .pad10{ padding: 30px;}*/
+
+	.index_bannerOrbit .slick-dots{width: 90%;}
+	.colunaIndex .colRight .agenda_hold .index_agendaOrbit .agenda_elemento:first-child .data{vertical-align: super; height: 59px;}
+	.progEvento .eventos .evento_amarelo{min-height: 250px;}
+
+	.news .artigo.img .imagem img{margin: 0 30%;}
+	.news .artigo.img .dados-e-fatos{width: 98%;}
+	.news .right_ .artigo .dado_ .imagem{margin: 0 12%;margin-left: 6%;width: 90%;margin-bottom: 10px;}
+	/*.progEvento .eventos .event .date div{width: 77%;}*/
+	.progEvento .eventos .event .date div{width: 66%;}
+        .progEvento .eventos .event .date div.dupla-data {width: 30%;}
+	.progEvento .eventos .right_ .event.img .date div{width: 75%;}
+	.progEvento .eventos .right_{border-top: 3px solid #ffd503;}
+	.tam{height: 92px !important;}
+	/* >>> page agenda*/
+	.progEvento .eventos .event-agenda .date div{width: 62%;}
+	/* <<< page agenda*/
+	.news .dados_fatos .right_ .artigos_ .artigo .download a{padding: 2px 17px;}
+}
+@media only screen and (max-width : 450px){
+	.tam{height: 81px !important;}
+}

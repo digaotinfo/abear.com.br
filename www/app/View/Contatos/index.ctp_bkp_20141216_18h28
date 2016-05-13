@@ -1,0 +1,82 @@
+<?php
+//print_r($contatos);
+?>
+<div class='row contato'>
+	<div class='titulo_grande'>
+		<div class='title'><p><?=__d('default', 'CONTATO')?></p></div>
+		<div class='quad'></div>
+	</div>
+	<div class='row'>
+		<div class='small-4 columns left_'>
+			<p class='title'><?=__d('default', 'EQUIPE')?> ABEAR</p>
+			
+			<?php foreach($contatos as $contato): ?>	
+				<p class='sub-title'><?=$this->Text->autoLinkEmails($contato['Contato']['nome']);?></p>
+				<p class='content'><?=$contato['Contato']['tel']?></br><?=$this->Text->autoLinkEmails($contato['Contato']['email']);?></p>
+			<?php endforeach; ?>
+			
+		</div>
+		<div class='small-8 columns end right_'>
+			<?php 
+			
+			      echo $this->Form->create($model, array('id' => 'form_contato'));
+			
+			      echo $this->Form->input('nome', array(
+                                                    'label' => false,
+                                                    'placeholder' => __d('default', 'Nome Completo')
+                                                  ));
+            echo $this->Form->input('email', array(
+            										'type' => 'email',
+                                                    'label' => false,
+                                                    'placeholder' => __d('default', 'E-mail')
+                                                  ));
+			      echo $this->Form->input('veiculo', array(
+                                                    'label' => false,
+                                                    'placeholder' => __d('default', 'Veiculo/Empresa')
+                                                  ));                                                  
+      ?>
+
+      <div class='row mBot10'>
+          <div class='small-12 medium-6 columns'>
+      <?php
+           echo $this->Form->input('tel', array(
+                                                    'label' => false,
+                                                    'placeholder' => __d('default', 'Telefone'),
+                                                  ));                                                
+      ?>
+
+          </div>
+          <div class='small-12 medium-6 columns'>
+      <?php
+           echo $this->Form->input('cidade', array(
+                                                    'label' => false,
+                                                    'placeholder' => __d('default', 'Cidade')
+                                                  ));                                                
+      ?>
+
+          </div>
+      </div>
+      <?php
+         
+           echo $this->Form->input('mensagem', array(
+           											'type' => 'textarea',
+                                                    'label' => false,
+                                                    'placeholder' => __d('default', 'Mensagem'),
+                                                    'id' => 'mensagem'
+                                                  ));
+                                                  
+		  echo $this->Form->input('receber_news', array(
+                                					'type' => 'checkbox',
+                                                    'label' => __d('default', 'Desejo receber notícias da ABEAR.'),
+                                                    'id' => 'receber_news'
+                                                  ));                                                  
+                                                  
+            ?>
+            <button type="submit"><?=__d('default', 'ENVIAR')?></button>
+            <?php
+			echo $this->Form->end();
+			?>
+      <div class='loader' align='center'><?=$this->Html->image('/img/index/loader.gif')?></div>
+		</div>
+	</div>
+</div>

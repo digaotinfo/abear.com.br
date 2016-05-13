@@ -1,0 +1,4 @@
+<?
+class Radio extends AppModel{
+	var $useTable = 'tb_radio';
+}

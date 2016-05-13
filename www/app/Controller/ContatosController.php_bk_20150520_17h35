@@ -1,0 +1,45 @@
+<?
+class ContatosController extends AppController{
+	var $name 		= "Contatos";
+    public $helpers = array('Html', 'Session', 'Form', 'Text');
+    var $uses		= array('Contato', 'Newsletter');
+    var $scaffold 	= 'admin';
+  	//var $transformUrl = array('url_amigavel' => 'titulo_ptbr');
+
+
+	function beforeFilter() {
+		parent::beforeFilter();
+
+		if (isset($this->params['prefix']) && $this->params['prefix'] == 'admin') {
+			$showThisFields	=	array(
+									'id'	=> 'ID',
+									'nome' 	=> 'nome'
+
+								);
+			$showImage	=	array(
+								//'imagem_file'
+							);
+
+			$this->set('showFields', $showThisFields);
+			$this->set('fieldToImg', $showImage);
+
+
+			$this->set('schemaTable', $this->Contato->schema());
+		}
+	}
+		
+	public function index(){
+		
+		$model = 'Newsletter';
+		$this->set('model', $model);
+		
+		$this->set('contatos', $this->Contato->find('all', array(
+																'conditions' => array(
+																					'ativo' => 1
+																					)
+																)
+													));
+	}
+
+	
+}

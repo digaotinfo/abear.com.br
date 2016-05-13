@@ -1,0 +1,16 @@
+/*********************************************************************/
+/**																	**/
+/** MANTER ESSE BLOCO SEMPRE NO TOPO								**/
+/** NÃO ESQUECER DE ATUALIZAR O ARQUIVO WEBROOT/CONFIG/versao.zoio	**/
+/**																	**/
+/*********************************************************************/
+
+vX.Y - dd/mm/yy
+	Adicionado imagens e icones na pasta webroot/img/icons
+
+vX.Y - dd/mm/yy
+	Descrição do que foi feito no script. BAIXAR ARQUIVOS arquivo1, arquivo2, arquivo3 [...] OU BAIXAR PASTA pasta1, pasta2, pasta3 [...]
+
+vX.Y - dd/mm/YY
+	lib/cake/controller/scaffold.php - Descrição do que foi feito no script
+	lib/cake/view/scaffold/view.ctp - Descrição do que foi feito no script

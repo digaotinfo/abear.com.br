@@ -1,0 +1,20 @@
+<?php
+//Model: Intro
+//print_r($intro);
+?>
+<div class="hide teste">
+	<?php
+		print_r($intro);
+		print_r($introCat);
+	 ?>
+</div>
+<?php if(!empty($intro['Intro'])): ?>
+	<div class='text_intro'>
+
+
+
+	<p><?=$intro['Intro']['texto_'.$lang]?></p>
+
+
+	</div>
+<?php endif; ?>

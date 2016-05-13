@@ -1,0 +1,178 @@
+<?
+App::uses('CakeTime', 'Utility');
+
+class AgendasController extends AppController {
+    var $name 		= "Agendas";
+    public $helpers = array('Html', 'Session', 'Form', 'Time', 'Paginator', 'Text');
+    // var $uses		= array('Agenda');
+    var $scaffold 	= 'admin';
+    var $transformUrl = array(
+    							'url_amigavel_ptbr' => 'titulo_ptbr',
+    							'url_amigavel_eng'  => 'titulo_eng',
+    							'url_amigavel_esp'  => 'titulo_esp',
+    								);
+
+    var $paginate = array(
+                        'order'  => array(
+                                        'id' => 'DESC'
+                        				),
+                        'limit' => 10
+
+                        );
+
+
+    function beforeFilter() {
+		parent::beforeFilter();
+
+		if (isset($this->params['prefix']) && $this->params['prefix'] == 'admin') {
+			$showThisFields	=	array(
+									'id'			=> 'ID',
+									'titulo_ptbr'	=> 'Titulo em Português',
+									'data'			=> 'Data',
+									'ativo' 		=> 'Ativo',
+								);
+			$showImage	=	array(
+								//'imagem_file'
+							);
+
+			$this->set('showFields', $showThisFields);
+			$this->set('fieldToImg', $showImage);
+
+
+			$this->set('schemaTable', $this->Agenda->schema());
+
+			$this->buscaGenerica($showThisFields);
+		}
+	}
+
+	function index(){
+		$model = 'Agenda';
+        $this->set('model', $model);
+        
+        $lang = $this->Cookie->read('lang');
+		$this->set('lang', $lang);
+
+
+		if($lang == 'ptbr'){
+				/// Tradução de meses e dias da semana
+				$meses = array(
+							'January' => 'Janeiro',
+							'February' => 'Fevereiro',
+							'March' => 'Março',
+							'April' => 'Abril',
+							'May' => 'Maio',
+							'June' => 'Junho',
+							'July' => 'Julho',
+							'August' => 'Agosto',
+							'September' => 'Setembro',
+							'October' => 'Outubro',
+							'November' => 'Novembro',
+							'December' => 'Dezembro'
+							);
+				$dia_semana = array(
+							'Monday' => 'Segunda-feira',
+							'Tuesday' => 'Terça-feira',
+							'Wednesday' => 'Quarta-feira',
+							'Thursday' => 'Quinta-feira',
+							'Friday' => 'Sexta-feira',
+							'Saturday' => 'Sábado',
+							'Sunday' => 'Domingo'
+							);
+				
+				}
+		if($lang == 'esp'){
+				/// Tradução de meses e dias da semana
+				$meses = array(
+							'January' => 'Enero',
+							'February' => 'Febrero',
+							'March' => 'Marzo',
+							'April' => 'Abril',
+							'May' => 'Mayo',
+							'June' => 'Junio',
+							'July' => 'Julio',
+							'August' => 'Agosto',
+							'September' => 'Septiembre',
+							'October' => 'Octubre',
+							'November' => 'Noviembre',
+							'December' => 'Diciembre'
+							);
+				$dia_semana = array(
+							'Monday' => 'Lunes',
+							'Tuesday' => 'Martes',
+							'Wednesday' => 'Miércoles',
+							'Thursday' => 'Jueves',
+							'Friday' => 'Viernes',
+							'Saturday' => 'Sábado',
+							'Sunday' => 'Domingo'
+							);
+				}
+			if($lang == 'eng'){
+				/// Tradução de meses e dias da semana
+				$meses = array(
+							'January' => 'January',
+							'February' => 'February',
+							'March' => 'March',
+							'April' => 'April',
+							'May' => 'May',
+							'June' => 'June',
+							'July' => 'July',
+							'August' => 'August',
+							'September' => 'September',
+							'October' => 'October',
+							'November' => 'November',
+							'December' => 'December'
+							);
+				$dia_semana = array(
+							'Monday' => 'Monday',
+							'Tuesday' => 'Tuesday',
+							'Wednesday' => 'Wednesday',
+							'Thursday' => 'Thursday',
+							'Friday' => 'Friday',
+							'Saturday' => 'Saturday',
+							'Sunday' => 'Sunday'
+							);
+		
+				
+				}
+
+        $this->set('meses', $meses);
+		$this->set('dia_semana', $dia_semana);
+				
+        $this->paginate['limit'] = 6;
+        $this->paginate['fields'] = array(
+        								'data',
+        								'titulo_'.$lang,
+        								'descricao_'.$lang,
+        								'url_amigavel_'.$lang,
+        							);
+        $this->paginate['conditions'] = array(
+							                'Agenda.ativo' => 1,
+							                'Agenda.titulo_'.$lang.  ' <>' => ''
+							                	);
+	    
+	    $this->paginate['order'] = array('data' => 'desc');
+	    
+
+	    $eventos = $this->paginate($model);
+	    
+
+	   
+        														
+        $le_eventos = array();
+        foreach ($eventos as $evento) {
+            $e = $evento[$model];
+            $month = CakeTime::format('F', $e['data']);
+            $year = CakeTime::format('Y', $e['data']);
+            $day = CakeTime::format('d', $e['data']);
+            $mes = $meses[$month];
+            if(!isset($le_eventos[$year][$mes][$day])){
+                $le_eventos[$year][$mes][$day] = array();
+            }
+            array_unshift($le_eventos[$year][$mes][$day], $e);
+        }
+
+        $this->set(array(
+        					'eventos' => $le_eventos,
+        				));
+	}
+}

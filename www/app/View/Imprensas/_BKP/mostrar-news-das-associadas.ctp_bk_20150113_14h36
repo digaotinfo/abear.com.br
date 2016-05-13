@@ -1,0 +1,106 @@
+<?php
+//print_r($registro);
+//print_r($neighbors);
+
+
+
+
+$this->start('og:title');
+	?>
+	<meta property="og:title" content="<?=$registro[$model]['titulo_'.$lang]?>"/>
+	<?php
+$this->end();
+
+$this->start('og:description');
+	$texto = str_replace('"', '', $registro[$model]['texto_1_'.$lang]);
+	?>
+	<meta property="og:description" content="<?=strip_tags($texto)?>"/>
+	<?php
+$this->end();
+
+$this->start('og:image');
+	if (!empty($registro['img_file'])):
+		?>
+		<!-- <meta property="og:image" content="<?=$this->Html->url('/', true) . $registro['img_file']?>" /> -->
+		<?php
+	endif;
+$this->end();
+
+
+
+
+?>
+<input type="hidden" id="<?=$registro[$model]['id']?>" >
+<div class='row news'>
+	<div class='titulo_grande'>
+		<div class='title'><p><?=__d('default', 'News das associadas')?></p></div>
+		<div class='quad'></div>
+	</div>
+	<?=$this->element('intros')?>
+	<div class='associados_hold'>
+		<div class='left_'>
+		<div class='title'><p><?=$registro[$model]['titulo_'.$lang]?></p></div>
+		<div class='text'><p><?=$registro[$model]['texto_1_'.$lang]?></p></div>
+		<?php
+        	echo $this->element('galeria-fotos-eventos');
+        ?>
+		<div class='social_share'>
+			<a href="<?= Router::url('', true) ?>" share-pj='facebook'><div></div></a>
+			<a href="<?= Router::url('', true) ?>" share-pj='twitter'><div></div></a>
+			<a href="<?= Router::url('', true) ?>" modal-pj='.modal_mail'><div></div></a>
+			<a href="<?= Router::url('', true) ?>" share-pj='pinterest' share-pj-pinimg='IMG' share-pj-pindesc='DESC'><div></div></a>
+			<a href="<?= Router::url('', true) ?>" share-pj='g-plus'><div></div></a>
+		</div>
+		</div>
+	<?=$this->element('right_bar_news_associadas')?>
+	</div>
+	
+	<div class='pagina_eventos'>
+		<div class='hold'>
+			<div>
+				<?php
+					$next_ = '';
+					$prev_ = '';
+					if(empty($neighbors['prev'][$model]['url_amigavel_'.$lang])){ $prev_ = 'desactive';}
+					if(empty($neighbors['next'][$model]['url_amigavel_'.$lang])){ $next_ = 'desactive';}
+					
+				?>
+
+				<a href="<?=$this->Html->url(
+													array(
+														'controller' => 'imprensas',
+														'action' => 'mostrar_noticia',
+														'categoria' => $categoria,
+														'url_amigavel' => $neighbors['next'][$model]['url_amigavel_'.$lang]
+													))?>" 
+					class='arrowL <?=$next_?>'>
+					<div></div>
+					<p><?=__d('default', 'anterior')?></p>
+				</a>
+
+				<div><p> | </p></div>
+	
+				<a href="<?=$this->Html->url(
+													array(
+														'controller' => 'imprensas',
+														'action' => 'mostrar_noticia',
+														'categoria' => $categoria,
+														'url_amigavel' =>$neighbors['prev'][$model]['url_amigavel_'.$lang]))
+														?>" class='arrowR <?=$prev_?>'>
+					<div></div>
+					<p><?=__d('default', 'próximo')?></p>
+				</a>
+			</div>
+		</div>
+	</div>	
+</div>
+
+<?php
+	
+	//echo  Router::url('', true);
+?>
+
+
+<script type="text/javascript">
+	
+</script>

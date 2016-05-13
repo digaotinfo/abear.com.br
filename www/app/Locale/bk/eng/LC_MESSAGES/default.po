@@ -1,0 +1,338 @@
+#### ENG
+
+msgid "Em breve mais informações." 
+msgstr "Soon more information."
+
+msgid "Saiba como foi o evento" 
+msgstr "Learn how the event was"
+
+msgid "sobrea" 
+msgstr "About"
+
+msgid "nossosprodutos" 
+msgstr "<b>Products</b>"
+
+msgid "selecioneoproduto" 
+msgstr "Select a Product"
+
+msgid "listade" 
+msgstr "List of "
+
+msgid "produtores" 
+msgstr "Producers"
+
+msgid "sobre" 
+msgstr "about"
+
+msgid "produtos" 
+msgstr "products"
+
+msgid "novidades" 
+msgstr "new stuff"
+
+msgid "ondeencontrar" 
+msgstr "where to find"
+
+msgid "CONTATO" 
+msgstr "CONTACT"
+
+msgid "leiamais" 
+msgstr "_Read more"
+
+msgid "onde" 
+msgstr "Where"
+
+msgid "encontrar" 
+msgstr "to Find"
+
+msgid "email" 
+msgstr "Email"
+
+msgid "Nome do Remetente"
+msgstr "Sender Name"
+
+msgid "Email do Remetente"
+msgstr "Sender Email"
+
+msgid "Nome do Destinatário"
+msgstr "Name of Recipient "
+
+msgid "Email do Destinatário"
+msgstr "Recipient's Email"
+
+msgid "nome" 
+msgstr "name"
+
+msgid "Publicações"
+msgstr "Publications"
+
+msgid "Continuar lendo"
+msgstr "continue reading"
+
+msgid "email" 
+msgstr "email"
+
+msgid "mensagem" 
+msgstr "mensage"
+
+msgid "Compartilhar por e-mail" 
+msgstr "Share by email"
+
+msgid "Enviar" 
+msgstr "Send"
+
+msgid "senha" 
+msgstr "password"
+
+msgid "formnome" 
+msgstr "Name required"
+
+msgid "formemail" 
+msgstr "E-Mail required"
+
+msgid "formemailcadastrado" 
+msgstr "E-Mail in use"
+
+
+msgid "sim"
+msgstr "Yes"
+
+msgid "nao"
+msgstr "No"
+
+msgid "voce_tem_mais"
+msgstr "Are you older"
+
+msgid "de_18_anos"
+msgstr " than 21 years?"
+
+msgid "desculpe_nao_pode_entrar_no_site"
+msgstr "Sorry, but you are not old enough to enter this site."
+
+msgid "News das associadas" 
+msgstr "News the associated"
+
+msgid "Na midia" 
+msgstr "In the Media "
+
+msgid "NO RADIO" 
+msgstr "IN RADIO"
+
+msgid "NA TV" 
+msgstr "IN TV"
+
+msgid "no" 
+msgstr "in"
+
+msgid "na" 
+msgstr "in"
+
+msgid "EQUIPE" 
+msgstr "TEAM"
+
+msgid "ENVIAR" 
+msgstr "SEND"
+
+msgid "galeria de fotos" 
+msgstr "photo gallery"
+
+msgid "Organizar:" 
+msgstr "Organize:"
+
+msgid "por evento" 
+msgstr "by event"
+
+msgid "mais recentes" 
+msgstr "latest"
+
+msgid "fechar" 
+msgstr "close"
+
+msgid "vídeos" 
+msgstr "movie"
+
+msgid "anterior" 
+msgstr "previous"
+
+msgid "próximo" 
+msgstr "next"
+
+msgid "Associados" 
+msgstr "Associated"
+
+msgid "visitar o site" 
+msgstr "site visit"
+
+msgid "Comitês" 
+msgstr "COMMITTEES"
+
+msgid "suplentes" 
+msgstr "alternates"
+
+msgid "titulares" 
+msgstr "holders"
+
+msgid "Anteriores" 
+msgstr "Previous"
+
+msgid "Próximos" 
+msgstr "Next"
+
+msgid "eventos do setor" 
+msgstr "setor events"
+
+msgid "MENU" 
+msgstr "MENU"
+
+msgid "CONHEÇA" 
+msgstr "KNOW"
+
+msgid "A ABEAR" 
+msgstr "The ABEAR"
+
+msgid "Estrutura da Entidade" 
+msgstr "Structure of Entity"
+
+msgid "Fundadores" 
+msgstr "Founders"
+
+msgid "Código de Ética" 
+msgstr "Code of Ethics"
+
+msgid "Setor Aéreo" 
+msgstr "Air Sector"
+
+msgid "setor aéreo" 
+msgstr "Air Sector"
+
+msgid "Voltar"
+msgstr "Back "
+
+msgid "Eventos" 
+msgstr "Events"
+
+msgid "Prêmio de Jornalismo ABEAR" 
+msgstr "Journalism Award ABEAR"
+
+msgid "Por Dentro da Aviação" 
+msgstr "Inside Aviation"
+
+msgid "Como Voa o Brasil" 
+msgstr "How Brazil Flies"
+
+msgid "NEWS"
+msgstr "NEWS"
+
+msgid "Notas e Releases"
+msgstr "Notes and Releases"
+
+msgid "PROGRAMAS E EVENTOS" 
+msgstr "PROGRAMS AND EVENTS"
+
+msgid "IMPRENSA" 
+msgstr "PRESS"
+
+msgid "Artigos" 
+msgstr "Articles"
+
+msgid "Na Mídia" 
+msgstr "In The Media"
+
+msgid "News das Associadas" 
+msgstr "News of the Associated"
+
+msgid "Agência ABEAR" 
+msgstr "ABEAR Agency"
+
+msgid "DADOS E FATOS" 
+msgstr "DATA AND FACTS"
+
+msgid "EXPERIÊNCIA DE VOAR" 
+msgstr "EXPERIENCE OF FLYING"
+
+msgid "Guia do Passageiro" 
+msgstr "Passenger's Guide"
+
+msgid "Clube ABEAR" 
+msgstr "Club ABEAR"
+
+msgid "Clube ABEAR: Amigos da Aviação" 
+msgstr "ABEAR Club: Friends of Aviation"
+
+msgid "CAMPANHAS" 
+msgstr "CAMPAIGNS"
+
+msgid "Voar Por Mais Brasil" 
+msgstr "Voar Por Mais Brasil"
+
+msgid "Nas Aeronaves" 
+msgstr "In Aircraft"
+
+msgid "Transporte de Órgãos" 
+msgstr "Transport Organs "
+
+msgid "Tudo Para Voar Melhor" 
+msgstr "Tudo Pra Voar Melhor"
+
+msgid "VER TODAS" 
+msgstr "SEE ALL"
+
+msgid "Ver todos" 
+msgstr "View all"
+
+msgid "Ver todas as imagens" 
+msgstr "View all images"
+
+msgid "VER TODOS" 
+msgstr "VIEW ALL"
+
+msgid "VER AGENDA COMPLETA" 
+msgstr "SEE FULL SCHEDULE"
+
+msgid "Mostrar todos" 
+msgstr "Show All"
+
+msgid "NOTÍCIAS" 
+msgstr "NEWS"
+
+msgid "VÍDEOS" 
+msgstr "MOVIE"
+
+msgid "AGENDA" 
+msgstr "ORDER OF BUSINESS"
+
+msgid "Parceiros" 
+msgstr "Partners"
+
+msgid "Vídeos" 
+msgstr "Movie"
+
+msgid "Galeria" 
+msgstr "Gallery"
+
+msgid "Ver outras galerias" 
+msgstr "See other galleries"
+
+msgid "Assessoria de imprensa da Abear" 
+msgstr "Press office Abear"
+
+msgid "Nome Completo" 
+msgstr "Full Name"
+
+msgid "E-mail" 
+msgstr "Email"
+
+msgid "Veiculo/Empresa" 
+msgstr "Vehicle / Company"
+
+msgid "Telefone" 
+msgstr "Phone"
+
+msgid "Cidade" 
+msgstr "City"
+
+msgid "Mensagem" 
+msgstr "Post"
+
+msgid "Desejo receber notícias da ABEAR." 
+msgstr "I want to receive news ABEAR."

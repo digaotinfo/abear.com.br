@@ -1,0 +1,34 @@
+<?
+class DiretorsController extends AppController{
+    var $name 		= "Diretors";
+    public $helpers = array('Html', 'Session', 'Form');
+    //var $uses		= array('Comites');
+    var $scaffold 	= 'admin';
+  	var $transformUrl = array('url_amigavel_ptbr' => 'titulo_ptbr');
+
+
+	function beforeFilter() {
+		parent::beforeFilter();
+
+		if (isset($this->params['prefix']) && $this->params['prefix'] == 'admin') {
+			$showThisFields	=	array(
+									'id'				=> 'ID',
+									//'publicar_em_ptbr'	=> 'Public. em Português',
+									'nome'				=> 'Nome',
+									'cargo_ptbr'		=> 'Cargo em Português',
+
+								);
+			$showImage	=	array(
+								'foto_file'
+							);
+
+			$this->set('showFields', $showThisFields);
+			$this->set('fieldToImg', $showImage);
+
+
+			$this->set('schemaTable', $this->Diretor->schema());
+
+			$this->buscaGenerica($showThisFields);
+		}
+	}
+}

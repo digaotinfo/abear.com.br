@@ -1,0 +1,51 @@
+/*********************************************************************/
+/**
+/** MANTER ESSE BLOCO SEMPRE NO TOPO
+/** NÃO ESQUECER DE ATUALIZAR O ARQUIVO WEBROOT/CONFIG/versao.zoio
+/**
+/*********************************************************************/
+
+v1.4 - 20/12/2012
+	lib/cake/controller/Scaffold.php			- Criado variavel na {pagina}Controller.php ($transformUrl) que determina qual campo vira URL_AMIGAVEL (Key => campo_de_url, Val => campo_do_valor_ca_url)
+	app/controller/AppController				- Criado if() para verificar se resizeImage() deve ser chamada
+	app/webroot/								- Implementado CKEditor
+
+v1.3 - 06/11/2012
+	app/controller/AppController.php			- Ajuste do resize em PNG transparente. Correção do erro que deixava a imagem com fundo preto.
+	lib/cake/view/helper/formhelper.php			- Os campos de url_… não serão mais como TYNY (em caso de textarea)
+
+v1.2 - 29/10/2012
+	lib/cake/controller/Scaffold.php			- Criada opção para excluir apenas a imagem desejada
+	lib/cake/view/helper/formhelper.php			- input hidden de controle para deletar as imagens
+	app/controller/component/p28nComponent.php	- Cookie->write -> 3o parâmentro setado como 'false'
+	
+
+v1.1 - 26/10/2012
+	lib/cake/view/scaffolds/index.ctp	- Criada opção para mostrar os campos passado no array $showThisFields. Array $showImage converte o valor do campo de imagem em <img>
+	app/controller/*					- Os arrays acima são criados na função beforeFilter como exemplo abaixo
+
+	function beforeFilter() {
+		
+		if (isset($this->params['prefix']) && $this->params['prefix'] == 'admin') {
+			$showThisFields	=	array(
+									'id'			=> 'ID',
+									'autor'			=> 'Autor',
+									'data_inicio'	=> 'Data Inicio',
+									'data_fim'		=> 'Data Fim',
+									'status'		=> 'Status',
+									'titulo_ptbr'	=> 'Titulo',
+									'imagem_th_hidden'	=> 'Imagem',
+									'url_amigavel_ptbr'	=> 'URL Amigável'
+								);
+			$showImage	=	array(
+								'imagem_th_hidden'
+							);
+			
+			$this->set('showFields', $showThisFields);
+			$this->set('fieldToImg', $showImage);
+			
+			$this->layout = 'admin';
+		}
+	}
+	
+	lib/cake/controller/scaffold.php	- Função de upload copia a imagem subida e cria uma thumb na pasta /thumbs com o mesmo nome do arquivo com o prefixo 'th_'

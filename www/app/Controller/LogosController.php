@@ -1,0 +1,43 @@
+<?
+class LogosController extends AppController{
+	var $name = "Logos";
+	public $helpers = array('Html', 'Session', 'Form', 'Time', 'Text');
+	public $uses = array('Logo', 'Abear', 'Texto');
+	var $scaffold = 'admin';
+/* 	var $transformUrl = array('url_amigavel' => 'titulo'); */
+/*
+    var $paginate = array(
+                        'limit'  => 2,
+                        'order'  => array(
+                                        'id' => 'DESC'
+                        ),
+                        'conditions' => array(
+                             'ativo' => '1' 
+                        )
+                        ); 
+*/
+	
+	function beforeFilter() {
+		parent::beforeFilter();
+		
+		if (isset($this->params['prefix']) && $this->params['prefix'] == 'admin') {
+			$showThisFields	=	array(
+									'id'		=> 'ID',
+									'name_logo'	=> 'Nome do Logo',
+									'logo_file'	=> 'Imagem',
+								);
+			$showImage	=	array(
+								'',
+							);
+			
+			$this->set('showFields', $showThisFields);
+			$this->set('fieldToImg', $showImage);
+			
+			
+			$this->set('schemaTable', $this->Logo->schema());
+
+			$this->buscaGenerica($showThisFields);
+		}
+	}
+
+}

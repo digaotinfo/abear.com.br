@@ -1,0 +1,255 @@
+<?php
+/**
+ * Routes configuration
+ *
+ * In this file, you set up routes to your controllers and their actions.
+ * Routes are very important mechanism that allows you to freely connect
+ * different urls to chosen controllers and their actions (functions).
+ *
+ * PHP 5
+ *
+ * CakePHP(tm) : Rapid Development Framework (http://cakephp.org)
+ * Copyright 2005-2012, Cake Software Foundation, Inc. (http://cakefoundation.org)
+ *
+ * Licensed under The MIT License
+ * Redistributions of files must retain the above copyright notice.
+ *
+ * @copyright     Copyright 2005-2012, Cake Software Foundation, Inc. (http://cakefoundation.org)
+ * @link          http://cakephp.org CakePHP(tm) Project
+ * @package       app.Config
+ * @since         CakePHP(tm) v 0.2.9
+ * @license       MIT License (http://www.opensource.org/licenses/mit-license.php)
+ */
+/**
+ * Here, we are connecting '/' (base path) to controller called 'Pages',
+ * its action called 'display', and we pass a param to select the view file
+ * to use (in this case, /app/View/Pages/home.ctp)...
+ */
+    Router::connect('/', array('controller' => 'index', 'action' => 'index'));
+
+    //// ADMIN
+    Router::connect('/admin', array('controller' => 'index', 'action' => 'index', 'admin' => true));
+    Router::connect('/admin/como-voa-o-brasil/galeria', array('controller' => 'voars', 'action' => 'list', 'admin' => true)); // admin voars galeria
+    Router::connect('/admin/adicionar-newsletter/type/*', array('controller' => 'newslettersEditables', 'action' => 'add', 'admin' => true));
+    Router::connect('/admin/dadosefatos/view/*', array('controller' => 'dadoseFatos', 'action' => 'view', 'admin' => true));
+
+
+
+
+
+    //Router::connect('/index', array('controller' => 'index', 'action' => 'index', 'lang' => 'ptbr'));
+
+    ///// Languages ///
+    Router::connect('/pt-br/*', array('controller' => 'P28n', 'action' => 'shuntRequest', 'lang' => 'ptbr'));
+    Router::connect('/eng/*', array('controller' => 'P28n', 'action' => 'shuntRequest', 'lang' => 'eng'));
+    Router::connect('/esp/*', array('controller' => 'P28n', 'action' => 'shuntRequest', 'lang' => 'esp'));
+
+
+    //////////////////////////////////////////////////////////////////////////////////////////////
+    /// URL amigável
+    //////////////////////////////////////////////////////////////////////////////////////////////
+    //////////////////////////////////////////////////////////////////////////////////////////////
+
+    /////==> BUSCA
+    Router::connect('/busca', array('controller' => 'busca', 'action' => 'index'));
+    Router::connect('/busca/*', array('controller' => 'busca', 'action' => 'index'));
+
+    ////////////
+    //////==> HOME
+    // Router::connect('/videos', array('controller' => 'videos', 'action' => 'index'));
+
+    ////////////
+    //////==> Conheça
+    Router::connect('/conheca/abear', array('controller' => 'abears', 'action' => 'index'));
+    Router::connect('/conheca/estrutura-da-entidade', array('controller' => 'abears', 'action' => 'estruturas'));
+    Router::connect('/conheca/estrutura/diretoria/*', array('controller' => 'abears', 'action' => 'diretores'));
+    Router::connect('/conheca/fundadores', array('controller' => 'abears', 'action' => 'fundadores'));
+    Router::connect('/conheca/etica', array('controller' => 'abears', 'action' => 'etica'));
+    Router::connect('/conheca/setor-aereo', array('controller' => 'abears', 'action' => 'setor_aereo'));
+
+
+    ////////////
+    //////==> Programs e Eventos
+    Router::connect('/eventos/como-voa-o-brasil', array('controller' => 'eventos', 'action' => 'como_voar'));
+    Router::connect('/eventos/por-dentro-da-aviacao', array('controller' => 'eventos', 'action' => 'aviacao'));
+    Router::connect('/eventos/por-dentro-da-aviacao/*', array('controller' => 'eventos', 'action' => 'aviacao'));
+    Router::connect('/agenda', array('controller' => 'agendas', 'action' => 'index'));
+    Router::connect('/eventos/*', array('controller' => 'eventos', 'action' => 'index'));
+
+    //////==> Imprensa
+    Router::connect('/imprensa/clipping', array('controller' => 'Imprensas', 'action' => 'clipping'));
+    Router::connect('/imprensa/:categoria/mostrar/:url_amigavel',
+                        array('controller' => 'imprensas', 'action' => 'mostrar_noticia'),
+                        array(
+                            'pass' => array('categoria', 'url_amigavel'),
+                        )
+                    );
+     Router::connect('/imprensa/:categoria/*',
+                        array('controller' => 'imprensas', 'action' => 'listarTodas'),
+                        array(
+                            'pass' => array('categoria'),
+                        )
+                    );
+
+
+    Router::connect('/noticias/mais-lidas', array('controller' => 'maisLidas', 'action' => 'mais_lidas'));
+
+    Router::connect('/noticias/no-radio', array('controller' => 'imprensas', 'action' => 'all_sound'));
+    Router::connect('/noticias/no-radio/*', array('controller' => 'imprensas', 'action' => 'all_sound'));
+
+    Router::connect('/ultimas-noticias/*', array('controller' => 'imprensas', 'action' => 'ultimasNoticias'));
+
+
+    //////==> Experiência de Voar
+    Router::connect('/experiencia-de-voar', array('controller' => 'voarExperiencias', 'action' => 'index'));
+    Router::connect('/experiencia-de-voar/voar-por-mais-brasil', array('controller' => 'voarExperiencias', 'action' => 'voar_mais_brasil'));
+    Router::connect('/experiencia-de-voar/nas-aeronaves', array('controller' => 'voarExperiencias', 'action' => 'nas_aeronaves'));
+    Router::connect('/experiencia-de-voar/transporte-de-orgaos', array('controller' => 'voarExperiencias', 'action' => 'transporte_de_orgaos'));
+    Router::connect('/experiencia-de-voar/guia-de-passageiros', array('controller' => 'voarExperiencias', 'action' => 'guia_passageiros'));
+    Router::connect('/experiencia-de-voar/guia-de-passageiros/icones/*', array('controller' => 'voarExperiencias', 'action' => 'icones'));
+    Router::connect('/experiencia-de-voar/guia-de-passageiros/dica/*', array('controller' => 'voarExperiencias', 'action' => 'urlcompartilhar'));
+    Router::connect('/experiencia-de-voar/clube-abear', array('controller' => 'voarExperiencias', 'action' => 'clube_abear'));
+
+    //////==> Compartilhar por E-mail
+    Router::connect('/compartilhar/email', array('controller' => 'Emailenvios', 'action' => 'enviarDePara'));
+
+
+    //////==> Dados e Fatos
+    Router::connect('/update', array('controller' => 'updates', 'action' => 'index'));
+    // Router::connect('/dados-e-fatos', array('controller' => 'dadoseFatos', 'action' => 'index'));
+
+    // Router::connect('/videos/todos/*',
+    //                     array(
+    //                         'controller' => 'videos', 'action' => 'index'
+    //                     )
+    //                 );
+    // Router::connect('/videos/:categoria',
+    //                     array(
+    //                         'controller' => 'videos', 'action' => 'categoria'
+    //                     ),
+    //                     array(
+    //                         'pass' => array('categoria')
+    //                     )
+    //                 );
+    // Router::connect('/videos/:categoria/watch/:url/*',
+    //                     array(
+    //                         'controller' => 'videos', 'action' => 'videos'
+    //                     ),
+    //                     array(
+    //                         'pass' => array('categoria', 'url')
+    //                     )
+    //                 );
+    // Router::connect('/videos/:categoria/*',
+    //                     array(
+    //                         'controller' => 'videos', 'action' => 'categoria'
+    //                     ),
+    //                     array(
+    //                         'pass' => array('categoria')
+    //                     )
+    //                 );
+
+
+    Router::connect('/videos/:categoria/watch/:url/*',
+                        array(
+                            'controller' => 'videos', 'action' => 'index'
+                        ),
+                        array(
+                            'pass' => array('categoria', 'url')
+                        )
+                    );
+    Router::connect('/videos/:categoria/*',
+                        array(
+                            'controller' => 'videos', 'action' => 'index'
+                        ),
+                        array(
+                            'pass' => array('categoria')
+                        )
+                    );
+    // Router::connect('/videos/:categoria/*',
+    //                     array(
+    //                         'controller' => 'videos', 'action' => 'index'
+    //                     ),
+    //                     array(
+    //                         'pass' => array('categoria')
+    //                     )
+    //                 );
+
+
+
+    Router::connect('/dados-e-fatos/status-de-voos', array('controller' => 'statusvoos', 'action' => 'index'));
+    Router::connect('/dados-e-fatos/estudo/*', array('controller' => 'dadoseFatos', 'action' => 'estudo'));
+    Router::connect('/dados-e-fatos/page/*', array('controller' => 'dadoseFatos', 'action' => 'index'));
+    Router::connect('/dados-e-fatos/*', array('controller' => 'dadoseFatos', 'action' => 'index'));
+
+    //////==> Blog
+    Router::connect('/blog', array('controller' => 'blogposts', 'action' => 'index'));
+    Router::connect('/blog/page/*', array('controller' => 'blogposts', 'action' => 'index'));
+    Router::connect('/blog/filtro/*', array('controller' => 'blogposts', 'action' => 'filtro'));
+    Router::connect('/blog/*', array('controller' => 'blogposts', 'action' => 'post'));
+
+    //////==> Releases
+    Router::connect('/releases/*', array('controller' => 'releases', 'action' => 'index'));
+
+    //////==> Contato
+    Router::connect('/contato', array('controller' => 'contatos', 'action' => 'index'));
+    Router::connect('/contato/enviar', array('controller' => 'Emailenvios', 'action' => 'enviarcontato'));
+
+    //////==> Agenda Abear
+    Router::connect('/agenda/evento/*', array('controller' => 'eventos', 'action' => 'mostrar_evento'));
+    Router::connect('/evento/insert-url', array('controller' => 'eventos', 'action' => 'url_insert'));
+
+    //////==> Videos
+    // Router::connect('/videos', array('controller' => 'videos', 'action' => 'index'));
+    // Router::connect('/videos/*', array('controller' => 'videos', 'action' => 'index'));
+
+    //// Evento Modal
+    Router::connect('/imagem/*', array('controller' => 'fotoModal', 'action' => 'foto_modal'));
+
+
+
+    //// GALERIAS GERAIS
+    // //==> Mostrando imagens da Capa
+    Router::connect('/galerias/:categoria/album/:url_amigavel/*',
+                        array('controller' => 'GaleriaImagens', 'action' => 'galeria'),
+                        array(
+                            'pass' => array('categoria', 'url_amigavel'),
+                        )
+                    );
+
+    //==> por Categoria
+    // Router::connect('/galerias/:categoria/:tipo_filtro/*',
+    //                     array('controller' => 'GaleriaImagens', 'action' => 'index'),
+    //                     array(
+    //                         'pass' => array('categoria', 'tipo_filtro'),
+    //                     )
+    //                 );
+
+    Router::connect('/galerias/*',
+                        array('controller' => 'GaleriaImagens', 'action' => 'index')
+                    );
+
+
+    Router::connect('/voarmelhor', array('controller' => 'voarExperiencias', 'action' => 'guia_passageiros'));
+
+
+
+    ////Router::connect('/galerias/como-voa-o-brasil', array('controller' => 'galeriaImagens', 'action' => 'galeria'));
+    ////Router::connect('/galerias/*', array('controller' => 'galeriaImagens', 'action' => 'todas'));
+/**
+ * ...and connect the rest of 'Pages' controller's urls.
+ */
+    Router::connect('/pages/*', array('controller' => 'pages', 'action' => 'display'));
+//        Router::connect('/pages/**', array('controller' => 'pages'
+//        Router::connect('/pages/**', array('controller' => 'pages', 'action' => 'show'));
+
+/**
+ * Load all plugin routes.  See the CakePlugin documentation on
+ * how to customize the loading of plugin routes.
+ */
+    CakePlugin::routes();
+
+/**
+ * Load the CakePHP default routes. Remove this if you do not want to use
+ * the built-in default routes.
+ */
+    require CAKE . 'Config' . DS . 'routes.php';

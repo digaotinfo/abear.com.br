@@ -1,0 +1,323 @@
+#### PT-BR
+
+
+msgid "Em breve mais informações." 
+msgstr "Em breve mais informações."
+
+msgid "sobrea" 
+msgstr "Sobre a"
+
+msgid "Saiba como foi o evento" 
+msgstr "Saiba como foi o evento"
+
+msgid "nossosprodutos" 
+msgstr "Nossos <b>Produtos</b>"
+
+msgid "selecioneoproduto" 
+msgstr "Selecione o Produto"
+
+msgid "listade" 
+msgstr "Lista de "
+
+msgid "produtores" 
+msgstr "Produtores"
+
+msgid "sobre" 
+msgstr "sobre"
+
+msgid "produtos" 
+msgstr "produtos"
+
+msgid "novidades" 
+msgstr "novidades"
+
+msgid "ondeencontrar" 
+msgstr "onde encontrar"
+
+msgid "CONTATO" 
+msgstr "contato"
+
+msgid "leiamais" 
+msgstr "_Leia mais"
+
+msgid "onde" 
+msgstr "Onde"
+
+msgid "encontrar" 
+msgstr "Encontrar"
+
+msgid "email" 
+msgstr "E-mail"
+
+msgid "Publicações"
+msgstr "Publicações"
+
+msgid "Continuar lendo"
+msgstr "Continuar lendo"
+
+msgid "Nome do Remetente"
+msgstr "Nome do Remetente"
+
+msgid "Email do Remetente"
+msgstr "Email do Remetente"
+
+msgid "Nome do Destinatário"
+msgstr "Nome do Destinatário"
+
+msgid "Email do Destinatário"
+msgstr "Email do Destinatário"
+
+msgid "Enviar"
+msgstr "Enviar"
+
+msgid "formnome"
+msgstr "Nome obrigatório "
+
+msgid "formemail"
+msgstr "E-Mail obrigatório "
+
+msgid "sim"
+msgstr "Sim"
+
+msgid "nao"
+msgstr "Não"
+
+msgid "PESQUISAR"
+msgstr "PESQUISAR"
+
+msgid "Voltar"
+msgstr "Voltar"
+
+msgid "voce_tem_mais"
+msgstr "Você tem mais"
+
+msgid "de_18_anos"
+msgstr "de 18 anos?"
+
+msgid "desculpe_nao_pode_entrar_no_site"
+msgstr "Desculpe, mas você não tem idade para entrar  neste site."
+
+msgid "News das associadas" 
+msgstr "News das associadas"
+
+msgid "Asas do Bem" 
+msgstr "Asas do Bem"
+
+msgid "Na midia" 
+msgstr "Na mídia"
+
+msgid "NO RADIO" 
+msgstr "NO RÁDIO"
+
+msgid "NA TV" 
+msgstr "NA TV"
+
+msgid "no" 
+msgstr "no"
+
+msgid "na" 
+msgstr "na"
+
+msgid "ENVIAR" 
+msgstr "ENVIAR"
+
+msgid "EQUIPE" 
+msgstr "EQUIPE"
+
+msgid "Associados" 
+msgstr "Associados"
+
+msgid "visitar o site" 
+msgstr "visitar o site"
+
+msgid "Comitês" 
+msgstr "Comitês"
+
+msgid "galeria de fotos" 
+msgstr "galeria de fotos"
+
+msgid "Organizar:" 
+msgstr "Organizar:"
+
+msgid "por evento" 
+msgstr "por evento"
+
+msgid "mais recentes" 
+msgstr "mais recentes"
+
+msgid "fechar" 
+msgstr "fechar"
+
+msgid "vídeos" 
+msgstr "vídeos"
+
+msgid "anterior" 
+msgstr "anterior"
+
+msgid "próximo" 
+msgstr "próximo"
+
+msgid "suplentes" 
+msgstr "suplentes"
+
+msgid "titulares" 
+msgstr "titulares"
+
+msgid "VER TODAS" 
+msgstr "VER TODAS"
+
+msgid "Ver todas as imagens" 
+msgstr "Ver todas as imagens"
+
+msgid "VER TODOS" 
+msgstr "VER TODOS"
+
+msgid "Ver todos" 
+msgstr "Ver todos"
+
+msgid "VER AGENDA COMPLETA" 
+msgstr "VER AGENDA COMPLETA"
+
+msgid "Mostrar todos" 
+msgstr "Mostrar todos"
+
+msgid "eventos do setor" 
+msgstr "eventos do setor"
+
+msgid "MENU" 
+msgstr "MENU"
+
+msgid "CONHEÇA" 
+msgstr "CONHEÇA"
+
+msgid "A ABEAR" 
+msgstr "A ABEAR"
+
+msgid "Estrutura da Entidade" 
+msgstr "Estrutura da Entidade"
+
+msgid "Fundadores" 
+msgstr "Fundadores"
+
+msgid "Código de Ética" 
+msgstr "Código de Ética"
+
+msgid "Setor Aéreo" 
+msgstr "Setor Aéreo"
+
+msgid "PROGRAMAS E EVENTOS" 
+msgstr "PROGRAMAS E EVENTOS"
+
+msgid "Eventos" 
+msgstr "Eventos"
+
+msgid "Prêmio de Jornalismo ABEAR" 
+msgstr "Prêmio ABEAR de Jornalismo"
+
+msgid "Por Dentro da Aviação" 
+msgstr "Por Dentro da Aviação"
+
+msgid "Como Voa o Brasil" 
+msgstr "Como Voa o Brasil"
+
+msgid "Notas e Releases"
+msgstr "Notas e Releases"
+
+msgid "NEWS"
+msgstr "NEWS"
+
+msgid "Imprensa" 
+msgstr "Imprensa"
+
+msgid "Artigos e Publicações" 
+msgstr "Artigos e Publicações"
+
+msgid "Na Mídia" 
+msgstr "Na Mídia"
+
+msgid "News das Associadas" 
+msgstr "News das Associadas"
+
+msgid "Agência ABEAR" 
+msgstr "Agência ABEAR"
+
+msgid "DADOS E FATOS" 
+msgstr "DADOS E FATOS"
+
+msgid "EXPERIÊNCIA DE VOAR" 
+msgstr "EXPERIÊNCIA DE VOAR"
+
+msgid "Guia do Passageiro" 
+msgstr "Guia do Passageiro"
+
+msgid "Clube ABEAR" 
+msgstr "Clube ABEAR"
+
+msgid "Clube ABEAR: Amigos da Aviação" 
+msgstr "Clube ABEAR: Amigos da Aviação"
+
+msgid "CAMPANHAS" 
+msgstr "CAMPANHAS"
+
+msgid "Voar Por Mais Brasil" 
+msgstr "Voar Por Mais Brasil"
+
+msgid "Nas Aeronaves" 
+msgstr "Nas Aeronaves"
+
+msgid "Transporte de Órgãos" 
+msgstr "Transporte de Órgãos"
+
+msgid "Tudo Para Voar Melhor" 
+msgstr "Tudo Para Voar Melhor"
+
+msgid "CONTATO" 
+msgstr "CONTATO"
+
+msgid "NOTÍCIAS" 
+msgstr "NOTÍCIAS"
+
+msgid "VÍDEOS" 
+msgstr "VÍDEOS"
+
+msgid "AGENDA" 
+msgstr "AGENDA"
+
+msgid "Parceiros" 
+msgstr "Parceiros"
+
+msgid "Vídeos" 
+msgstr "Vídeos"
+
+msgid "Galeria" 
+msgstr "Galeria"
+
+msgid "Ver outras galerias" 
+msgstr "Ver outras galerias"
+
+msgid "Assessoria de imprensa da Abear" 
+msgstr "Assessoria de imprensa da Abear"
+
+msgid "Nome Completo" 
+msgstr "Nome Completo"
+
+msgid "E-mail" 
+msgstr "E-mail"
+
+msgid "Veiculo/Empresa'" 
+msgstr "Veiculo/Empresa'"
+
+msgid "Telefone" 
+msgstr "Telefone"
+
+msgid "Cidade" 
+msgstr "Cidade"
+
+msgid "Mensagem" 
+msgstr "Mensagem"
+
+msgid "Desejo receber notícias da ABEAR." 
+msgstr "Desejo receber notícias da ABEAR."
+
+msgid "horario_do_evento" 
+msgstr "Horário do Evento"

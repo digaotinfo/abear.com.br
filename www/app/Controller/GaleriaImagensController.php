@@ -1,0 +1,245 @@
+<?
+class GaleriaImagensController extends AppController {
+	var $name = "GaleriaImagens";
+	public $helpers = array('Html', 'Session', 'Form', 'Time', 'Text');
+	public $uses = array('GaleriaImagen', 'GaleriaCategoria', 'GaleriaImagenCapa', 'GaleriaImagenCapaFront', 'Evento');
+	var $scaffold = 'admin';
+	var $paginate = array(
+                        'order'  => array(
+                                        'id' => 'desc'
+                        ),
+                        'limit' => 30,
+                   );     
+    
+	
+	
+	function beforeFilter() {
+		parent::beforeFilter();
+
+		if (isset($this->params['prefix']) && $this->params['prefix'] == 'admin') {
+			$showThisFields	=	array(
+									'id'						=> 'ID',
+									'titulo_ptbr'				=> 'Titulo em Português',
+									'img_th_hidden'				=> 'Imagem',
+									'galeria_imagen_capa_id' 	=> 'Capa',
+								);
+			$showImage	=	array(
+								'img_th_hidden'
+							);
+
+			$this->set('showFields', $showThisFields);
+			$this->set('fieldToImg', $showImage);
+
+
+			$this->set('schemaTable', $this->GaleriaImagen->schema());
+
+			$this->buscaGenerica($showThisFields);
+		}
+	}	
+	
+	public function index($categoria = null, $tipo_filtro = null) {
+		if ($categoria == null) {
+			$categoria = 'todas';
+		}
+
+		$this->set('categoria', $categoria);
+		$this->set('tipo_filtro', $tipo_filtro);
+
+		//print_r($tipo_filtro);
+		
+		$lang = $this->Cookie->read('lang');
+
+		if(!empty($tipo_filtro)){
+			if ($tipo_filtro == 'por-album') {
+				$model = 'GaleriaImagenCapa';
+			}else{
+				$model = 'GaleriaImagen';
+			}
+
+		}else{
+			$model = 'GaleriaImagenCapa';
+		}
+
+
+		// POR ALBUM E SEM FILTRO
+		$this->paginate['fields'] = array(
+										// 'GaleriaImagenCapa.id',
+										// 'GaleriaImagenCapa.galeria_categoria_id',
+										// 'GaleriaImagenCapa.titulo_'.$lang,
+										// 'GaleriaImagenCapa.img_file',
+										// 'GaleriaImagenCapa.data',
+										// 'GaleriaImagenCapa.url_amigavel_'.$lang,
+									);
+		$this->paginate['limit'] = 16;
+		$this->paginate['recursive'] = 1;
+		$this->paginate['order'] = array(
+										'GaleriaImagenCapa.id' => 'DESC'
+									);
+		if (!empty($categoria) && $categoria != 'todas') {
+			if ($tipo_filtro == 'por-album') {
+				$this->paginate['conditions'] = array(
+												'GaleriaCategoria.url_amigavel_'.$lang => $categoria
+											);
+			}else{
+				
+				$categoria_id = $this->GaleriaCategoria->find('first', array(
+																			'fields' => array(
+																				'id',
+																			),
+																			'conditions' => array(
+																				'url_amigavel_'.$lang => $categoria,
+																			),
+																		));
+
+				$this->paginate['conditions'] = array(
+												'GaleriaImagenCapa.galeria_categoria_id' => $categoria_id['GaleriaCategoria']['id'],
+											);
+			}
+			
+		}
+
+		$registros = $this->paginate($model);
+		// print_r($registros);
+		// die();
+		// END POR ALBUM E SEM FILTRO
+
+		$this->set(array(
+						'model' => $model,
+						'registros' => $registros,
+					));
+	
+	}
+	
+	// public function galeria($url_amigavel = null) {
+	// 	$model = 'GaleriaImagen';
+	// 	$lang = $this->Cookie->read('lang');
+
+	// 	if ($url_amigavel == null) {
+	// 		$this->redirect(array(
+	// 							'controller' => 'DadosFatos',
+	// 							'action' => 'index',
+	// 								));
+	// 	}
+
+	// 	$this->paginate['limit'] = 8;								
+		
+	// 	$this->paginate['fields'] = array(
+	// 										'GaleriaImagen.id', 
+	// 										'GaleriaImagen.titulo_'.$lang, 
+	// 										'GaleriaImagen.img_file', 
+	// 										'GaleriaImagen.descricao_'.$lang, 
+	// 										'GaleriaImagen.descricao_'.$lang, 
+	// 										'GaleriaImagenCapa.id', 
+	// 										'GaleriaImagenCapa.titulo_'.$lang, 
+	// 										'GaleriaImagenCapa.img_file', 
+	// 										'GaleriaImagenCapa.descricao_'.$lang, 
+	// 										'GaleriaImagenCapa.data',
+
+	// 								);
+	// 	$this->paginate['conditions'] = array(
+	// 											'GaleriaImagenCapa.url_amigavel_'.$lang => $url_amigavel
+	// 										);
+                   															
+	// 	$fotos = $this->paginate($model);
+
+	// 	$this->set(array(
+	// 						'model' => $model,
+	// 						'fotos' => $fotos,
+	// 					));
+	// }
+
+		public function galeria($categoria = null, $url_amigavel = null) {
+			$this->set('categoria', $categoria);
+			$this->set('url_amigavel', $url_amigavel);
+
+			$model = 'GaleriaImagen';
+			$lang = $this->Cookie->read('lang');
+			
+			// if ($url_amigavel == null) {
+			// 	$this->redirect(array(
+			// 						'controller' => 'DadosFatos',
+			// 						'action' => 'index',
+			// 							));
+			// }
+
+			if($url_amigavel == null){
+				$this->paginate = array(
+										'fields' => array(
+														'GaleriaImagen.id',
+														'GaleriaImagen.galeria_imagen_capa_id',
+														'GaleriaImagen.img_file',
+														)
+										);
+
+				$fotos = $this->paginate($model);
+				//print_r($fotos);
+			}
+
+
+			$this->paginate['limit'] = 40;								
+			
+			$this->paginate['fields'] = array(
+												'GaleriaImagen.id', 
+												'GaleriaImagen.titulo_'.$lang, 
+												'GaleriaImagen.img_file', 
+												'GaleriaImagen.descricao_'.$lang, 
+												'GaleriaImagen.descricao_'.$lang, 
+												'GaleriaImagenCapa.id', 
+												'GaleriaImagenCapa.titulo_'.$lang, 
+												'GaleriaImagenCapa.img_file', 
+												'GaleriaImagenCapa.descricao_'.$lang, 
+												'GaleriaImagenCapa.data',
+
+										);
+
+			$this->paginate['conditions'] = array(
+													'GaleriaImagenCapa.url_amigavel_'.$lang => $url_amigavel
+												);
+	                   															
+			$fotos = $this->paginate($model);
+
+			$this->set(array(
+								'model' => $model,
+								'fotos' => $fotos,
+							));
+		
+			// print_r($fotos);
+			// die();
+		}
+		
+		public function todas($tipo = null) {
+
+			$model = '';
+			$registros = array();
+
+			if ($tipo == null) {
+				$tipo = 'por-album';
+			}
+			$this->set('tipo', $tipo);
+
+			$this->paginate['limit'] = 8;
+			$lang = $this->Cookie->read('lang');
+
+			/// POR ALBUM
+			if ($tipo == 'por-album') {
+
+				$model = 'GaleriaImagenCapaFront';
+				$this->paginate['order'] = array('GaleriaImagenCapaFront.id' => 'DESC');
+
+
+			/// POR DATA
+			} else if($tipo == 'mais-recentes') {
+
+				$model = 'GaleriaImagen';
+				$this->paginate['order'] = array('GaleriaImagen.id' => 'DESC');
+			}
+
+			$registros = $this->paginate($model);
+			$this->set(array(
+				'model' => $model,
+				'registros' => $registros,
+			));
+		
+		}
+			
+	}

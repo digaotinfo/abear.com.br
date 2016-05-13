@@ -1,0 +1,32 @@
+<?
+class NoticiaCategoriasController extends AppController{
+	var $name 		= "NoticiaCategorias";
+    public $helpers = array('Html', 'Session', 'Form', 'Time', 'Paginator');
+    //var $uses		= array('NoticiaCategoria');
+    var $scaffold 	= 'admin';
+    var $transformUrl = array(
+								'url_amigavel_ptbr' => 'nome_ptbr',
+  								'url_amigavel_eng'  => 'nome_eng',
+  								'url_amigavel_esp'  => 'nome_esp',
+								);
+
+    function beforeFilter() {
+		parent::beforeFilter();
+
+		if (isset($this->params['prefix']) && $this->params['prefix'] == 'admin') {
+			$showThisFields	=	array(
+									'id'			=> 'ID',
+									'nome_ptbr'	=> 'Categoria em Português',
+								);
+			$showImage	=	array(
+								//'imagem_file'
+							);
+
+			$this->set('showFields', $showThisFields);
+			$this->set('fieldToImg', $showImage);
+
+
+			$this->set('schemaTable', $this->NoticiaCategoria->schema());
+		}
+	}
+}

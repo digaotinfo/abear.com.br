@@ -1,0 +1,6 @@
+<?php
+class Videos extends AppModel {
+    var $name = 'tb_video';
+
+    var $order = array("Video.id" => "DESC");
+}

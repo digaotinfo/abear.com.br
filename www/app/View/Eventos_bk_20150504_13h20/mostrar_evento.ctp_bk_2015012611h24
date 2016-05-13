@@ -1,0 +1,88 @@
+<?php
+//echo $evento[$model]
+//	print_r($imagens);
+?>
+<div class='row progEvento interna'>
+    <div class='titulo_grande'>
+        <div class='title'>
+            <a href="<?=$this->Html->url(
+                                            array(
+                                                'action' => 'index',
+                                            )
+                                        )?>">
+                <p><?=__d('default', 'Eventos')?></p>
+            </a>
+        </div>
+        <div class='quad'></div>
+    </div>
+
+    <div class='eventos'>
+        <div class='sub-title'><p><?=__d('default', 'eventos do setor')?></p></div>
+    	<div class='evento_main interna'>
+    		<div class='left_'>
+    		<?php 
+    			$month = CakeTime::format('F', $evento[$model]['data']);
+			    $mes = $meses[$month];
+    		?>
+
+                <?php if(!empty($evento[$model]['imagem_destacada_'.$lang.'_file'])):?>
+                    <div class="area-imagem">
+                        <div class="imagem" style="background-image: url(<?=$this->webroot.$evento[$model]['imagem_destacada_'.$lang.'_file']?>)"></div>
+                    </div>
+                <?php else: ?>
+           		<div class='mes'><p><?=$mes?></p></div>
+                <?php endif; ?>
+
+            </div>
+
+            <div class='right_'>
+                <div class='event'>
+                    <div class='date'><p><?= $this->Time->format('d.m.Y', $evento[$model]['data']);?></p><div></div></div>
+                    <div class='info'>
+                        <div class='title'><p><?=$evento[$model]['chamada_'.$lang]?></p></div>
+                        <div class='text'><p><?=$evento[$model]['descricao_'.$lang]?></p></div>
+                    </div>
+                </div>
+
+                <?php
+                	echo $this->element('galeria-fotos-eventos');
+                ?>
+	            
+            </div>
+        </div>
+        <div class='pagina_eventos'>
+            <div class='hold'>
+				<div>
+					<?php
+					$next_ = '';
+					$prev_ = '';
+					if(!$neighbors['prev'][$model]['url_amigavel_'.$lang]) $prev_ = 'deactive';
+					if(!$neighbors['next'][$model]['url_amigavel_'.$lang]) $next_ = 'deactive';
+					?>
+                    <a href="<?=$this->Html->url(
+                                                array(
+                                                    'action' => 'mostrar_evento', 
+                                                    $neighbors['next'][$model]['url_amigavel_'.$lang]
+                                                )
+                                            )?>" class='arrowL <?=$prev_?>'>
+                        <div></div>
+                        <p><?=__d('default', 'anterior')?></p>
+                    </a>
+
+					<div><p> | </p></div>
+		
+                    <a href="<?=$this->Html->url(
+                                                array(
+                                                    'action' => 'mostrar_evento', 
+                                                    $neighbors['prev'][$model]['url_amigavel_'.$lang]
+                                                )
+                                            )?>" class='arrowR <?=$prev_?>'>
+                        <div></div>
+                        <p><?=__d('default', 'próximo')?></p>
+                    </a>
+
+             	</div>
+            </div>
+        </div>
+    </div>
+</div>

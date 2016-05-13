@@ -1,0 +1,139 @@
+<?php
+//print_r($video);
+//print_r($videos);
+//print_r($neighbors);
+//print_r($catVideos);
+?>
+<div class='row news'>
+			<div class='titulo_grande'>
+				<div class='title'><p><?=__d('default', 'vídeos')?></p></div>
+				<div class='quad'></div>
+			</div>
+			<div class='video_visualizar'>
+			<?=$video[$model]["video_{$lang}"]?>
+				<div class='info'>
+					<div  class='title'><p><?=$video[$model]["titulo_{$lang}"]?></p></div>
+					<p class='text'><?=$video[$model]["chamada_{$lang}"]?></p>
+	
+					
+					<div class='prev_next'>
+						<?php
+						if (!empty($neighbors['next'])){?>
+							<div class='prev_'><a href="<?=$this->Html->url(array('action' => 'index', $neighbors['next'][$model]['url_amigavel_'.$lang]))?>"><?=__d('default', 'anterior')?><div></div></a></div>
+	
+							<?php
+						}else{
+							echo "<div class='prev_ deactive'><a href='#'>".__d('default', 'anterior')."<div></div></a></div>";
+						}
+						if (!empty($neighbors['prev'])){?>
+							<div class='next_'><a href="<?=$this->Html->url(array('action' => 'index', $neighbors['prev'][$model]['url_amigavel_'.$lang]))?>"><?=__d('default', 'próximo')?><div></div></a></div>
+						<?php
+						}else{
+							echo "<div class='next_ deactive'><a href='#'>".__d('default', 'próximo')."<div></div></a></div>";
+						} ?>
+					</div>
+					
+				
+				</div>
+			</div>
+		</div>	
+		
+		<div class='news bgWhite w100 pTop20 mBot0 pBot10'>
+			<div class='row'>
+					<div class='video_small'>
+				<?php 
+					$count = 0;
+					
+					foreach($videos as $video){
+							if($count < 4){ 
+								$frame = split("/", $video['Video']['video_'.$lang]);
+								
+									$img_yt = split('"', $frame[4]);
+									?>
+										<div class='video_'>
+											<a href='<?=$this->Html->url(array('action' => 'index', $video[$model]['url_amigavel_'.$lang]))?>'>
+		
+												<?=$this->Html->image('http://img.youtube.com/vi/' .$img_yt[0]. '/0.jpg')?>
+		
+											</a>
+											<div class='video_info'>
+												<p>
+													<?php echo $this->Text->truncate(
+											                                    $video[$model]['titulo_'.$lang],
+											                                    28,
+											                                    array(
+											                                        'ellipsis' => '...',
+											                                        'exact' => false
+											                                    )
+											                                );
+											          ?>
+												
+												</p>
+											</div>
+										</div>	
+									<?php
+					 		}else{
+								$count = 0;
+								?>
+									</div>
+									<div class='video_small'>
+										<div class='video_'>
+											<a href='<?=$this->Html->url(array('action' => 'index', $video[$model]['url_amigavel_'.$lang]))?>'>
+	
+												<?=$this->Html->image('http://img.youtube.com/vi/' .$img_yt[0]. '/0.jpg')?>
+												
+											</a>
+											<div class='video_info'>
+												<p>
+													<?php echo $this->Text->truncate(
+										                                    $video[$model]['titulo_'.$lang],
+										                                    28,
+										                                    array(
+										                                        'ellipsis' => '...',
+										                                        'exact' => false
+										                                    )
+										                                );
+										          ?>
+												</p>
+											</div>
+										</div>	
+								<?php
+					 		}
+					 	$count++;
+				 	}
+				 	
+				?>
+				</div>	
+			</div>			
+				<div class='paginator row mBot0'>
+					<div class='hold'>
+				<?php 
+                	echo $this->Paginator->prev(
+                                            '',
+                                            null,
+                                            null,
+                                            array('class' => 'prev')
+                                            );
+                 
+                	echo $this->Paginator->numbers(array(
+                    									'separator' => '',
+                                                        'currentTag' => 'a',
+                    									'tag' => 'div',
+                    									'class' => 'bt'
+                                                                                        
+                    									));
+                           
+                 
+                   echo $this->Paginator->next(
+                                            '',
+                                            null,
+                                            null,
+                                            array('class' => 'next')
+                                            );
+                 ?>
+						
+					</div>
+				</div>
+			</div>
+		</div>
+

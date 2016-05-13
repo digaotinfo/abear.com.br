@@ -1,0 +1,31 @@
+<?
+class EventoVideosController extends AppController {
+    var $name 		= "EventoVideos";
+    public $helpers = array('Html', 'Session', 'Form');
+    // public $uses 	= array('EventoVideo');
+    var $scaffold 	= 'admin';
+    
+    function beforeFilter() {
+		parent::beforeFilter();
+
+		if (isset($this->params['prefix']) && $this->params['prefix'] == 'admin') {
+			$showThisFields	=	array(
+									'id'		  	=> 'ID',
+									'titulo_ptbr' 	=> 'Titulo em Português do Video',
+									'evento_id' 	=> 'Referente ao Evento',
+
+								);
+			$showImage	=	array(
+								//'imagem_file'
+							);
+
+			$this->set('showFields', $showThisFields);
+			$this->set('fieldToImg', $showImage);
+
+
+			$this->set('schemaTable', $this->EventoVideo->schema());
+
+			$this->buscaGenerica($showThisFields);
+		}
+	}
+}

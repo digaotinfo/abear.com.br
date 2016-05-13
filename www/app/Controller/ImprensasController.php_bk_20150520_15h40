@@ -1,0 +1,371 @@
+<?php
+App::uses('Controller', 'Controller');
+
+class ImprensasController extends AppController {
+	var $name 		= "Imprensas";
+    public $helpers = array('Html', 'Session', 'Form', 'Time', 'Paginator', 'Text');
+    var $uses		= array('Imprensa', 'Imprensa', 'TxtArtigo', 'Artigo', 'NotaRelease','NaMidia', 'NaMidiaVideo', 'Associada', 'Associadamaislida', 'GaleriaImagenCapa', 'GaleriaImagen', 'GaleriaCategoria', 'NoticiaCategoria', 'Noticia', 'Radio');
+    var $scaffold 	= 'admin';
+    // public $components = array('Paginator');
+
+    public $paginate= array(
+    						'order' => array(
+    							'Noticia.data' => 'DESC'
+    						)
+    					);
+
+    function beforeFilter() {
+		parent::beforeFilter();
+
+		if (isset($this->params['prefix']) && $this->params['prefix'] == 'admin') {
+			$showThisFields	=	array(
+									'id'			=> 'ID',
+									'titulo_ptbr'	=> 'Titulo em Português',
+								);
+			$showImage	=	array(
+								//'imagem_file'
+							);
+
+			$this->set('showFields', $showThisFields);
+			$this->set('fieldToImg', $showImage);
+
+
+			$this->set('schemaTable', $this->Imprensa->schema());
+		}
+	}    
+    
+    //////////////////////////////////////////////////////////////////////////////////
+    /////Antiga NEWS
+    //////////////////////////////////////////////////////////////////////////////////
+    public function imprensa($id=null) {
+		$model = 'NotaRelease';
+		$this->set('model', $model);
+		
+		$lang = $this->Cookie->read('lang');
+ 
+		
+		$release = $this->$model->find('all');
+		
+		$this->paginate['limit'] = 10;
+		$this->paginate['conditions'] = array('Imprensa.chamada_'.$lang => '');
+		
+		$imprensa = $this->paginate('Imprensa');
+
+		$this->set(array(	
+							'release' => $release,
+							'imprensa' => $imprensa,
+							));							
+	}
+	
+	public function ultimasNoticias(){
+
+      	   $model = 'Noticia';
+	       $this->set('model', $model);
+		   
+	       $lang = $this->Cookie->read('lang');
+	       
+	       $this->paginate = array('fields' => array(
+														'Noticia.id',
+														'NoticiaCategoria.nome_'.$lang,
+														'NoticiaCategoria.url_amigavel_'.$lang,
+														'Noticia.data',
+														'Noticia.titulo_'.$lang,
+														'Noticia.chamada_'.$lang,
+														'Noticia.url_amigavel_'.$lang,
+														),
+									'conditions' => array(
+															'Noticia.titulo_'.$lang. ' <>'	=> '',
+															'Noticia.ativo'	=> 1,
+															'Noticia.data_de_publicacao <='	=> date('Y-m-d H:i'),
+															),
+									'limit' => 5
+								);
+			$registros = $this->paginate($model);
+	      
+			$release = $this->NotaRelease->find('all');
+			$txtArtigo = $this->TxtArtigo->find('first');
+
+			$this->set(array(
+							'registros' => $registros,
+							'release' => $release,
+							'txtArtigo' => $txtArtigo,
+							));
+       }
+	
+	public function listarTodas($categoria = null){
+			$model = 'Noticia';
+			$this->set('model', $model);
+
+			$lang = $this->Cookie->read('lang');
+			$this->set('lang', $lang);
+
+			$this->set('categoria', $categoria);
+			////////////////////////////////////////////////
+
+	       	$this->paginate = array('fields' => array(
+														'id',
+														'noticia_categoria_id',
+														'data',
+														'titulo_'.$lang,
+														'chamada_'.$lang,
+														'texto_1_'.$lang,
+														'texto_2_'.$lang,
+														'imagem_'.$lang. '_file',
+														'url_amigavel_'.$lang,
+														'fonte',
+														'fonte_url'
+														),
+									'conditions' => array(
+															'NoticiaCategoria.url_amigavel_ptbr' => $categoria,
+															'Noticia.titulo_'.$lang. ' <>'	=> '',
+															'Noticia.ativo'	=> 1,
+															'Noticia.data_de_publicacao <'	=> date('Y-m-d H:i'),
+															
+															),
+	       							'limit' => 5
+	       								);
+	   
+			$registros = $this->paginate($model);
+			//print_r($categoria);
+	       	 
+			$radios = $this->Radio->find('all', array(
+	       												'fields' => array(
+	       																	'id',
+	       																	'link_'.$lang,
+	       																	'titulo_'.$lang,
+	       																	),
+	       												'limit' => 3
+	       												));
+	      
+			$release = $this->NotaRelease->find('all', array(
+															'conditions' => array(
+																				'ativo' => 1,
+																					)	
+																));
+
+			$txtArtigo = $this->TxtArtigo->find('first');
+
+			$this->set(array(
+       						'registros' => $registros,
+       						'radios' => $radios,
+       						'release' => $release,
+       						'txtArtigo' => $txtArtigo,
+       						//'urlAtual' => $urlAtual,
+       						));
+
+			///////////////////////////////////////////////
+	      	/// TOP MAIS LIDAS
+			///////////////////////////////////////////////
+			$IdCatNoticia = $this->NoticiaCategoria->find('first', array(
+																		'fields' => array(
+																						'id',
+																						'url_amigavel_'.$lang,	
+																							),
+																		'conditions' => array(
+																							'url_amigavel_ptbr' => $categoria	
+																								)
+																		));
+			
+			if ($categoria == 'news-das-associadas' || $categoria == 'artigos') {
+				$mais_lidas = $this->Associadamaislida->getMaisLidas($limit = 10, $order = 'desc', $lang, $cat = $IdCatNoticia['NoticiaCategoria']['id']);
+				//print_r($mais_lidas);
+				//die();
+				$this->set('model_maislidas', 'Associadamaislida');
+				$this->set('mais_lidas', $mais_lidas);
+			}
+			///////////////////////////////////////////////
+			///////////////////////////////////////////////
+			// print_r($categoria);
+	      $this->render($categoria);
+       }
+
+	function mostrar_noticia($categoria = null, $url_amigavel = null){
+		$this->set('categoria', $categoria);
+	
+		$model = 'Noticia';
+		$this->set('model', $model);
+		
+		$lang = $this->Cookie->read('lang');
+		$this->set('lang', $lang);
+		
+		$registro = $this->$model->find('first', array(	
+															'fields' => array(
+																				'id',
+																				'galeria_imagen_capa_id',
+																				'noticia_categoria_id',
+																				'Noticia.titulo_'.$lang,
+																				'texto_1_'.$lang,
+																				'imagem_'.$lang. '_file',
+																				'texto_2_'.$lang,
+																				'url_amigavel_'.$lang,
+																				'data',	
+																				),
+															'conditions' => array(
+																				'Noticia.url_amigavel_'.$lang => $url_amigavel,
+																				'Noticia.data_de_publicacao <=' => date('Y-m-d H:i')
+																			),
+															));
+
+		if(!empty($registro)):
+			$neighbors = $this->$model->find('neighbors', array(
+	            												'field' => 'id', "Noticia.url_amigavel_{$lang}",
+	            												'value' => $registro[$model]['id'],
+	                                                            'fields' => array(
+					                                                            'id',
+					                                                            "Noticia.url_amigavel_{$lang}",
+																				),
+	                                                            'conditions' => array(
+	                                                            					"Noticia.url_amigavel_{$lang} <>" => '',
+	                                                            					//'noticia_categoria_id' => $registro[$model]['noticia_categoria_id']
+	                                                            					'NoticiaCategoria.url_amigavel_'.$lang => $categoria,
+	                                                            					),
+	                                                            'limit' => 1,
+	                                                            'order' => array(
+	                                                            					'data' => 'DESC'
+	                                                            					)
+																));
+
+		 
+		    
+		    $imagens = $this->GaleriaImagenCapa->find('first', array(
+		    														'fields' => array(
+		    																			'id',
+		    																			'titulo_'.$lang,
+		    																			'descricao_'.$lang,
+		    																			),
+		    														'conditions' => array(
+		    																				'GaleriaImagenCapa.id' => $registro[$model]['galeria_imagen_capa_id']
+		    																				),
+		    														));
+			
+			$release = $this->NotaRelease->find('all', array(
+																	'conditions' => array(
+																						'ativo' => 1,
+																							)	
+																		));
+			$txtArtigo = $this->TxtArtigo->find('first');
+			$radios = $this->Radio->find('all', array(
+	   												'fields' => array(
+	   																	'id',
+	   																	'link_'.$lang,
+	   																	'titulo_'.$lang,
+	   																	),
+	   												'limit' => 3
+	   												));
+
+			$this->set(array(
+								'registro' => $registro,
+								'neighbors' => $neighbors,
+								'imagens' => $imagens,
+								'release' => $release,
+								'txtArtigo' => $txtArtigo,
+								'radios' => $radios,
+								//'myurl' => $myurl,
+								));
+			
+			////////////////////////
+			/// GRAVANDO MAIS LIDAS
+			$this->noticialida($registro[$model]['id']);
+			////////////////////////
+
+			///////////////////////////////////////////////
+	      	/// TOP MAIS LIDAS
+			///////////////////////////////////////////////
+			$IdCatNoticia = $this->NoticiaCategoria->find('first', array(
+																		'fields' => array(
+																						'id',
+																						'url_amigavel_'.$lang,	
+																							),
+																		'conditions' => array(
+																							'url_amigavel_ptbr' => $categoria	
+																								)
+																		));
+			
+			if ($categoria == 'news-das-associadas' || $categoria == 'artigos') {
+				$mais_lidas = $this->Associadamaislida->getMaisLidas($limit = 10, $order = 'desc', $lang, $cat = $IdCatNoticia['NoticiaCategoria']['id']);
+				//print_r($mais_lidas);
+				//die();
+				$this->set('model_maislidas', 'Associadamaislida');
+				$this->set('mais_lidas', $mais_lidas);
+			}
+			///////////////////////////////////////////////
+			///////////////////////////////////////////////
+
+			$this->render('../Imprensas/mostrar-'.$categoria);
+
+		else:
+			$this->redirect(array('action' => 'listarTodas' ,$categoria));
+			// $this->redirect(array('controller' => 'orders', 'action' => 'thanks'));
+		endif;
+	}
+	
+	function all_sound(){
+		$model = 'Radio';
+		$this->set('model', $model);
+		
+		$lang = $this->Cookie->read('lang');
+		
+		$this->paginate = array(
+								'fields' => array(
+													'id',
+													'titulo_'.$lang,
+													'descricao_'.$lang,
+													'link_'.$lang,
+													'data',
+													),
+       							'limit' => 5
+	       								);
+		$radios = $this->paginate($model);
+
+
+		$midias = $this->Noticia->find('all', array(
+													'fields' => array(
+																		'Noticia.id',
+																		'Noticia.titulo_'.$lang,
+																		'Noticia.url_amigavel_'.$lang,
+																		'NoticiaCategoria.url_amigavel_'.$lang,
+																		),
+													'conditions' => array(
+																			//'noticia_categoria_id' => $catNaMidia['NoticiaCategoria']['id']
+																			'NoticiaCategoria.url_amigavel_'.$lang => 'na-midia',
+																			'Noticia.titulo_'.$lang. ' <>'	=> '',
+																		),
+													'order' => array(
+																		'Noticia.id' => 'DESC'
+																		),
+													'limit' => 3,
+													//'recursive' => 2,
+													));
+		//print_r($midias);
+		$this->set(array(
+							'radios' => $radios,
+							'midias' => $midias,
+							
+							));
+							
+		
+	}
+	
+	
+	
+	function noticialida($id = null) {
+		//$this->layout = 'ajax';
+		//$this->autoRender = false;
+		
+		//print_r($id);
+		//die();
+		
+		if (!empty($id) || $id != null) {
+			$this->Associadamaislida->create();
+			$this->Associadamaislida->set(array(
+				'noticia_id' => $id,
+				'created' => date("Y-m-d H:i:s"),
+			));
+			$this->Associadamaislida->save();
+			
+			//echo 'ok';
+		}
+		
+	}
+    
+}

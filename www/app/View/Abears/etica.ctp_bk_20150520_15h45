@@ -1,0 +1,11 @@
+<div class='row conheca'>
+    <div class='titulo_grande'>
+        <div class='title'><p><?=__d('default', 'Código de Ética')?></p></div>
+        <div class='quad'></div>
+    </div>
+    <?=$this->element('intros')?>
+    <div class='paragrafo'>
+        <?= $etica[$model]["texto_1_{$lang}"];?>
+    </div>
+    <?=$this->element('tipo-galeria')?>
+</div>

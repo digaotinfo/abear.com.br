@@ -1,0 +1,99 @@
+<?php
+	//print_r($videos);
+	//print_r($txt);
+	//print_r($videoDestaque);
+	//print_r($neighbors);
+?>
+<div class='row news exp_de_voar'>
+			<div class='titulo_grande'>
+				<div class='title'><p><?=$txt['ClubeTexto']['titulo_ptbr']?></p></div>
+				<div class='quad'></div>
+			</div>
+			<div class='clube'>
+				<div class='text'><p><?=$txt['ClubeTexto']['texto_ptbr']?></p></div>
+			</div>
+			<div class='video_visualizar'>
+			<?=$videoDestaque[$model]['video_'.$lang]?>
+				<div class='info'>
+					<div class='title'><p><?=$videoDestaque[$model]['titulo_'.$lang]?></p></div>
+					<div class='text'><p><?=$videoDestaque[$model]['texto_'.$lang]?></p></div>
+					<div class='prev_next'>
+						<div class='prev_'><a href=" <?=$this->Html->url(array('action' => 'clube_abear', $neighbors['prev']['Clube']['url_amigavel_'.$lang]))?>">anterior<div></div></a></div>
+						<div class='next_'><a href=" <?=$this->Html->url(array('action' => 'clube_abear', $neighbors['next']['Clube']['url_amigavel_'.$lang]))?>">próximo<div></div></a></div>
+					</div>
+				</div>
+			</div>
+		</div>	
+		<div class='news w100 pTop20'>
+			<div class='row'>
+				
+				<div class='video_small'>
+				<?php 
+					$count = 0;
+
+					foreach($videos as $video){
+
+						if($count < 4){ 
+							?>
+								<div class='video_'>
+									<?=$video[$model]['video_'.$lang];?>
+									<div class='video_info'>
+										<p><?=$video[$model]['titulo_'.$lang]?></p>
+									</div>
+								</div>	
+							<?php
+				 		}else{
+							$count = 0;
+							?>
+								</div>
+								<div class='video_small'>
+									<div class='video_'>
+										<?=$video[$model]['video_'.$lang];?>
+										<div class='video_info'>
+											<p><?=$video[$model]['titulo_'.$lang]?></p>
+										</div>
+									</div>	
+							<?php
+				 		}
+				 	$count++;
+				 	}
+				?>
+			</div>	
+					
+				<div class='paginator'>
+					<div class='hold'>
+					
+					<?php 
+/*
+                	echo $this->Paginator->prev(
+                                            '<-',
+                                            null,
+                                            null,
+                                            array('class' => 'prev')
+                                            );
+*/
+                 
+                	echo $this->Paginator->numbers(array(
+                    									'separator' => '',
+                                                        'currentTag' => 'a',
+                    									'tag' => 'div',
+                    									'class' => 'bt'
+                                                                                        
+                    									));
+                           
+                 
+/*
+                   echo $this->Paginator->next(
+                                            '->',
+                                            null,
+                                            null,
+                                            array('class' => 'next')
+                                            );
+*/
+                 ?>
+					
+
+					</div>
+				</div>
+			</div>
+		</div>

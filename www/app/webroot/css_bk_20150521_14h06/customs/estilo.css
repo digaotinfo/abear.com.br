@@ -1,0 +1,177 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 17/03/2014, 17:10:52
+    Author     : rodrigocosta
+*/
+
+.button_submit{
+    text-align: center;
+    font-size: 40px;
+
+}
+.separador_menu{
+/*background: url(img/Fixo/Header/HEADER__separador_menu.png) no-repeat right center;*/
+background: url(img/Fixo/Header/HEADER__separador_menu.png)repeat;
+    height: 10px;
+    width: 10px;
+    float: left;
+}
+.img_superior{
+    margin-left: 9%;   
+}
+.img1{
+    position: relative;
+    left: 7%;
+}
+.img3{
+    position: relative;
+    left: -69%;
+}
+.txt1{
+    font-size: 12px;
+    position: relative;
+    text-align: center;
+    margin-top: -27px;
+    color: rgb(174, 174, 174);
+    font-weight: bold;
+}
+.txt2{
+    font-size: 12px;
+    position: relative;
+    margin-top: -27px;
+    color: rgb(174, 174, 174);
+    font-weight: bold;
+    text-align: center;
+}
+.txt3{
+    font-size: 12px;
+    position: relative;
+    margin-left: 21%;
+    margin-top: -27px;
+    color: rgb(174, 174, 174);
+    font-weight: bold;
+}
+.links_text{
+    margin-top: 10px;
+    font-size: 15px;
+    color: rgb(147, 147, 148);
+}
+.button_padrao{
+    width: 110px;
+    height: 35px;
+    margin-top: 0px;
+    margin-bottom: 50px;
+    border: 1px solid rgb(197, 197, 198);
+    color: rgb(110, 110, 110);
+    font-size: 16px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    background: none;
+    margin-left: 25%;
+}
+.separador{
+    float: left;
+    margin-left: -1px;
+    
+}
+#separador_footer{
+background: url(img/Fixo/Footer/FOOTER_divisor.png) no-repeat right center;
+margin-top: 28px;
+height: 115px;
+}
+.margin_banner{
+    margin-top: 25px;
+    border: 4px solid rgba(236, 218, 218, 1);
+}
+#margin_miolo{
+    margin-bottom: -7px;
+}
+#button_social{
+    margin-top: -4%;
+}
+.center{
+vertical-align: middle;
+}
+.banner{
+    margin-top: 2%;
+}
+.orbit-container .orbit-next > span{
+    background: url(../img/Home/HOME_seta-banner-direita.png) no-repeat;
+    left: 50%;
+    margin-left: -35px;
+    width: 40px;
+    height: 77px;
+    border: 0;
+    margin-top: -105%;
+}
+.orbit-container .orbit-prev > span{
+    background: url(../img/Home/HOME_seta-banner-esquerda.png) no-repeat;
+    border: 0px;
+    right: -25%;
+    margin-left: -35px;
+    width: 40px;
+    height: 77px;
+    border: 0;
+    margin-top: -105%;
+}
+.orbit-container .orbit-timer{
+    position: absolute;
+    top: 12px;
+    right: 10px;
+    height: 6px;
+    width: 100px;
+    display: none;
+    z-index: 10;
+}
+.orbit-container .orbit-slide-number{
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    font-size: 12px;
+    color: white;
+    background: rgba(0, 0, 0, 0);
+    z-index: 10;
+    display: none;
+}
+.orbit-bullets li{
+display: inline-block;
+width: 0.5625rem;
+height: 0.5625rem;
+background: #cccccc;
+float: none;
+margin-right: 6px;
+-webkit-border-radius: 1000px;
+border-radius: 1000px;
+/*display: none;*/
+}
+#border{
+    border: 4px solid rgb(219, 219, 221)
+    
+}
+.nav-bar > li:hover{
+ background: #F8F8F8;
+/*color: #000;*/
+-webkit-transition: all .2s ease-in-out;   
+}
+.nav-bar > li > a:first-child {
+          font-size: 12px; 
+          text-transform: uppercase; 
+          padding: 5px 25px; 
+          color: rgb(139, 139, 139);
+}
+.sep{
+    /*background: url(img/Fixo/Header/HEADER__separador_menu.png) no-repeat;*/
+    background: url(img/Fixo/Header/HEADER__separador_menu.png) no-repeat right center;
+    height: 10px;
+    width: 10px;
+}
+.separador_pos_venda{
+    /*background: url(img/pos_venda/NOTICIAS-traco-fim-postagem.png) no-repeat right center;*/
+    height: 1px;
+    width: 100%;
+}

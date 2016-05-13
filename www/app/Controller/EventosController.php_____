@@ -1,0 +1,509 @@
+<?php
+
+App::uses('CakeTime', 'Utility');
+
+class EventosController extends AppController {
+    var $name 		= "Eventos";
+    public $helpers = array('Html', 'Session', 'Form', 'Time', 'Paginator', 'Text');
+    var $uses		= array('Evento', 'EventoArquivo', 'EventoVideo', 'Texto', 'Aviacao', 'AviacaoVideo', 'Voar', 'ComoVoarGaleriaVideo', 'GaleriaImagenCapa', 'GaleriaCategoria', 'VoarMaisBrasil', 'VoarMaisBrasilMidia', 'VoarExperiencia', 'VoarExperienciaVideo', 'GaleriaImagen', 'GaleriaImagenCapa');
+    var $scaffold 	= 'admin';
+    var $transformUrl = array(
+    							'url_amigavel_ptbr' => 'titulo_ptbr',
+    							'url_amigavel_eng'  => 'titulo_eng',
+    							'url_amigavel_esp'  => 'titulo_esp',
+    								);
+
+    var $paginate = array(
+                        'order'  => array(
+                                        'data' => 'DESC'
+                        ),
+                        'conditions' => array(
+                        		'destaque_home' => 0
+                        	)
+                        );
+
+
+    function beforeFilter() {
+		parent::beforeFilter();
+
+		if (isset($this->params['prefix']) && $this->params['prefix'] == 'admin') {
+			$showThisFields	=	array(
+									'id'						=> 'ID',
+									'titulo_ptbr'				=> 'Título em Português',
+									// 'chamada_ptbr'				=> 'Chamada em Português',
+									'destaque_eventos' 	=> 'Destaque de Eventos',
+									'destaque_home'	 	=> 'Destaque em Home',
+									'ativo' 				=> 'Ativo',
+								);
+			$showImage	=	array(
+								//'imagem_file'
+							);
+
+			$this->set('showFields', $showThisFields);
+			$this->set('fieldToImg', $showImage);
+
+
+			$this->set('schemaTable', $this->Evento->schema());
+
+			$this->buscaGenerica($showThisFields);
+		}
+	}
+
+    public function index(){
+        $model = 'Evento';
+        $this->set('model', $model);
+        
+        $lang = $this->Cookie->read('lang');
+		$this->set('lang', $lang);
+
+
+		if($lang == 'ptbr'){
+				/// Tradução de meses e dias da semana
+				$meses = array(
+							'January' => 'Janeiro',
+							'February' => 'Fevereiro',
+							'March' => 'Março',
+							'April' => 'Abril',
+							'May' => 'Maio',
+							'June' => 'Junho',
+							'July' => 'Julho',
+							'August' => 'Agosto',
+							'September' => 'Setembro',
+							'October' => 'Outubro',
+							'November' => 'Novembro',
+							'December' => 'Dezembro'
+							);
+				$dia_semana = array(
+							'Monday' => 'Segunda-feira',
+							'Tuesday' => 'Terça-feira',
+							'Wednesday' => 'Quarta-feira',
+							'Thursday' => 'Quinta-feira',
+							'Friday' => 'Sexta-feira',
+							'Saturday' => 'Sábado',
+							'Sunday' => 'Domingo'
+							);
+				
+				}
+		if($lang == 'esp'){
+				/// Tradução de meses e dias da semana
+				$meses = array(
+							'January' => 'Enero',
+							'February' => 'Febrero',
+							'March' => 'Marzo',
+							'April' => 'Abril',
+							'May' => 'Mayo',
+							'June' => 'Junio',
+							'July' => 'Julio',
+							'August' => 'Agosto',
+							'September' => 'Septiembre',
+							'October' => 'Octubre',
+							'November' => 'Noviembre',
+							'December' => 'Diciembre'
+							);
+				$dia_semana = array(
+							'Monday' => 'Lunes',
+							'Tuesday' => 'Martes',
+							'Wednesday' => 'Miércoles',
+							'Thursday' => 'Jueves',
+							'Friday' => 'Viernes',
+							'Saturday' => 'Sábado',
+							'Sunday' => 'Domingo'
+							);
+				}
+			if($lang == 'eng'){
+				/// Tradução de meses e dias da semana
+				$meses = array(
+							'January' => 'January',
+							'February' => 'February',
+							'March' => 'March',
+							'April' => 'April',
+							'May' => 'May',
+							'June' => 'June',
+							'July' => 'July',
+							'August' => 'August',
+							'September' => 'September',
+							'October' => 'October',
+							'November' => 'November',
+							'December' => 'December'
+							);
+				$dia_semana = array(
+							'Monday' => 'Monday',
+							'Tuesday' => 'Tuesday',
+							'Wednesday' => 'Wednesday',
+							'Thursday' => 'Thursday',
+							'Friday' => 'Friday',
+							'Saturday' => 'Saturday',
+							'Sunday' => 'Sunday'
+							);
+		
+				
+				}
+
+        $this->set('meses', $meses);
+		$this->set('dia_semana', $dia_semana);
+				
+        $this->paginate['limit'] = 6;
+        $this->paginate['fields'] = array(
+        								'data',
+        								'imagem_destacada_'.$lang.'_file',
+        								'chamada_'.$lang,
+        								'descricao_'.$lang,
+        								'url_amigavel_'.$lang,
+                                                                        'mostrar_segunda_data',
+                                                                        'segunda_data',
+        							);
+        $this->paginate['conditions'] = array(
+							                'Evento.ativo' => 1,
+							                'Evento.destaque_eventos' => 0,
+							                'Evento.titulo_'.$lang.  ' <>' => ''
+							                	);
+        $this->paginate['order'] = array('data' => 'DESC');
+        $eventos = $this->paginate($model);
+        $eventos_destaque = $this->$model->find('all', array(	'fields' => array(
+                                                                                'id',
+                                                                                'data',
+                                                                                'mostrar_segunda_data',
+                                                                                'segunda_data',
+                                                                                'imagem_destacada_'.$lang.'_file',
+                                                                                'titulo_'.$lang,
+                                                                                'chamada_'.$lang,
+                                                                                'destaque_eventos',
+                                                                                'destaque_home',
+                                                                                'url_amigavel_'.$lang
+                                                                                ),
+                                                                'conditions' => array(
+                                                                                'Evento.titulo_'.$lang. ' <>' => '',
+                                                                                'Evento.destaque_eventos' => 1,
+                                                                                // 'Evento.destaque_home' => 0,
+                                                                                'Evento.ativo' => 1,
+                                                                                ),
+                                                                'order' => array(
+                                                                            'data' => 'DESC',
+                                                                            ),
+                                                                // 'limit' => 2,
+                                                                ));	
+        														
+        $le_eventos = array();
+        foreach ($eventos as $evento) {
+            $e = $evento['Evento'];
+            $month = CakeTime::format('F', $e['data']);
+            $year = CakeTime::format('Y', $e['data']);
+            $mes = $meses[$month];
+            if(!isset($le_eventos[$year][$mes])){
+                $le_eventos[$year][$mes] = array();
+            }
+
+            array_unshift($le_eventos[$year][$mes], $e);
+
+        }
+
+       
+
+        $this->set(array(
+                        'eventos' => $le_eventos,
+                        'eventos_destaque' => $eventos_destaque
+                        ));
+    }
+    
+    function mostrar_evento($url_amigavel=null){
+	    $model = 'Evento';
+	    $this->set('model', $model);
+	    
+	    $lang = $this->Cookie->read('lang');
+	    
+	    if ($url_amigavel==null) {
+	    	$this->redirect(array('action' => 'index'));
+	    }
+
+	    $evento = $this->$model->find('first', array(
+                                                    'fields' => array(
+                                                                    'id',
+                                                                    'galeria_imagen_capa_id',
+                                                                    'titulo_'.$lang,
+                                                                    'chamada_'.$lang,
+                                                                    'descricao_'.$lang,
+                                                                    'url_amigavel_'. $lang,
+                                                                    'data',
+                                                                    'mostrar_horario_de_inicio',
+                                                                    'horario_de_inicio',
+                                                                    'mostrar_horario_de_termino',
+                                                                    'horario_de_termino',
+                                                                    'mostrar_segunda_data',
+                                                                    'segunda_data',
+                                                                    'mostrar_horario_de_inicio_da_segunda_data',
+                                                                    'horario_de_inicio_da_segunda_data',
+                                                                    'mostrar_horario_de_termino_da_segunda_data',
+                                                                    'horario_de_termino_da_segunda_data',
+                                                                    'destaque_eventos',
+                                                                    'imagem_destacada_'.$lang.'_file',
+                                                                    'link_externo_'.$lang,
+                                                                    ),
+                                                    'conditions' => array(
+                                                                        'Evento.url_amigavel_'.$lang => $url_amigavel
+                                                                        ),
+                                                    ));
+		
+		// >>> caso tenho link externo
+		if(!empty($evento[$model]['link_externo_'.$lang])):
+			$mylinkExterno = $evento[$model]['link_externo_'.$lang];
+			$findme   = 'http';
+			$pos = strpos($mylinkExterno, $findme);
+
+			if($pos !== true){
+				$go = $mylinkExterno;
+			}else{
+				$go = 'http://'.$mylinkExterno;
+			}
+			header("Location: ".$go);
+			die();
+			
+		endif;
+		// <<< caso tenho link externo
+
+		$videosEvento = $this->EventoVideo->find('all', array(
+																'conditions' => array(
+																						'EventoVideo.ativo' => 1, 
+																						'evento_id' => $evento[$model]['id']
+																					),
+															));
+		$arquivosEvento = $this->EventoArquivo->find('all', array(
+															'conditions' => array(
+																					// 'EventoArquivo.ativo' => 1, 
+																					'EventoArquivo.data_de_publicacao <=' => date('Y-m-d H:i'),
+																					'evento_id' => $evento[$model]['id']
+																					),
+														));
+	
+	    if (empty($evento)) {
+	    	$this->redirect(array('action' => 'index'));
+	    }
+		
+	    $month = CakeTime::format('F', $evento[$model]['data']);
+
+	    if($lang == 'ptbr'){
+			/// Tradução de meses e dias da semana
+			$meses = array(
+						'January' => 'Janeiro',
+						'February' => 'Fevereiro',
+						'March' => 'Março',
+						'April' => 'Abril',
+						'May' => 'Maio',
+						'June' => 'Junho',
+						'July' => 'Julho',
+						'August' => 'Agosto',
+						'September' => 'Setembro',
+						'October' => 'Outubro',
+						'November' => 'Novembro',
+						'December' => 'Dezembro'
+						);
+			$dia_semana = array(
+						'Monday' => 'Segunda-feira',
+						'Tuesday' => 'Terça-feira',
+						'Wednesday' => 'Quarta-feira',
+						'Thursday' => 'Quinta-feira',
+						'Friday' => 'Sexta-feira',
+						'Saturday' => 'Sábado',
+						'Sunday' => 'Domingo'
+						);
+		}
+
+		if($lang == 'esp'){
+			/// Tradução de meses e dias da semana
+			$meses = array(
+						'January' => 'Enero',
+						'February' => 'Febrero',
+						'March' => 'Marzo',
+						'April' => 'Abril',
+						'May' => 'Mayo',
+						'June' => 'Junio',
+						'July' => 'Julio',
+						'August' => 'Agosto',
+						'September' => 'Septiembre',
+						'October' => 'Octubre',
+						'November' => 'Noviembre',
+						'December' => 'Diciembre'
+						);
+			$dia_semana = array(
+						'Monday' => 'Lunes',
+						'Tuesday' => 'Martes',
+						'Wednesday' => 'Miércoles',
+						'Thursday' => 'Jueves',
+						'Friday' => 'Viernes',
+						'Saturday' => 'Sábado',
+						'Sunday' => 'Domingo'
+						);
+		}
+
+		if($lang == 'eng'){
+			/// Tradução de meses e dias da semana
+			$meses = array(
+						'January' => 'January',
+						'February' => 'February',
+						'March' => 'March',
+						'April' => 'April',
+						'May' => 'May',
+						'June' => 'June',
+						'July' => 'July',
+						'August' => 'August',
+						'September' => 'September',
+						'October' => 'October',
+						'November' => 'November',
+						'December' => 'December'
+						);
+			$dia_semana = array(
+						'Monday' => 'Monday',
+						'Tuesday' => 'Tuesday',
+						'Wednesday' => 'Wednesday',
+						'Thursday' => 'Thursday',
+						'Friday' => 'Friday',
+						'Saturday' => 'Saturday',
+						'Sunday' => 'Sunday'
+						);
+	
+			
+		}
+	    $mes = $meses[$month];
+	    										
+		$neighbors = $this->$model->find('neighbors', array(
+            												'field' => 'Evento.url_amigavel_'. $lang,
+            												'value' => $evento[$model]['url_amigavel_'. $lang],
+                                                            'fields' => array(
+				                                                            'Evento.id',
+				                                                            'Evento.url_amigavel_'. $lang,
+				                                                            'Evento.data',
+																			),
+                                                            'conditions' => array(
+                                                            					'not' => array(
+                                                            						'Evento.url_amigavel_'. $lang => '',
+                                                            					)
+                                                            					//'Evento.destaque' => 1
+                                                            				),
+                                                            'order' => 'Evento.data DESC',
+                                                            'limit' => 1,
+															));	
+	 
+	    
+	    $imagens = $this->GaleriaImagenCapa->find('first', array(
+	    														'fields' => array(
+	    																			//'id',
+	    																			),
+	    														'conditions' => array(
+	    																				'GaleriaImagenCapa.id' => $evento[$model]['galeria_imagen_capa_id'],
+	    																				),
+	    														));			
+	    
+	    
+
+	    $this->set(array(
+	    					'evento' => $evento,
+	    					'videosEvento' => $videosEvento,
+	    					'arquivosEvento' => $arquivosEvento,
+	    					'imagens' => $imagens,
+	    					'neighbors' => $neighbors,
+	    				));
+    }
+    
+    function aviacao(){
+    	$model = 'Aviacao';
+    	$this->set('model', $model);
+    	$lang = $this->Cookie->read('lang');
+		$this->set('lang', $lang);
+    	
+    	$txt = $this->$model->find('first', array(
+    												'fields' => array(
+    																	'id',
+    																	'titulo_'.$lang,
+    																	'texto_'.$lang,
+    																	'logo_' .$lang. '_file',
+    																	'imagem_facebook_' .$lang. '_file',
+    																	),
+    												'conditions' => array(
+    																		'titulo_'.$lang. ' <>' => ''
+    																		)
+    												));
+
+    	$this->paginate['conditions'] = array('ativo' => 1, 'titulo_'.$lang. ' <>' => '');
+    	$this->paginate['limit'] = 4;
+    	   												
+    	$this->set(array(
+    						'txt' => $txt,
+    						));
+    
+    }
+    
+    function como_voar(){
+		$model = 'Voar';
+		$this->set('model', $model);
+		
+		$lang = $this->Cookie->read('lang');
+		$this->set('lang', $lang);
+		
+		$txt = $this->$model->find('first', array(
+													'fields' => array(
+																		'id',
+																		'titulo_'.$lang,
+																		'logo_' .$lang. '_file',
+																		'imagem_facebook_' .$lang. '_file',
+																		'texto_'.$lang
+																		),
+													'conditions' => array(
+																			'logo_' .$lang. '_file <>' => '',
+																			),
+													));
+				    																									
+		$this-> set(array(
+							'txtvoar' => $txt,
+							));
+	}
+
+	
+	///////////////////////////////////////////////////////////////////////////////////////////////////////
+	////////////////////O BD, NÃO TINHA NADA EM URL_AMIGAVEL, O TRECO ABAIXO, PEGA O QUE ESTA EM CHAMADA_PTBR, 
+	////////////////////CHAMADA_ENG, CHAMADA_ESP, VAI PARA O METODO stringToSlug NA AppController PARA TIRAR 
+	////////////////////ACENTUAÇÃO E FINALMENTE, SALVA NO CAMPO URL_AMIGAVEL NO BD
+	///////////////////////////////////////////////////////////////////////////////////////////////////////
+	function url_insert(){
+		$model = 'Evento';
+		
+		$registros = $this->$model->find('all', array(
+														'fields' => array(	
+																			'Evento.id',
+																			'Evento.titulo_ptbr',
+																			'Evento.titulo_eng',
+																			'Evento.titulo_esp',
+																			'Evento.url_amigavel_ptbr',
+																			'Evento.url_amigavel_eng',
+																			'Evento.url_amigavel_esp',
+																				),
+														'conditions' =>array(
+																				'Evento.url_amigavel_ptbr' => '',
+																				'Evento.url_amigavel_eng' => '',
+																				'Evento.url_amigavel_esp' => '',
+																				),
+															));
+		
+		foreach($registros as $registro){
+			$titulo_ptbr = $registro[$model]['titulo_ptbr'];
+			$titulo_eng = $registro[$model]['titulo_eng'];
+			$titulo_esp = $registro[$model]['titulo_esp'];
+			
+			$url_amigavel_ptbr = $this->stringToSlug($titulo_ptbr);
+			$url_amigavel_eng = $this->stringToSlug($titulo_eng);
+			$url_amigavel_esp = $this->stringToSlug($titulo_esp);
+			
+			$this->$model->read(NULL, $registro[$model]['id']);
+			//$this->$model->id = $registro[$model]['id']; //TBM PODE SER USADO
+			$this->$model->set(array(
+									'url_amigavel_ptbr' => $url_amigavel_ptbr,
+									'url_amigavel_eng' => $url_amigavel_eng,
+									'url_amigavel_esp' => $url_amigavel_esp,
+										));
+						
+		}
+		
+	}
+
+	
+}
+
+
