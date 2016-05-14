@@ -72,6 +72,6 @@
 		        }
 			?>
 		</div>
-		<?=$this->element('right_bar_news_associadas')?>
+		<?=$this->element('right_bar_news_clipping_mais_lidas')?>
 	</div>
 </div>

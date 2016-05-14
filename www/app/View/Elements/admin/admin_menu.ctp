@@ -106,7 +106,11 @@
 			         			<li><?= $this->Html->link('Radio', array('controller' => 'radios', 'action' => 'index')); ?></li>
 			         			<li><?= $this->Html->link('Notas e Release Texto', array('controller' => 'notaReleases', 'action' => 'index')); ?></li>
 			         			<li><?= $this->Html->link('Artigos Descrição Lateral', array('controller' => 'txtArtigos', 'action' => 'index')); ?></li>
-			         			<li><?= $this->Html->link('Clipping', array('controller' => 'clippings', 'action' => 'index')); ?></li>
+			         			<li><?= $this->Html->link('Clipping', array('controller' => 'clippings', 'action' => 'index')); ?>
+			         				<ul style="margin-top: 7px;">
+						         		<li><?= $this->Html->link('Log Clipping', array('controller' => 'clippingHistoricos', 'action' => 'index')); ?></li>
+						         	</ul>
+			         			</li>
 			         		</ul>
 		         		</li>
 		         	</ul>

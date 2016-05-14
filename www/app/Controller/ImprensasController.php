@@ -4,7 +4,7 @@ App::uses('Controller', 'Controller');
 class ImprensasController extends AppController {
 	var $name 		= "Imprensas";
     public $helpers = array('Html', 'Session', 'Form', 'Time', 'Paginator', 'Text');
-    var $uses		= array('Imprensa', 'Imprensa', 'TxtArtigo', 'Artigo', 'NotaRelease','NaMidia', 'NaMidiaVideo', 'Associada', 'Associadamaislida', 'GaleriaImagenCapa', 'GaleriaImagen', 'GaleriaCategoria', 'NoticiaCategoria', 'Noticia', 'Radio', "Clipping");
+    var $uses		= array('Imprensa', 'Imprensa', 'TxtArtigo', 'Artigo', 'NotaRelease','NaMidia', 'NaMidiaVideo', 'Associada', 'Associadamaislida', 'GaleriaImagenCapa', 'GaleriaImagen', 'GaleriaCategoria', 'NoticiaCategoria', 'Noticia', 'Radio', "Clipping", "ClippingMaisLida");
     var $scaffold 	= 'admin';
     // public $components = array('Paginator');
 
@@ -349,12 +349,6 @@ class ImprensasController extends AppController {
 
 
 	function noticialida($id = null) {
-		//$this->layout = 'ajax';
-		//$this->autoRender = false;
-
-		//print_r($id);
-		//die();
-
 		if (!empty($id) || $id != null) {
 			$this->Associadamaislida->create();
 			$this->Associadamaislida->set(array(
@@ -362,8 +356,6 @@ class ImprensasController extends AppController {
 				'created' => date("Y-m-d H:i:s"),
 			));
 			$this->Associadamaislida->save();
-
-			//echo 'ok';
 		}
 
 	}
@@ -391,6 +383,33 @@ class ImprensasController extends AppController {
 		$registros = $this->paginate($model);
 		
 		$this->set("registros", $registros);
+		
+		
+		////////////////////////
+		/// GRAVANDO MAIS LIDAS
+		$this->clippingLida(4);
+		////////////////////////
+		
+		
+		///////////////////////////////////////////////
+		/// TOP MAIS LIDAS
+		///////////////////////////////////////////////
+		
+		$mais_lidas = $this->ClippingMaisLida->getMaisLidas($limit = 10, $order = 'desc', $lang);
+		$this->set('model_maislidas', 'ClippingMaisLida');
+		$this->set('mais_lidas', $mais_lidas);
+		///////////////////////////////////////////////
+		///////////////////////////////////////////////
 	}
 	
+	function clippingLida($id = null) {
+		if (!empty($id) || $id != null) {
+			$this->ClippingMaisLida->create();
+			$this->ClippingMaisLida->set(array(
+					'clipping_id' => $id,
+					'created' => date("Y-m-d H:i:s"),
+			));
+			$this->ClippingMaisLida->save();
+		}
+	}
 }
