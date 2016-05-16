@@ -43,24 +43,24 @@
 		                        <?php
 			                        if(!empty($this->params->paging[$model]['prevPage'])){
 			                            echo $this->Paginator->prev(
-			                                __d('default', 'Meses Anteriores'),
+			                                __d('default', 'Clipping Anterior'),
 			                                array('class' => 'arrowL')
 			                            );
 			                        }else{
 			                            echo $this->Paginator->prev(
-			                                __d('default', 'Meses Anteriores'),
+			                                __d('default', 'Clipping Anterior'),
 			                                array('class' => 'arrowL desactive')
 			                            );
 			                        }
 			                        echo "<div><p> | </p></div>";
 			                        if(!empty($this->params->paging[$model]['nextPage'])){
 			                                echo $this->Paginator->next(
-			                                __d('default', 'Próximos Meses'),
+			                                __d('default', 'Próximo Clipping'),
 			                                array('class' => 'arrowR')
 			                            );
 			                        }else{
 			                            echo $this->Paginator->next(
-			                                __d('default', 'Próximos Meses'),
+			                                __d('default', 'Próximo Clipping'),
 			                                array('class' => 'arrowR desactive')
 			                            );
 			                        }

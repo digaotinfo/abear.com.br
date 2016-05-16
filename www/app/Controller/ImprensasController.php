@@ -377,7 +377,7 @@ class ImprensasController extends AppController {
 						"Clipping.ativo" => 1,
 						"Clipping.titulo_".$lang." <>" => ""
 				),
-				"limit" => 10
+				"limit" => 1
 		);
 	
 		$registros = $this->paginate($model);
