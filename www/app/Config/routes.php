@@ -78,6 +78,7 @@
 
     //////==> Imprensa
     Router::connect('/imprensa/clipping', array('controller' => 'Imprensas', 'action' => 'clipping'));
+    Router::connect('/imprensa/clipping/*', array('controller' => 'Imprensas', 'action' => 'clipping'));
     Router::connect('/imprensa/:categoria/mostrar/:url_amigavel',
                         array('controller' => 'imprensas', 'action' => 'mostrar_noticia'),
                         array(

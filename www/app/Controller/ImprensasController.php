@@ -4,7 +4,7 @@ App::uses('Controller', 'Controller');
 class ImprensasController extends AppController {
 	var $name 		= "Imprensas";
     public $helpers = array('Html', 'Session', 'Form', 'Time', 'Paginator', 'Text');
-    var $uses		= array('Imprensa', 'Imprensa', 'TxtArtigo', 'Artigo', 'NotaRelease','NaMidia', 'NaMidiaVideo', 'Associada', 'Associadamaislida', 'GaleriaImagenCapa', 'GaleriaImagen', 'GaleriaCategoria', 'NoticiaCategoria', 'Noticia', 'Radio', "Clipping", "ClippingMaisLida");
+    var $uses		= array('Imprensa', 'Imprensa', 'TxtArtigo', 'Artigo', 'NotaRelease','NaMidia', 'NaMidiaVideo', 'Associada', 'Associadamaislida', 'GaleriaImagenCapa', 'GaleriaImagen', 'GaleriaCategoria', 'NoticiaCategoria', 'Noticia', 'Radio', "Clipping");
     var $scaffold 	= 'admin';
     // public $components = array('Paginator');
 
@@ -360,56 +360,73 @@ class ImprensasController extends AppController {
 
 	}
 
-	function clipping(){
+	function clipping($url_amigavel=NULL){
 		$model = "Clipping";
 		$this->set("model", $model);
 		
 		$lang = $this->Cookie->read('lang');
-		$this->paginate = array(
-				"fields" => array(
-						"Clipping.data",
-						"Clipping.titulo_".$lang,
-						"Clipping.texto_".$lang,
-						"Clipping.ativo",
-						"Clipping.url_amigavel_".$lang,
-				),
-				"conditions" => array(
-						"Clipping.ativo" => 1,
-						"Clipping.titulo_".$lang." <>" => ""
-				),
-				"limit" => 1
-		);
-	
-		$registros = $this->paginate($model);
 		
-		$this->set("registros", $registros);
-		
-		
-		////////////////////////
-		/// GRAVANDO MAIS LIDAS
-		$this->clippingLida(4);
-		////////////////////////
-		
-		
-		///////////////////////////////////////////////
-		/// TOP MAIS LIDAS
-		///////////////////////////////////////////////
-		
-		$mais_lidas = $this->ClippingMaisLida->getMaisLidas($limit = 10, $order = 'desc', $lang);
-		$this->set('model_maislidas', 'ClippingMaisLida');
-		$this->set('mais_lidas', $mais_lidas);
-		///////////////////////////////////////////////
-		///////////////////////////////////////////////
-	}
-	
-	function clippingLida($id = null) {
-		if (!empty($id) || $id != null) {
-			$this->ClippingMaisLida->create();
-			$this->ClippingMaisLida->set(array(
-					'clipping_id' => $id,
-					'created' => date("Y-m-d H:i:s"),
-			));
-			$this->ClippingMaisLida->save();
+		$conditions = array();
+		if( !empty($url_amigavel) ){
+			$conditions = array(
+				"Clipping.url_amigavel_{$lang}" => $url_amigavel
+			);
 		}
+		$registro = $this->$model->find("first", array(
+			"fields" => array(
+				"id",
+				"titulo_{$lang}",
+				"texto_{$lang}",
+				"url_amigavel_{$lang}",
+				"data",
+			),
+			"conditions" => array(
+					"Clipping.ativo" => 1,
+					"Clipping.titulo_".$lang." <>" => "",
+					$conditions
+			),
+			"order" => array(
+					"Clipping.data" => "DESC"
+			)
+		));
+		$this->set("registro", $registro);
+		
+		
+		$neighbors = "";
+		if(!empty($registro)):
+			$neighbors = $this->$model->find('neighbors', array(
+				'field' => 'id', "Clipping.url_amigavel_{$lang}",
+				'value' => $registro[$model]['id'],
+				'fields' => array(
+						'id',
+						"Clipping.url_amigavel_{$lang}",
+				),
+				'conditions' => array(
+					"Clipping.url_amigavel_{$lang} <>" => '',
+					"Clipping.id <>" => $registro[$model]['id'],
+				),
+				'limit' => 1,
+				'order' => array(
+						'data' => 'DESC'
+				)
+			));
+		endif;
+		$this->set("neighbors", $neighbors);
+		
+		
+		
+		$lastClippings = $this->$model->find("all", array(
+			"fields" => array(
+				"titulo_{$lang}",
+				"url_amigavel_{$lang}",
+			),
+			"conditions" => array(
+					"Clipping.id <>" => $registro[$model]["id"],
+					"Clipping.ativo" => 1,
+					"Clipping.titulo_".$lang." <>" => ""
+			),
+			"limit" => 10
+		));
+		$this->set("lastClippings", $lastClippings);
 	}
 }

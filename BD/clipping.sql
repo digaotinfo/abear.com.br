@@ -34,11 +34,3 @@ CREATE TABLE `tb_clipping_historico` (
 ENGINE = MyISAM;
 
 
-
-CREATE TABLE `tb_clipping_mais_lido` (
-  `id` INT NOT NULL AUTO_INCREMENT,
-  `clipping_id` INT NULL,
-  `created` DATETIME NULL,
-  PRIMARY KEY (`id`))
-ENGINE = MyISAM;
-
