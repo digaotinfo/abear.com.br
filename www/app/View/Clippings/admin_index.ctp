@@ -5,7 +5,7 @@
 </style>
 <div id="conteudo_form">
 	<h3>Clipping</h3>
-	<?php echo $this->Html->link('[Nova Clipping]', array('action' => 'add')); ?>
+	<?php echo $this->Html->link('[Novo Clipping]', array('action' => 'add')); ?>
 	<br><br>
 	<table>
 		<tr>
