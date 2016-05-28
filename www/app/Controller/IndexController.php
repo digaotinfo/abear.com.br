@@ -151,6 +151,9 @@ class IndexController extends AppController {
 																				'id',
 																				'foto_th_hidden',
 																				),
+															'conditions' => array(
+																	'ativo' => 1
+															),
 															'order' => array(
 																				'order' => 'ASC'
 																				),
