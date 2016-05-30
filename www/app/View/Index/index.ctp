@@ -124,9 +124,21 @@ $this->end();
 				<div class='text '><p><?=$descricao['DescricaoHome']['texto_'.$lang]?></p></div>
 
 				<div class='logos'>
-					<?php foreach($fundadores as $logo): ?>
-						<?=$this->Html->image('/'.$logo['Estrutura']['foto_th_hidden'])?>
-					<? endforeach; ?>
+					<?php 
+						$i = 0; 
+						foreach($fundadores as $logo): 
+							$i=$i+1;
+							$class="";
+							if($i == 4){
+								$class="latam";
+							}
+							?>
+							<div class="columns small-3 text-center <?php echo $class; ?>">	
+								<?=$this->Html->image('/'.$logo['Estrutura']['foto_th_hidden'])?>
+							</div>
+							<? 
+						endforeach; 
+					?>
 				</div>
 
 			</div>
