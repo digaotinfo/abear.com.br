@@ -174,6 +174,12 @@ if (!empty($configuracao["Configuracao"])) {
 				<div class='head'>
 					<div class='top'>
 						<div class='top_hold'>
+							<div class='newSpace'>
+								<div>
+									<a href="http://abearcrm.riweb.com.br/mailingbasic.aspx" class="btn btn-crm"><?php eho __d('default', 'CLICK AQUI') ?></a>
+								</div>
+							</div>
+							<div class='divisoria'></div>
 							<div class='language'>
 								<div>
 									<?php
@@ -647,6 +653,7 @@ if (!empty($configuracao["Configuracao"])) {
 								<a href="<?= $this->webroot;?>dados-e-fatos" class='title'><?=__d('default', 'DADOS E FATOS')?></a>
 									<div class='spacer'></div>
 								<a href="<?=$this->Html->url(array('controller' => 'contatos', 'action' => 'index'))?>" class='title'><?=__d('default', 'CONTATO')?></a>
+								<a href="<?=$this->Html->url(array('controller' => 'contatos', 'action' => 'index'))?>" class='title'><?=__d('default', 'NOVO LINK')?></a>
 							<?php endif ?>
 						</div>
 
