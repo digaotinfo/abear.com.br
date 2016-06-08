@@ -35,10 +35,17 @@ ENGINE = MyISAM;
 
 
 
-CREATE TABLE `tb_clipping_mais_lido` (
-  `id` INT NOT NULL AUTO_INCREMENT,
-  `clipping_id` INT NULL,
-  `created` DATETIME NULL,
-  PRIMARY KEY (`id`))
-ENGINE = MyISAM;
+
+
+
+
+
+HOT SITE
+
+ALTER TABLE `abear_2014`.`tb_hotsites` 
+ADD COLUMN `premio_de_jornalismo_abear_titulo` VARCHAR(100) NULL AFTER `id`,
+ADD COLUMN `premio_de_jornalismo_abear_ativo` TINYINT(1) NULL AFTER `premio_de_jornalismo_abear`;
+
+ALTER TABLE `abear_2014`.`tb_hotsites` 
+CHANGE COLUMN `premio_de_jornalismo_abear_titulo` `premio_de_jornalismo_abear_titulo` VARCHAR(100) CHARACTER SET 'latin1' COLLATE 'latin1_general_ci' NULL DEFAULT NULL COMMENT 'Titulo que será mostrado no menu do site referente ao Prêmio de Jornalismo ABEAR' ;
 

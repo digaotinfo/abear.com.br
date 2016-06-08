@@ -295,7 +295,7 @@ if (!empty($configuracao["Configuracao"])) {
 									<?php
 									if (!empty($hotsite_urls)){
 										if (!empty($hotsite_urls[$model_hotsite]['premio_de_jornalismo_abear'])){
-											?>
+											?>$hotsite_urls[$model_hotsite]['premio_de_jornalismo_abear']
 											<li><a href="<?=$hotsite_urls[$model_hotsite]['premio_de_jornalismo_abear']?>" target="_blank"><?= __d('default', 'Prêmio de Jornalismo ABEAR')?></a></li>
 											<?php
 										}
