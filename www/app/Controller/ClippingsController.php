@@ -283,4 +283,26 @@ class ClippingsController extends AppController{
 		/// Seta o request data com as informações que a Model possui.
 		$this->request->data = $this->$model->read(null, $id);
 	}
+
+	function admin_delete($id = null) {
+		$model = 'Clipping';
+	
+		if (!$this->request->is('post')) {
+			throw new MethodNotAllowedException();
+		}
+		$this->$model->id = $id;
+		if (!$this->$model->exists()) {
+			throw new NotFoundException(__('Registro inexistente'));
+		}
+	
+		if ($this->$model->delete()) {
+			$this->Session->setFlash(__('Registro excluído com sucesso.'));
+			$this->redirect(array( 'controller' => 'Clippings', 'action' => 'admin_index'));
+		}else{
+	
+			$this->Session->setFlash(__('Registro não excluido.'));
+			$this->redirect(array('action' => 'admin_index'));
+		
+		}
+	}
 }

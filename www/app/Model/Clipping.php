@@ -48,14 +48,43 @@
 			
     		$alteracao = "";
     		foreach( $a_data as $key => $val ):
-				$alteracao = $alteracao." ".$key. " => ".$val;    			
+    			$remove_apostrofos = str_replace( "'", "", $val );
+    			$valorSemAcentos = str_replace( '"', "",  $remove_apostrofos );
+				$alteracao = $alteracao." ".$key. " => ".$valorSemAcentos;    			
 
     		endforeach;
     		
     		$a_fieldSave["edicao"] = "Registro Deletado:<br>".$alteracao;
     		$a_fieldSave["delete"] = true;
 
-    		$sql = "INSERT INTO tb_clipping_historico (id, user_id, clipping_id, username, name, acao, edicao, `delete`, created, modified) values(NULL, '{$a_fieldSave["user_id"]}', '{$a_fieldSave["clipping_id"]}', '{$a_fieldSave["username"]}', '{$a_fieldSave["name"]}', '{$a_fieldSave["acao"]}', '{$a_fieldSave["edicao"]}', {$a_fieldSave["delete"]}, '".date('Y-m-d H:i:s')."', '".date('Y-m-d H:i:s')."') ";
+    		$sql = "
+    				INSERT INTO 
+    					tb_clipping_historico (
+    							id, 
+    							user_id, 
+    							clipping_id, 
+    							username, 
+    							name, 
+    							acao, 
+    							edicao, 
+    							`delete`, 
+    							created, 
+    							modified
+    							) 
+    					values(
+    						NULL, 
+    						'{$a_fieldSave["user_id"]}', 
+    						'{$a_fieldSave["clipping_id"]}', 
+    						'{$a_fieldSave["username"]}', 
+    						'{$a_fieldSave["name"]}', 
+    						'{$a_fieldSave["acao"]}', 
+    						'{$a_fieldSave["edicao"]}', 
+    						{$a_fieldSave["delete"]}, 
+    						'".date('Y-m-d H:i:s')."', 
+    						'".date('Y-m-d H:i:s')."'
+    					) ";
+    		
+    		
     		$this->query($sql);
     	}
     }
