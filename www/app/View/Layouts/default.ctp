@@ -174,12 +174,12 @@ if (!empty($configuracao["Configuracao"])) {
 				<div class='head'>
 					<div class='top'>
 						<div class='top_hold'>
-							<div class='newSpace'>
+							<div class='newSpace hide'>
 								<div>
-									<a href="http://abearcrm.riweb.com.br/mailingbasic.aspx" class="btn btn-crm"><?php eho __d('default', 'CLICK AQUI') ?></a>
+									<a href="http://abearcrm.riweb.com.br/mailingbasic.aspx" class="btn btn-crm"><?php echo __d('default', 'CLICK AQUI') ?></a>
 								</div>
 							</div>
-							<div class='divisoria'></div>
+							<div class='divisoria hide'></div>
 							<div class='language'>
 								<div>
 									<?php
@@ -286,7 +286,7 @@ if (!empty($configuracao["Configuracao"])) {
 												$link =  $hotsite_urls[$model_hotsite]['aviacao_em_debate'];
 											}
 											?>
-											<li><a href="<?=$link?>" target="_blank"><?= __d('default', 'Aviação em Debate')?></a></li>
+											<li><a href="<?=$link?>" target="_blank"><?php echo $hotsite_urls[$model_hotsite]['aviacao_em_debate_titulo_'.$lang];?></a></li>
 											<?php
 										}
 									}
@@ -295,8 +295,8 @@ if (!empty($configuracao["Configuracao"])) {
 									<?php
 									if (!empty($hotsite_urls)){
 										if (!empty($hotsite_urls[$model_hotsite]['premio_de_jornalismo_abear'])){
-											?>$hotsite_urls[$model_hotsite]['premio_de_jornalismo_abear']
-											<li><a href="<?=$hotsite_urls[$model_hotsite]['premio_de_jornalismo_abear']?>" target="_blank"><?= __d('default', 'Prêmio de Jornalismo ABEAR')?></a></li>
+											?>
+											<li><a href="<?php echo $hotsite_urls[$model_hotsite]['premio_de_jornalismo_abear']?>" target="_blank"><?php echo $hotsite_urls[$model_hotsite]['premio_de_jornalismo_abear_titulo_'.$lang]?></a></li>
 											<?php
 										}
 									}
@@ -327,7 +327,7 @@ if (!empty($configuracao["Configuracao"])) {
 									if (!empty($hotsite_urls)){
 										if (!empty($hotsite_urls[$model_hotsite]['agencia_abear'])){
 											?>
-											<li><a href="<?=$hotsite_urls[$model_hotsite]['agencia_abear']?>" target="_blank"><?= __d('default', 'Agência ABEAR')?></a></li>
+											<li><a href="<?=$hotsite_urls[$model_hotsite]['agencia_abear']?>" target="_blank"><?= $hotsite_urls[$model_hotsite]['agencia_abear_titulo_'.$lang]?></a></li>
 											<?php
 										}
 									}
@@ -348,7 +348,7 @@ if (!empty($configuracao["Configuracao"])) {
 										if (!empty($hotsite_urls)){
 											if (!empty($hotsite_urls[$model_hotsite]['clube_abear'])){
 												?>
-												<li><a href="<?=$hotsite_urls[$model_hotsite]['clube_abear']?>" target="_blank"><?= __d('default', 'Clube ABEAR')?></a></li>
+												<li><a href="<?=$hotsite_urls[$model_hotsite]['clube_abear']?>" target="_blank"><?= $hotsite_urls[$model_hotsite]['clube_abear_titulo_'.$lang]?></a></li>
 												<?php
 											}
 										}
@@ -358,7 +358,7 @@ if (!empty($configuracao["Configuracao"])) {
 										if (!empty($hotsite_urls)){
 											if (!empty($hotsite_urls[$model_hotsite]['asas_do_bem'])){
 												?>
-												<li class='mL5 <?=$mostrarMenu?>'><a href="<?=$hotsite_urls[$model_hotsite]['asas_do_bem']?>" target="_blank"><?= __d('default', 'Asas do Bem')?></a></li>
+												<li class='mL5 <?=$mostrarMenu?>'><a href="<?=$hotsite_urls[$model_hotsite]['asas_do_bem']?>" target="_blank"><?= $hotsite_urls[$model_hotsite]['asas_do_bem_titulo_'.$lang]?></a></li>
 												<?php
 											}
 										}
@@ -370,7 +370,7 @@ if (!empty($configuracao["Configuracao"])) {
 										if (!empty($hotsite_urls)){
 											if (!empty($hotsite_urls[$model_hotsite]['transporte_de_orgaos'])){
 												?>
-												<li class='mL5 <?=$mostrarMenu?>'><a href="<?=$hotsite_urls[$model_hotsite]['transporte_de_orgaos']?>" target="_blank"><?= __d('default', 'Transporte de Órgãos')?></a></li>
+												<li class='mL5 <?=$mostrarMenu?>'><a href="<?=$hotsite_urls[$model_hotsite]['transporte_de_orgaos']?>" target="_blank"><?= $hotsite_urls[$model_hotsite]['transporte_de_orgaos_titulo_'.$lang]?></a></li>
 												<?php
 											}
 										}
@@ -380,7 +380,7 @@ if (!empty($configuracao["Configuracao"])) {
 										if (!empty($hotsite_urls)){
 											if (!empty($hotsite_urls[$model_hotsite]['tudo_para_voar_melhor'])){
 												?>
-												<li class='mL5 <?=$mostrarMenu?>'><a href="<?=$hotsite_urls[$model_hotsite]['tudo_para_voar_melhor']?>" target="_blank"><?= __d('default', 'Tudo Para Voar Melhor')?></a></li>
+												<li class='mL5 <?=$mostrarMenu?>'><a href="<?=$hotsite_urls[$model_hotsite]['tudo_para_voar_melhor']?>" target="_blank"><?= $hotsite_urls[$model_hotsite]['tudo_para_voar_melhor_titulo_'.$lang]?></a></li>
 												<?php
 											}
 										}
@@ -390,6 +390,7 @@ if (!empty($configuracao["Configuracao"])) {
 							<li>
 								<div><a href="<?=$this->Html->url(array('controller' => 'contatos', 'action' => 'index'))?>"><p><?=__d('default', 'CONTATO')?></p></a></div>
 							</li>
+							
 						</ul>
 					</div>
 				</div>
@@ -437,7 +438,7 @@ if (!empty($configuracao["Configuracao"])) {
 													$link =  $hotsite_urls[$model_hotsite]['aviacao_em_debate'];
 												}
 												?>
-												<li><a href="<?=$link?>" target="_blank"><?= __d('default', 'Aviação em Debate')?></a></li>
+												<li><a href="<?=$link?>" target="_blank"><?= $hotsite_urls[$model_hotsite]['aviacao_em_debate_titulo_'.$lang]?></a></li>
 												<?php
 											}
 										}
@@ -448,7 +449,7 @@ if (!empty($configuracao["Configuracao"])) {
 										if (!empty($hotsite_urls)){
 											if (!empty($hotsite_urls[$model_hotsite]['premio_de_jornalismo_abear'])){
 												?>
-												<li><a href="<?=$hotsite_urls[$model_hotsite]['premio_de_jornalismo_abear']?>" target="_blank"><?= __d('default', 'Prêmio de Jornalismo ABEAR')?></a></li>
+												<li><a href="<?=$hotsite_urls[$model_hotsite]['premio_de_jornalismo_abear']?>" target="_blank"><?= $hotsite_urls[$model_hotsite]['premio_de_jornalismo_abear_titulo_'.$lang]?></a></li>
 												<?php
 											}
 										}
@@ -486,7 +487,7 @@ if (!empty($configuracao["Configuracao"])) {
 										if (!empty($hotsite_urls)){
 											if (!empty($hotsite_urls[$model_hotsite]['agencia_abear'])){
 												?>
-												<li><a href="<?=$hotsite_urls[$model_hotsite]['agencia_abear']?>" target="_blank"><?= __d('default', 'Agência ABEAR')?></a></li>
+												<li><a href="<?=$hotsite_urls[$model_hotsite]['agencia_abear']?>" target="_blank"><?= $hotsite_urls[$model_hotsite]['agencia_abear_titulo_'.$lang]?></a></li>
 												<?php
 											}
 										}
@@ -510,7 +511,7 @@ if (!empty($configuracao["Configuracao"])) {
 										if (!empty($hotsite_urls)){
 											if (!empty($hotsite_urls[$model_hotsite]['clube_abear'])){
 												?>
-												<li><a href="<?=$hotsite_urls[$model_hotsite]['clube_abear']?>" target="_blank"><?= __d('default', 'Clube ABEAR')?></a></li>
+												<li><a href="<?=$hotsite_urls[$model_hotsite]['clube_abear']?>" target="_blank"><?= $hotsite_urls[$model_hotsite]['clube_abear_titulo_'.$lang]?></a></li>
 												<?php
 											}
 										}
@@ -522,7 +523,7 @@ if (!empty($configuracao["Configuracao"])) {
 										if (!empty($hotsite_urls)){
 											if (!empty($hotsite_urls[$model_hotsite]['asas_do_bem'])){
 												?>
-												<li class='mL5 <?=$mostrarMenu?>'><a href="<?=$hotsite_urls[$model_hotsite]['asas_do_bem']?>" target="_blank"><?= __d('default', 'Asas do Bem')?></a></li>
+												<li class='mL5 <?=$mostrarMenu?>'><a href="<?=$hotsite_urls[$model_hotsite]['asas_do_bem']?>" target="_blank"><?= $hotsite_urls[$model_hotsite]['asas_do_bem_titulo_'.$lang]?></a></li>
 												<?php
 											}
 										}
@@ -533,7 +534,7 @@ if (!empty($configuracao["Configuracao"])) {
 										if (!empty($hotsite_urls)){
 											if (!empty($hotsite_urls[$model_hotsite]['transporte_de_orgaos'])){
 												?>
-												<li class='mL5 <?=$mostrarMenu?>'><a href="<?=$hotsite_urls[$model_hotsite]['transporte_de_orgaos']?>" target="_blank"><?= __d('default', 'Transporte de Órgãos')?></a></li>
+												<li class='mL5 <?=$mostrarMenu?>'><a href="<?=$hotsite_urls[$model_hotsite]['transporte_de_orgaos']?>" target="_blank"><?= $hotsite_urls[$model_hotsite]['transporte_de_orgaos_titulo_'.$lang]?></a></li>
 												<?php
 											}
 										}
@@ -541,7 +542,7 @@ if (!empty($configuracao["Configuracao"])) {
 										if (!empty($hotsite_urls)){
 											if (!empty($hotsite_urls[$model_hotsite]['tudo_para_voar_melhor'])){
 												?>
-												<li class='mL5 <?=$mostrarMenu?>'><a href="<?=$hotsite_urls[$model_hotsite]['tudo_para_voar_melhor']?>" target="_blank"><?= __d('default', 'Tudo Para Voar Melhor')?></a></li>
+												<li class='mL5 <?=$mostrarMenu?>'><a href="<?=$hotsite_urls[$model_hotsite]['tudo_para_voar_melhor']?>" target="_blank"><?= $hotsite_urls[$model_hotsite]['tudo_para_voar_melhor_titulo_'.$lang]?></a></li>
 												<?php
 											}
 										}
@@ -552,6 +553,7 @@ if (!empty($configuracao["Configuracao"])) {
 								<li class="divider"></li>
 
 								<li><a href="<?=$this->Html->url(array('controller' => 'contatos', 'action' => 'index'))?>"><?=__d('default', 'CONTATO')?></a></li>
+								<li><a href="<?=$hotsite_urls[$model_hotsite]['quero_voar']?>" target="_blank"><?= $hotsite_urls[$model_hotsite]['quero_voar_titulo_'.$lang]?></a></li>
 							</ul>
 						</li>
 					</ul>
@@ -600,7 +602,7 @@ if (!empty($configuracao["Configuracao"])) {
 									$link =  $hotsite_urls[$model_hotsite]['aviacao_em_debate'];
 								}
 								?>
-								<a href="<?=$link?>" target="_blank"><?= __d('default', 'Aviação em Debate')?></a>
+								<a href="<?=$link?>" target="_blank"><?= $hotsite_urls[$model_hotsite]['aviacao_em_debate_titulo_'.$lang]?></a>
 								<?php
 							}
 						}
@@ -610,7 +612,7 @@ if (!empty($configuracao["Configuracao"])) {
 						if (!empty($hotsite_urls)){
 							if (!empty($hotsite_urls[$model_hotsite]['premio_de_jornalismo_abear'])){
 								?>
-								<a href="<?=$hotsite_urls[$model_hotsite]['premio_de_jornalismo_abear']?>" target="_blank"><?= __d('default', 'Prêmio de Jornalismo ABEAR')?></a>
+								<a href="<?=$hotsite_urls[$model_hotsite]['premio_de_jornalismo_abear']?>" target="_blank"><?= $hotsite_urls[$model_hotsite]['premio_de_jornalismo_abear_titulo_'.$lang]?></a>
 								<?php
 							}
 						}
@@ -640,7 +642,7 @@ if (!empty($configuracao["Configuracao"])) {
 							if (!empty($hotsite_urls)){
 								if (!empty($hotsite_urls[$model_hotsite]['agencia_abear'])){
 									?>
-									<a href="<?=$hotsite_urls[$model_hotsite]['agencia_abear']?>" target="_blank"><?= __d('default', 'Agência ABEAR')?></a>
+									<a href="<?=$hotsite_urls[$model_hotsite]['agencia_abear']?>" target="_blank"><?= $hotsite_urls[$model_hotsite]['agencia_abear_titulo_'.$lang]?></a>
 									<?php
 								}
 							}
@@ -653,7 +655,15 @@ if (!empty($configuracao["Configuracao"])) {
 								<a href="<?= $this->webroot;?>dados-e-fatos" class='title'><?=__d('default', 'DADOS E FATOS')?></a>
 									<div class='spacer'></div>
 								<a href="<?=$this->Html->url(array('controller' => 'contatos', 'action' => 'index'))?>" class='title'><?=__d('default', 'CONTATO')?></a>
-								<a href="<?=$this->Html->url(array('controller' => 'contatos', 'action' => 'index'))?>" class='title'><?=__d('default', 'NOVO LINK')?></a>
+								<?php
+								if (!empty($hotsite_urls)){
+									if (!empty($hotsite_urls[$model_hotsite]['quero_voar'])){
+										?>
+										<a href="<?=$hotsite_urls[$model_hotsite]['quero_voar']?>" target="_blank"><?= $hotsite_urls[$model_hotsite]['quero_voar_titulo_'.$lang]?></a>
+										<?php
+									}
+								}
+								?>
 							<?php endif ?>
 						</div>
 
@@ -665,7 +675,7 @@ if (!empty($configuracao["Configuracao"])) {
 										if (!empty($hotsite_urls)){
 											if (!empty($hotsite_urls[$model_hotsite]['asas_do_bem'])){
 												?>
-												<a href="<?=$hotsite_urls[$model_hotsite]['asas_do_bem']?>" target="_blank"><?= __d('default', 'Asas do Bem')?></a>
+												<a href="<?=$hotsite_urls[$model_hotsite]['asas_do_bem']?>" target="_blank"><?= $hotsite_urls[$model_hotsite]['asas_do_bem_titulo_'.$lang]?></a>
 												<?php
 											}
 										}
@@ -676,7 +686,7 @@ if (!empty($configuracao["Configuracao"])) {
 									if (!empty($hotsite_urls)){
 										if (!empty($hotsite_urls[$model_hotsite]['transporte_de_orgaos'])){
 											?>
-											<a href="<?=$hotsite_urls[$model_hotsite]['transporte_de_orgaos']?>" target="_blank"><?= __d('default', 'Transporte de Órgãos')?></a>
+											<a href="<?=$hotsite_urls[$model_hotsite]['transporte_de_orgaos']?>" target="_blank"><?= $hotsite_urls[$model_hotsite]['transporte_de_orgaos_titulo_'.$lang]?></a>
 											<?php
 										}
 									}
@@ -685,7 +695,7 @@ if (!empty($configuracao["Configuracao"])) {
 									if (!empty($hotsite_urls)){
 										if (!empty($hotsite_urls[$model_hotsite]['tudo_para_voar_melhor'])){
 											?>
-											<a href="<?=$hotsite_urls[$model_hotsite]['tudo_para_voar_melhor']?>" target="_blank"><?= __d('default', 'Tudo Para Voar Melhor')?></a>
+											<a href="<?=$hotsite_urls[$model_hotsite]['tudo_para_voar_melhor']?>" target="_blank"><?= $hotsite_urls[$model_hotsite]['tudo_para_voar_melhor_titulo_'.$lang]?></a>
 											<?php
 										}
 									}
@@ -701,7 +711,7 @@ if (!empty($configuracao["Configuracao"])) {
 							if (!empty($hotsite_urls)){
 								if (!empty($hotsite_urls[$model_hotsite]['clube_abear'])){
 									?>
-									<a href="<?=$hotsite_urls[$model_hotsite]['clube_abear']?>" target="_blank"><?= __d('default', 'Clube ABEAR')?></a>
+									<a href="<?=$hotsite_urls[$model_hotsite]['clube_abear']?>" target="_blank"><?= $hotsite_urls[$model_hotsite]['clube_abear_titulo_'.$lang]?></a>
 									<?php
 								}
 							}
@@ -709,6 +719,15 @@ if (!empty($configuracao["Configuracao"])) {
 							<?php if(!empty($mostrarMenu)): ?>
 								<a href="<?=$this->Html->url(array('controller' => 'contatos', 'action' => 'index'))?>" class='title'><?=__d('default', 'CONTATO')?></a>
 							<?php endif; ?>
+							<?php
+							if (!empty($hotsite_urls)){
+								if (!empty($hotsite_urls[$model_hotsite]['quero_voar'])){
+									?>
+									<a href="<?=$hotsite_urls[$model_hotsite]['quero_voar']?>" target="_blank"><?= $hotsite_urls[$model_hotsite]['quero_voar_titulo_'.$lang]?></a>
+									<?php
+								}
+							}
+							?>
 
 						</div>
 

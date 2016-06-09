@@ -9,42 +9,42 @@
 			</tr>
 				<?php if(!empty($registro[$model]['premio_de_jornalismo_abear'])):?>
 					<tr>
-						<td>Prêmio de Jornalismo ABEAR: </td>
+						<td><?=$registro[$model]['premio_de_jornalismo_abear_titulo_ptbr']?>: </td>
 						<td><?=$registro[$model]['premio_de_jornalismo_abear']?></td>
 					</tr>
 				<?php endif; ?>
 
 				<?php if(!empty($registro[$model]['agencia_abear'])):?>
 					<tr>
-						<td>Agência ABEAR: </td>
+						<td><?=$registro[$model]['agencia_abear_titulo_ptbr']?>: </td>
 						<td><?=$registro[$model]['agencia_abear']?></td>
 					</tr>
 				<?php endif; ?>
 
 				<?php if(!empty($registro[$model]['clube_abear'])):?>
 					<tr>
-						<td>Clube ABEAR: </td>
+						<td><?=$registro[$model]['clube_abear_titulo_ptbr']?>: </td>
 						<td><?=$registro[$model]['clube_abear']?></td>
 					</tr>
 				<?php endif; ?>
 
 				<?php if(!empty($registro[$model]['tudo_para_voar_melhor'])):?>
 					<tr>
-						<td>Tudo Para Voar Melhor: </td>
+						<td><?=$registro[$model]['tudo_para_voar_melhor_titulo_ptbr']?>: </td>
 						<td><?=$registro[$model]['tudo_para_voar_melhor']?></td>
 					</tr>
 				<?php endif; ?>
 
 				<?php if(!empty($registro[$model]['transporte_de_orgaos'])):?>
 					<tr>
-						<td>Transporte de Orgãos: </td>
+						<td><?=$registro[$model]['transporte_de_orgaos_titulo_ptbr']?>: </td>
 						<td><?=$registro[$model]['transporte_de_orgaos']?></td>
 					</tr>
 				<?php endif; ?>
 
 				<?php if(!empty($registro[$model]['asas_do_bem'])):?>
 					<tr>
-						<td>ASAS do Bem: </td>
+						<td><?=$registro[$model]['asas_do_bem_titulo_ptbr']?>: </td>
 						<td><?=$registro[$model]['asas_do_bem']?></td>
 					</tr>
 				<?php endif; ?>
@@ -52,8 +52,16 @@
 
 				<?php if(!empty($registro[$model]['aviacao_em_debate'])):?>
 					<tr>
-						<td>Aviação em Debate: </td>
+						<td><?=$registro[$model]['aviacao_em_debate_titulo_ptbr']?>: </td>
 						<td><?=$registro[$model]['aviacao_em_debate']?></td>
+					</tr>
+				<?php endif; ?>
+
+
+				<?php if(!empty($registro[$model]['quero_voar'])):?>
+					<tr>
+						<td><?=$registro[$model]['quero_voar_titulo_ptbr']?>: </td>
+						<td><?=$registro[$model]['quero_voar']?></td>
 					</tr>
 				<?php endif; ?>
 		
@@ -70,44 +78,51 @@
 			</tr>
 			<?php if(empty($registro[$model]['premio_de_jornalismo_abear'])):?>
 					<tr>
-						<td>Prêmio de Jornalismo ABEAR </td>
+						<td><?php echo $registro[$model]['premio_de_jornalismo_abear_titulo_ptbr']; ?> </td>
 					</tr>
 				<?php endif; ?>
 
 				<?php if(empty($registro[$model]['agencia_abear'])):?>
 					<tr>
-						<td>Agência ABEAR </td>
+						<td><?php echo $registro[$model]['agencia_abear_titulo_ptbr'];?> </td>
 					</tr>
 				<?php endif; ?>
 
 				<?php if(empty($registro[$model]['clube_abear'])):?>
 					<tr>
-						<td>Clube ABEAR </td>
+						<td><?php echo $registro[$model]['clube_abear_titulo_ptbr'];?> </td>
 					</tr>
 				<?php endif; ?>
 
 				<?php if(empty($registro[$model]['tudo_para_voar_melhor'])):?>
 					<tr>
-						<td>Tudo Para Voar Melhor </td>
+						<td><?php echo $registro[$model]['tudo_para_voar_melhor_titulo_ptbr'];?> </td>
 					</tr>
 				<?php endif; ?>
 
 				<?php if(empty($registro[$model]['transporte_de_orgaos'])):?>
 					<tr>
-						<td>Transporte de Orgãos </td>
+						<td><?php echo $registro[$model]['transporte_de_orgaos_titulo_ptbr'];?> </td>
 					</tr>
 				<?php endif; ?>
 
 				<?php if(empty($registro[$model]['asas_do_bem'])):?>
 					<tr>
-						<td>ASAS do Bem </td>
+						<td><?php echo $registro[$model]['asas_do_bem_titulo_ptbr'];?> </td>
 					</tr>
 				<?php endif; ?>
 
 
 				<?php if(empty($registro[$model]['aviacao_em_debate'])):?>
 					<tr>
-						<td>Aviação em Debate</td>
+						<td><?php echo $registro[$model]['aviacao_em_debate_titulo_ptbr'];?></td>
+					</tr>
+				<?php endif; ?>
+
+
+				<?php if(empty($registro[$model]['quero_voar'])):?>
+					<tr>
+						<td><?php echo $registro[$model]['quero_voar_titulo_ptbr'];?></td>
 					</tr>
 				<?php endif; ?>
 		</tbody>

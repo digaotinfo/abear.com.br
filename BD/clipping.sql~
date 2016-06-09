@@ -43,9 +43,34 @@ ENGINE = MyISAM;
 HOT SITE
 
 ALTER TABLE `abear_2014`.`tb_hotsites` 
-ADD COLUMN `premio_de_jornalismo_abear_titulo` VARCHAR(100) NULL AFTER `id`,
-ADD COLUMN `premio_de_jornalismo_abear_ativo` TINYINT(1) NULL AFTER `premio_de_jornalismo_abear`;
+ADD COLUMN `premio_de_jornalismo_abear_titulo_ptbr` VARCHAR(100) NULL COMMENT 'Colocar o titulo do link site em Português.' AFTER `id`,
+ADD COLUMN `premio_de_jornalismo_abear_titulo_eng` VARCHAR(100) NULL COMMENT 'Colocar o titulo do link site em Inglês.' AFTER `premio_de_jornalismo_abear_titulo_ptbr`,
+ADD COLUMN `premio_de_jornalismo_abear_titulo_esp` VARCHAR(100) NULL COMMENT 'Colocar o titulo do link site em Espanhol.' AFTER `premio_de_jornalismo_abear_titulo_eng`,
+ADD COLUMN `agencia_abear_titulo_ptbr` VARCHAR(100) NULL COMMENT 'Colocar o titulo do link site em Português.' AFTER `premio_de_jornalismo_abear`,
+ADD COLUMN `agencia_abear_titulo_eng` VARCHAR(100) NULL COMMENT 'Colocar o titulo do link site em Inglês.' AFTER `agencia_abear_titulo_ptbr`,
+ADD COLUMN `agencia_abear_titulo_esp` VARCHAR(100) NULL COMMENT 'Colocar o titulo do link site em Espanhol.' AFTER `agencia_abear_titulo_eng`,
+ADD COLUMN `clube_abear_titulo_ptbr` VARCHAR(100) NULL COMMENT 'Colocar o titulo do link site em Português.' AFTER `agencia_abear`,
+ADD COLUMN `clube_abear_titulo_eng` VARCHAR(100) NULL COMMENT 'Colocar o titulo do link site em Inglês.' AFTER `clube_abear_titulo_ptbr`,
+ADD COLUMN `clube_abear_titulo_esp` VARCHAR(100) NULL COMMENT 'Colocar o titulo do link site em Espanhol.' AFTER `clube_abear_titulo_eng`,
+ADD COLUMN `tudo_para_voar_melhor_titulo_ptbr` VARCHAR(100) NULL COMMENT 'Colocar o titulo do link site em Português.' AFTER `clube_abear`,
+ADD COLUMN `tudo_para_voar_melhor_titulo_eng` VARCHAR(100) NULL COMMENT 'Colocar o titulo do link site em Inglês.' AFTER `tudo_para_voar_melhor_titulo_ptbr`,
+ADD COLUMN `tudo_para_voar_melhor_titulo_esp` VARCHAR(100) NULL COMMENT 'Colocar o titulo do link site em Espanhol.' AFTER `tudo_para_voar_melhor_titulo_eng`,
+ADD COLUMN `transporte_de_orgaos_titulo_ptbr` VARCHAR(100) NULL COMMENT 'Colocar o titulo do link site em Português.' AFTER `tudo_para_voar_melhor`,
+ADD COLUMN `transporte_de_orgaos_titulo_eng` VARCHAR(100) NULL COMMENT 'Colocar o titulo do link site em Inglês.' AFTER `transporte_de_orgaos_titulo_ptbr`,
+ADD COLUMN `transporte_de_orgaos_titulo_esp` VARCHAR(100) NULL COMMENT 'Colocar o titulo do link site em Espanhol.' AFTER `transporte_de_orgaos_titulo_eng`,
+ADD COLUMN `asas_do_bem_titulo_ptbr` VARCHAR(100) NULL COMMENT 'Colocar o titulo do link site em Português.' AFTER `transporte_de_orgaos`,
+ADD COLUMN `asas_do_bem_titulo_eng` VARCHAR(100) NULL COMMENT 'Colocar o titulo do link site em Inglês.' AFTER `asas_do_bem_titulo_ptbr`,
+ADD COLUMN `asas_do_bem_titulo_esp` VARCHAR(100) NULL COMMENT 'Colocar o titulo do link site em Espanhol.' AFTER `asas_do_bem_titulo_eng`,
+ADD COLUMN `aviacao_em_debate_titulo_ptbr` VARCHAR(100) NULL COMMENT 'Colocar o titulo do link site em Português.' AFTER `asas_do_bem`,
+ADD COLUMN `aviacao_em_debate_titulo_eng` VARCHAR(100) NULL COMMENT 'Colocar o titulo do link site em Inglês.' AFTER `aviacao_em_debate_titulo_ptbr`,
+ADD COLUMN `aviacao_em_debate_titulo_esp` VARCHAR(100) NULL COMMENT 'Colocar o titulo do link site em Espanhol.' AFTER `aviacao_em_debate_titulo_eng`;
+
+
 
 ALTER TABLE `abear_2014`.`tb_hotsites` 
-CHANGE COLUMN `premio_de_jornalismo_abear_titulo` `premio_de_jornalismo_abear_titulo` VARCHAR(100) CHARACTER SET 'latin1' COLLATE 'latin1_general_ci' NULL DEFAULT NULL COMMENT 'Titulo que será mostrado no menu do site referente ao Prêmio de Jornalismo ABEAR' ;
+ADD COLUMN `quero_voar_titulo_ptbr` VARCHAR(100) NULL AFTER `aviacao_em_debate`,
+ADD COLUMN `quero_voar_titulo_eng` VARCHAR(100) NULL AFTER `quero_voar_titulo_ptbr`,
+ADD COLUMN `quero_voar_titulo_esp` VARCHAR(100) NULL AFTER `quero_voar_titulo_eng`,
+ADD COLUMN `quero_voar` VARCHAR(200) NULL AFTER `quero_voar_titulo_esp`;
+
 
