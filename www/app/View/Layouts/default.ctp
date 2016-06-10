@@ -275,7 +275,7 @@ if (!empty($configuracao["Configuracao"])) {
 								<ul id="drop_progEventos" class="dropdown_pj pTop10">
 									<?php
 									if (!empty($hotsite_urls)){
-										if (!empty($hotsite_urls[$model_hotsite]['aviacao_em_debate'])){
+										if (!empty($hotsite_urls[$model_hotsite]['aviacao_em_debate']) && !empty($hotsite_urls[$model_hotsite]['aviacao_em_debate_titulo_'.$lang]) ){
 											$myHotSite = $hotsite_urls[$model_hotsite]['aviacao_em_debate'];
 											$findme   = 'http';
 											$result = strpos($myHotSite, $findme);
@@ -294,7 +294,7 @@ if (!empty($configuracao["Configuracao"])) {
 									<li><a href="<?=$this->Html->url(array('controller' => 'eventos', 'action' => 'index'))?>"><?= __d('default', 'Eventos')?></a></li>
 									<?php
 									if (!empty($hotsite_urls)){
-										if (!empty($hotsite_urls[$model_hotsite]['premio_de_jornalismo_abear'])){
+										if (!empty($hotsite_urls[$model_hotsite]['premio_de_jornalismo_abear']) && !empty($hotsite_urls[$model_hotsite]['premio_de_jornalismo_abear_titulo_'.$lang]) ){
 											?>
 											<li><a href="<?php echo $hotsite_urls[$model_hotsite]['premio_de_jornalismo_abear']?>" target="_blank"><?php echo $hotsite_urls[$model_hotsite]['premio_de_jornalismo_abear_titulo_'.$lang]?></a></li>
 											<?php
