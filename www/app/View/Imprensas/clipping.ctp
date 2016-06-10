@@ -67,6 +67,12 @@
 				</div>
 			</div>
 			<?=$this->element('right_bar_ultimos_clippings')?>
+			
+		<?php 
+			else: 
+				echo __d( "default", "Sem Registros." );
+		?>
+			
 		<?php endif; ?>
 	</div>
 </div>

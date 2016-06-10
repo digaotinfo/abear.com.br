@@ -6,6 +6,9 @@ msgstr " a las "
 msgid " até "
 msgstr " a "
 
+msgid "Sem Registros."
+msgstr "No hay Registros."
+
 msgid " até às "
 msgstr " hasta "
 
