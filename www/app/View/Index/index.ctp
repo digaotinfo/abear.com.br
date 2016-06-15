@@ -120,6 +120,16 @@ $this->end();
 				</div>
 			<?php } ?>
 
+
+			<?php if( $lang == "ptbr" ): ?>
+				<div class='abear_cadastreSe'>
+					<div class="img">
+						<a href="http://abearcrm.riweb.com.br/mailingbasic.aspx" target="_blank">
+							<?php echo $this->Html->image("/images/cadastre_se.png");  ?>
+						</a>
+					</div>
+				</div>
+			<?php endif; ?>
 			<div class='abear_hold'>
 				<div class='text '><p><?=$descricao['DescricaoHome']['texto_'.$lang]?></p></div>
 
@@ -140,8 +150,12 @@ $this->end();
 						endforeach; 
 					?>
 				</div>
-
 			</div>
+			
+			
+			
+			
+			
 		</div>
 
 		<div class='small-6 columns colRight' data-equalizer-watch="foo">

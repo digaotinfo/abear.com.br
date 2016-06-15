@@ -153,7 +153,8 @@ button.slick-prev:before{content: '';}
 .colunaIndex .titleTop .verTodos a:hover{color: #7d7d7d;}
 		/*ESQUERDA*/
 			/*NOTICIAS*/
-.colunaIndex .colLeft .news_hold{margin-bottom: 25px;}
+/*.colunaIndex .colLeft .news_hold{margin-bottom: 25px;}*/
+.colunaIndex .colLeft .abear_cadastreSe{margin-bottom: 25px;}
 .colunaIndex .colLeft .news_hold .titleTop .symbol{background: url(../../img/index/home_ico-jornal.png) no-repeat center center;}
 .colunaIndex .colLeft .news_hold .titleTop .verTodos{width: 64%;}
 .colunaIndex .colLeft .news_hold .news .noticia .noti_hold{min-height: 100px; width: 97.5%; border-top: 1px solid #cecece;

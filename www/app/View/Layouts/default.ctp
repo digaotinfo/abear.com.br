@@ -385,6 +385,18 @@ if (!empty($configuracao["Configuracao"])) {
 											}
 										}
 										?>
+										<?php
+											if (!empty($hotsite_urls)){
+												if (!empty($hotsite_urls[$model_hotsite]['quero_voar'])){
+													?>
+													<li class='mL5 <?=$mostrarMenu?>'>
+														<a href="<?=$hotsite_urls[$model_hotsite]['quero_voar']?>" target="_blank"><?= $hotsite_urls[$model_hotsite]['quero_voar_titulo_'.$lang]?></a>
+													</li>
+													
+													<?php
+												}
+											}
+										?>
 									</ul>
 							</li>
 							<li>
@@ -547,13 +559,25 @@ if (!empty($configuracao["Configuracao"])) {
 											}
 										}
 										?>
+										
+										<?php
+											if (!empty($hotsite_urls)){
+												if (!empty($hotsite_urls[$model_hotsite]['quero_voar'])){
+													?>
+													<li class='mL5 <?=$mostrarMenu?>'>
+														<a href="<?=$hotsite_urls[$model_hotsite]['quero_voar']?>" target="_blank"><?= $hotsite_urls[$model_hotsite]['quero_voar_titulo_'.$lang]?></a>
+													</li>
+													<?php
+												}
+											}
+										?>	
+										
 									</ul>
 								</li>
 
 								<li class="divider"></li>
 
 								<li><a href="<?=$this->Html->url(array('controller' => 'contatos', 'action' => 'index'))?>"><?=__d('default', 'CONTATO')?></a></li>
-								<li><a href="<?=$hotsite_urls[$model_hotsite]['quero_voar']?>" target="_blank"><?= $hotsite_urls[$model_hotsite]['quero_voar_titulo_'.$lang]?></a></li>
 							</ul>
 						</li>
 					</ul>
@@ -655,15 +679,7 @@ if (!empty($configuracao["Configuracao"])) {
 								<a href="<?= $this->webroot;?>dados-e-fatos" class='title'><?=__d('default', 'DADOS E FATOS')?></a>
 									<div class='spacer'></div>
 								<a href="<?=$this->Html->url(array('controller' => 'contatos', 'action' => 'index'))?>" class='title'><?=__d('default', 'CONTATO')?></a>
-								<?php
-								if (!empty($hotsite_urls)){
-									if (!empty($hotsite_urls[$model_hotsite]['quero_voar'])){
-										?>
-										<a href="<?=$hotsite_urls[$model_hotsite]['quero_voar']?>" target="_blank"><?= $hotsite_urls[$model_hotsite]['quero_voar_titulo_'.$lang]?></a>
-										<?php
-									}
-								}
-								?>
+								<a href="http://abearcrm.riweb.com.br/mailingbasic.aspx" class='title' target="_blank"><?=__d('default', 'CADASTRE-SE')?></a>
 							<?php endif ?>
 						</div>
 
@@ -719,16 +735,17 @@ if (!empty($configuracao["Configuracao"])) {
 							<?php if(!empty($mostrarMenu)): ?>
 								<a href="<?=$this->Html->url(array('controller' => 'contatos', 'action' => 'index'))?>" class='title'><?=__d('default', 'CONTATO')?></a>
 							<?php endif; ?>
+							
 							<?php
-							if (!empty($hotsite_urls)){
-								if (!empty($hotsite_urls[$model_hotsite]['quero_voar'])){
-									?>
-									<a href="<?=$hotsite_urls[$model_hotsite]['quero_voar']?>" target="_blank"><?= $hotsite_urls[$model_hotsite]['quero_voar_titulo_'.$lang]?></a>
-									<?php
+								if (!empty($hotsite_urls)){
+									if (!empty($hotsite_urls[$model_hotsite]['quero_voar'])){
+										?>
+										<a href="<?=$hotsite_urls[$model_hotsite]['quero_voar']?>" target="_blank"><?= $hotsite_urls[$model_hotsite]['quero_voar_titulo_'.$lang]?></a>
+										<?php
+									}
 								}
-							}
-							?>
-
+							?>							
+							
 						</div>
 
 					</div>
