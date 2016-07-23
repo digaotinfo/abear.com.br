@@ -19,7 +19,7 @@
  * @since         CakePHP(tm) v 0.2.9
  * @license       MIT License (http://www.opensource.org/licenses/mit-license.php)
  */
-
+App::import('Sanitize');
 App::uses('Controller', 'Controller', 'Network/Email');
 /**
  * Application Controller
@@ -91,11 +91,11 @@ class AppController extends Controller {
 			if ($this->name != 'P28n') {
 
 				if($lang == 'ptbr'){
-					/// Tradução de meses e dias da semana
+					/// TraduÃ§Ã£o de meses e dias da semana
 					$meses = array(
 								'January' => 'Janeiro',
 								'February' => 'Fevereiro',
-								'March' => 'Março',
+								'March' => 'MarÃ§o',
 								'April' => 'Abril',
 								'May' => 'Maio',
 								'June' => 'Junho',
@@ -108,16 +108,16 @@ class AppController extends Controller {
 								);
 					$dia_semana = array(
 								'Monday' => 'Segunda-feira',
-								'Tuesday' => 'Terça-feira',
+								'Tuesday' => 'TerÃ§a-feira',
 								'Wednesday' => 'Quarta-feira',
 								'Thursday' => 'Quinta-feira',
 								'Friday' => 'Sexta-feira',
-								'Saturday' => 'Sábado',
+								'Saturday' => 'SÃ¡bado',
 								'Sunday' => 'Domingo'
 								);
 				}
 
-				/// Tradução de meses e dias da semana
+				/// TraduÃ§Ã£o de meses e dias da semana
 				if($lang == 'esp'){
 					$meses = array(
 								'January' => 'Enero',
@@ -136,15 +136,15 @@ class AppController extends Controller {
 					$dia_semana = array(
 								'Monday' => 'Lunes',
 								'Tuesday' => 'Martes',
-								'Wednesday' => 'Miércoles',
+								'Wednesday' => 'MiÃ©rcoles',
 								'Thursday' => 'Jueves',
 								'Friday' => 'Viernes',
-								'Saturday' => 'Sábado',
+								'Saturday' => 'SÃ¡bado',
 								'Sunday' => 'Domingo'
 								);
 				}
 
-				/// Tradução de meses e dias da semana
+				/// TraduÃ§Ã£o de meses e dias da semana
 				if($lang == 'eng'){
 					$meses = array(
 								'January' => 'January',
@@ -204,11 +204,11 @@ class AppController extends Controller {
 
 
 				/////////////////////////////////////////////====>
-				//CONFIGURAÇÕES
+				//CONFIGURAÃ‡Ã•ES
 				/////////////////////////////////////////////////////////////////
 				$configuracao = $this->Configuracao->find('first');
 				$this->set('configuracao', $configuracao);
-				////////End CONFIGURAÇÕES
+				////////End CONFIGURAÃ‡Ã•ES
 				/////////////////////////////////////////////====>
 
 
@@ -217,11 +217,11 @@ class AppController extends Controller {
 
 
 				/////////////////////////////////////////////====>
-				//ENDEREÇOS
+				//ENDEREÃ‡OS
 				/////////////////////////////////////////////////////////////////
 				$enderecos = $this->Endereco->find('all');
 				$this->set('enderecos', $enderecos);
-				////////End ENDEREÇOS
+				////////End ENDEREÃ‡OS
 				/////////////////////////////////////////////====>
 
 
@@ -235,7 +235,7 @@ class AppController extends Controller {
 				$hotsite_urls = $this->Hotsite->find('first');
 				$this->set('hotsite_urls', $hotsite_urls);
 				$this->set('model_hotsite', 'Hotsite');
-				////////End ENDEREÇOS
+				////////End ENDEREÃ‡OS
 				/////////////////////////////////////////////====>
 
 
@@ -243,7 +243,7 @@ class AppController extends Controller {
 
 
 				/////////////////////////////////////////////====>
-				////////Introdução
+				////////IntroduÃ§Ã£o
 				$mystringD = $this->here;
 				$findmeD   = 'dados-e-fatos';
 				$posDados = strpos($mystringD, $findmeD);
@@ -349,7 +349,7 @@ class AppController extends Controller {
 																		));
 
 					/////////////////////////////////////////////////////
-					///////POR DENTRO DA AVIAÇÃO
+					///////POR DENTRO DA AVIAÃ‡ÃƒO
 					$mystring = $this->params->here;
 					$findme   = 'por-dentro-da-aviacao';
 					$pos = strpos($mystring, $findme);
@@ -549,7 +549,7 @@ class AppController extends Controller {
 					}
 				}
 				////////////////////////////////////////////////////////////////////////////
-				////// PEGAR O NOME DA SESSÃO DE ALBUNS
+				////// PEGAR O NOME DA SESSÃƒO DE ALBUNS
 				////////////////////////////////////////////////////////////////////////////
 				if(!empty($this->params['pass'])){
 					$NamePage = $this->GaleriaCategoria->find('first', array(
@@ -660,7 +660,7 @@ class AppController extends Controller {
 			return true;
 
 		} else {
-			//echo '_SMTP+_Não enviou e-mail';
+			//echo '_SMTP+_NÃ£o enviou e-mail';
 			return false;
 
 		}
@@ -732,7 +732,7 @@ class AppController extends Controller {
 			return true;
 
 		} else {
-			//echo '_SMTP+_Não enviou e-mail';
+			//echo '_SMTP+_NÃ£o enviou e-mail';
 			return false;
 
 		}
@@ -854,13 +854,13 @@ class AppController extends Controller {
 	*       uploadFile()
 	*       Alexandre MBroetto - 03-10-2011
 	*
-	*       $dir   -> Diretório de Destino do arquivo
+	*       $dir   -> DiretÃ³rio de Destino do arquivo
 	*       $file  -> Arquivo
-	*       $ext   -> Extensões permitidas para esse arquivo. (Array)
-	*       $force -> Se TRUE, força a existência de um arquivo.
+	*       $ext   -> ExtensÃµes permitidas para esse arquivo. (Array)
+	*       $force -> Se TRUE, forÃ§a a existÃªncia de um arquivo.
 	*       $resize-> Chama a funcao resizeImage() se passado como array
-	*       $fileName -> Se TRUE, impõe um novo nome ao arquivo.
-	*       $toLower -> Se TRUE, força o nome do arquivo a ser minusculo.
+	*       $fileName -> Se TRUE, impÃµe um novo nome ao arquivo.
+	*       $toLower -> Se TRUE, forÃ§a o nome do arquivo a ser minusculo.
 	*
 	*/
 	public function uploadFile($dir, $file, $ext="", $resize=false, $force=false, $fileName="", $createDir = false, $action='', $toLower=true, $createThumb=false) {
@@ -885,7 +885,7 @@ class AppController extends Controller {
 				return array(true, '');
 			}
 		}
-		if(!is_dir($dir) && !$force) {die('Diretório não encontrado');}
+		if(!is_dir($dir) && !$force) {die('DiretÃ³rio nÃ£o encontrado');}
 
 	      if($toLower)
 	         $fileExt = strToLower(end(explode(".", $file['name'])));
@@ -961,7 +961,7 @@ class AppController extends Controller {
 	      }
 	   //} else {
 	   //   $error = false;
-	   //   $errorLine = "Arquivo excede o tamanho máximo de 10MB";
+	   //   $errorLine = "Arquivo excede o tamanho mÃ¡ximo de 10MB";
 	   //}
 
 
@@ -1031,8 +1031,8 @@ class AppController extends Controller {
 
     function stringToSlug($str) {
 
-		$array1 = array(   "á", "à", "â", "ã", "ä", "é", "è", "ê", "ë", "í", "ì", "î", "ï", "ó", "ò", "ô", "õ", "ö", "ú", "ù", "û", "ü", "ç"
-				 , "Á", "À", "Â", "Ã", "Ä", "É", "È", "Ê", "Ë", "Í", "Ì", "Î", "Ï", "Ó", "Ò", "Ô", "Õ", "Ö", "Ú", "Ù", "Û", "Ü", "Ç" );
+		$array1 = array(   "Ã¡", "Ã ", "Ã¢", "Ã£", "Ã¤", "Ã©", "Ã¨", "Ãª", "Ã«", "Ã­", "Ã¬", "Ã®", "Ã¯", "Ã³", "Ã²", "Ã´", "Ãµ", "Ã¶", "Ãº", "Ã¹", "Ã»", "Ã¼", "Ã§"
+				 , "Ã�", "Ã€", "Ã‚", "Ãƒ", "Ã„", "Ã‰", "Ãˆ", "ÃŠ", "Ã‹", "Ã�", "ÃŒ", "ÃŽ", "Ã�", "Ã“", "Ã’", "Ã”", "Ã•", "Ã–", "Ãš", "Ã™", "Ã›", "Ãœ", "Ã‡" );
 
 		$array2 = array(   "a", "a", "a", "a", "a", "e", "e", "e", "e", "i", "i", "i", "i", "o", "o", "o", "o", "o", "u", "u", "u", "u", "c"
 				 , "A", "A", "A", "A", "A", "E", "E", "E", "E", "I", "I", "I", "I", "O", "O", "O", "O", "O", "U", "U", "U", "U", "C" );
@@ -1041,32 +1041,32 @@ class AppController extends Controller {
 
 
 		/*
-		/// ERRO DE CARACTERES NESTA FUNÇÃO //////////////
+		/// ERRO DE CARACTERES NESTA FUNÃ‡ÃƒO //////////////
 		//////////////////////////////////////////////////
-			$as = array("Ã¡", "Ã£", "Ã ", "Ã¢", "Ã¤","Ã", "Ã", "Ã", "Ã", "Ã");
+			$as = array("ÃƒÂ¡", "ÃƒÂ£", "ÃƒÂ ", "ÃƒÂ¢", "ÃƒÂ¤","ÃƒÂ�", "ÃƒÂƒ", "ÃƒÂ€", "ÃƒÂ‚", "ÃƒÂ„");
 			$str = str_replace($as, "a", $str);
 
-			$es = array("Ã©", "Ãª", "Ã¨", "Ã«","Ã", "Ã", "Ã", "Ã");
+			$es = array("ÃƒÂ©", "ÃƒÂª", "ÃƒÂ¨", "ÃƒÂ«","ÃƒÂ‰", "ÃƒÂŠ", "ÃƒÂˆ", "ÃƒÂ‹");
 			$str = str_replace($es, "e", $str);
 
-			$is = array("Ã­", "Ã®", "Ã¬", "Ã¯", "Ã", "Ã", "Ã", "Ã");
+			$is = array("ÃƒÂ­", "ÃƒÂ®", "ÃƒÂ¬", "ÃƒÂ¯", "ÃƒÂ�", "ÃƒÂŽ", "ÃƒÂŒ", "ÃƒÂ�");
 			$str = str_replace($is, "i", $str);
 
-			$os = array("Ã³", "Ã²", "Ã´", "Ã¶", "Ãµ", "Ã", "Ã", "Ã", "Ã", "Ã");
+			$os = array("ÃƒÂ³", "ÃƒÂ²", "ÃƒÂ´", "ÃƒÂ¶", "ÃƒÂµ", "ÃƒÂ“", "ÃƒÂ’", "ÃƒÂ”", "ÃƒÂ–", "ÃƒÂ•");
 			$str = str_replace($os,"o", $str);
 
-			$us = array("Ãº", "Ã»", "Ã¹", "Ã¼", "Ã", "Ã", "Ã", "Ã");
+			$us = array("ÃƒÂº", "ÃƒÂ»", "ÃƒÂ¹", "ÃƒÂ¼", "ÃƒÂš", "ÃƒÂ›", "ÃƒÂ™", "ÃƒÂœ");
 			$str = str_replace($us,"u", $str);
 
-			$ns = array("Ã±", "Ã");
+			$ns = array("ÃƒÂ±", "ÃƒÂ‘");
 			$str = str_replace($ns, "n", $str);
 
-			$cs = array("Ã§", "Ã");
+			$cs = array("ÃƒÂ§", "ÃƒÂ‡");
 			$str = str_replace($cs, "c", $str);
 		*/
 
 		$str = strtolower(trim($str));
-		//$str = strtr($str, "áàãâéêíóôõúüçÁÀÃÂÉÊÍÓÔÕÚÜÇ ", "aaaaeeiooouucAAAAEEIOOOUUC_");
+		//$str = strtr($str, "Ã¡Ã Ã£Ã¢Ã©ÃªÃ­Ã³Ã´ÃµÃºÃ¼Ã§Ã�Ã€ÃƒÃ‚Ã‰ÃŠÃ�Ã“Ã”Ã•ÃšÃœÃ‡ ", "aaaaeeiooouucAAAAEEIOOOUUC_");
 		$str = ereg_replace("[^a-zA-Z0-9_]", "-", $str);
 		$str = preg_replace('/[^a-z0-9-]/', '-', $str);
 		$str = preg_replace('/-+/', "-", $str);
@@ -1109,8 +1109,8 @@ class AppController extends Controller {
 			}
 		}
 
-		//$paginacao .= ($curPage!=$numeroDePaginas) ? '<a href="'.$this->webroot.$controller.'/'.$action.'/'.$numeroDePaginas.'" class="'.$addClass.'" rel="'.$numeroDePaginas.'">Última</a>' : '';
-		$paginacao .= ($curPage!=$numeroDePaginas) ? '<a href="'.$this->webroot.$controller.'/'.$action.'/'.$numeroDePaginas.'" class="'.$addClass.'" rel="'.$numeroDePaginas.'" style="border:0;">Última</a>' : '';
+		//$paginacao .= ($curPage!=$numeroDePaginas) ? '<a href="'.$this->webroot.$controller.'/'.$action.'/'.$numeroDePaginas.'" class="'.$addClass.'" rel="'.$numeroDePaginas.'">ÃšÂšltima</a>' : '';
+		$paginacao .= ($curPage!=$numeroDePaginas) ? '<a href="'.$this->webroot.$controller.'/'.$action.'/'.$numeroDePaginas.'" class="'.$addClass.'" rel="'.$numeroDePaginas.'" style="border:0;">Ãšltima</a>' : '';
 
 		if($numeroDePaginas==0) $paginacao = "";
 
@@ -1140,11 +1140,11 @@ class AppController extends Controller {
 
 				//>>> name model
 				$myModel = $this->modelClass;
-				//>>> no metodo admin_index da controller voars, o find é feito na model GaleriaImagenCapa
+				//>>> no metodo admin_index da controller voars, o find Ã© feito na model GaleriaImagenCapa
 				if($this->params['controller'] == 'voars'){
 					$myModel = 'GaleriaImagenCapa';
 				}
-				//<<< no metodo admin_index da controller voars, o find é feito na model GaleriaImagenCapa
+				//<<< no metodo admin_index da controller voars, o find Ã© feito na model GaleriaImagenCapa
 				//<<< name model
 
 
@@ -1178,12 +1178,12 @@ class AppController extends Controller {
 
 
 
-				//>>> paginação dos registros com base na busca
+				//>>> paginaÃ§Ã£o dos registros com base na busca
 				$this->paginate = array(
 									'conditions' => array($conditions)
 									);
 				$result = $this->paginate($myModel);
-				//<<< paginação dos registros com base na busca
+				//<<< paginaÃ§Ã£o dos registros com base na busca
 
 
 				$this->set('resultBusca', $result);

